@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#efaa08" />
+
+  <title>BuzzBuzz — Step Counter & Social Walking App for Friends</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="BuzzBuzz is a playful step counter and social walking app. Track daily steps, join a hive of friends, share one photo a day, and play weekly Color Hunt challenges. Free for iOS and Android." />
+  <meta name="keywords" content="step counter app, social walking app, walking app with friends, daily step tracker, fitness app for friends, photo diary app, color hunt challenge, walking challenge app, BuzzBuzz app, hive walking" />
+  <meta name="author" content="BuzzBuzz" />
+  <meta name="publisher" content="BuzzBuzz" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://vanholk.github.io/buzzbuzz-invite/landing.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuzzBuzz — Walk with your hive" />
+  <meta property="og:description" content="A cozy step counter and social walking app. Track steps, share one photo a day, play weekly Color Hunts with friends." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BuzzBuzz" />
+  <meta property="og:url" content="https://vanholk.github.io/buzzbuzz-invite/landing.html" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
+  <meta property="og:image:alt" content="BuzzBuzz app icon — a cozy step counter and social walking app" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BuzzBuzz — Walk with your hive" />
+  <meta name="twitter:description" content="Step counter + social walking app. Daily photos, weekly Color Hunts, and a hive of friends." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
+  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
+
+  <!-- Structured data: MobileApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "BuzzBuzz",
+    "alternateName": "BuzzBuzz App",
+    "applicationCategory": "HealthApplication",
+    "applicationSubCategory": "Fitness",
+    "operatingSystem": "iOS, Android",
+    "description": "BuzzBuzz is a playful step counter and social walking app where friends track daily steps, join hives, share one photo a day, and take part in weekly Color Hunt challenges.",
+    "url": "https://vanholk.github.io/buzzbuzz-invite/landing.html",
+    "featureList": [
+      "Daily step tracking",
+      "Friend hives for social walking",
+      "Bee cam diary - one photo a day",
+      "Weekly Color Hunt photo challenges",
+      "Walking streaks and goals"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BuzzBuzz",
+      "url": "https://vanholk.github.io/buzzbuzz-invite/landing.html",
+      "sameAs": [
+        "https://www.instagram.com/buzzbuzz_stepcount/"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Structured data: WebSite (helps sitelinks search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BuzzBuzz",
+    "url": "https://vanholk.github.io/buzzbuzz-invite/landing.html",
+    "description": "Official site of BuzzBuzz, a step counter and social walking app."
+  }
+  </script>
+
+  <!-- Structured data: Organization (links the brand to its social profiles) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BuzzBuzz",
+    "url": "https://vanholk.github.io/buzzbuzz-invite/landing.html",
+    "logo": "https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png",
+    "sameAs": [
+      "https://www.instagram.com/buzzbuzz_stepcount/"
+    ]
+  }
+  </script>
+
+  <!-- Structured data: FAQPage (AI crawlers and Google rich results both consume this) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuzzBuzz is a playful step counter and social walking app. It helps you track steps, connect with friends, join a hive, share one photo a day, and take part in weekly Color Hunt challenges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BuzzBuzz a step counter app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BuzzBuzz tracks daily steps and progress, but the experience is designed to feel more social, playful, and low-pressure than a traditional fitness tracker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use BuzzBuzz with friends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BuzzBuzz is built around your hive, a small friend network where you can follow each other's walking progress, share daily moments, and stay motivated together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a hive in BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hive is your friend group inside BuzzBuzz. It is where your steps, daily photos, and Color Hunt moments are shared with the people you invite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Bee cam diary?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bee cam diary is the daily photo feature in BuzzBuzz. You can share one real photo a day with your hive, and the photo stays visible for 24 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Color Hunt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Color Hunt is a weekly photo challenge where everyone gets a color prompt. You find that color in the real world, take a picture, and share it with your hive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do BuzzBuzz photos stay forever?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bee cam diary photos are designed to stay visible for 24 hours, then disappear. The goal is to keep sharing light, fresh, and casual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BuzzBuzz a fitness app or a social app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuzzBuzz is both. It is a walking and step tracking app with social features, daily photos, friend hives, and playful challenges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to post photos to use BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You can use BuzzBuzz mainly as a step counter and walking motivation app. Photo sharing and Color Hunt challenges are there when you want to join in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "When will BuzzBuzz be available?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuzzBuzz is preparing for app store release on iOS and Android. Download links will appear on the official site when they are ready."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5efdf;
+      color: #2d221c;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    /* Skip link for accessibility (also a small SEO/UX signal) */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #2d221c;
+      color: #fff7eb;
+      padding: 10px 14px;
+      border-radius: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus { left: 12px; top: 12px; }
+
+    .hero {
+      padding: 96px 24px 72px;
+      text-align: center;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      margin: 0 auto 18px;
+      border-radius: 22px;
+      display: block;
+      box-shadow: 0 14px 32px rgba(65, 45, 10, .14);
+      object-fit: cover;
+    }
+
+    h1, h2, h3, .quote, summary, .store-badge .badge-large {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8.5vw, 84px);
+      font-weight: 800;
+      line-height: .95;
+      margin: 0 0 18px;
+      letter-spacing: -2px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+    }
+
+    p { margin-top: 0; }
+
+    .subtitle {
+      max-width: 720px;
+      margin: 0 auto 36px;
+      font-size: 22px;
+      color: #5a4b41; /* bumped contrast from #6a5a50 */
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1a1410;
+      color: #fff7eb;
+      padding: 12px 22px 12px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      min-width: 200px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow: 0 10px 24px rgba(65, 45, 10, .18);
+      position: relative;
+    }
+
+    .store-badge:hover, .store-badge:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(65, 45, 10, .24);
+      background: #2d221c;
+      outline: none;
+    }
+
+    .store-badge svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .store-badge .badge-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.1;
+    }
+
+    .store-badge .badge-small {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      opacity: .85;
+      text-transform: uppercase;
+    }
+
+    .store-badge .badge-large {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+      margin-top: 1px;
+    }
+
+    .store-badge .coming-soon {
+      position: absolute;
+      top: -10px;
+      right: -8px;
+      background: #efaa08;
+      color: #2d221c;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 999px;
+      transform: rotate(6deg);
+      box-shadow: 0 3px 8px rgba(65, 45, 10, .2);
+      pointer-events: none;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 76px;
+    }
+
+    .intro {
+      max-width: 920px;
+      margin: 0 auto 34px;
+      text-align: center;
+      font-size: 19px;
+      color: #5a4b41;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .emoji {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .text-block p,
+    details p {
+      color: #5a4b41;
+      margin-bottom: 0;
+    }
+
+    .text-block {
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 32px;
+      padding: 34px;
+      margin-top: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .quote {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 36px);
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      color: #4b3b33;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .faq { max-width: 920px; margin: 0 auto; }
+
+    details {
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 22px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      float: right;
+      font-size: 24px;
+      line-height: 1;
+      color: #efaa08;
+    }
+    details[open] summary::after { content: "–"; }
+    details p { margin-top: 12px; }
+
+    /* Visually hidden but available to screen readers and crawlers */
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 48px 24px 80px;
+      color: #7a695f;
+      font-size: 14px;
+    }
+    footer a {
+      color: #5a4b41;
+      text-decoration: none;
+      border-bottom: 1px solid #d9c9b3;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    footer a:hover, footer a:focus-visible {
+      color: #2d221c;
+      border-bottom-color: #efaa08;
+      outline: none;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-bottom: 14px;
+    }
+    .footer-links .dot {
+      color: #c7b59f;
+      font-weight: 700;
+    }
+    .ig-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ig-link svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: -2px;
+    }
+
+    @media (max-width: 760px) {
+      .hero { padding-top: 72px; }
+      .subtitle { font-size: 18px; }
+      .split { grid-template-columns: 1fr; }
+      .text-block { padding: 26px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <!-- AI/LLM-friendly summary: a single paragraph models can quote cleanly. -->
+  <p class="visually-hidden" id="tldr">
+    BuzzBuzz is a free step counter and social walking app for iOS and Android. Users track daily steps, build a hive of friends, share one photo a day through Bee cam diary, and join weekly Color Hunt photo challenges. Photos disappear after 24 hours. BuzzBuzz blends fitness tracking with low-pressure social motivation.
+  </p>
+
+  <header>
+    <section class="hero" aria-labelledby="page-title">
+      <img class="logo"
+           src="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png"
+           alt="BuzzBuzz app icon"
+           width="88" height="88"
+           fetchpriority="high" />
+
+      <h1 id="page-title">BuzzBuzz</h1>
+
+      <p class="subtitle">
+        A cozy step counter and social walking app for friends. Daily walks, tiny real moments, and weekly Color Hunts.
+      </p>
+
+      <nav class="cta-row" aria-label="Download BuzzBuzz">
+        <a href="#" class="store-badge" rel="nofollow"
+           aria-label="Download BuzzBuzz on the App Store (coming soon)">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.26-1.32-1.93-3.38-2.2-4.11-2.22-1.75-.18-3.42 1.03-4.31 1.03-.89 0-2.27-1.01-3.74-.98-1.92.03-3.7 1.12-4.69 2.84-2 3.47-.51 8.6 1.43 11.42.95 1.38 2.08 2.92 3.56 2.87 1.43-.06 1.97-.92 3.7-.92 1.72 0 2.21.92 3.72.89 1.54-.03 2.51-1.4 3.45-2.79 1.09-1.6 1.54-3.15 1.57-3.23-.03-.01-3.01-1.15-3.04-4.58zM14.34 3.65c.79-.96 1.32-2.29 1.18-3.62-1.14.05-2.52.76-3.34 1.71-.73.85-1.37 2.21-1.2 3.51 1.27.1 2.57-.65 3.36-1.6z"/>
+          </svg>
+          <span class="badge-text">
+            <span class="badge-small">Download on the</span>
+            <span class="badge-large">App Store</span>
+          </span>
+          <span class="coming-soon" aria-hidden="true">Coming Soon</span>
+        </a>
+
+        <a href="#" class="store-badge" rel="nofollow"
+           aria-label="Get BuzzBuzz on Google Play (coming soon)">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <defs>
+              <linearGradient id="gpA" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#00d4ff"/>
+                <stop offset="1" stop-color="#00b8e6"/>
+              </linearGradient>
+              <linearGradient id="gpB" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#ffce00"/>
+                <stop offset="1" stop-color="#ffa800"/>
+              </linearGradient>
+              <linearGradient id="gpC" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#ff3a44"/>
+                <stop offset="1" stop-color="#c31162"/>
+              </linearGradient>
+              <linearGradient id="gpD" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#00f076"/>
+                <stop offset="1" stop-color="#00c853"/>
+              </linearGradient>
+            </defs>
+            <path fill="url(#gpA)" d="M3.6 1.7c-.4.4-.6 1-.6 1.8v17c0 .8.2 1.4.6 1.8l.1.1L13.2 13v-.2L3.7 1.7h-.1z"/>
+            <path fill="url(#gpB)" d="M16.4 16.2 13.2 13v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2-.1-.1z"/>
+            <path fill="url(#gpC)" d="M16.5 16.1 13.2 12.8 3.6 22.4c.4.4 1 .4 1.7 0l11.2-6.3"/>
+            <path fill="url(#gpD)" d="M16.5 9.7 5.3 3.4c-.7-.4-1.3-.4-1.7 0l9.6 9.6 3.3-3.3z"/>
+          </svg>
+          <span class="badge-text">
+            <span class="badge-small">Get it on</span>
+            <span class="badge-large">Google Play</span>
+          </span>
+          <span class="coming-soon" aria-hidden="true">Coming Soon</span>
+        </a>
+      </nav>
+    </section>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="what-is-buzzbuzz">
+      <h2 id="what-is-buzzbuzz">Walk with your hive</h2>
+
+      <div class="intro">
+        <p>
+          BuzzBuzz is a step counter app built around friends, not pressure. Track your daily steps, join a hive, share one photo a day, and turn walking into a small social ritual. It's fitness, but less intense. Social, but less noisy.
+        </p>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">👟</div>
+          <h3>Step counter</h3>
+          <p>Track your daily movement with simple step goals, progress, and streaks that make walking feel lighter.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">🐝</div>
+          <h3>Hive network</h3>
+          <p>Add friends, build your hive, and keep each other moving with gentle social motivation.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">📸</div>
+          <h3>Bee cam diary</h3>
+          <p>Share one real photo a day with your hive. Photos stay visible for 24 hours, then buzz away.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">🌈</div>
+          <h3>Color Hunt</h3>
+          <p>Join weekly color challenges and capture your world through shared prompts. One color. One photo. Main character walk.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-it-works">
+      <h2 id="how-it-works">How BuzzBuzz works</h2>
+
+      <ol class="split" style="padding:0; list-style:none; margin:22px 0 0;">
+        <li class="text-block">
+          <h3>1. Set your daily step goal</h3>
+          <p>BuzzBuzz helps you track walking progress without turning your day into a spreadsheet. See your steps, keep your streak alive, and move at your own pace.</p>
+        </li>
+
+        <li class="text-block">
+          <h3>2. Join or invite your hive</h3>
+          <p>A hive is your small friend network inside BuzzBuzz, designed for lightweight encouragement, walking challenges, and low-pressure social check-ins.</p>
+        </li>
+
+        <li class="text-block">
+          <h3>3. Share one photo a day</h3>
+          <p>Bee cam diary lets you post one daily photo to your hive. It stays for 24 hours, keeping the feed fresh, real, and not too serious.</p>
+        </li>
+
+        <li class="text-block">
+          <h3>4. Play the Color Hunt</h3>
+          <p>Each week, BuzzBuzz gives everyone a color prompt. Spot the color on your walk, snap it, and share it before the moment disappears.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="why-buzzbuzz">
+      <h2 id="why-buzzbuzz">A walking app with social energy</h2>
+
+      <div class="text-block">
+        <p>
+          Most step counter apps focus on numbers, calories, or strict fitness goals. BuzzBuzz is different. It is designed for people who want to move more, stay connected with friends, and make daily walks feel playful. The app combines step tracking, social walking motivation, temporary photo sharing, and weekly photo prompts in one simple bee-themed experience.
+        </p>
+        <p style="margin-top:16px;">
+          Whether you want a cute step tracker, a walking challenge app for friends, a tiny photo diary, or a more fun way to build healthy habits, BuzzBuzz keeps things casual. No gym pressure. No overthinking. Just walk, snap, buzz.
+        </p>
+      </div>
+    </section>
+
+    <aside class="quote" aria-label="Tagline">
+      &ldquo;main character walk detected 🐝&rdquo;
+    </aside>
+
+    <section class="section faq" aria-labelledby="faq">
+      <h2 id="faq">BuzzBuzz FAQ</h2>
+
+      <details>
+        <summary>What is BuzzBuzz?</summary>
+        <p>BuzzBuzz is a playful step counter and social walking app. It helps you track steps, connect with friends, join a hive, share one photo a day, and take part in weekly Color Hunt challenges.</p>
+      </details>
+
+      <details>
+        <summary>Is BuzzBuzz a step counter app?</summary>
+        <p>Yes. BuzzBuzz tracks daily steps and progress, but the experience is designed to feel more social, playful, and low-pressure than a traditional fitness tracker.</p>
+      </details>
+
+      <details>
+        <summary>Can I use BuzzBuzz with friends?</summary>
+        <p>Yes. BuzzBuzz is built around your hive, a small friend network where you can follow each other's walking progress, share daily moments, and stay motivated together.</p>
+      </details>
+
+      <details>
+        <summary>What is a hive?</summary>
+        <p>A hive is your friend group inside BuzzBuzz. It is where your steps, daily photos, and Color Hunt moments can be shared with the people you invite.</p>
+      </details>
+
+      <details>
+        <summary>What is Bee cam diary?</summary>
+        <p>Bee cam diary is the daily photo feature in BuzzBuzz. You can share one real photo a day with your hive, and the photo stays visible for 24 hours.</p>
+      </details>
+
+      <details>
+        <summary>What is Color Hunt?</summary>
+        <p>Color Hunt is a weekly photo challenge where everyone gets a color prompt. You find that color in the real world, take a picture, and share it with your hive.</p>
+      </details>
+
+      <details>
+        <summary>Do photos stay forever?</summary>
+        <p>No. Bee cam diary photos are designed to stay visible for 24 hours. The goal is to keep sharing light, fresh, and casual.</p>
+      </details>
+
+      <details>
+        <summary>Is BuzzBuzz a fitness app or a social app?</summary>
+        <p>BuzzBuzz is both. It is a walking and step tracking app with social features, daily photos, friend hives, and playful challenges.</p>
+      </details>
+
+      <details>
+        <summary>Do I need to post photos to use BuzzBuzz?</summary>
+        <p>No. You can use BuzzBuzz mainly as a step counter and walking motivation app. Photo sharing and Color Hunt challenges are there when you want to join in.</p>
+      </details>
+
+      <details>
+        <summary>When will BuzzBuzz be available?</summary>
+        <p>BuzzBuzz is preparing for app store release. Download links for iOS and Android will be added here when they are ready.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-links" aria-label="Footer">
+      <a class="ig-link"
+         href="https://www.instagram.com/buzzbuzz_stepcount/"
+         target="_blank"
+         rel="noopener me"
+         aria-label="Follow BuzzBuzz on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        @buzzbuzz_stepcount
+      </a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://www.notion.so/BUZZBUZZ-Privacy-Policy-35988e07417f809ba9b1d6759e20817e"
+         target="_blank"
+         rel="noopener">Privacy Policy</a>
+    </nav>
+    <p>BuzzBuzz &copy; 2026 &middot; walk. snap. buzz.</p>
+  </footer>
+
+</body>
+</html>
