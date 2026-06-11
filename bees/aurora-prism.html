@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#efaa08" />
+
+  <title>Aurora Prism — The Legendary BuzzBuzz Bee | Bee Lore</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Meet Aurora Prism, the legendary holographic BuzzBuzz bee. Appears rarely, exclusively at golden hour, allegedly walks in RGB. Read the official bee lore." />
+  <meta name="keywords" content="Aurora Prism, BuzzBuzz bee, BuzzBuzz bee skins, bee lore, BuzzBuzz characters, step counter app mascot, social walking app, Honey Shop skins" />
+  <meta name="author" content="BuzzBuzz" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://vanholk.github.io/buzzbuzz-invite/bees/aurora-prism.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Aurora Prism — BuzzBuzz Bee Lore" />
+  <meta property="og:description" content="Legendary drop. Walks in RGB." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="BuzzBuzz" />
+  <meta property="og:url" content="https://vanholk.github.io/buzzbuzz-invite/bees/aurora-prism.html" />
+  <meta property="og:image" content="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/aurora-prism.png" />
+  <meta property="og:image:alt" content="Aurora Prism, a holographic rainbow gradient bee with iridescent wings" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Aurora Prism — BuzzBuzz Bee Lore" />
+  <meta name="twitter:description" content="Legendary drop. Walks in RGB." />
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/aurora-prism.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="../favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="../favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Aurora Prism — BuzzBuzz Bee Lore",
+    "url": "https://vanholk.github.io/buzzbuzz-invite/bees/aurora-prism.html",
+    "description": "Meet Aurora Prism, the legendary holographic BuzzBuzz bee. Appears rarely, exclusively at golden hour, allegedly walks in RGB. Read the official bee lore.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BuzzBuzz",
+      "url": "https://vanholk.github.io/buzzbuzz-invite/landing.html"
+    },
+    "primaryImageOfPage": "https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/aurora-prism.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "BuzzBuzz", "item": "https://vanholk.github.io/buzzbuzz-invite/landing.html" },
+      { "@type": "ListItem", "position": 2, "name": "Bees", "item": "https://vanholk.github.io/buzzbuzz-invite/landing.html#meet-the-bees" },
+      { "@type": "ListItem", "position": 3, "name": "Aurora Prism", "item": "https://vanholk.github.io/buzzbuzz-invite/bees/aurora-prism.html" }
+    ]
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5efdf;
+      color: #2d221c;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    h1, h2, h3, .eyebrow, .mini-name, .store-badge .badge-large {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    h1 {
+      font-size: clamp(44px, 7.5vw, 72px);
+      font-weight: 800;
+      line-height: .95;
+      letter-spacing: -2px;
+      margin: 6px 0 10px;
+    }
+    h2 {
+      font-size: clamp(30px, 4.5vw, 44px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1.2px;
+      margin: 0 0 18px;
+    }
+    h3 { margin: 0 0 10px; font-size: 22px; font-weight: 700; letter-spacing: -.3px; }
+    p { margin-top: 0; }
+
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      background: #2d221c; color: #fff7eb;
+      padding: 10px 14px; border-radius: 8px; z-index: 100;
+    }
+    .skip-link:focus { left: 12px; top: 12px; }
+
+    .lang-toggle {
+      position: fixed; top: 14px; right: 14px; z-index: 50;
+      display: inline-flex; align-items: center;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 999px;
+      padding: 3px; box-shadow: 0 6px 18px rgba(65,45,10,.12);
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .lang-toggle button {
+      border: 0; background: transparent; color: #5a4b41;
+      font: inherit; font-size: 14px; font-weight: 700;
+      padding: 6px 14px; border-radius: 999px; cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] { background: #efaa08; color: #2d221c; }
+    .lang-toggle button:focus-visible { outline: 2px solid #2d221c; outline-offset: 2px; }
+
+    .topbar {
+      max-width: 1120px; margin: 0 auto; padding: 22px 24px 0;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: "Baloo 2", sans-serif; font-weight: 700;
+      text-decoration: none; color: #5a4b41;
+      border-bottom: 2px solid transparent;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .back-link:hover, .back-link:focus-visible { color: #2d221c; border-bottom-color: #efaa08; outline: none; }
+
+    .hero {
+      max-width: 1120px; margin: 0 auto;
+      padding: 36px 24px 64px;
+      display: grid; grid-template-columns: minmax(260px, 440px) 1fr;
+      gap: 44px; align-items: center;
+    }
+    .bee-cell {
+      background: #000; border: 2px solid #2d221c; border-radius: 36px;
+      overflow: hidden; box-shadow: 0 18px 44px rgba(65,45,10,.2);
+    }
+    .bee-cell img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #2d221c; background: #efaa08;
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .epithet { font-size: 22px; color: #5a4b41; margin: 0 0 26px; }
+
+    .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .chip {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 18px;
+      padding: 14px 16px;
+    }
+    .chip-k {
+      display: block; font-size: 11px; font-weight: 800; letter-spacing: 1px;
+      text-transform: uppercase; color: #a08c75; margin-bottom: 3px;
+    }
+    .chip-v { font-size: 15px; color: #2d221c; font-weight: 600; }
+
+    .section { max-width: 920px; margin: 0 auto; padding: 0 24px 64px; }
+    .text-block {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 32px;
+      padding: 34px; font-size: 18px;
+    }
+    .text-block p { color: #5a4b41; }
+    .text-block p:last-child { margin-bottom: 0; }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 28px;
+      padding: 26px;
+    }
+    .card p { color: #5a4b41; margin-bottom: 0; }
+
+    .color-banner {
+      display: flex; align-items: center; gap: 20px;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 28px;
+      padding: 26px;
+    }
+    .swatch {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 3px solid #2d221c; flex-shrink: 0;
+      background:conic-gradient(#ff5e7e, #ffb347, #fff95b, #6ef195, #5ad7ff, #b96bff, #ff5e7e);
+    }
+    .color-banner h3 { margin-bottom: 2px; }
+    .color-banner p { margin: 0; color: #5a4b41; font-size: 18px; }
+
+    .pager {
+      display: flex; justify-content: space-between; gap: 14px;
+      margin-bottom: 26px; flex-wrap: wrap;
+    }
+    .pager a {
+      font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 17px;
+      text-decoration: none; color: #2d221c;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 999px;
+      padding: 12px 22px;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .pager a:hover, .pager a:focus-visible { border-color: #efaa08; transform: translateY(-2px); outline: none; }
+
+    .mini-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+    }
+    .mini-cell {
+      background: #000; border: 2px solid #2d221c; border-radius: 22px;
+      overflow: hidden; text-decoration: none; color: #fff7eb;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .mini-cell:hover, .mini-cell:focus-visible { transform: translateY(-3px); border-color: #efaa08; outline: none; }
+    .mini-cell img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+    .mini-name {
+      display: block; padding: 10px 14px 13px;
+      font-size: 16px; font-weight: 800; letter-spacing: -.3px;
+      border-top: 1px solid rgba(255,247,235,.12);
+    }
+
+    .cta {
+      text-align: center;
+      max-width: 720px; margin: 0 auto; padding: 0 24px 80px;
+    }
+    .cta p { color: #5a4b41; font-size: 18px; margin-bottom: 26px; }
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #1a1410; color: #fff7eb;
+      padding: 12px 22px 12px 18px; border-radius: 14px;
+      text-decoration: none; min-width: 200px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow: 0 10px 24px rgba(65,45,10,.18);
+    }
+    .store-badge:hover, .store-badge:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(65,45,10,.24);
+      background: #2d221c; outline: none;
+    }
+    .store-badge svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .store-badge .badge-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+    .store-badge .badge-small { font-size: 10px; font-weight: 500; letter-spacing: .5px; opacity: .85; text-transform: uppercase; }
+    .store-badge .badge-large { font-size: 19px; font-weight: 700; letter-spacing: -.3px; margin-top: 1px; }
+
+    footer { text-align: center; padding: 0 24px 80px; color: #7a695f; font-size: 14px; }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 24px; }
+      .bee-cell { max-width: 380px; margin: 0 auto; }
+      .chips { grid-template-columns: 1fr; }
+      .lang-toggle { top: 10px; right: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .pager a, .mini-cell, .store-badge { transition: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
+
+  <div class="topbar">
+    <a class="back-link" href="../landing.html" data-i18n="lbl.back">← Back to the hive</a>
+  </div>
+
+  <header class="hero">
+    <div class="bee-cell">
+      <img src="img/aurora-prism.png" alt="Aurora Prism, a holographic rainbow gradient bee with iridescent wings" width="480" height="480" fetchpriority="high" />
+    </div>
+    <div>
+      <span class="eyebrow"><span data-i18n="lbl.eyebrow">BuzzBuzz Bee Lore</span> · No. 05</span>
+      <h1>Aurora Prism</h1>
+      <p class="epithet" data-i18n="epithet">Legendary drop. Walks in RGB.</p>
+
+      <h2 class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" data-i18n="lbl.file_title">Official bee file</h2>
+      <div class="chips">
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.0.k">Vibe</span>
+            <span class="chip-v" data-i18n="file.0.v">Shimmering. Elusive. Slightly smug about it.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.1.k">Natural habitat</span>
+            <span class="chip-v" data-i18n="file.1.v">Golden hour. Exclusively.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.2.k">Step style</span>
+            <span class="chip-v" data-i18n="file.2.v">Glide. Glow. Gone.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.3.k">Honey order</span>
+            <span class="chip-v" data-i18n="file.3.v">Iridescent, somehow. Nobody knows how.</span>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="lore">
+      <h2 id="lore" data-i18n="lbl.lore_title">The lore</h2>
+      <div class="text-block">
+        <p data-i18n="lore.0">Aurora Prism appears rarely, and when she does, the lighting is always perfect. Always. Hive scientists (three bees and a clipboard) have studied this for months and their official conclusion is “we don’t know, she just be like that.”</p>
+        <p data-i18n="lore.1">Walking next to her adds an estimated +10 aesthetic to every Bee cam photo you take. This is not a confirmed app feature. It is simply what happens. The shimmer is rumored to be solar-powered, with a backup generator that runs on compliments.</p>
+        <p data-i18n="lore.2">Some say she’s the final Color Hunt — the one where the color is “all of them, simultaneously.” She has neither confirmed nor denied this. She did shimmer slightly harder when asked, which the hive has chosen to interpret as a yes.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="facts">
+      <h2 id="facts" data-i18n="lbl.facts_title">Bee facts</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.0.k">Photo anomaly</h3>
+          <p data-i18n="fact.0.v">No two photos of her show the same colors. Camera engineers have given up. They’re happier now.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.1.k">Hydration</h3>
+          <p data-i18n="fact.1.v">Does not sweat. Glistens. There is a difference and she will explain it.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.2.k">The 24-hour loophole</h3>
+          <p data-i18n="fact.2.v">Her Bee cam photos disappear after 24 hours like everyone else’s. From the app. Not from your memory.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.3.k">Rarity</h3>
+          <p data-i18n="fact.3.v">Spotting her on a walk is considered good luck. Spotting her twice is considered showing off. By her.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="color">
+      <h2 id="color" data-i18n="lbl.color_title">Favorite Color Hunt color</h2>
+      <div class="color-banner">
+        <span class="swatch" aria-hidden="true"></span>
+        <div>
+          <h3>All of them</h3>
+          <p data-i18n="color.quote">“Simultaneously.”</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="more">
+      <h2 id="more" data-i18n="lbl.more_title">More bees</h2>
+      <nav class="pager" aria-label="Bee navigation">
+        <a href="outlaw.html" rel="prev" data-i18n="lbl.prev">← Previous bee</a>
+        <a href="normal.html" rel="next" data-i18n="lbl.next">Next bee →</a>
+      </nav>
+      <div class="mini-grid">
+          <a class="mini-cell" href="normal.html">
+            <img src="img/normal.png" alt="Normal Bee, the original yellow BuzzBuzz bee with a calm smile" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Normal Bee</span>
+          </a>
+          <a class="mini-cell" href="berry-blush.html">
+            <img src="img/berry-blush.png" alt="Berry Blush, a hot pink bee with heart-shaped cheeks and long lashes" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Berry Blush</span>
+          </a>
+          <a class="mini-cell" href="goblin.html">
+            <img src="img/goblin.png" alt="Goblin Bee, a green bee with pointy ears, red eyes and a fanged grin" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Goblin Bee</span>
+          </a>
+          <a class="mini-cell" href="outlaw.html">
+            <img src="img/outlaw.png" alt="Outlaw Bee, a yellow bee wearing a brown cowboy hat with a star and a red bandana" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Outlaw Bee</span>
+          </a>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <h2 id="cta-title" data-i18n="lbl.cta_title">Pick your bee. Start your streak.</h2>
+    <p data-i18n="lbl.cta_sub">BuzzBuzz is free on iPhone. Walk, snap, buzz — and unlock skins like this one in the Honey Shop.</p>
+    <a href="https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595"
+       class="store-badge" target="_blank" rel="noopener"
+       aria-label="Download BuzzBuzz on the App Store">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.26-1.32-1.93-3.38-2.2-4.11-2.22-1.75-.18-3.42 1.03-4.31 1.03-.89 0-2.27-1.01-3.74-.98-1.92.03-3.7 1.12-4.69 2.84-2 3.47-.51 8.6 1.43 11.42.95 1.38 2.08 2.92 3.56 2.87 1.43-.06 1.97-.92 3.7-.92 1.72 0 2.21.92 3.72.89 1.54-.03 2.51-1.4 3.45-2.79 1.09-1.6 1.54-3.15 1.57-3.23-.03-.01-3.01-1.15-3.04-4.58zM14.34 3.65c.79-.96 1.32-2.29 1.18-3.62-1.14.05-2.52.76-3.34 1.71-.73.85-1.37 2.21-1.2 3.51 1.27.1 2.57-.65 3.36-1.6z"/>
+      </svg>
+      <span class="badge-text">
+        <span class="badge-small">Download on the</span>
+        <span class="badge-large">App Store</span>
+      </span>
+    </a>
+  </section>
+
+  <footer>
+    <p data-i18n="lbl.footer_tag">BuzzBuzz © 2026 · walk. snap. buzz.</p>
+  </footer>
+
+  <script>
+  (function () {
+    var KO = {
+  "lbl.back": "← 하이브로 돌아가기",
+  "lbl.eyebrow": "BuzzBuzz 벌 세계관",
+  "lbl.file_title": "공식 벌 프로필",
+  "lbl.lore_title": "세계관",
+  "lbl.facts_title": "벌 팩트",
+  "lbl.color_title": "최애 컬러헌트 색",
+  "lbl.more_title": "다른 벌들",
+  "lbl.more_intro": "세계관은 여기서 안 끝남. 절대 안 끝남.",
+  "lbl.read": "세계관 보기 →",
+  "lbl.prev": "← 이전 벌",
+  "lbl.next": "다음 벌 →",
+  "lbl.cta_title": "내 벌 정하고, 스트릭 시작하기.",
+  "lbl.cta_sub": "BuzzBuzz는 iPhone에서 무료임. 걷고, 찍고, 버즈 — 허니샵에서 이런 스킨도 풀 수 있음.",
+  "lbl.footer_tag": "BuzzBuzz © 2026 · 걷고. 찍고. 버즈.",
+  "epithet": "전설 등급 드랍. RGB로 걷는 중.",
+  "file.0.k": "바이브",
+  "file.0.v": "반짝임. 신비주의. 그걸 살짝 즐기는 중.",
+  "file.1.k": "서식지",
+  "file.1.v": "골든아워. 거기서만.",
+  "file.2.k": "걸음 스타일",
+  "file.2.v": "스르륵. 반짝. 사라짐.",
+  "file.3.k": "꿀 주문",
+  "file.3.v": "어떻게인지 무지갯빛임. 원리는 아무도 모름.",
+  "lore.0": "오로라 프리즘은 아주 가끔 나타나는데, 나타날 때마다 조명이 완벽함. 매번. 하이브 과학자들(벌 셋이랑 클립보드 하나)이 몇 달을 연구한 끝에 내린 공식 결론: “모르겠음. 걍 원래 그런 애임.”",
+  "lore.1": "옆에서 같이 걸으면 비캠 사진 감성이 +10 정도 올라감. 공식 앱 기능 아님. 그냥 일어나는 일임. 저 반짝임은 태양광 충전이라는 소문이 있는데, 보조 발전기는 칭찬으로 돌아간다고 함.",
+  "lore.2": "혹자는 얘가 마지막 컬러헌트라고 함 — 미션 컬러가 “전부 다, 동시에”인 그 전설의 회차. 본인은 긍정도 부정도 안 했음. 근데 질문받았을 때 살짝 더 반짝였고, 하이브는 그걸 ‘맞다’로 해석하기로 했음.",
+  "fact.0.k": "사진 미스터리",
+  "fact.0.v": "얘 사진은 두 장이 같은 색인 적이 없음. 카메라 엔지니어들은 포기했고, 지금이 더 행복하대.",
+  "fact.1.k": "수분 관리",
+  "fact.1.v": "땀 안 흘림. 윤광이 도는 거임. 다른 거임. 차이점은 본인이 직접 설명해줄 거임.",
+  "fact.2.k": "24시간의 허점",
+  "fact.2.v": "얘 비캠 사진도 남들처럼 24시간 뒤에 사라짐. 앱에서만. 네 기억에서는 안 사라짐.",
+  "fact.3.k": "희귀도",
+  "fact.3.v": "산책 중에 마주치면 행운임. 두 번 마주치면 자랑임. 본인 기준.",
+  "color.quote": "“동시에 전부 다.”"
+};
+
+    var enCache = {};
+    function setLang(lang) {
+      document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (!(key in enCache)) enCache[key] = el.textContent;
+        if (lang === 'ko' && KO[key]) el.textContent = KO[key];
+        else el.textContent = enCache[key];
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+      try { localStorage.setItem('bb-lang', lang); } catch (e) {}
+    }
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+    var saved = 'en';
+    try { saved = localStorage.getItem('bb-lang') || 'en'; } catch (e) {}
+    if (saved === 'ko') setLang('ko');
+  })();
+  </script>
+
+</body>
+</html>

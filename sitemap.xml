@@ -21,5 +21,61 @@
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
+  <!-- Bee lore pages -->
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/normal.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/normal.png</image:loc>
+      <image:title>Normal Bee — the original BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/berry-blush.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/berry-blush.png</image:loc>
+      <image:title>Berry Blush — the pink BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/goblin.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/goblin.png</image:loc>
+      <image:title>Goblin Bee — the chaos bee of BuzzBuzz</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/outlaw.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/outlaw.png</image:loc>
+      <image:title>Outlaw Bee — the cowboy bee of BuzzBuzz</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/aurora-prism.html</loc>
+    <lastmod>2026-06-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <mobile:mobile/>
+    <image:image>
+      <image:loc>https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/bees/img/aurora-prism.png</image:loc>
+      <image:title>Aurora Prism — the legendary BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
 
 </urlset>

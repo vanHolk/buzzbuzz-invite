@@ -33,8 +33,10 @@
   <meta name="twitter:image" content="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
-  <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/vanHolk/buzzbuzz-invite/main/app-icon.png" />
+  <link rel="icon" href="favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="favicon-192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -495,9 +497,142 @@
       .text-block { padding: 26px; }
     }
 
+    /* ---- Language toggle ---- */
+    .lang-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: 0 6px 18px rgba(65, 45, 10, .12);
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .lang-toggle button {
+      border: 0;
+      background: transparent;
+      color: #5a4b41;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] {
+      background: #efaa08;
+      color: #2d221c;
+    }
+    .lang-toggle button:focus-visible {
+      outline: 2px solid #2d221c;
+      outline-offset: 2px;
+    }
+
+    /* ---- Meet the bees carousel ---- */
+    .bees-intro {
+      max-width: 920px;
+      margin: 0 auto 6px;
+      text-align: center;
+      font-size: 19px;
+      color: #5a4b41;
+    }
+    .bee-carousel-wrap { position: relative; margin-top: 28px; }
+    .bee-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 6px 4px 18px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .bee-carousel::-webkit-scrollbar { display: none; }
+    .bee-slide {
+      scroll-snap-align: center;
+      flex: 0 0 min(78vw, 300px);
+      background: #000;
+      border: 2px solid #2d221c;
+      border-radius: 28px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #fff7eb;
+      display: flex;
+      flex-direction: column;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      box-shadow: 0 12px 28px rgba(65, 45, 10, .16);
+    }
+    .bee-slide:hover, .bee-slide:focus-visible {
+      transform: translateY(-4px);
+      border-color: #efaa08;
+      box-shadow: 0 18px 36px rgba(65, 45, 10, .24);
+      outline: none;
+    }
+    .bee-slide img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+    .bee-slide .bee-plate {
+      padding: 16px 20px 20px;
+      border-top: 1px solid rgba(255, 247, 235, .12);
+    }
+    .bee-slide .bee-name {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      margin: 0 0 2px;
+    }
+    .bee-slide .bee-tag {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #cdbfae;
+    }
+    .bee-slide .bee-more {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #efaa08;
+    }
+    .bee-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #eadbc7;
+      background: #fffaf1;
+      color: #2d221c;
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(65, 45, 10, .16);
+      transition: background .15s ease, transform .15s ease;
+      z-index: 2;
+    }
+    .bee-nav:hover, .bee-nav:focus-visible {
+      background: #efaa08;
+      outline: none;
+    }
+    .bee-nav.prev { left: -8px; }
+    .bee-nav.next { right: -8px; }
+    @media (max-width: 760px) {
+      .bee-nav { display: none; }
+      .lang-toggle { top: 10px; right: 10px; }
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       .button { transition: none; }
+      .bee-slide, .bee-nav { transition: none; }
     }
   </style>
   
@@ -507,6 +642,11 @@
 <body>
 
   <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
 
   <!-- AI/LLM-friendly summary: a single paragraph models can quote cleanly. -->
   <p class="visually-hidden" id="tldr">
@@ -615,6 +755,61 @@
           <h3>Color Hunt</h3>
           <p>Join weekly color challenges and capture your world through shared prompts. One color. One photo. Main character walk.</p>
         </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="meet-the-bees">
+      <h2 id="meet-the-bees" data-i18n="bees.title">Meet the bees</h2>
+
+      <p class="bees-intro" data-i18n="bees.intro">
+        Every walker needs a bee. Collect skins in the Honey Shop, pick your icon, and let it carry your whole personality. Tap a bee for the lore — yes, there's lore.
+      </p>
+
+      <div class="bee-carousel-wrap">
+        <button class="bee-nav prev" type="button" aria-label="Previous bee" data-dir="-1">‹</button>
+        <div class="bee-carousel" role="list" aria-label="BuzzBuzz bees">
+          <a class="bee-slide" role="listitem" href="bees/normal.html">
+            <img src="bees/img/normal.png" alt="Normal Bee, the original yellow BuzzBuzz bee" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Normal Bee</span>
+              <p class="bee-tag" data-i18n="bees.normal.tag">The Original. The Blueprint.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/berry-blush.html">
+            <img src="bees/img/berry-blush.png" alt="Berry Blush, a pink bee with heart cheeks and lashes" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Berry Blush</span>
+              <p class="bee-tag" data-i18n="bees.berry.tag">The blush is cardio, baby.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/goblin.html">
+            <img src="bees/img/goblin.png" alt="Goblin Bee, a green bee with pointy ears, fangs and red eyes" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Goblin Bee</span>
+              <p class="bee-tag" data-i18n="bees.goblin.tag">Goblin mode: permanently on.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/outlaw.html">
+            <img src="bees/img/outlaw.png" alt="Outlaw Bee, a yellow bee wearing a cowboy hat and red bandana" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Outlaw Bee</span>
+              <p class="bee-tag" data-i18n="bees.outlaw.tag">Wanted: for stealing leaderboards.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/aurora-prism.html">
+            <img src="bees/img/aurora-prism.png" alt="Aurora Prism, a holographic rainbow bee" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Aurora Prism</span>
+              <p class="bee-tag" data-i18n="bees.aurora.tag">Legendary drop. Walks in RGB.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+        </div>
+        <button class="bee-nav next" type="button" aria-label="Next bee" data-dir="1">›</button>
       </div>
     </section>
 
@@ -738,6 +933,113 @@
     </nav>
     <p>BuzzBuzz &copy; 2026 &middot; walk. snap. buzz.</p>
   </footer>
+  <script>
+  (function () {
+    /* ---- Bee carousel arrows ---- */
+    var track = document.querySelector('.bee-carousel');
+    document.querySelectorAll('.bee-nav').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var slide = track.querySelector('.bee-slide');
+        var step = slide ? slide.getBoundingClientRect().width + 18 : 320;
+        track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+      });
+    });
+
+    /* ---- EN / KO toggle ----
+       Korean voice: modern, expressive, slang-forward Gen Z energy. */
+    var KO = {
+      'bees.title': '우리 벌들 소개',
+      'bees.intro': '워커라면 벌 하나쯤은 있어야지. 허니샵에서 스킨 모으고, 내 아이콘 정하고, 성격까지 통째로 맡겨버려. 벌 누르면 세계관 나옴 — ㄹㅇ 세계관 있음.',
+      'bees.more': '세계관 보기 →',
+      'bees.normal.tag': '원조. 교과서. 그냥 벌.',
+      'bees.berry.tag': '이 블러시? 메이크업 아니고 유산소임.',
+      'bees.goblin.tag': '고블린 모드: 상시 ON.',
+      'bees.outlaw.tag': '수배 중: 리더보드 털이범.',
+      'bees.aurora.tag': '전설 등급 드랍. RGB로 걷는 중.'
+    };
+
+    /* Existing page copy, addressed by stable selectors (index = nth match). */
+    var MAP = [
+      ['.subtitle', 0, '친구들이랑 걷는 만보기 앱인데, 분위기가 좀 다름. 매일 걷고, 하루 한 컷 찍고, 주간 컬러헌트까지. 이게 되네?'],
+      ['#what-is-buzzbuzz', 0, '하이브랑 같이 걷자'],
+      ['.intro p', 0, 'BuzzBuzz는 압박 말고 친구 중심으로 만든 만보기 앱임. 걸음 수 찍고, 하이브 들어가고, 하루에 사진 한 장 올리고 — 걷기가 작은 소셜 리추얼이 되는 거지. 운동인데 안 빡세고, 소셜인데 안 시끄러움. 이 조합 ㄹㅇ 미쳤다.'],
+      ['.grid .card h3', 0, '걸음 수 카운터'],
+      ['.grid .card p', 0, '데일리 걸음, 목표, 스트릭까지. 스프레드시트 감성은 빼고 걷기를 가볍게 만들어줌.'],
+      ['.grid .card h3', 1, '하이브 네트워크'],
+      ['.grid .card p', 1, '친구 추가하고 하이브 만들고, 서로 슬쩍 자극 주면서 같이 움직이는 거임. 갓벽.'],
+      ['.grid .card h3', 2, '비캠 다이어리'],
+      ['.grid .card p', 2, '하루에 진짜 사진 딱 한 장만 하이브에 공유. 24시간 지나면 붕— 하고 사라짐.'],
+      ['.grid .card h3', 3, '컬러헌트'],
+      ['.grid .card p', 3, '매주 컬러 미션 받고 세상에서 그 색 찾기. 색 하나. 사진 한 장. 주인공 산책 각.'],
+      ['#how-it-works', 0, 'BuzzBuzz 이렇게 굴러감'],
+      ['.split .text-block h3', 0, '1. 데일리 걸음 목표 정하기'],
+      ['.split .text-block p', 0, '걷기를 엑셀로 만들 생각 1도 없음. 걸음 확인하고, 스트릭 지키고, 내 페이스대로 가면 됨.'],
+      ['.split .text-block h3', 1, '2. 하이브 만들거나 들어가기'],
+      ['.split .text-block p', 1, '하이브는 BuzzBuzz 속 내 소규모 친구 네트워크. 가벼운 응원, 걷기 챌린지, 부담 제로 안부용으로 설계됨.'],
+      ['.split .text-block h3', 2, '3. 하루 한 장 올리기'],
+      ['.split .text-block p', 2, '비캠 다이어리에 데일리 한 컷. 24시간 뒤 사라지니까 피드가 늘 신선하고, 진지함은 제로.'],
+      ['.split .text-block h3', 3, '4. 컬러헌트 플레이'],
+      ['.split .text-block p', 3, '매주 모두에게 컬러 하나 떨어짐. 산책하다 발견하면 찰칵, 순간이 사라지기 전에 공유.'],
+      ['#why-buzzbuzz', 0, '소셜 에너지 탑재한 걷기 앱'],
+      ['#why-buzzbuzz ~ .text-block p', 0, '대부분의 만보기 앱은 숫자, 칼로리, 빡센 목표 얘기만 함. BuzzBuzz는 다름. 더 걷고 싶고, 친구랑 연결되고 싶고, 매일 산책이 좀 재밌었으면 하는 사람들을 위해 만든 앱임. 걸음 트래킹 + 소셜 동기부여 + 24시간 사진 + 주간 컬러 미션을 꿀벌 테마 하나에 싹 담았음.'],
+      ['#why-buzzbuzz ~ .text-block p', 1, '귀여운 만보기를 원하든, 친구랑 하는 걷기 챌린지 앱을 원하든, 초미니 포토 다이어리를 원하든 — BuzzBuzz는 그냥 캐주얼하게 감. 헬스장 압박 없음. 오버띵킹 없음. 걷고, 찍고, 버즈.'],
+      ['.quote', 0, '\u201c주인공 산책 감지됨 \ud83d\udc1d\u201d'],
+      ['#faq', 0, 'BuzzBuzz 자주 묻는 질문'],
+      ['details summary', 0, 'BuzzBuzz가 뭐임?'],
+      ['details p', 0, 'BuzzBuzz는 만보기 + 소셜 걷기 앱임. 걸음 수 추적하고, 친구랑 연결되고, 하이브에 들어가고, 하루 한 장 사진 올리고, 주간 컬러헌트까지 즐길 수 있음.'],
+      ['details summary', 1, '만보기 앱 맞음?'],
+      ['details p', 1, '맞음. 데일리 걸음이랑 진행 상황 다 추적함. 근데 일반 피트니스 트래커보다 훨씬 소셜하고, 가볍고, 부담 없는 경험으로 디자인됐음.'],
+      ['details summary', 2, '친구랑 같이 쓸 수 있음?'],
+      ['details p', 2, '당연하지. BuzzBuzz의 중심은 하이브 — 서로의 걷기 진행 상황 보고, 데일리 순간 공유하고, 같이 동기부여 받는 소규모 친구 네트워크임.'],
+      ['details summary', 3, '하이브가 뭐임?'],
+      ['details p', 3, '하이브는 BuzzBuzz 안의 내 친구 그룹. 걸음 수, 데일리 사진, 컬러헌트 순간을 내가 초대한 사람들이랑만 공유하는 공간임.'],
+      ['details summary', 4, '비캠 다이어리는 뭐임?'],
+      ['details p', 4, '비캠 다이어리는 BuzzBuzz의 데일리 포토 기능. 하루에 진짜 사진 한 장을 하이브에 공유하고, 그 사진은 24시간 동안만 보임.'],
+      ['details summary', 5, '컬러헌트는 뭐임?'],
+      ['details p', 5, '컬러헌트는 매주 모두가 같은 컬러 미션을 받는 포토 챌린지. 현실 세계에서 그 색 찾아서 찍고, 하이브에 공유하면 됨.'],
+      ['details summary', 6, '사진 영구 보관됨?'],
+      ['details p', 6, '아니. 비캠 다이어리 사진은 24시간 동안만 보이게 설계됐음. 공유를 가볍고, 신선하고, 캐주얼하게 유지하는 게 목표임.'],
+      ['details summary', 7, '피트니스 앱임, 소셜 앱임?'],
+      ['details p', 7, '둘 다임. 걷기 + 걸음 추적 앱인데 소셜 기능, 데일리 사진, 친구 하이브, 재밌는 챌린지가 다 들어있음.'],
+      ['details summary', 8, '사진 꼭 올려야 됨?'],
+      ['details p', 8, '아니. 그냥 만보기 + 걷기 동기부여 앱으로만 써도 됨. 사진 공유랑 컬러헌트는 끼고 싶을 때 끼면 되는 거임.'],
+      ['details summary', 9, '언제 쓸 수 있음?'],
+      ['details p', 9, 'iPhone용은 지금 바로 App Store에서 다운 가능. Android용 Google Play 버전은 곧 나옴.'],
+      ['footer > p', 0, 'BuzzBuzz © 2026 · 걷고. 찍고. 버즈.']
+    ];
+
+    var enCache = {};
+
+    function setLang(lang) {
+      document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (!(key in enCache)) enCache[key] = el.textContent;
+        if (lang === 'ko' && KO[key]) el.textContent = KO[key];
+        else el.textContent = enCache[key];
+      });
+      MAP.forEach(function (row) {
+        var el = document.querySelectorAll(row[0])[row[1]];
+        if (!el) return;
+        var cacheKey = 's:' + row[0] + ':' + row[1];
+        if (!(cacheKey in enCache)) enCache[cacheKey] = el.textContent;
+        el.textContent = lang === 'ko' ? row[2] : enCache[cacheKey];
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+      try { localStorage.setItem('bb-lang', lang); } catch (e) {}
+    }
+
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+
+    var saved = 'en';
+    try { saved = localStorage.getItem('bb-lang') || 'en'; } catch (e) {}
+    if (saved === 'ko') setLang('ko');
+  })();
+  </script>
 
 </body>
 </html>
