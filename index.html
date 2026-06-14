@@ -18,6 +18,9 @@
       --open-text: #2c2418;
       --store-bg: #2c2418;
       --store-text: #ffffff;
+      --escape-bg: #ffffff;
+      --escape-text: #2c2418;
+      --escape-border: #e8a317;
     }
 
     * { box-sizing: border-box; }
@@ -72,16 +75,37 @@
       text-decoration: none;
       font-weight: 700;
       transition: transform 0.08s ease, opacity 0.12s ease;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
     }
 
     .btn:active { transform: scale(0.995); }
 
     .btn-open { background: var(--open-bg); color: var(--open-text); }
     .btn-store { background: var(--store-bg); color: var(--store-text); }
+    .btn-escape {
+      background: var(--escape-bg);
+      color: var(--escape-text);
+      border: 2px solid var(--escape-border);
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fdf3da;
+      border: 1px solid #f0e2bd;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    [hidden] { display: none !important; }
   </style>
-  
+
 <meta name="google-site-verification" content="f5kW8lnfxmBm6ORzf38g_FlO5oWQp37LfXvhJd4OjpE" />
-  
+
 </head>
 <body>
   <div class="wrap">
@@ -90,71 +114,168 @@
 
       <h1>Join my BuzzBuzz Hive</h1>
       <p id="fromText">Opening your invite…</p>
-      <p class="muted">If BuzzBuzz is installed, it should open automatically.</p>
 
-      <!-- href stays https so "Copy link" works in Messages / WhatsApp / etc. -->
+      <!-- Standard-browser hint (default). Hidden inside chat in-app browsers. -->
+      <p class="muted" id="standardHint">If BuzzBuzz is installed, it should open automatically.</p>
+
+      <!-- Open in app: href stays https so "Copy link" works in chat apps. -->
       <a id="openBtn" class="btn btn-open" href="">Open BuzzBuzz</a>
-      <a id="storeBtnIos" class="btn btn-store" href="https://apps.apple.com/app/id6767195595">Get BuzzBuzz on the App Store</a>
-      <a id="storeBtnAndroid" class="btn btn-store" href="https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker">Get BuzzBuzz on Google Play</a>
 
-      <p class="muted" style="margin-top:10px;">
-          First time installing BuzzBuzz? After install, return to your message and tap this invite link again to join the correct hive.
+      <!-- Store buttons (referrer baked into Android URL). -->
+      <a id="storeBtnIos" class="btn btn-store" href="https://apps.apple.com/app/id6767195595">Get BuzzBuzz on the App Store</a>
+      <a id="storeBtnAndroid" class="btn btn-store" href="">Get BuzzBuzz on Google Play</a>
+
+      <!-- External-browser escape (chat in-app browsers only). Button-only, user-tapped. -->
+      <button id="escapeBtn" class="btn btn-escape" hidden type="button">브라우저에서 열기 · Open in browser</button>
+
+      <!-- Chat-app helper copy (shown only inside Kakao/LINE/WeChat). -->
+      <div class="hint" id="chatHint" hidden></div>
+
+      <!-- First-install copy (standard browsers). -->
+      <p class="muted" id="installHint" style="margin-top:10px;">
+        First time installing BuzzBuzz? After install, return to your message and tap this invite link again to join the correct hive.
       </p>
     </div>
   </div>
 
   <script>
-    const params = new URLSearchParams(window.location.search);
-    const hiveId = params.get("hiveId") || "";
-    const from = params.get("from") || "";
-    const inviteId = params.get("inviteId") || "";
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var hiveId = params.get("hiveId") || "";
+      var from = params.get("from") || "";
+      var inviteId = params.get("inviteId") || "";
 
-    const deepLink =
-      "buzzbuzz://community/friend/new?hiveId=" + encodeURIComponent(hiveId) +
-      "&from=" + encodeURIComponent(from) +
-      "&inviteId=" + encodeURIComponent(inviteId);
+      var ua = navigator.userAgent || "";
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
 
-    /** Same invite as the address bar — safe to copy/paste into chat as a tappable link. */
-    const invitePageHttps = window.location.href.split("#")[0];
+      // Chat in-app browser detection (heuristic, not a security boundary).
+      var isKakao = /KAKAOTALK/i.test(ua);
+      var isLine = /\bLine\//i.test(ua);
+      var isWeChat = /MicroMessenger/i.test(ua);
+      var isChatInApp = isKakao || isLine || isWeChat;
 
-    const fromText = document.getElementById("fromText");
-    if (from) {
-      fromText.textContent = "@" + from + " invited you to join their hive.";
-    } else {
-      fromText.textContent = "You were invited to join a BuzzBuzz hive.";
-    }
+      // ---- Deep link (custom scheme) ----
+      var deepLink =
+        "buzzbuzz://community/friend/new?hiveId=" + encodeURIComponent(hiveId) +
+        "&from=" + encodeURIComponent(from) +
+        "&inviteId=" + encodeURIComponent(inviteId);
 
-    const openBtn = document.getElementById("openBtn");
-    openBtn.setAttribute("href", invitePageHttps);
-    openBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      window.location.href = deepLink;
-    });
+      // ---- Store URLs ----
+      // Android Play URL carries the Install Referrer payload (hiveId + from only;
+      // inviteId intentionally dropped to keep payload short -- join needs only these two).
+      var referrerPayload = new URLSearchParams({ hiveId: hiveId, from: from }).toString();
+      var storeUrlIos = "https://apps.apple.com/app/id6767195595";
+      var storeUrlAndroid =
+        "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker" +
+        "&referrer=" + encodeURIComponent(referrerPayload);
 
-    const storeUrlIos = "https://apps.apple.com/app/id6767195595";
-    const storeUrlAndroid = "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker";
-    let didHide = false;
+      // Same invite as the address bar -- safe to copy/paste into chat as a tappable link.
+      var invitePageHttps = window.location.href.split("#")[0];
 
-    document.addEventListener("visibilitychange", function () {
-      if (document.hidden) didHide = true;
-    });
+      // ---- "From" text ----
+      var fromText = document.getElementById("fromText");
+      fromText.textContent = from
+        ? ("@" + from + " invited you to join their hive.")
+        : "You were invited to join a BuzzBuzz hive.";
 
-    const ua = navigator.userAgent || "";
-    const isAndroid = /Android/i.test(ua);
-    document.getElementById("storeBtnIos").style.display = isAndroid ? "none" : "inline-block";
-    document.getElementById("storeBtnAndroid").style.display = isAndroid ? "inline-block" : "none";
+      // ---- Element refs ----
+      var openBtn = document.getElementById("openBtn");
+      var storeBtnIos = document.getElementById("storeBtnIos");
+      var storeBtnAndroid = document.getElementById("storeBtnAndroid");
+      var escapeBtn = document.getElementById("escapeBtn");
+      var chatHint = document.getElementById("chatHint");
+      var standardHint = document.getElementById("standardHint");
+      var installHint = document.getElementById("installHint");
 
-    // Try to open app after first paint.
-    setTimeout(function () {
-      window.location.href = deepLink;
-    }, 120);
+      // Wire store hrefs.
+      storeBtnIos.setAttribute("href", storeUrlIos);
+      storeBtnAndroid.setAttribute("href", storeUrlAndroid);
 
-    // If the page stayed visible, assume app is not installed — offer store.
-    setTimeout(function () {
-      if (!didHide) {
-        window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
+      // Platform store-button visibility.
+      storeBtnIos.hidden = isAndroid;
+      storeBtnAndroid.hidden = !isAndroid;
+
+      // Open button: keep https href for copy/share; click tries the custom scheme.
+      openBtn.setAttribute("href", invitePageHttps);
+      openBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = deepLink;
+      });
+
+      if (isChatInApp) {
+        // ---- CHAT IN-APP PATH (Kakao / LINE / WeChat) ----
+        // Custom-scheme redirects are sandboxed here, and a blind Play redirect
+        // traps already-installed users (Play "Open" loses invite context).
+        // So: no auto-scheme, no auto-Play. Surface a user-tapped escape + install.
+
+        standardHint.hidden = true;
+        installHint.hidden = true;
+
+        // The "Open BuzzBuzz" custom-scheme button is unreliable inside these
+        // browsers -- hide it to avoid a dead tap; the escape button is primary.
+        openBtn.hidden = true;
+
+        // External-browser escape (button-only; auto-firing fails on Android per Kakao docs).
+        escapeBtn.hidden = false;
+        escapeBtn.addEventListener("click", function () {
+          if (isKakao) {
+            // Kakao: open current page in the system browser.
+            window.location.href =
+              "kakaotalk://web/openExternal?url=" + encodeURIComponent(invitePageHttps);
+          } else if (isAndroid) {
+            // Generic Android intent to hand off to a real browser.
+            window.location.href =
+              "intent://" + invitePageHttps.replace(/^https?:\/\//, "") +
+              "#Intent;scheme=https;action=android.intent.action.VIEW;" +
+              "category=android.intent.category.BROWSABLE;end";
+          } else {
+            // iOS in-app (LINE/WeChat): no reliable programmatic escape -- guide via copy.
+            // Best effort: re-navigate to https (often no-ops inside the in-app browser).
+            window.location.href = invitePageHttps;
+          }
+        });
+
+        // Helper copy (Korean primary, English secondary). Functional, unambiguous.
+        var kakaoCopy =
+          "카카오톡 안에서는 초대가 바로 적용되지 않을 수 있어요.<br>" +
+          "위 <b>브라우저에서 열기</b>를 누르거나, 오른쪽 위 <b>⋯ → 다른 브라우저로 열기</b>를 사용하세요.<br>" +
+          "<span style=\"opacity:.8\">In KakaoTalk, tap \u201COpen in browser\u201D above, or use \u22EF \u2192 Open in another browser.</span>";
+        var lineCopy =
+          "라인 안에서는 초대가 바로 적용되지 않을 수 있어요.<br>" +
+          "위 <b>브라우저에서 열기</b>를 누르거나, 메뉴에서 <b>다른 브라우저로 열기</b>를 사용하세요.<br>" +
+          "<span style=\"opacity:.8\">In LINE, tap \u201COpen in browser\u201D above, or use the menu \u2192 Open in another browser.</span>";
+        var weChatCopy =
+          "위챗 안에서는 초대가 바로 적용되지 않아요.<br>" +
+          "오른쪽 위 <b>⋯ → 브라우저에서 열기</b>를 사용하세요.<br>" +
+          "<span style=\"opacity:.8\">In WeChat, use the \u22EF menu \u2192 Open in browser.</span>";
+
+        chatHint.innerHTML = isKakao ? kakaoCopy : (isLine ? lineCopy : weChatCopy);
+        chatHint.hidden = false;
+
+        // No auto-redirects on this path.
+        return;
       }
-    }, 1800);
+
+      // ---- STANDARD BROWSER PATH (Chrome / Safari / Samsung / in-chat western apps) ----
+      // Original behavior: try the app via custom scheme, fall back to the store.
+      var didHide = false;
+      document.addEventListener("visibilitychange", function () {
+        if (document.hidden) didHide = true;
+      });
+
+      // Try to open app after first paint.
+      setTimeout(function () {
+        window.location.href = deepLink;
+      }, 120);
+
+      // If the page stayed visible, assume app is not installed -- offer store (with referrer on Android).
+      setTimeout(function () {
+        if (!didHide) {
+          window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
+        }
+      }, 1800);
+    })();
   </script>
 </body>
 </html>
