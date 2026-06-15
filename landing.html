@@ -1035,9 +1035,20 @@
       b.addEventListener('click', function () { setLang(b.dataset.lang); });
     });
 
-    var saved = 'en';
-    try { saved = localStorage.getItem('bb-lang') || 'en'; } catch (e) {}
-    if (saved === 'ko') setLang('ko');
+    /** URL ?lang= wins (for QR / share links); only ko → Korean, else English. */
+    function resolveLang() {
+      var urlLang = new URLSearchParams(window.location.search).get('lang');
+      if (urlLang !== null) {
+        return urlLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
+      }
+      try {
+        var saved = localStorage.getItem('bb-lang');
+        if (saved === 'ko') return 'ko';
+      } catch (e) {}
+      return 'en';
+    }
+
+    setLang(resolveLang());
   })();
   </script>
 
