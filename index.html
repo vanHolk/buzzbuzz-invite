@@ -101,18 +101,64 @@
       line-height: 1.5;
     }
 
+    /* ---- Language toggle ---- */
+    .lang-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: 0 6px 18px rgba(65, 45, 10, .12);
+      font-family: inherit;
+    }
+    .lang-toggle button {
+      border: 0;
+      background: transparent;
+      color: #5a4b41;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] {
+      background: #efaa08;
+      color: #2d221c;
+    }
+    .lang-toggle button:focus-visible {
+      outline: 2px solid #2d221c;
+      outline-offset: 2px;
+    }
+
     [hidden] { display: none !important; }
+
+    @media (max-width: 640px) {
+      .lang-toggle { top: 10px; right: 10px; }
+    }
   </style>
 
 <meta name="google-site-verification" content="f5kW8lnfxmBm6ORzf38g_FlO5oWQp37LfXvhJd4OjpE" />
 
 </head>
 <body>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
+
   <div class="wrap">
     <div class="card">
-      <img src="./app-icon.png" alt="BuzzBuzz app icon" class="app-icon" />
+      <img src="./app-icon.png" alt="BuzzBuzz app icon" class="app-icon" id="appIcon" />
 
-      <h1>Join my BuzzBuzz Hive</h1>
+      <h1 id="pageHeading">Join my BuzzBuzz Hive</h1>
       <p id="fromText">Opening your invite…</p>
 
       <!-- Standard-browser hint (default). Hidden inside chat in-app browsers. -->
@@ -126,7 +172,7 @@
       <a id="storeBtnAndroid" class="btn btn-store" href="">Get BuzzBuzz on Google Play</a>
 
       <!-- External-browser escape (chat in-app browsers only). Button-only, user-tapped. -->
-      <button id="escapeBtn" class="btn btn-escape" hidden type="button">브라우저에서 열기 · Open in browser</button>
+      <button id="escapeBtn" class="btn btn-escape" hidden type="button">Open in browser</button>
 
       <!-- Chat-app helper copy (shown only inside Kakao/LINE/WeChat). -->
       <div class="hint" id="chatHint" hidden></div>
@@ -173,13 +219,8 @@
       // Same invite as the address bar -- safe to copy/paste into chat as a tappable link.
       var invitePageHttps = window.location.href.split("#")[0];
 
-      // ---- "From" text ----
-      var fromText = document.getElementById("fromText");
-      fromText.textContent = from
-        ? ("@" + from + " invited you to join their hive.")
-        : "You were invited to join a BuzzBuzz hive.";
-
       // ---- Element refs ----
+      var fromText = document.getElementById("fromText");
       var openBtn = document.getElementById("openBtn");
       var storeBtnIos = document.getElementById("storeBtnIos");
       var storeBtnAndroid = document.getElementById("storeBtnAndroid");
@@ -187,6 +228,142 @@
       var chatHint = document.getElementById("chatHint");
       var standardHint = document.getElementById("standardHint");
       var installHint = document.getElementById("installHint");
+      var pageHeading = document.getElementById("pageHeading");
+      var appIcon = document.getElementById("appIcon");
+      var metaDescription = document.querySelector('meta[name="description"]');
+
+      var enCache = {};
+      var activeLang = "en";
+
+      var STRINGS = {
+        en: {
+          title: "Join my BuzzBuzz Hive",
+          metaDescription: "Open your BuzzBuzz invite or install the app.",
+          appIconAlt: "BuzzBuzz app icon",
+          heading: "Join my BuzzBuzz Hive",
+          opening: "Opening your invite\u2026",
+          fromInvite: function (name) { return "@" + name + " invited you to join their hive."; },
+          fromFallback: "You were invited to join a BuzzBuzz hive.",
+          standardHint: "If BuzzBuzz is installed, it should open automatically.",
+          openBtn: "Open BuzzBuzz",
+          storeIos: "Get BuzzBuzz on the App Store",
+          storeAndroid: "Get BuzzBuzz on Google Play",
+          escapeBtn: "Open in browser",
+          installHint: "First time installing BuzzBuzz? After install, return to your message and tap this invite link again to join the correct hive.",
+          chatKakao:
+            "Invites may not apply correctly inside KakaoTalk.<br>" +
+            "Tap <b>Open in browser</b> above, or use \u22EF \u2192 Open in another browser.<br>" +
+            "<span style=\"opacity:.8\">\uCE74\uCE74\uC624\uD1A1 \uC548\uC5D0\uC11C\uB294 \uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098 \u22EF \u2192 \uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.</span>",
+          chatLine:
+            "Invites may not apply correctly inside LINE.<br>" +
+            "Tap <b>Open in browser</b> above, or use the menu \u2192 Open in another browser.<br>" +
+            "<span style=\"opacity:.8\">\uB77C\uC778 \uC548\uC5D0\uC11C\uB294 \uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098 \uBA54\uB274\uC5D0\uC11C \uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.</span>",
+          chatWeChat:
+            "Invites do not work inside WeChat.<br>" +
+            "Use the \u22EF menu \u2192 Open in browser.<br>" +
+            "<span style=\"opacity:.8\">\uC704\uCE6E \uC548\uC5D0\uC11C\uB294 \u22EF \u2192 \uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.</span>"
+        },
+        ko: {
+          title: "BuzzBuzz \uD558\uC774\uBE0C \uCD08\uB300",
+          metaDescription: "BuzzBuzz \uCD08\uB300 \uB9C1\uD06C\uB97C \uC5F4\uAC70\uB098 \uC571\uC744 \uC124\uCE58\uD558\uC138\uC694.",
+          appIconAlt: "BuzzBuzz \uC571 \uC544\uC774\uCF58",
+          heading: "BuzzBuzz \uD558\uC774\uBE0C \uCD08\uB300",
+          opening: "\uCD08\uB300\uC7A5 \uC5F4\uB294 \uC911\u2026",
+          fromInvite: function (name) { return "@" + name + "\uB2D8\uC774 \uD558\uC774\uBE0C\uC5D0 \uCD08\uB300\uD588\uC5B4\uC694."; },
+          fromFallback: "BuzzBuzz \uD558\uC774\uBE0C\uC5D0 \uCD08\uB300\uBC1B\uC558\uC5B4\uC694.",
+          standardHint: "BuzzBuzz\uAC00 \uC124\uCE58\uB418\uC5B4 \uC788\uC73C\uBA74 \uC790\uB3D9\uC73C\uB85C \uC5F4\uB824\uC694.",
+          openBtn: "BuzzBuzz \uC5F4\uAE30",
+          storeIos: "App Store\uC5D0\uC11C BuzzBuzz \uBC1B\uAE30",
+          storeAndroid: "Google Play\uC5D0\uC11C BuzzBuzz \uBC1B\uAE30",
+          escapeBtn: "\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30",
+          installHint: "BuzzBuzz\uB97C \uCC98\uC74C \uC124\uCE58\uD558\uC2DC\uB098\uC694? \uC124\uCE58 \uD6C4 \uBA54\uC2DC\uC9C0\uB85C \uB3CC\uC544\uC640 \uC774 \uCD08\uB300 \uB9C1\uD06C\uB97C \uB2E4\uC2DC \uB20C\uB7EC \uC62C\uBC14\uB978 \uD558\uC774\uBE0C\uC5D0 \uCC38\uC5EC\uD558\uC138\uC694.",
+          chatKakao:
+            "\uCE74\uCE74\uC624\uD1A1 \uC548\uC5D0\uC11C\uB294 \uCD08\uB300\uAC00 \uBC14\uB85C \uC801\uC6A9\uB418\uC9C0 \uC54A\uC744 \uC218 \uC788\uC5B4\uC694.<br>" +
+            "\uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098, \uC624\uB978\uCABD \uC704 <b>\u22EF \u2192 \uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30</b>\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.<br>" +
+            "<span style=\"opacity:.8\">In KakaoTalk, tap \u201COpen in browser\u201D above, or use \u22EF \u2192 Open in another browser.</span>",
+          chatLine:
+            "\uB77C\uC778 \uC548\uC5D0\uC11C\uB294 \uCD08\uB300\uAC00 \uBC14\uB85C \uC801\uC6A9\uB418\uC9C0 \uC54A\uC744 \uC218 \uC788\uC5B4\uC694.<br>" +
+            "\uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098, \uBA54\uB274\uC5D0\uC11C <b>\uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30</b>\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.<br>" +
+            "<span style=\"opacity:.8\">In LINE, tap \u201COpen in browser\u201D above, or use the menu \u2192 Open in another browser.</span>",
+          chatWeChat:
+            "\uC704\uCE6E \uC548\uC5D0\uC11C\uB294 \uCD08\uB300\uAC00 \uBC14\uB85C \uC801\uC6A9\uB418\uC9C0 \uC54A\uC544\uC694.<br>" +
+            "\uC624\uB978\uCABD \uC704 <b>\u22EF \u2192 \uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.<br>" +
+            "<span style=\"opacity:.8\">In WeChat, use the \u22EF menu \u2192 Open in browser.</span>"
+        }
+      };
+
+      function cacheEnglishDefaults() {
+        if (Object.keys(enCache).length) return;
+        enCache.title = document.title;
+        if (metaDescription) enCache.metaDescription = metaDescription.getAttribute("content");
+        enCache.appIconAlt = appIcon.getAttribute("alt");
+        enCache.heading = pageHeading.textContent;
+        enCache.opening = fromText.textContent;
+        enCache.fromFallback = STRINGS.en.fromFallback;
+        enCache.standardHint = standardHint.textContent;
+        enCache.openBtn = openBtn.textContent;
+        enCache.storeIos = storeBtnIos.textContent;
+        enCache.storeAndroid = storeBtnAndroid.textContent;
+        enCache.escapeBtn = escapeBtn.textContent;
+        enCache.installHint = installHint.textContent;
+      }
+
+      function updateFromText(lang) {
+        var copy = STRINGS[lang];
+        fromText.textContent = from ? copy.fromInvite(from) : copy.fromFallback;
+      }
+
+      function chatHintHtml(lang) {
+        var copy = STRINGS[lang];
+        if (isKakao) return copy.chatKakao;
+        if (isLine) return copy.chatLine;
+        return copy.chatWeChat;
+      }
+
+      function setLang(lang) {
+        activeLang = lang === "ko" ? "ko" : "en";
+        cacheEnglishDefaults();
+        var copy = STRINGS[activeLang];
+
+        document.documentElement.lang = activeLang;
+        document.title = copy.title;
+        if (metaDescription) metaDescription.setAttribute("content", copy.metaDescription);
+        appIcon.setAttribute("alt", copy.appIconAlt);
+        pageHeading.textContent = copy.heading;
+        standardHint.textContent = copy.standardHint;
+        openBtn.textContent = copy.openBtn;
+        storeBtnIos.textContent = copy.storeIos;
+        storeBtnAndroid.textContent = copy.storeAndroid;
+        escapeBtn.textContent = copy.escapeBtn;
+        installHint.textContent = copy.installHint;
+        updateFromText(activeLang);
+
+        if (!chatHint.hidden) {
+          chatHint.innerHTML = chatHintHtml(activeLang);
+        }
+
+        document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+          b.setAttribute("aria-pressed", String(b.dataset.lang === activeLang));
+        });
+        try { localStorage.setItem("bb-lang", activeLang); } catch (e) {}
+      }
+
+      /** URL ?lang= wins (for QR / share links); only ko → Korean, else English. */
+      function resolveLang() {
+        var urlLang = new URLSearchParams(window.location.search).get("lang");
+        if (urlLang !== null) {
+          return urlLang.toLowerCase().startsWith("ko") ? "ko" : "en";
+        }
+        try {
+          var saved = localStorage.getItem("bb-lang");
+          if (saved === "ko") return "ko";
+        } catch (e) {}
+        return "en";
+      }
+
+      document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+        b.addEventListener("click", function () { setLang(b.dataset.lang); });
+      });
 
       // Wire store hrefs.
       storeBtnIos.setAttribute("href", storeUrlIos);
@@ -236,45 +413,29 @@
           }
         });
 
-        // Helper copy (Korean primary, English secondary). Functional, unambiguous.
-        var kakaoCopy =
-          "카카오톡 안에서는 초대가 바로 적용되지 않을 수 있어요.<br>" +
-          "위 <b>브라우저에서 열기</b>를 누르거나, 오른쪽 위 <b>⋯ → 다른 브라우저로 열기</b>를 사용하세요.<br>" +
-          "<span style=\"opacity:.8\">In KakaoTalk, tap \u201COpen in browser\u201D above, or use \u22EF \u2192 Open in another browser.</span>";
-        var lineCopy =
-          "라인 안에서는 초대가 바로 적용되지 않을 수 있어요.<br>" +
-          "위 <b>브라우저에서 열기</b>를 누르거나, 메뉴에서 <b>다른 브라우저로 열기</b>를 사용하세요.<br>" +
-          "<span style=\"opacity:.8\">In LINE, tap \u201COpen in browser\u201D above, or use the menu \u2192 Open in another browser.</span>";
-        var weChatCopy =
-          "위챗 안에서는 초대가 바로 적용되지 않아요.<br>" +
-          "오른쪽 위 <b>⋯ → 브라우저에서 열기</b>를 사용하세요.<br>" +
-          "<span style=\"opacity:.8\">In WeChat, use the \u22EF menu \u2192 Open in browser.</span>";
-
-        chatHint.innerHTML = isKakao ? kakaoCopy : (isLine ? lineCopy : weChatCopy);
         chatHint.hidden = false;
+      } else {
+        // ---- STANDARD BROWSER PATH (Chrome / Safari / Samsung / in-chat western apps) ----
+        // Original behavior: try the app via custom scheme, fall back to the store.
+        var didHide = false;
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) didHide = true;
+        });
 
-        // No auto-redirects on this path.
-        return;
+        // Try to open app after first paint.
+        setTimeout(function () {
+          window.location.href = deepLink;
+        }, 120);
+
+        // If the page stayed visible, assume app is not installed -- offer store (with referrer on Android).
+        setTimeout(function () {
+          if (!didHide) {
+            window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
+          }
+        }, 1800);
       }
 
-      // ---- STANDARD BROWSER PATH (Chrome / Safari / Samsung / in-chat western apps) ----
-      // Original behavior: try the app via custom scheme, fall back to the store.
-      var didHide = false;
-      document.addEventListener("visibilitychange", function () {
-        if (document.hidden) didHide = true;
-      });
-
-      // Try to open app after first paint.
-      setTimeout(function () {
-        window.location.href = deepLink;
-      }, 120);
-
-      // If the page stayed visible, assume app is not installed -- offer store (with referrer on Android).
-      setTimeout(function () {
-        if (!didHide) {
-          window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
-        }
-      }, 1800);
+      setLang(resolveLang());
     })();
   </script>
 </body>
