@@ -57,4 +57,14 @@
       <image:title>Aurora Prism — the legendary BuzzBuzz bee</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/hani.html</loc>
+    <lastmod>2026-06-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/hani.png</image:loc>
+      <image:title>Hani — the support BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
 </urlset>
