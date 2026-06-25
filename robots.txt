@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vanholk.github.io/buzzbuzz-invite/sitemap.xml
