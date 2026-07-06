@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vanholk.github.io/buzzbuzz-invite/landing.html</loc>
-    <lastmod>2026-06-25</lastmod>
+    <lastmod>2026-07-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -64,7 +64,37 @@
     <priority>0.7</priority>
     <image:image>
       <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/hani.png</image:loc>
-      <image:title>Hani — the support BuzzBuzz bee</image:title>
+      <image:title>Hani — the main character BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/kpop-jimmy.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/kpop-jimmy.png</image:loc>
+      <image:title>Kpop Jimmy — the idol BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/wizard-student.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/wizard-student.png</image:loc>
+      <image:title>Wizard Student — the magic school BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/festival-bee.html</loc>
+    <lastmod>2026-07-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/festival-bee.png</image:loc>
+      <image:title>Festival Bee — the Honey Festival BuzzBuzz bee</image:title>
     </image:image>
   </url>
 </urlset>
