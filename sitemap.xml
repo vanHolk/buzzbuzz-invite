@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://vanholk.github.io/buzzbuzz-invite/landing.html</loc>
-    <lastmod>2026-07-06</lastmod>
+    <lastmod>2026-07-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -95,6 +95,26 @@
     <image:image>
       <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/festival-bee.png</image:loc>
       <image:title>Festival Bee — the Honey Festival BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/luau-bee.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/luau.png</image:loc>
+      <image:title>Luau Bee — the golden-hour island BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://vanholk.github.io/buzzbuzz-invite/bees/unc-summer.html</loc>
+    <lastmod>2026-07-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://vanholk.github.io/buzzbuzz-invite/bees/img/unc.png</image:loc>
+      <image:title>Unc Summer — the vacation uncle BuzzBuzz bee</image:title>
     </image:image>
   </url>
 </urlset>
