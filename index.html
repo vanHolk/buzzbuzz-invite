@@ -1517,6 +1517,9 @@
         <a class="ask-hive-action" data-ask-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
           <span class="ask-hive-action-label"><span data-i18n="askHive.perplexity">Ask Perplexity</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
         </a>
+        <a class="ask-hive-action" data-ask-provider="grok" href="https://grok.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.grok">Ask Grok</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
         <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="copy">
           <span class="ask-hive-action-label" data-i18n="askHive.copy">Copy prompt</span>
         </button>
@@ -1565,6 +1568,7 @@
       'askHive.chatgpt': 'ChatGPT에게 물어보기',
       'askHive.claude': 'Claude에게 물어보기',
       'askHive.perplexity': 'Perplexity에게 물어보기',
+      'askHive.grok': 'Grok에게 물어보기',
       'askHive.copy': '프롬프트 복사',
       'askHive.gemini': '복사하고 Gemini 열기',
       'askHive.closeAria': '닫기',
@@ -1677,7 +1681,7 @@
 
     /* ---- Ask the Hive (v1 experiment) ---- */
     (function initAskHive() {
-      var ASK_HIVE_ENABLED = false;
+      var ASK_HIVE_ENABLED = true;
       var askHivePreview =
         new URLSearchParams(window.location.search).get('askHive') === '1';
       var isMarketing = document.documentElement.classList.contains('mode-marketing');
@@ -1728,6 +1732,16 @@
           label: 'Ask Perplexity',
           // Observed / community pattern: https://www.perplexity.ai/?q=… (may redirect)
           baseUrl: 'https://www.perplexity.ai/',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        grok: {
+          id: 'grok',
+          label: 'Ask Grok',
+          // Undocumented / community pattern: https://grok.com/?q=… (not an official xAI API)
+          baseUrl: 'https://grok.com/',
           queryParam: 'q',
           supportsPromptPrefill: true,
           enabled: true,
