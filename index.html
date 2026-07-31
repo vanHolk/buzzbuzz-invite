@@ -890,6 +890,14 @@
       background: #fff3d6;
     }
     #ask-hive-fab-label { white-space: nowrap; }
+    #ask-hive-fab-bee {
+      display: inline-block;
+      animation: ask-hive-bee-bob 1.6s ease-in-out infinite;
+    }
+    @keyframes ask-hive-bee-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
     @media (max-width: 360px) {
       #ask-hive-fab-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; white-space: nowrap; }
       #ask-hive-fab { width: 48px; height: 48px; padding: 0; justify-content: center; }
@@ -1080,6 +1088,9 @@
       #ask-hive-fab,
       .ask-hive-action {
         transition: none;
+      }
+      #ask-hive-fab-bee {
+        animation: none;
       }
     }
 
@@ -1496,7 +1507,7 @@
   <!-- Ask the Hive FAB (hidden unless .ask-hive-on + marketing mode) -->
   <div id="ask-hive" hidden>
     <button type="button" id="ask-hive-fab" aria-expanded="false" aria-controls="ask-hive-panel" aria-haspopup="dialog">
-      <span aria-hidden="true">🐝</span>
+      <span class="ask-hive-fab-bee" id="ask-hive-fab-bee" aria-hidden="true">🐝</span>
       <span id="ask-hive-fab-label" data-i18n="askHive.fab">Ask about BuzzBuzz</span>
     </button>
     <div id="ask-hive-backdrop" hidden></div>
