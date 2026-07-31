@@ -839,6 +839,250 @@
       color: #2c2418;
     }
 
+    /* ---- Ask the Hive (marketing experiment; gated by .ask-hive-on) ---- */
+    html:not(.ask-hive-on) #ask-hive { display: none !important; }
+
+    #ask-hive {
+      --ask-ink: #2d221c;
+      --ask-cream: #fffaf1;
+      --ask-bg: #fff8e7;
+      --ask-border: #eadbc7;
+      --ask-honey: #efaa08;
+      --ask-muted: #5a4b41;
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    #ask-hive-fab {
+      position: fixed;
+      z-index: 60;
+      bottom: max(16px, env(safe-area-inset-bottom, 0px));
+      right: max(16px, env(safe-area-inset-right, 0px));
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 2px solid var(--ask-border);
+      border-radius: 999px;
+      background: var(--ask-cream);
+      color: var(--ask-ink);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(65, 45, 10, .16);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    #ask-hive-fab:hover,
+    #ask-hive-fab:focus-visible {
+      background: #fff3d6;
+      box-shadow: 0 14px 28px rgba(65, 45, 10, .2);
+      outline: none;
+    }
+    #ask-hive-fab:focus-visible {
+      outline: 2px solid var(--ask-ink);
+      outline-offset: 3px;
+    }
+    #ask-hive-fab:active { transform: translateY(1px); }
+    #ask-hive-fab[aria-expanded="true"] {
+      border-color: var(--ask-honey);
+      background: #fff3d6;
+    }
+    #ask-hive-fab-label { white-space: nowrap; }
+    @media (max-width: 360px) {
+      #ask-hive-fab-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; white-space: nowrap; }
+      #ask-hive-fab { width: 48px; height: 48px; padding: 0; justify-content: center; }
+    }
+
+    #ask-hive-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(45, 34, 28, 0.35);
+    }
+    #ask-hive.is-sheet-open #ask-hive-backdrop { display: block; }
+
+    #ask-hive-panel {
+      display: none;
+      position: fixed;
+      z-index: 80;
+      width: min(360px, calc(100vw - 32px));
+      max-height: min(70vh, 520px);
+      overflow: auto;
+      padding: 18px 18px 16px;
+      background: var(--ask-cream);
+      color: var(--ask-ink);
+      border: 2px solid var(--ask-border);
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(65, 45, 10, .22);
+      box-sizing: border-box;
+    }
+    #ask-hive.is-open #ask-hive-panel { display: block; }
+
+    /* Desktop / tablet: anchored non-modal popover above FAB */
+    @media (min-width: 761px) {
+      #ask-hive-panel {
+        bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 60px);
+        right: max(16px, env(safe-area-inset-right, 0px));
+      }
+      #ask-hive-backdrop { display: none !important; }
+    }
+
+    /* Mobile: modal bottom sheet */
+    @media (max-width: 760px) {
+      #ask-hive-panel {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: none;
+        max-height: min(78vh, 640px);
+        border-radius: 22px 22px 0 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        padding-bottom: max(18px, env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    #ask-hive-panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    #ask-hive-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    #ask-hive-close {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      margin: -6px -6px 0 0;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ask-ink);
+      font: inherit;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    #ask-hive-close:hover,
+    #ask-hive-close:focus-visible {
+      background: rgba(239, 170, 8, 0.28);
+      outline: none;
+    }
+    #ask-hive-close:focus-visible {
+      outline: 2px solid var(--ask-ink);
+      outline-offset: 2px;
+    }
+    #ask-hive-desc {
+      margin: 0 0 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ask-muted);
+      line-height: 1.45;
+    }
+    #ask-hive-external-note {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ask-muted);
+      letter-spacing: 0.01em;
+    }
+    #ask-hive-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ask-hive-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 2px solid var(--ask-border);
+      background: #fffdf8;
+      color: var(--ask-ink);
+      text-decoration: none;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      box-sizing: border-box;
+      width: 100%;
+      transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    }
+    .ask-hive-action:hover,
+    .ask-hive-action:focus-visible {
+      background: #fff3d6;
+      border-color: var(--ask-honey);
+      outline: none;
+    }
+    .ask-hive-action:focus-visible {
+      outline: 2px solid var(--ask-ink);
+      outline-offset: 2px;
+    }
+    .ask-hive-action:active { transform: translateY(1px); }
+    .ask-hive-action-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ask-hive-ext-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .ask-hive-action--secondary {
+      background: transparent;
+      font-weight: 700;
+    }
+    #ask-hive-status {
+      min-height: 1.2em;
+      margin: 10px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ask-muted);
+    }
+    #ask-hive-status[data-tone="ok"] { color: #2f6b3a; }
+    #ask-hive-status[data-tone="err"] { color: #8a3b2b; }
+    #ask-hive-fallback {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed var(--ask-border);
+      background: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--ask-ink);
+      white-space: pre-wrap;
+      max-height: 140px;
+      overflow: auto;
+      user-select: text;
+    }
+    #ask-hive-fallback.is-visible { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      #ask-hive-fab,
+      .ask-hive-action {
+        transition: none;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1248,6 +1492,43 @@
     </nav>
     <p>BuzzBuzz &copy; 2026 &middot; walk. snap. buzz.</p>
   </footer>
+
+  <!-- Ask the Hive FAB (hidden unless .ask-hive-on + marketing mode) -->
+  <div id="ask-hive" hidden>
+    <button type="button" id="ask-hive-fab" aria-expanded="false" aria-controls="ask-hive-panel" aria-haspopup="dialog">
+      <span aria-hidden="true">🐝</span>
+      <span id="ask-hive-fab-label" data-i18n="askHive.fab">Ask about BuzzBuzz</span>
+    </button>
+    <div id="ask-hive-backdrop" hidden></div>
+    <div id="ask-hive-panel" role="dialog" aria-labelledby="ask-hive-title" aria-describedby="ask-hive-desc" hidden>
+      <div id="ask-hive-panel-header">
+        <h2 id="ask-hive-title" data-i18n="askHive.title">Ask the Hive</h2>
+        <button type="button" id="ask-hive-close" data-i18n-aria="askHive.closeAria" aria-label="Close">×</button>
+      </div>
+      <p id="ask-hive-desc" data-i18n="askHive.desc">Explore BuzzBuzz with your preferred AI assistant. You’ll continue on their website.</p>
+      <p id="ask-hive-external-note" data-i18n="askHive.externalNote">Opens an external AI website — not an official BuzzBuzz chatbot.</p>
+      <div id="ask-hive-actions">
+        <a class="ask-hive-action" data-ask-provider="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.chatgpt">Ask ChatGPT</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="claude" href="https://claude.ai/new" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.claude">Ask Claude</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.perplexity">Ask Perplexity</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="copy">
+          <span class="ask-hive-action-label" data-i18n="askHive.copy">Copy prompt</span>
+        </button>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="gemini">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.gemini">Copy and open Gemini</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </button>
+      </div>
+      <p id="ask-hive-status" role="status" aria-live="polite"></p>
+      <pre id="ask-hive-fallback" tabindex="0"></pre>
+    </div>
+  </div>
+
   <script>
   (function () {
     /* ---- Bee carousel arrows ---- */
@@ -1276,7 +1557,20 @@
       'bees.wizard.tag': '스펠은 하나. 자신감은 무한.',
       'bees.festival.tag': '축제부 장관. 셀프 임명.',
       'bees.luau.tag': '하와이 바람, 히비스커스 한 송이, 걱정 제로.',
-      'bees.unc.tag': '휴가 온 삼촌 에너지, 벌 사이즈로.'
+      'bees.unc.tag': '휴가 온 삼촌 에너지, 벌 사이즈로.',
+      'askHive.fab': 'BuzzBuzz 물어보기',
+      'askHive.title': '하이브에 물어보기',
+      'askHive.desc': '원하는 AI 어시스턴트에서 BuzzBuzz를 더 알아보세요. 해당 서비스 웹사이트로 이동합니다.',
+      'askHive.externalNote': '외부 AI 웹사이트로 이동합니다. BuzzBuzz 공식 챗봇이 아니에요.',
+      'askHive.chatgpt': 'ChatGPT에게 물어보기',
+      'askHive.claude': 'Claude에게 물어보기',
+      'askHive.perplexity': 'Perplexity에게 물어보기',
+      'askHive.copy': '프롬프트 복사',
+      'askHive.gemini': '복사하고 Gemini 열기',
+      'askHive.closeAria': '닫기',
+      'askHive.copied': '프롬프트를 복사했어요',
+      'askHive.copyError': '복사를 못 했어요. 아래 텍스트를 직접 복사해 주세요.',
+      'askHive.geminiHint': 'Gemini에 붙여넣어 주세요.'
     };
 
     /* Existing page copy, addressed by stable selectors (index = nth match). */
@@ -1339,6 +1633,13 @@
         if (lang === 'ko' && KO[key]) el.textContent = KO[key];
         else el.textContent = enCache[key];
       });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        var cacheKey = 'aria:' + key;
+        if (!(cacheKey in enCache)) enCache[cacheKey] = el.getAttribute('aria-label') || '';
+        if (lang === 'ko' && KO[key]) el.setAttribute('aria-label', KO[key]);
+        else el.setAttribute('aria-label', enCache[cacheKey]);
+      });
       MAP.forEach(function (row) {
         var el = document.querySelectorAll(row[0])[row[1]];
         if (!el) return;
@@ -1350,6 +1651,9 @@
         b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
       });
       try { localStorage.setItem('bb-lang', lang); } catch (e) {}
+      if (typeof window.__askHiveOnLangChange === 'function') {
+        window.__askHiveOnLangChange(lang === 'ko' ? 'ko' : 'en');
+      }
     }
 
     document.querySelectorAll('.lang-toggle button').forEach(function (b) {
@@ -1370,6 +1674,385 @@
     }
 
     setLang(resolveLang());
+
+    /* ---- Ask the Hive (v1 experiment) ---- */
+    (function initAskHive() {
+      var ASK_HIVE_ENABLED = false;
+      var askHivePreview =
+        new URLSearchParams(window.location.search).get('askHive') === '1';
+      var isMarketing = document.documentElement.classList.contains('mode-marketing');
+      var showAskHive = (ASK_HIVE_ENABLED || askHivePreview) && isMarketing;
+      if (!showAskHive) return;
+
+      var root = document.getElementById('ask-hive');
+      var fab = document.getElementById('ask-hive-fab');
+      var panel = document.getElementById('ask-hive-panel');
+      var backdrop = document.getElementById('ask-hive-backdrop');
+      var closeBtn = document.getElementById('ask-hive-close');
+      var statusEl = document.getElementById('ask-hive-status');
+      var fallbackEl = document.getElementById('ask-hive-fallback');
+      if (!root || !fab || !panel) return;
+
+      document.documentElement.classList.add('ask-hive-on');
+      root.hidden = false;
+
+      /**
+       * Provider config — consumer prefill URLs are UNDOCUMENTED / fragile.
+       * Do not treat ChatGPT / Claude / Perplexity query params as official APIs.
+       * Update, disable, or swap destinations here without touching markup.
+       */
+      var PROVIDERS = {
+        chatgpt: {
+          id: 'chatgpt',
+          label: 'Ask ChatGPT',
+          // Undocumented: https://chatgpt.com/?q=… (not an official OpenAI API)
+          baseUrl: 'https://chatgpt.com/',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        claude: {
+          id: 'claude',
+          label: 'Ask Claude',
+          // Undocumented for consumer web chat: https://claude.ai/new?q=…
+          // (Official docs cover Claude Desktop claude:// and Claude Code URLs.)
+          baseUrl: 'https://claude.ai/new',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        perplexity: {
+          id: 'perplexity',
+          label: 'Ask Perplexity',
+          // Observed / community pattern: https://www.perplexity.ai/?q=… (may redirect)
+          baseUrl: 'https://www.perplexity.ai/',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        copy: {
+          id: 'copy',
+          label: 'Copy prompt',
+          baseUrl: '',
+          supportsPromptPrefill: false,
+          enabled: true,
+          openMode: 'copy'
+        },
+        gemini: {
+          id: 'gemini',
+          label: 'Copy and open Gemini',
+          // No reliable native prompt-prefill URL — clipboard-first.
+          baseUrl: 'https://gemini.google.com/app',
+          supportsPromptPrefill: false,
+          enabled: true,
+          openMode: 'copy-open'
+        }
+      };
+
+      var PROMPTS = {
+        en:
+          "I'm viewing BuzzBuzz at " + window.location.href.split('#')[0] + ".\n\n" +
+          "BuzzBuzz is a playful social step-tracking app designed to help friends and families stay active together. Users join small Hives, contribute their daily steps, and care for expressive virtual bees. The experience is intended to feel warmer and less competitive than traditional fitness tracking apps.\n\n" +
+          "Based on the information available on the page, explain:\n" +
+          "1. How BuzzBuzz works\n" +
+          "2. Who it is best suited for\n" +
+          "3. How Hives support motivation and connection\n" +
+          "4. How it differs from more competitive fitness apps such as Strava\n\n" +
+          "Clearly distinguish facts found on the page from any assumptions or general advice.",
+        ko:
+          "지금 BuzzBuzz 페이지를 보고 있어요: " + window.location.href.split('#')[0] + "\n\n" +
+          "BuzzBuzz는 친구·가족이 함께 가볍게 걸을 수 있게 만든 소셜 만보기 앱이에요. 작은 하이브에 들어가 하루 걸음을 모으고, 표정이 있는 가상 벌을 돌보는 방식이에요. 전통적인 경쟁형 피트니스 앱보다 더 따뜻하고 부담이 적게 느껴지도록 설계됐어요.\n\n" +
+          "페이지에 있는 정보를 바탕으로 아래를 설명해 주세요:\n" +
+          "1. BuzzBuzz가 어떻게 작동하는지\n" +
+          "2. 어떤 사람에게 잘 맞는지\n" +
+          "3. 하이브가 동기부여와 연결감에 어떻게 도움이 되는지\n" +
+          "4. Strava처럼 더 경쟁적인 피트니스 앱과 어떻게 다른지\n\n" +
+          "페이지에서 확인되는 사실과, 추정이나 일반적인 조언을 분명히 구분해 주세요."
+      };
+
+      var STR = {
+        en: {
+          copied: 'Prompt copied',
+          copyError: "Couldn't copy. Select the text below and copy it yourself.",
+          geminiHint: 'Paste the prompt in Gemini.',
+          closeAria: 'Close'
+        },
+        ko: {
+          copied: '프롬프트를 복사했어요',
+          copyError: '복사를 못 했어요. 아래 텍스트를 직접 복사해 주세요.',
+          geminiHint: 'Gemini에 붙여넣어 주세요.',
+          closeAria: '닫기'
+        }
+      };
+
+      var isOpen = false;
+      var mqSheet = window.matchMedia('(max-width: 760px)');
+      var inertTargets = [];
+
+      function locale() {
+        return document.documentElement.lang === 'ko' ? 'ko' : 'en';
+      }
+
+      function trackAskHive(eventName, detail) {
+        var payload = detail || {};
+        payload.locale = locale();
+        payload.pageType = 'marketing';
+        try {
+          window.dispatchEvent(new CustomEvent('ask-hive:' + eventName, { detail: payload }));
+        } catch (e) {}
+      }
+
+      function getPrompt() {
+        return PROMPTS[locale()] || PROMPTS.en;
+      }
+
+      function providerUrl(provider, prompt) {
+        if (!provider || !provider.supportsPromptPrefill) return provider.baseUrl || '#';
+        var url = new URL(provider.baseUrl);
+        url.searchParams.set(provider.queryParam || 'q', prompt);
+        return url.toString();
+      }
+
+      function refreshAnchorHrefs() {
+        var prompt = getPrompt();
+        Object.keys(PROVIDERS).forEach(function (id) {
+          var provider = PROVIDERS[id];
+          if (!provider.enabled || provider.openMode !== 'anchor') return;
+          var el = root.querySelector('[data-ask-provider="' + id + '"]');
+          if (!el) return;
+          el.setAttribute('href', providerUrl(provider, prompt));
+        });
+      }
+
+      function setStatus(message, tone) {
+        statusEl.textContent = message || '';
+        if (tone) statusEl.setAttribute('data-tone', tone);
+        else statusEl.removeAttribute('data-tone');
+      }
+
+      function showFallback(text) {
+        fallbackEl.textContent = text;
+        fallbackEl.classList.add('is-visible');
+      }
+
+      function hideFallback() {
+        fallbackEl.classList.remove('is-visible');
+        fallbackEl.textContent = '';
+      }
+
+      function isSheetMode() {
+        return mqSheet.matches;
+      }
+
+      function getFocusable() {
+        return Array.prototype.slice.call(
+          panel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        ).filter(function (el) {
+          if (el.hasAttribute('disabled') || el.getAttribute('aria-hidden') === 'true') return false;
+          // Avoid offsetParent checks — fixed-position panels often report null.
+          var style = window.getComputedStyle(el);
+          return style.visibility !== 'hidden' && style.display !== 'none';
+        });
+      }
+
+      function setBackgroundInert(on) {
+        inertTargets.forEach(function (el) {
+          if (on) el.setAttribute('inert', '');
+          else el.removeAttribute('inert');
+        });
+      }
+
+      function openPanel() {
+        if (isOpen) return;
+        isOpen = true;
+        hideFallback();
+        setStatus('');
+        refreshAnchorHrefs();
+        panel.hidden = false;
+        root.classList.add('is-open');
+        fab.setAttribute('aria-expanded', 'true');
+
+        if (isSheetMode()) {
+          root.classList.add('is-sheet-open');
+          backdrop.hidden = false;
+          panel.setAttribute('aria-modal', 'true');
+          setBackgroundInert(true);
+        } else {
+          root.classList.remove('is-sheet-open');
+          backdrop.hidden = true;
+          panel.removeAttribute('aria-modal');
+          setBackgroundInert(false);
+        }
+
+        var focusables = getFocusable();
+        (focusables[0] || closeBtn).focus();
+        trackAskHive('open', {});
+      }
+
+      function closePanel() {
+        if (!isOpen) return;
+        isOpen = false;
+        panel.hidden = true;
+        backdrop.hidden = true;
+        root.classList.remove('is-open', 'is-sheet-open');
+        fab.setAttribute('aria-expanded', 'false');
+        panel.removeAttribute('aria-modal');
+        setBackgroundInert(false);
+        fab.focus();
+        trackAskHive('close', {});
+      }
+
+      function togglePanel() {
+        if (isOpen) closePanel();
+        else openPanel();
+      }
+
+      function copyPrompt(providerId) {
+        var prompt = getPrompt();
+        var strings = STR[locale()];
+        var id = providerId || 'copy';
+        function ok() {
+          setStatus(strings.copied, 'ok');
+          hideFallback();
+          trackAskHive('copy_prompt', { providerId: id, prefillAttempted: false });
+          return true;
+        }
+        function fail() {
+          setStatus(strings.copyError, 'err');
+          showFallback(prompt);
+          trackAskHive('copy_error', { providerId: id, prefillAttempted: false });
+          return false;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(prompt).then(ok).catch(fail);
+        }
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = prompt;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          var success = document.execCommand('copy');
+          document.body.removeChild(ta);
+          return Promise.resolve(success ? ok() : fail());
+        } catch (e) {
+          return Promise.resolve(fail());
+        }
+      }
+
+      // Cache inert targets: marketing chrome except Ask Hive
+      inertTargets = Array.prototype.slice.call(
+        document.querySelectorAll('#marketing-content > :not(#ask-hive)')
+      );
+
+      fab.addEventListener('click', function () { togglePanel(); });
+      closeBtn.addEventListener('click', function () { closePanel(); });
+      backdrop.addEventListener('click', function () { closePanel(); });
+
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen) return;
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closePanel();
+          return;
+        }
+        if (e.key !== 'Tab' || !isSheetMode()) return;
+        var focusables = getFocusable();
+        if (!focusables.length) return;
+        var first = focusables[0];
+        var last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      document.addEventListener('pointerdown', function (e) {
+        if (!isOpen || isSheetMode()) return;
+        if (root.contains(e.target)) return;
+        closePanel();
+      });
+
+      function onBreakpointChange() {
+        if (!isOpen) return;
+        // Re-apply mode-specific a11y when crossing breakpoint while open.
+        closePanel();
+      }
+      if (typeof mqSheet.addEventListener === 'function') {
+        mqSheet.addEventListener('change', onBreakpointChange);
+      } else if (typeof mqSheet.addListener === 'function') {
+        mqSheet.addListener(onBreakpointChange);
+      }
+
+      root.querySelectorAll('[data-ask-provider]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var id = el.getAttribute('data-ask-provider');
+          var provider = PROVIDERS[id];
+          if (!provider || !provider.enabled) {
+            e.preventDefault();
+            return;
+          }
+          trackAskHive('provider_select', {
+            providerId: id,
+            prefillAttempted: !!provider.supportsPromptPrefill
+          });
+
+          if (provider.openMode === 'copy') {
+            e.preventDefault();
+            copyPrompt('copy');
+            return;
+          }
+
+          if (provider.openMode === 'copy-open') {
+            e.preventDefault();
+            var strings = STR[locale()];
+            // Open Gemini synchronously in this click gesture, then copy.
+            var a = document.createElement('a');
+            a.href = provider.baseUrl;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            trackAskHive('external_open', {
+              providerId: id,
+              prefillAttempted: false
+            });
+            copyPrompt('gemini').then(function (ok) {
+              if (ok) {
+                setStatus(strings.copied + ' — ' + strings.geminiHint, 'ok');
+              }
+            });
+            return;
+          }
+
+          // Anchor mode: href already refreshed on open / language change.
+          trackAskHive('external_open', {
+            providerId: id,
+            prefillAttempted: true
+          });
+        });
+      });
+
+      window.__askHiveOnLangChange = function () {
+        refreshAnchorHrefs();
+        if (isOpen) {
+          setStatus('');
+          hideFallback();
+        }
+      };
+
+      refreshAnchorHrefs();
+    })();
+
   })();
   </script>
   </div>
