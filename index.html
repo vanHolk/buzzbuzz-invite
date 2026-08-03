@@ -393,6 +393,37 @@
       padding: 0 24px 76px;
     }
 
+    /* Soft Spotify playlist — secondary to download CTAs */
+    .playlist-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 8px 24px 64px;
+      text-align: center;
+    }
+    .playlist-section h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #6b5a48;
+    }
+    .playlist-section .playlist-note {
+      margin: 0 0 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #8a7664;
+      line-height: 1.4;
+    }
+    .playlist-embed {
+      width: 100%;
+      max-width: 100%;
+      border: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      display: block;
+    }
+
     .intro {
       max-width: 920px;
       margin: 0 auto 34px;
@@ -1426,6 +1457,20 @@
       &ldquo;main character walk detected 🐝&rdquo;
     </aside>
 
+    <section class="playlist-section" aria-labelledby="walking-playlist">
+      <h2 id="walking-playlist" data-i18n="playlist.title">Music for your walks</h2>
+      <p class="playlist-note" data-i18n="playlist.note">A little playlist if you want company on the path.</p>
+      <iframe
+        class="playlist-embed"
+        title="BuzzBuzz walking playlist on Spotify"
+        src="https://open.spotify.com/embed/playlist/0axnxTBiVR8nWPnHrwm247?utm_source=generator"
+        width="100%"
+        height="152"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+
     <section class="section faq" aria-labelledby="faq">
       <h2 id="faq">BuzzBuzz FAQ</h2>
 
@@ -1585,7 +1630,9 @@
       'askHive.closeAria': '닫기',
       'askHive.copied': '프롬프트를 복사했어요',
       'askHive.copyError': '복사를 못 했어요. 아래 텍스트를 직접 복사해 주세요.',
-      'askHive.geminiHint': 'Gemini에 붙여넣어 주세요.'
+      'askHive.geminiHint': 'Gemini에 붙여넣어 주세요.',
+      'playlist.title': '산책할 때 듣기 좋은 음악',
+      'playlist.note': '길 위에서 살짝 듣고 싶을 때용 플레이리스트.'
     };
 
     /* Existing page copy, addressed by stable selectors (index = nth match). */
