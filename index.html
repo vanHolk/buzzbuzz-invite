@@ -2335,10 +2335,13 @@
       storeBtnAndroid.hidden = !isAndroid;
 
       // Open button: keep https href for copy/share; click tries the custom scheme.
+      var startStoreFallback = null;
+
       openBtn.setAttribute("href", invitePageHttps);
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
         window.location.href = deepLink;
+        if (startStoreFallback) startStoreFallback();
       });
 
       if (isChatInApp) {
@@ -2377,23 +2380,26 @@
         chatHint.hidden = false;
       } else {
         // ---- STANDARD BROWSER PATH (Chrome / Safari / Samsung / in-chat western apps) ----
-        // Original behavior: try the app via custom scheme, fall back to the store.
+        // Fixed 2026-08-11: no silent auto-attempt on page load. The store
+        // fallback only arms once the person taps "Open BuzzBuzz" (see the
+        // click handler above) -- otherwise visitors who already had the app
+        // installed were getting bounced to the store on a fixed timer before
+        // the custom-scheme confirmation dialog had a chance to work.
         var didHide = false;
         document.addEventListener("visibilitychange", function () {
           if (document.hidden) didHide = true;
         });
 
-        // Try to open app after first paint.
-        setTimeout(function () {
-          window.location.href = deepLink;
-        }, 120);
-
-        // If the page stayed visible, assume app is not installed -- offer store (with referrer on Android).
-        setTimeout(function () {
-          if (!didHide) {
-            window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
-          }
-        }, 1800);
+        var fallbackArmed = false;
+        startStoreFallback = function () {
+          if (fallbackArmed) return;
+          fallbackArmed = true;
+          setTimeout(function () {
+            if (!didHide) {
+              window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
+            }
+          }, 1800);
+        };
       }
 
       setLang(resolveLang());
