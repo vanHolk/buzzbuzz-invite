@@ -1,0 +1,456 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Download / open-app funnel (logic extracted from former root index.html). -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex, follow" />
+  <title>Download BuzzBuzz</title>
+  <link rel="canonical" href="https://buzzbuzz.club/download" />
+  <meta name="description" content="Open your BuzzBuzz invite or install the app." />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+  <style>
+    :root {
+      --bg: #fff8e7;
+      --text: #2c2418;
+      --muted: #6b5a48;
+      --card: #ffffff;
+      --border: #e8dcc6;
+      --open-bg: #e8a317;
+      --open-text: #2c2418;
+      --store-bg: #2c2418;
+      --store-text: #ffffff;
+      --escape-bg: #ffffff;
+      --escape-text: #2c2418;
+      --escape-border: #e8a317;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+    }
+
+    .wrap {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 28px 18px 40px;
+      text-align: center;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 4px 14px rgba(61, 46, 34, 0.06);
+    }
+
+    .app-icon {
+      width: 76px;
+      height: 76px;
+      border-radius: 18px;
+      margin: 0 auto 12px;
+      display: block;
+      box-shadow: 0 6px 16px rgba(61, 46, 34, 0.12);
+      object-fit: cover;
+      background: #fff;
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 28px;
+      line-height: 1.2;
+    }
+
+    p { margin: 8px 0; line-height: 1.45; }
+    .muted { color: var(--muted); font-size: 14px; }
+
+    .btn {
+      display: inline-block;
+      width: 100%;
+      margin-top: 12px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.08s ease, opacity 0.12s ease;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn:active { transform: scale(0.995); }
+
+    .btn-open { background: var(--open-bg); color: var(--open-text); }
+    .btn-store { background: var(--store-bg); color: var(--store-text); }
+    .btn-escape {
+      background: var(--escape-bg);
+      color: var(--escape-text);
+      border: 2px solid var(--escape-border);
+    }
+
+    .hint {
+      margin-top: 14px;
+      padding: 12px;
+      border-radius: 10px;
+      background: #fdf3da;
+      border: 1px solid #f0e2bd;
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* ---- Language toggle ---- */
+    .lang-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: 0 6px 18px rgba(65, 45, 10, .12);
+      font-family: inherit;
+    }
+    .lang-toggle button {
+      border: 0;
+      background: transparent;
+      color: #5a4b41;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] {
+      background: #efaa08;
+      color: #2d221c;
+    }
+    .lang-toggle button:focus-visible {
+      outline: 2px solid #2d221c;
+      outline-offset: 2px;
+    }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 640px) {
+      .lang-toggle { top: 10px; right: 10px; }
+    }
+  </style>
+
+<meta name="google-site-verification" content="f5kW8lnfxmBm6ORzf38g_FlO5oWQp37LfXvhJd4OjpE" />
+
+</head>
+<body>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
+
+  <div class="wrap">
+    <div class="card">
+      <img src="/app-icon.png" alt="BuzzBuzz app icon" class="app-icon" id="appIcon" />
+
+      <h1 id="pageHeading">Join my BuzzBuzz Hive</h1>
+      <p id="fromText">Opening your invite…</p>
+
+      <!-- Standard-browser hint (default). Hidden inside chat in-app browsers. -->
+      <p class="muted" id="standardHint">If BuzzBuzz is installed, it should open automatically.</p>
+
+      <!-- Open in app: href stays https so "Copy link" works in chat apps. -->
+      <a id="openBtn" class="btn btn-open" href="">Open BuzzBuzz</a>
+
+      <!-- Store buttons (referrer baked into Android URL). -->
+      <a id="storeBtnIos" class="btn btn-store" href="https://apps.apple.com/app/id6767195595">Get BuzzBuzz on the App Store</a>
+      <a id="storeBtnAndroid" class="btn btn-store" href="">Get BuzzBuzz on Google Play</a>
+
+      <!-- External-browser escape (chat in-app browsers only). Button-only, user-tapped. -->
+      <button id="escapeBtn" class="btn btn-escape" hidden type="button">Open in browser</button>
+
+      <!-- Chat-app helper copy (shown only inside Kakao/LINE/WeChat). -->
+      <div class="hint" id="chatHint" hidden></div>
+
+      <!-- First-install copy (standard browsers). -->
+      <p class="muted" id="installHint" style="margin-top:10px;">
+        First time installing BuzzBuzz? After install, return to your message and tap this invite link again to join the correct hive.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var hiveId = params.get("hiveId") || "";
+      var from = params.get("from") || "";
+      var inviteId = params.get("inviteId") || "";
+
+      var ua = navigator.userAgent || "";
+      var isAndroid = /Android/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+
+      // Chat in-app browser detection (heuristic, not a security boundary).
+      var isKakao = /KAKAOTALK/i.test(ua);
+      var isLine = /\bLine\//i.test(ua);
+      var isWeChat = /MicroMessenger/i.test(ua);
+      var isChatInApp = isKakao || isLine || isWeChat;
+
+      // ---- Deep link (custom scheme) ----
+      var deepLink =
+        "buzzbuzz://community/friend/new?hiveId=" + encodeURIComponent(hiveId) +
+        "&from=" + encodeURIComponent(from) +
+        "&inviteId=" + encodeURIComponent(inviteId);
+
+      // ---- Store URLs ----
+      // Android Play URL carries the Install Referrer payload (hiveId + from only;
+      // inviteId intentionally dropped to keep payload short -- join needs only these two).
+      var referrerPayload = new URLSearchParams({ hiveId: hiveId, from: from }).toString();
+      var storeUrlIos = "https://apps.apple.com/app/id6767195595";
+      var storeUrlAndroid =
+        "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker" +
+        "&referrer=" + encodeURIComponent(referrerPayload);
+
+      // Same invite as the address bar -- safe to copy/paste into chat as a tappable link.
+      var invitePageHttps = window.location.href.split("#")[0];
+
+      // ---- Element refs ----
+      var fromText = document.getElementById("fromText");
+      var openBtn = document.getElementById("openBtn");
+      var storeBtnIos = document.getElementById("storeBtnIos");
+      var storeBtnAndroid = document.getElementById("storeBtnAndroid");
+      var escapeBtn = document.getElementById("escapeBtn");
+      var chatHint = document.getElementById("chatHint");
+      var standardHint = document.getElementById("standardHint");
+      var installHint = document.getElementById("installHint");
+      var pageHeading = document.getElementById("pageHeading");
+      var appIcon = document.getElementById("appIcon");
+      var metaDescription = document.querySelector('meta[name="description"]');
+
+      var enCache = {};
+      var activeLang = "en";
+
+      var STRINGS = {
+        en: {
+          title: "Join my BuzzBuzz Hive",
+          metaDescription: "Open your BuzzBuzz invite or install the app.",
+          appIconAlt: "BuzzBuzz app icon",
+          heading: "Join my BuzzBuzz Hive",
+          opening: "Opening your invite\u2026",
+          fromInvite: function (name) { return "@" + name + " invited you to join their hive."; },
+          fromFallback: "You were invited to join a BuzzBuzz hive.",
+          standardHint: "If BuzzBuzz is installed, it should open automatically.",
+          openBtn: "Open BuzzBuzz",
+          storeIos: "Get BuzzBuzz on the App Store",
+          storeAndroid: "Get BuzzBuzz on Google Play",
+          escapeBtn: "Open in browser",
+          installHint: "First time installing BuzzBuzz? After install, return to your message and tap this invite link again to join the correct hive.",
+          chatKakao:
+            "Invites may not apply correctly inside KakaoTalk.<br>" +
+            "Tap <b>Open in browser</b> above, or use \u22EF \u2192 Open in another browser.<br>" +
+            "<span style=\"opacity:.8\">\uCE74\uCE74\uC624\uD1A1 \uC548\uC5D0\uC11C\uB294 \uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098 \u22EF \u2192 \uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.</span>",
+          chatLine:
+            "Invites may not apply correctly inside LINE.<br>" +
+            "Tap <b>Open in browser</b> above, or use the menu \u2192 Open in another browser.<br>" +
+            "<span style=\"opacity:.8\">\uB77C\uC778 \uC548\uC5D0\uC11C\uB294 \uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098 \uBA54\uB274\uC5D0\uC11C \uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.</span>",
+          chatWeChat:
+            "Invites do not work inside WeChat.<br>" +
+            "Use the \u22EF menu \u2192 Open in browser.<br>" +
+            "<span style=\"opacity:.8\">\uC704\uCE6E \uC548\uC5D0\uC11C\uB294 \u22EF \u2192 \uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.</span>"
+        },
+        ko: {
+          title: "BuzzBuzz \uD558\uC774\uBE0C \uCD08\uB300",
+          metaDescription: "BuzzBuzz \uCD08\uB300 \uB9C1\uD06C\uB97C \uC5F4\uAC70\uB098 \uC571\uC744 \uC124\uCE58\uD558\uC138\uC694.",
+          appIconAlt: "BuzzBuzz \uC571 \uC544\uC774\uCF58",
+          heading: "BuzzBuzz \uD558\uC774\uBE0C \uCD08\uB300",
+          opening: "\uCD08\uB300\uC7A5 \uC5F4\uB294 \uC911\u2026",
+          fromInvite: function (name) { return "@" + name + "\uB2D8\uC774 \uD558\uC774\uBE0C\uC5D0 \uCD08\uB300\uD588\uC5B4\uC694."; },
+          fromFallback: "BuzzBuzz \uD558\uC774\uBE0C\uC5D0 \uCD08\uB300\uBC1B\uC558\uC5B4\uC694.",
+          standardHint: "BuzzBuzz\uAC00 \uC124\uCE58\uB418\uC5B4 \uC788\uC73C\uBA74 \uC790\uB3D9\uC73C\uB85C \uC5F4\uB824\uC694.",
+          openBtn: "BuzzBuzz \uC5F4\uAE30",
+          storeIos: "App Store\uC5D0\uC11C BuzzBuzz \uBC1B\uAE30",
+          storeAndroid: "Google Play\uC5D0\uC11C BuzzBuzz \uBC1B\uAE30",
+          escapeBtn: "\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30",
+          installHint: "BuzzBuzz\uB97C \uCC98\uC74C \uC124\uCE58\uD558\uC2DC\uB098\uC694? \uC124\uCE58 \uD6C4 \uBA54\uC2DC\uC9C0\uB85C \uB3CC\uC544\uC640 \uC774 \uCD08\uB300 \uB9C1\uD06C\uB97C \uB2E4\uC2DC \uB20C\uB7EC \uC62C\uBC14\uB978 \uD558\uC774\uBE0C\uC5D0 \uCC38\uC5EC\uD558\uC138\uC694.",
+          chatKakao:
+            "\uCE74\uCE74\uC624\uD1A1 \uC548\uC5D0\uC11C\uB294 \uCD08\uB300\uAC00 \uBC14\uB85C \uC801\uC6A9\uB418\uC9C0 \uC54A\uC744 \uC218 \uC788\uC5B4\uC694.<br>" +
+            "\uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098, \uC624\uB978\uCABD \uC704 <b>\u22EF \u2192 \uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30</b>\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.<br>" +
+            "<span style=\"opacity:.8\">In KakaoTalk, tap \u201COpen in browser\u201D above, or use \u22EF \u2192 Open in another browser.</span>",
+          chatLine:
+            "\uB77C\uC778 \uC548\uC5D0\uC11C\uB294 \uCD08\uB300\uAC00 \uBC14\uB85C \uC801\uC6A9\uB418\uC9C0 \uC54A\uC744 \uC218 \uC788\uC5B4\uC694.<br>" +
+            "\uC704 <b>\uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uB204\uB974\uAC70\uB098, \uBA54\uB274\uC5D0\uC11C <b>\uB2E4\uB978 \uBE0C\uB77C\uC6B0\uC800\uB85C \uC5F4\uAE30</b>\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.<br>" +
+            "<span style=\"opacity:.8\">In LINE, tap \u201COpen in browser\u201D above, or use the menu \u2192 Open in another browser.</span>",
+          chatWeChat:
+            "\uC704\uCE6E \uC548\uC5D0\uC11C\uB294 \uCD08\uB300\uAC00 \uBC14\uB85C \uC801\uC6A9\uB418\uC9C0 \uC54A\uC544\uC694.<br>" +
+            "\uC624\uB978\uCABD \uC704 <b>\u22EF \u2192 \uBE0C\uB77C\uC6B0\uC800\uC5D0\uC11C \uC5F4\uAE30</b>\uB97C \uC0AC\uC6A9\uD558\uC138\uC694.<br>" +
+            "<span style=\"opacity:.8\">In WeChat, use the \u22EF menu \u2192 Open in browser.</span>"
+        }
+      };
+
+      function cacheEnglishDefaults() {
+        if (Object.keys(enCache).length) return;
+        enCache.title = document.title;
+        if (metaDescription) enCache.metaDescription = metaDescription.getAttribute("content");
+        enCache.appIconAlt = appIcon.getAttribute("alt");
+        enCache.heading = pageHeading.textContent;
+        enCache.opening = fromText.textContent;
+        enCache.fromFallback = STRINGS.en.fromFallback;
+        enCache.standardHint = standardHint.textContent;
+        enCache.openBtn = openBtn.textContent;
+        enCache.storeIos = storeBtnIos.textContent;
+        enCache.storeAndroid = storeBtnAndroid.textContent;
+        enCache.escapeBtn = escapeBtn.textContent;
+        enCache.installHint = installHint.textContent;
+      }
+
+      function updateFromText(lang) {
+        var copy = STRINGS[lang];
+        fromText.textContent = from ? copy.fromInvite(from) : copy.fromFallback;
+      }
+
+      function chatHintHtml(lang) {
+        var copy = STRINGS[lang];
+        if (isKakao) return copy.chatKakao;
+        if (isLine) return copy.chatLine;
+        return copy.chatWeChat;
+      }
+
+      function setLang(lang) {
+        activeLang = lang === "ko" ? "ko" : "en";
+        cacheEnglishDefaults();
+        var copy = STRINGS[activeLang];
+
+        document.documentElement.lang = activeLang;
+        document.title = copy.title;
+        if (metaDescription) metaDescription.setAttribute("content", copy.metaDescription);
+        appIcon.setAttribute("alt", copy.appIconAlt);
+        pageHeading.textContent = copy.heading;
+        standardHint.textContent = copy.standardHint;
+        openBtn.textContent = copy.openBtn;
+        storeBtnIos.textContent = copy.storeIos;
+        storeBtnAndroid.textContent = copy.storeAndroid;
+        escapeBtn.textContent = copy.escapeBtn;
+        installHint.textContent = copy.installHint;
+        updateFromText(activeLang);
+
+        if (!isChatInApp && !isMobile) {
+          standardHint.textContent =
+            activeLang === "ko"
+              ? "스토어를 골라 BuzzBuzz를 다운로드하세요."
+              : "Pick a store to download BuzzBuzz.";
+          installHint.hidden = true;
+        }
+
+        if (!chatHint.hidden) {
+          chatHint.innerHTML = chatHintHtml(activeLang);
+        }
+
+        document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+          b.setAttribute("aria-pressed", String(b.dataset.lang === activeLang));
+        });
+        try { localStorage.setItem("bb-lang", activeLang); } catch (e) {}
+      }
+
+      /** URL ?lang= wins (for QR / share links); only ko → Korean, else English. */
+      function resolveLang() {
+        var urlLang = new URLSearchParams(window.location.search).get("lang");
+        if (urlLang !== null) {
+          return urlLang.toLowerCase().startsWith("ko") ? "ko" : "en";
+        }
+        try {
+          var saved = localStorage.getItem("bb-lang");
+          if (saved === "ko") return "ko";
+        } catch (e) {}
+        return "en";
+      }
+
+      document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+        b.addEventListener("click", function () { setLang(b.dataset.lang); });
+      });
+
+      // Wire store hrefs.
+      storeBtnIos.setAttribute("href", storeUrlIos);
+      storeBtnAndroid.setAttribute("href", storeUrlAndroid);
+
+      // Platform store-button visibility.
+      // Mobile: show the matching store only. Desktop: show both (no awkward iOS-only default).
+      var isMobile = isAndroid || isIOS;
+      storeBtnIos.hidden = isAndroid;
+      storeBtnAndroid.hidden = isIOS;
+
+      // Open button: keep https href for copy/share; click tries the custom scheme.
+      openBtn.setAttribute("href", invitePageHttps);
+      openBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        window.location.href = deepLink;
+      });
+
+      if (isChatInApp) {
+        // ---- CHAT IN-APP PATH (Kakao / LINE / WeChat) ----
+        // Custom-scheme redirects are sandboxed here, and a blind Play redirect
+        // traps already-installed users (Play "Open" loses invite context).
+        // So: no auto-scheme, no auto-Play. Surface a user-tapped escape + install.
+
+        standardHint.hidden = true;
+        installHint.hidden = true;
+
+        // The "Open BuzzBuzz" custom-scheme button is unreliable inside these
+        // browsers -- hide it to avoid a dead tap; the escape button is primary.
+        openBtn.hidden = true;
+
+        // External-browser escape (button-only; auto-firing fails on Android per Kakao docs).
+        escapeBtn.hidden = false;
+        escapeBtn.addEventListener("click", function () {
+          if (isKakao) {
+            // Kakao: open current page in the system browser.
+            window.location.href =
+              "kakaotalk://web/openExternal?url=" + encodeURIComponent(invitePageHttps);
+          } else if (isAndroid) {
+            // Generic Android intent to hand off to a real browser.
+            window.location.href =
+              "intent://" + invitePageHttps.replace(/^https?:\/\//, "") +
+              "#Intent;scheme=https;action=android.intent.action.VIEW;" +
+              "category=android.intent.category.BROWSABLE;end";
+          } else {
+            // iOS in-app (LINE/WeChat): no reliable programmatic escape -- guide via copy.
+            // Best effort: re-navigate to https (often no-ops inside the in-app browser).
+            window.location.href = invitePageHttps;
+          }
+        });
+
+        chatHint.hidden = false;
+      } else if (isMobile) {
+        // ---- STANDARD MOBILE BROWSER PATH ----
+        // Try the app via custom scheme, fall back to the matching store.
+        var didHide = false;
+        document.addEventListener("visibilitychange", function () {
+          if (document.hidden) didHide = true;
+        });
+
+        // Try to open app after first paint.
+        setTimeout(function () {
+          window.location.href = deepLink;
+        }, 120);
+
+        // If the page stayed visible, assume app is not installed -- offer store (with referrer on Android).
+        setTimeout(function () {
+          if (!didHide) {
+            window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
+          }
+        }, 1800);
+      }
+      // Desktop: no auto deep-link / store redirect; both badges stay visible for a manual pick.
+
+      setLang(resolveLang());
+    })();
+  </script>
+</body>
+</html>

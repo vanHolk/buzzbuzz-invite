@@ -1,16 +1,734 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Source for GitHub Pages: copy invite-landing/ to buzzbuzz-invite repo and publish. -->
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <meta name="robots" content="noindex, follow" />
-  <title>Join my BuzzBuzz Hive</title>
-  <meta name="description" content="Open your BuzzBuzz invite or install the app." />
-  <link rel="icon" type="image/png" sizes="48x48" href="https://vanholk.github.io/buzzbuzz-invite/favicon-48.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="https://vanholk.github.io/buzzbuzz-invite/favicon-192.png" />
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var isInvite = params.has('hiveId') || params.has('inviteId');
+      document.documentElement.classList.add(isInvite ? 'mode-invite' : 'mode-marketing');
+    })();
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#efaa08" />
+  <meta name="google-site-verification" content="f5kW8lnfxmBm6ORzf38g_FlO5oWQp37LfXvhJd4OjpE" />
+  <meta name="application-name" content="BuzzBuzz" />
+
+  <title>BuzzBuzz — Step Counter & Social Walking App for Friends</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="BuzzBuzz is a playful step counter and social walking app. Track daily steps, join a hive of friends, share one photo a day, and play weekly Color Hunt challenges. Free for iOS and Android." />
+  <meta name="keywords" content="step counter app, social walking app, walking app with friends, daily step tracker, fitness app for friends, photo diary app, color hunt challenge, walking challenge app, BuzzBuzz app, hive walking" />
+  <meta name="author" content="BuzzBuzz" />
+  <meta name="publisher" content="BuzzBuzz" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="googlebot" content="index, follow" />
+  <link rel="canonical" href="https://buzzbuzz.club/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BuzzBuzz — Walk with your hive" />
+  <meta property="og:description" content="A cozy step counter and social walking app. Track steps, share one photo a day, play weekly Color Hunts with friends." />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="BuzzBuzz" />
+  <meta property="og:url" content="https://buzzbuzz.club/" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:image" content="https://buzzbuzz.club/app-icon.png" />
+  <meta property="og:image:alt" content="BuzzBuzz app icon — a cozy step counter and social walking app" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="BuzzBuzz — Walk with your hive" />
+  <meta name="twitter:description" content="Step counter + social walking app. Daily photos, weekly Color Hunts, and a hive of friends." />
+  <meta name="twitter:image" content="https://buzzbuzz.club/app-icon.png" />
+
+  <!-- Favicon (absolute URLs — required for GitHub Pages subpaths & Google Search) -->
+  <link rel="icon" type="image/png" sizes="48x48" href="https://buzzbuzz.club/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://buzzbuzz.club/favicon-192.png" />
+  <link rel="shortcut icon" href="https://buzzbuzz.club/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://buzzbuzz.club/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
+
+  <!-- Structured data: MobileApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "BuzzBuzz",
+    "alternateName": "BuzzBuzz App",
+    "applicationCategory": "HealthApplication",
+    "applicationSubCategory": "Fitness",
+    "operatingSystem": "iOS, Android",
+    "description": "BuzzBuzz is a playful step counter and social walking app where friends track daily steps, join hives, share one photo a day, and take part in weekly Color Hunt challenges.",
+    "url": "https://buzzbuzz.club/",
+    "installUrl": "https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595",
+    "featureList": [
+      "Daily step tracking",
+      "Friend hives for social walking",
+      "Bee cam diary - one photo a day",
+      "Weekly Color Hunt photo challenges",
+      "Walking streaks and goals"
+    ],
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "BuzzBuzz",
+      "url": "https://buzzbuzz.club/",
+      "sameAs": [
+        "https://www.instagram.com/buzzbuzz_stepcount/"
+      ]
+    }
+  }
+  </script>
+
+  <!-- Structured data: WebSite (helps sitelinks search) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "BuzzBuzz",
+    "url": "https://buzzbuzz.club/",
+    "description": "Official site of BuzzBuzz, a step counter and social walking app."
+  }
+  </script>
+
+  <!-- Structured data: Organization (links the brand to its social profiles) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BuzzBuzz",
+    "url": "https://buzzbuzz.club/",
+      "logo": "https://buzzbuzz.club/app-icon.png",
+    "sameAs": [
+      "https://www.instagram.com/buzzbuzz_stepcount/"
+    ]
+  }
+  </script>
+
+  <!-- Structured data: FAQPage (AI crawlers and Google rich results both consume this) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuzzBuzz is a playful step counter and social walking app. It helps you track steps, connect with friends, join a hive, share one photo a day, and take part in weekly Color Hunt challenges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BuzzBuzz a step counter app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BuzzBuzz tracks daily steps and progress, but the experience is designed to feel more social, playful, and low-pressure than a traditional fitness tracker."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I use BuzzBuzz with friends?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. BuzzBuzz is built around your hive, a small friend network where you can follow each other's walking progress, share daily moments, and stay motivated together."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is a hive in BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A hive is your friend group inside BuzzBuzz. It is where your steps, daily photos, and Color Hunt moments are shared with the people you invite."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Bee cam diary?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Bee cam diary is the daily photo feature in BuzzBuzz. You can share one real photo a day with your hive, and the photo stays visible for 24 hours."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Color Hunt?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Color Hunt is a weekly photo challenge where everyone gets a color prompt. You find that color in the real world, take a picture, and share it with your hive."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do BuzzBuzz photos stay forever?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Bee cam diary photos are designed to stay visible for 24 hours, then disappear. The goal is to keep sharing light, fresh, and casual."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is BuzzBuzz a fitness app or a social app?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuzzBuzz is both. It is a walking and step tracking app with social features, daily photos, friend hives, and playful challenges."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need to post photos to use BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. You can use BuzzBuzz mainly as a step counter and walking motivation app. Photo sharing and Color Hunt challenges are there when you want to join in."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where can I download BuzzBuzz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "BuzzBuzz is available now on the App Store for iPhone and on Google Play for Android."
+        }
+      }
+    ]
+  }
+  </script>
+
   <style>
-    :root {
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5efdf;
+      color: #2d221c;
+      line-height: 1.55;
+    }
+
+    a { color: inherit; }
+
+    /* Skip link for accessibility (also a small SEO/UX signal) */
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      background: #2d221c;
+      color: #fff7eb;
+      padding: 10px 14px;
+      border-radius: 8px;
+      z-index: 100;
+    }
+    .skip-link:focus { left: 12px; top: 12px; }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "copy visual"
+        "ph visual";
+      align-items: center;
+      column-gap: 56px;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 96px 24px 72px;
+      text-align: left;
+    }
+
+    .hero-copy { grid-area: copy; text-align: left; }
+    .hero-visual { grid-area: visual; }
+    .hero .ph-badge { grid-area: ph; }
+
+    .hero-visual img {
+      display: block;
+      width: 100%;
+      max-width: 440px;
+      height: auto;
+      margin-left: auto;
+    }
+
+    .logo {
+      width: 88px;
+      height: 88px;
+      margin: 0 0 18px;
+      border-radius: 22px;
+      display: block;
+      box-shadow: 0 14px 32px rgba(65, 45, 10, .14);
+      object-fit: cover;
+    }
+
+    h1, h2, h3, .quote, summary, .store-badge .badge-large {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(48px, 8.5vw, 84px);
+      font-weight: 800;
+      line-height: .95;
+      margin: 0 0 18px;
+      letter-spacing: -2px;
+    }
+
+    h2 {
+      font-size: clamp(32px, 5vw, 52px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1.5px;
+      margin: 0 0 18px;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+    }
+
+    p { margin-top: 0; }
+
+    .subtitle {
+      max-width: 520px;
+      margin: 0 0 36px;
+      font-size: 22px;
+      color: #5a4b41; /* bumped contrast from #6a5a50 */
+    }
+
+    .cta-row {
+      display: flex;
+      justify-content: flex-start;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .ph-badge {
+      margin: 20px 0 0;
+    }
+
+    .ph-badge a {
+      display: inline-block;
+      line-height: 0;
+      border-radius: 8px;
+      transition: opacity .15s ease, transform .15s ease;
+    }
+
+    .ph-badge a:hover,
+    .ph-badge a:focus-visible {
+      opacity: .92;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .ph-badge img {
+      display: block;
+      width: 250px;
+      max-width: min(250px, 100%);
+      height: auto;
+    }
+
+    .store-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #1a1410;
+      color: #fff7eb;
+      padding: 12px 22px 12px 18px;
+      border-radius: 14px;
+      text-decoration: none;
+      min-width: 200px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow: 0 10px 24px rgba(65, 45, 10, .18);
+      position: relative;
+    }
+
+    .store-badge:hover, .store-badge:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(65, 45, 10, .24);
+      background: #2d221c;
+      outline: none;
+    }
+
+    .store-badge svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+
+    .store-badge .badge-text {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      line-height: 1.1;
+    }
+
+    .store-badge .badge-small {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      opacity: .85;
+      text-transform: uppercase;
+    }
+
+    .store-badge .badge-large {
+      font-size: 19px;
+      font-weight: 700;
+      letter-spacing: -.3px;
+      margin-top: 1px;
+    }
+
+    .section {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 24px 76px;
+    }
+
+    /* Soft Spotify playlist — secondary to download CTAs */
+    .playlist-section {
+      max-width: 640px;
+      margin: 0 auto;
+      padding: 8px 24px 64px;
+      text-align: center;
+    }
+    .playlist-section h2 {
+      margin: 0 0 6px;
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: #6b5a48;
+    }
+    .playlist-section .playlist-note {
+      margin: 0 0 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #8a7664;
+      line-height: 1.4;
+    }
+    .playlist-embed {
+      width: 100%;
+      max-width: 100%;
+      border: 0;
+      border-radius: 12px;
+      overflow: hidden;
+      background: transparent;
+      display: block;
+    }
+
+    .intro {
+      max-width: 920px;
+      margin: 0 auto 34px;
+      text-align: center;
+      font-size: 19px;
+      color: #5a4b41;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .card {
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .emoji {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .card p,
+    .text-block p,
+    details p {
+      color: #5a4b41;
+      margin-bottom: 0;
+    }
+
+    .text-block {
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 32px;
+      padding: 34px;
+      margin-top: 22px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-top: 22px;
+    }
+
+    .quote {
+      text-align: center;
+      font-size: clamp(24px, 4vw, 36px);
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 64px 24px;
+      color: #4b3b33;
+      font-weight: 800;
+      letter-spacing: -1px;
+    }
+
+    .faq { max-width: 920px; margin: 0 auto; }
+
+    details {
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 22px;
+      padding: 20px 22px;
+      margin-bottom: 12px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: 800;
+      list-style: none;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      float: right;
+      font-size: 24px;
+      line-height: 1;
+      color: #efaa08;
+    }
+    details[open] summary::after { content: "–"; }
+    details p { margin-top: 12px; }
+
+    /* Visually hidden but available to screen readers and crawlers */
+    .visually-hidden {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0,0,0,0);
+      white-space: nowrap; border: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 48px 24px 80px;
+      color: #7a695f;
+      font-size: 14px;
+    }
+    footer a {
+      color: #5a4b41;
+      text-decoration: none;
+      border-bottom: 1px solid #d9c9b3;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    footer a:hover, footer a:focus-visible {
+      color: #2d221c;
+      border-bottom-color: #efaa08;
+      outline: none;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      margin-bottom: 14px;
+    }
+    .footer-links .dot {
+      color: #c7b59f;
+      font-weight: 700;
+    }
+    .ig-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .ig-link svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: -2px;
+    }
+
+    @media (max-width: 760px) {
+      .hero {
+        display: block;
+        text-align: center;
+        padding-top: 72px;
+      }
+      .hero-copy { text-align: center; }
+      .logo { margin: 0 auto 18px; }
+      .subtitle {
+        max-width: 720px;
+        margin: 0 auto 36px;
+        font-size: 18px;
+      }
+      .cta-row { justify-content: center; }
+      .hero-visual img {
+        max-width: min(400px, 88vw);
+        margin: 32px auto 0;
+      }
+      .split { grid-template-columns: 1fr; }
+      .text-block { padding: 26px; }
+    }
+
+    /* ---- Language toggle ---- */
+    .lang-toggle {
+      position: fixed;
+      top: 14px;
+      right: 14px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 999px;
+      padding: 3px;
+      box-shadow: 0 6px 18px rgba(65, 45, 10, .12);
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .lang-toggle button {
+      border: 0;
+      background: transparent;
+      color: #5a4b41;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] {
+      background: #efaa08;
+      color: #2d221c;
+    }
+    .lang-toggle button:focus-visible {
+      outline: 2px solid #2d221c;
+      outline-offset: 2px;
+    }
+
+    /* ---- Meet the bees carousel ---- */
+    .bees-intro {
+      max-width: 920px;
+      margin: 0 auto 6px;
+      text-align: center;
+      font-size: 19px;
+      color: #5a4b41;
+    }
+    .bee-carousel-wrap { position: relative; margin-top: 28px; }
+    .bee-carousel {
+      display: flex;
+      gap: 18px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding: 6px 4px 18px;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .bee-carousel::-webkit-scrollbar { display: none; }
+    .bee-slide {
+      scroll-snap-align: center;
+      flex: 0 0 min(78vw, 300px);
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 28px;
+      overflow: hidden;
+      text-decoration: none;
+      color: #2d221c;
+      display: flex;
+      flex-direction: column;
+      transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      box-shadow: 0 12px 28px rgba(65, 45, 10, .1);
+    }
+    .bee-slide:hover, .bee-slide:focus-visible {
+      transform: translateY(-4px);
+      border-color: #efaa08;
+      box-shadow: 0 18px 36px rgba(65, 45, 10, .18);
+      outline: none;
+    }
+    .bee-slide img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      display: block;
+    }
+    .bee-slide .bee-plate {
+      padding: 16px 20px 20px;
+      border-top: 2px solid #f3e9d7;
+    }
+    .bee-slide .bee-name {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      margin: 0 0 2px;
+    }
+    .bee-slide .bee-tag {
+      margin: 0 0 10px;
+      font-size: 14px;
+      color: #5a4b41;
+    }
+    .bee-slide .bee-more {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: #c98a06;
+    }
+    .bee-nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #eadbc7;
+      background: #fffaf1;
+      color: #2d221c;
+      font-size: 20px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(65, 45, 10, .16);
+      transition: background .15s ease, transform .15s ease;
+      z-index: 2;
+    }
+    .bee-nav:hover, .bee-nav:focus-visible {
+      background: #efaa08;
+      outline: none;
+    }
+    .bee-nav.prev { left: -8px; }
+    .bee-nav.next { right: -8px; }
+    @media (max-width: 760px) {
+      .bee-nav { display: none; }
+      .lang-toggle { top: 10px; right: 10px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+      .bee-slide, .bee-nav { transition: none; }
+    }
+  </style>
+
+
+  <style>
+    /* Route mode: invite vs marketing */
+    html.mode-invite #marketing-content { display: none !important; }
+    html.mode-marketing #invite-flow { display: none !important; }
+
+    /* Invite funnel styles (from former root index.html) */
+:root {
       --bg: #fff8e7;
       --text: #2c2418;
       --muted: #6b5a48;
@@ -144,14 +862,279 @@
     @media (max-width: 640px) {
       .lang-toggle { top: 10px; right: 10px; }
     }
+
+    html.mode-invite body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #fff8e7;
+      color: #2c2418;
+    }
+
+    /* ---- Ask the Hive (marketing experiment; gated by .ask-hive-on) ---- */
+    html:not(.ask-hive-on) #ask-hive { display: none !important; }
+
+    #ask-hive {
+      --ask-ink: #2d221c;
+      --ask-cream: #fffaf1;
+      --ask-bg: #fff8e7;
+      --ask-border: #eadbc7;
+      --ask-honey: #efaa08;
+      --ask-muted: #5a4b41;
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    #ask-hive-fab {
+      position: fixed;
+      z-index: 60;
+      bottom: max(16px, env(safe-area-inset-bottom, 0px));
+      right: max(16px, env(safe-area-inset-right, 0px));
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 12px 18px;
+      border: 2px solid var(--ask-border);
+      border-radius: 999px;
+      background: var(--ask-cream);
+      color: var(--ask-ink);
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.2;
+      cursor: pointer;
+      box-shadow: 0 10px 24px rgba(65, 45, 10, .16);
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+    }
+    #ask-hive-fab:hover,
+    #ask-hive-fab:focus-visible {
+      background: #fff3d6;
+      box-shadow: 0 14px 28px rgba(65, 45, 10, .2);
+      outline: none;
+    }
+    #ask-hive-fab:focus-visible {
+      outline: 2px solid var(--ask-ink);
+      outline-offset: 3px;
+    }
+    #ask-hive-fab:active { transform: translateY(1px); }
+    #ask-hive-fab[aria-expanded="true"] {
+      border-color: var(--ask-honey);
+      background: #fff3d6;
+    }
+    #ask-hive-fab-label { white-space: nowrap; }
+    #ask-hive-fab-bee {
+      display: inline-block;
+      animation: ask-hive-bee-bob 1.6s ease-in-out infinite;
+    }
+    @keyframes ask-hive-bee-bob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-3px); }
+    }
+    @media (max-width: 360px) {
+      #ask-hive-fab-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; white-space: nowrap; }
+      #ask-hive-fab { width: 48px; height: 48px; padding: 0; justify-content: center; }
+    }
+
+    #ask-hive-backdrop {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      background: rgba(45, 34, 28, 0.35);
+    }
+    #ask-hive.is-sheet-open #ask-hive-backdrop { display: block; }
+
+    #ask-hive-panel {
+      display: none;
+      position: fixed;
+      z-index: 80;
+      width: min(360px, calc(100vw - 32px));
+      max-height: min(70vh, 520px);
+      overflow: auto;
+      padding: 18px 18px 16px;
+      background: var(--ask-cream);
+      color: var(--ask-ink);
+      border: 2px solid var(--ask-border);
+      border-radius: 22px;
+      box-shadow: 0 18px 40px rgba(65, 45, 10, .22);
+      box-sizing: border-box;
+    }
+    #ask-hive.is-open #ask-hive-panel { display: block; }
+
+    /* Desktop / tablet: anchored non-modal popover above FAB */
+    @media (min-width: 761px) {
+      #ask-hive-panel {
+        bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 60px);
+        right: max(16px, env(safe-area-inset-right, 0px));
+      }
+      #ask-hive-backdrop { display: none !important; }
+    }
+
+    /* Mobile: modal bottom sheet */
+    @media (max-width: 760px) {
+      #ask-hive-panel {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        max-width: none;
+        max-height: min(78vh, 640px);
+        border-radius: 22px 22px 0 0;
+        border-left: 0;
+        border-right: 0;
+        border-bottom: 0;
+        padding-bottom: max(18px, env(safe-area-inset-bottom, 0px));
+      }
+    }
+
+    #ask-hive-panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 8px;
+    }
+    #ask-hive-title {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+    }
+    #ask-hive-close {
+      flex: 0 0 auto;
+      width: 40px;
+      height: 40px;
+      margin: -6px -6px 0 0;
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--ask-ink);
+      font: inherit;
+      font-size: 22px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    #ask-hive-close:hover,
+    #ask-hive-close:focus-visible {
+      background: rgba(239, 170, 8, 0.28);
+      outline: none;
+    }
+    #ask-hive-close:focus-visible {
+      outline: 2px solid var(--ask-ink);
+      outline-offset: 2px;
+    }
+    #ask-hive-desc {
+      margin: 0 0 14px;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--ask-muted);
+      line-height: 1.45;
+    }
+    #ask-hive-external-note {
+      margin: 0 0 12px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--ask-muted);
+      letter-spacing: 0.01em;
+    }
+    #ask-hive-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .ask-hive-action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 48px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 2px solid var(--ask-border);
+      background: #fffdf8;
+      color: var(--ask-ink);
+      text-decoration: none;
+      font: inherit;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      text-align: left;
+      box-sizing: border-box;
+      width: 100%;
+      transition: background .15s ease, border-color .15s ease, transform .15s ease;
+    }
+    .ask-hive-action:hover,
+    .ask-hive-action:focus-visible {
+      background: #fff3d6;
+      border-color: var(--ask-honey);
+      outline: none;
+    }
+    .ask-hive-action:focus-visible {
+      outline: 2px solid var(--ask-ink);
+      outline-offset: 2px;
+    }
+    .ask-hive-action:active { transform: translateY(1px); }
+    .ask-hive-action-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ask-hive-ext-icon {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+      opacity: 0.7;
+    }
+    .ask-hive-action--secondary {
+      background: transparent;
+      font-weight: 700;
+    }
+    #ask-hive-status {
+      min-height: 1.2em;
+      margin: 10px 0 0;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ask-muted);
+    }
+    #ask-hive-status[data-tone="ok"] { color: #2f6b3a; }
+    #ask-hive-status[data-tone="err"] { color: #8a3b2b; }
+    #ask-hive-fallback {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed var(--ask-border);
+      background: #fff;
+      font-size: 13px;
+      line-height: 1.4;
+      color: var(--ask-ink);
+      white-space: pre-wrap;
+      max-height: 140px;
+      overflow: auto;
+      user-select: text;
+    }
+    #ask-hive-fallback.is-visible { display: block; }
+
+    @media (prefers-reduced-motion: reduce) {
+      #ask-hive-fab,
+      .ask-hive-action {
+        transition: none;
+      }
+      #ask-hive-fab-bee {
+        animation: none;
+      }
+    }
+
   </style>
-
-<meta name="google-site-verification" content="f5kW8lnfxmBm6ORzf38g_FlO5oWQp37LfXvhJd4OjpE" />
-
 </head>
 <body>
 
-  <div class="lang-toggle" role="group" aria-label="Language">
+  <!-- ============================================= -->
+  <!-- INVITE FLOW — existing index.html content.
+       Shown/run only when hiveId or inviteId is present. -->
+  <!-- ============================================= -->
+  <div id="invite-flow">
+<div class="lang-toggle" role="group" aria-label="Language">
     <button type="button" data-lang="en" aria-pressed="true">EN</button>
     <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
   </div>
@@ -185,8 +1168,984 @@
       </p>
     </div>
   </div>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- MARKETING — former landing.html body (+ Download CTA) -->
+  <!-- ============================================= -->
+  <div id="marketing-content">
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
+
+  <!-- AI/LLM-friendly summary: a single paragraph models can quote cleanly. -->
+  <p class="visually-hidden" id="tldr">
+    BuzzBuzz is a free step counter and social walking app for iOS and Android. Users track daily steps, build a hive of friends, share one photo a day through Bee cam diary, and join weekly Color Hunt photo challenges. Photos disappear after 24 hours. BuzzBuzz blends fitness tracking with low-pressure social motivation.
+  </p>
+
+  <header>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-copy">
+        <img class="logo"
+             src="https://buzzbuzz.club/app-icon.png"
+             alt="BuzzBuzz app icon"
+             width="88" height="88"
+             loading="eager" />
+
+        <h1 id="page-title">BuzzBuzz</h1>
+
+        <p class="subtitle">
+          A cozy step counter and social walking app for friends. Daily walks, tiny real moments, and weekly Color Hunts.
+        </p>
+
+        <nav class="cta-row" aria-label="Download BuzzBuzz">
+          <a href="https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595"
+             class="store-badge"
+             target="_blank"
+             rel="noopener"
+             aria-label="Download BuzzBuzz on the App Store">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.26-1.32-1.93-3.38-2.2-4.11-2.22-1.75-.18-3.42 1.03-4.31 1.03-.89 0-2.27-1.01-3.74-.98-1.92.03-3.7 1.12-4.69 2.84-2 3.47-.51 8.6 1.43 11.42.95 1.38 2.08 2.92 3.56 2.87 1.43-.06 1.97-.92 3.7-.92 1.72 0 2.21.92 3.72.89 1.54-.03 2.51-1.4 3.45-2.79 1.09-1.6 1.54-3.15 1.57-3.23-.03-.01-3.01-1.15-3.04-4.58zM14.34 3.65c.79-.96 1.32-2.29 1.18-3.62-1.14.05-2.52.76-3.34 1.71-.73.85-1.37 2.21-1.2 3.51 1.27.1 2.57-.65 3.36-1.6z"/>
+            </svg>
+            <span class="badge-text">
+              <span class="badge-small">Download on the</span>
+              <span class="badge-large">App Store</span>
+            </span>
+          </a>
+
+          <a href="https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker"
+             class="store-badge"
+             target="_blank"
+             rel="noopener"
+             aria-label="Get BuzzBuzz on Google Play">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <defs>
+                <linearGradient id="gpA" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#00d4ff"/>
+                  <stop offset="1" stop-color="#00b8e6"/>
+                </linearGradient>
+                <linearGradient id="gpB" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#ffce00"/>
+                  <stop offset="1" stop-color="#ffa800"/>
+                </linearGradient>
+                <linearGradient id="gpC" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#ff3a44"/>
+                  <stop offset="1" stop-color="#c31162"/>
+                </linearGradient>
+                <linearGradient id="gpD" x1="0" x2="1" y1="0" y2="1">
+                  <stop offset="0" stop-color="#00f076"/>
+                  <stop offset="1" stop-color="#00c853"/>
+                </linearGradient>
+              </defs>
+              <path fill="url(#gpA)" d="M3.6 1.7c-.4.4-.6 1-.6 1.8v17c0 .8.2 1.4.6 1.8l.1.1L13.2 13v-.2L3.7 1.7h-.1z"/>
+              <path fill="url(#gpB)" d="M16.4 16.2 13.2 13v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2-.1-.1z"/>
+              <path fill="url(#gpC)" d="M16.5 16.1 13.2 12.8 3.6 22.4c.4.4 1 .4 1.7 0l11.2-6.3"/>
+              <path fill="url(#gpD)" d="M16.5 9.7 5.3 3.4c-.7-.4-1.3-.4-1.7 0l9.6 9.6 3.3-3.3z"/>
+            </svg>
+            <span class="badge-text">
+              <span class="badge-small">Get it on</span>
+              <span class="badge-large">Google Play</span>
+            </span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="hero-visual">
+        <img src="beach-visual.webp"
+             alt="Woman on a sunset beach walk checking her step count in the BuzzBuzz app"
+             width="656" height="850"
+             fetchpriority="high" decoding="async" />
+      </div>
+
+      <p class="ph-badge">
+        <a href="https://www.producthunt.com/products/buzzbuzz-step-tracker?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-buzzbuzz-step-tracker"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="BuzzBuzz on Product Hunt">
+          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1175163&amp;theme=light&amp;t=1781850749371"
+               alt="BuzzBuzz - Step Tracker - A cozy step counter and social walking app for friends | Product Hunt"
+               width="250"
+               height="54" />
+        </a>
+      </p>
+    </section>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="what-is-buzzbuzz">
+      <h2 id="what-is-buzzbuzz">Walk with your hive</h2>
+
+      <div class="intro">
+        <p>
+          BuzzBuzz is a step counter app built around friends, not pressure. Track your daily steps, join a hive, share one photo a day, and turn walking into a small social ritual. It's fitness, but less intense. Social, but less noisy.
+        </p>
+      </div>
+
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">👟</div>
+          <h3>Step counter</h3>
+          <p>Track your daily movement with simple step goals, progress, and streaks that make walking feel lighter.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">🐝</div>
+          <h3>Hive network</h3>
+          <p>Add friends, build your hive, and keep each other moving with gentle social motivation.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">📸</div>
+          <h3>Bee cam diary</h3>
+          <p>Share one real photo a day with your hive. Photos stay visible for 24 hours, then buzz away.</p>
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="emoji" aria-hidden="true">🌈</div>
+          <h3>Color Hunt</h3>
+          <p>Join weekly color challenges and capture your world through shared prompts. One color. One photo. Main character walk.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="meet-the-bees">
+      <h2 id="meet-the-bees" data-i18n="bees.title">Meet the bees</h2>
+
+      <p class="bees-intro" data-i18n="bees.intro">
+        Every walker needs a bee. Collect skins in the Honey Shop, pick your icon, and let it carry your whole personality. Tap a bee for the lore — yes, there's lore.
+      </p>
+
+      <div class="bee-carousel-wrap">
+        <button class="bee-nav prev" type="button" aria-label="Previous bee" data-dir="-1">‹</button>
+        <div class="bee-carousel" role="list" aria-label="BuzzBuzz bees">
+          <a class="bee-slide" role="listitem" href="bees/normal.html">
+            <img src="bees/img/normal.png" alt="Normal Bee, the original yellow BuzzBuzz bee" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Normal Bee</span>
+              <p class="bee-tag" data-i18n="bees.normal.tag">The Original. The Blueprint.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/unc-summer.html">
+            <img src="bees/img/unc.png" alt="Unc Summer, a bee in a Hawaiian shirt with a perm and mustache" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Unc Summer</span>
+              <p class="bee-tag" data-i18n="bees.unc.tag">Tropical vacation uncle energy, bee-sized.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/luau-bee.html">
+            <img src="bees/img/luau.png" alt="Luau Bee, a bee with hibiscus tucked behind one antenna and a floral pareo" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Luau Bee</span>
+              <p class="bee-tag" data-i18n="bees.luau.tag">Island breeze, hibiscus hair, zero worries.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/festival-bee.html">
+            <img src="bees/img/festival-bee.png" alt="Festival Bee, a bee with a white goatee in a star-spangled top hat, blue suit and red bow tie" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Festival Bee</span>
+              <p class="bee-tag" data-i18n="bees.festival.tag">Minister of Festivities. Self-appointed.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/wizard-student.html">
+            <img src="bees/img/wizard-student.png" alt="Wizard Student, a bee wearing a black witch hat and a gold bell collar" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Wizard Student</span>
+              <p class="bee-tag" data-i18n="bees.wizard.tag">One spell. Unlimited confidence.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/kpop-jimmy.html">
+            <img src="bees/img/kpop-jimmy.png" alt="Kpop Jimmy, a bee with a wavy blue perm and an idol headset mic" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Kpop Jimmy</span>
+              <p class="bee-tag" data-i18n="bees.jimmy.tag">Every walk is a comeback stage.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/hani.html">
+            <img src="bees/img/hani.png" alt="Hani, a bee with pastel pink hair, heart wings, and a headset" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Hani</span>
+              <p class="bee-tag" data-i18n="bees.hani.tag">Mic hot. Wings up. Crowd of one.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/aurora-prism.html">
+            <img src="bees/img/aurora-prism.png" alt="Aurora Prism, a holographic rainbow bee" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Aurora Prism</span>
+              <p class="bee-tag" data-i18n="bees.aurora.tag">Legendary drop. Walks in RGB.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/outlaw.html">
+            <img src="bees/img/outlaw.png" alt="Outlaw Bee, a yellow bee wearing a cowboy hat and red bandana" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Outlaw Bee</span>
+              <p class="bee-tag" data-i18n="bees.outlaw.tag">Wanted: for stealing leaderboards.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/goblin.html">
+            <img src="bees/img/goblin.png" alt="Goblin Bee, a green bee with pointy ears, fangs and red eyes" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Goblin Bee</span>
+              <p class="bee-tag" data-i18n="bees.goblin.tag">Goblin mode: permanently on.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/berry-blush.html">
+            <img src="bees/img/berry-blush.png" alt="Berry Blush, a pink bee with heart cheeks and lashes" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Berry Blush</span>
+              <p class="bee-tag" data-i18n="bees.berry.tag">The blush is cardio, baby.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+        </div>
+        <button class="bee-nav next" type="button" aria-label="Next bee" data-dir="1">›</button>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="how-it-works">
+      <h2 id="how-it-works">How BuzzBuzz works</h2>
+
+      <ol class="split" style="padding:0; list-style:none; margin:22px 0 0;">
+        <li class="text-block">
+          <h3>1. Set your daily step goal</h3>
+          <p>BuzzBuzz helps you track walking progress without turning your day into a spreadsheet. See your steps, keep your streak alive, and move at your own pace.</p>
+        </li>
+
+        <li class="text-block">
+          <h3>2. Join or invite your hive</h3>
+          <p>A hive is your small friend network inside BuzzBuzz, designed for lightweight encouragement, walking challenges, and low-pressure social check-ins.</p>
+        </li>
+
+        <li class="text-block">
+          <h3>3. Share one photo a day</h3>
+          <p>Bee cam diary lets you post one daily photo to your hive. It stays for 24 hours, keeping the feed fresh, real, and not too serious.</p>
+        </li>
+
+        <li class="text-block">
+          <h3>4. Play the Color Hunt</h3>
+          <p>Each week, BuzzBuzz gives everyone a color prompt. Spot the color on your walk, snap it, and share it before the moment disappears.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="section" aria-labelledby="why-buzzbuzz">
+      <h2 id="why-buzzbuzz">A walking app with social energy</h2>
+
+      <div class="text-block">
+        <p>
+          Most step counter apps focus on numbers, calories, or strict fitness goals. BuzzBuzz is different. It is designed for people who want to move more, stay connected with friends, and make daily walks feel playful. The app combines step tracking, social walking motivation, temporary photo sharing, and weekly photo prompts in one simple bee-themed experience.
+        </p>
+        <p style="margin-top:16px;">
+          Whether you want a cute step tracker, a walking challenge app for friends, a tiny photo diary, or a more fun way to build healthy habits, BuzzBuzz keeps things casual. No gym pressure. No overthinking. Just walk, snap, buzz.
+        </p>
+      </div>
+    </section>
+
+    <aside class="quote" aria-label="Tagline">
+      &ldquo;main character walk detected 🐝&rdquo;
+    </aside>
+
+    <section class="playlist-section" aria-labelledby="walking-playlist">
+      <h2 id="walking-playlist" data-i18n="playlist.title">Music for your walks</h2>
+      <p class="playlist-note" data-i18n="playlist.note">A little playlist if you want company on the path.</p>
+      <iframe
+        class="playlist-embed"
+        title="BuzzBuzz walking playlist on Spotify"
+        src="https://open.spotify.com/embed/playlist/0axnxTBiVR8nWPnHrwm247?utm_source=generator"
+        width="100%"
+        height="152"
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    </section>
+
+    <section class="section faq" aria-labelledby="faq">
+      <h2 id="faq">BuzzBuzz FAQ</h2>
+
+      <details>
+        <summary>What is BuzzBuzz?</summary>
+        <p>BuzzBuzz is a playful step counter and social walking app. It helps you track steps, connect with friends, join a hive, share one photo a day, and take part in weekly Color Hunt challenges.</p>
+      </details>
+
+      <details>
+        <summary>Is BuzzBuzz a step counter app?</summary>
+        <p>Yes. BuzzBuzz tracks daily steps and progress, but the experience is designed to feel more social, playful, and low-pressure than a traditional fitness tracker.</p>
+      </details>
+
+      <details>
+        <summary>Can I use BuzzBuzz with friends?</summary>
+        <p>Yes. BuzzBuzz is built around your hive, a small friend network where you can follow each other's walking progress, share daily moments, and stay motivated together.</p>
+      </details>
+
+      <details>
+        <summary>What is a hive?</summary>
+        <p>A hive is your friend group inside BuzzBuzz. It is where your steps, daily photos, and Color Hunt moments can be shared with the people you invite.</p>
+      </details>
+
+      <details>
+        <summary>What is Bee cam diary?</summary>
+        <p>Bee cam diary is the daily photo feature in BuzzBuzz. You can share one real photo a day with your hive, and the photo stays visible for 24 hours.</p>
+      </details>
+
+      <details>
+        <summary>What is Color Hunt?</summary>
+        <p>Color Hunt is a weekly photo challenge where everyone gets a color prompt. You find that color in the real world, take a picture, and share it with your hive.</p>
+      </details>
+
+      <details>
+        <summary>Do photos stay forever?</summary>
+        <p>No. Bee cam diary photos are designed to stay visible for 24 hours. The goal is to keep sharing light, fresh, and casual.</p>
+      </details>
+
+      <details>
+        <summary>Is BuzzBuzz a fitness app or a social app?</summary>
+        <p>BuzzBuzz is both. It is a walking and step tracking app with social features, daily photos, friend hives, and playful challenges.</p>
+      </details>
+
+      <details>
+        <summary>Do I need to post photos to use BuzzBuzz?</summary>
+        <p>No. You can use BuzzBuzz mainly as a step counter and walking motivation app. Photo sharing and Color Hunt challenges are there when you want to join in.</p>
+      </details>
+
+      <details>
+        <summary>Where can I download BuzzBuzz?</summary>
+        <p>BuzzBuzz is available now on the App Store for iPhone and on Google Play for Android.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <nav class="footer-links" aria-label="Footer">
+      <a class="ig-link"
+         href="https://www.instagram.com/buzzbuzz_stepcount/"
+         target="_blank"
+         rel="noopener me"
+         aria-label="Follow BuzzBuzz on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+        </svg>
+        @buzzbuzz_stepcount
+      </a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="https://www.notion.so/BUZZBUZZ-Privacy-Policy-35988e07417f809ba9b1d6759e20817e"
+         target="_blank"
+         rel="noopener">Privacy Policy</a>
+    </nav>
+    <p>BuzzBuzz &copy; 2026 &middot; walk. snap. buzz.</p>
+  </footer>
+
+  <!-- Ask the Hive FAB (hidden unless .ask-hive-on + marketing mode) -->
+  <div id="ask-hive" hidden>
+    <button type="button" id="ask-hive-fab" aria-expanded="false" aria-controls="ask-hive-panel" aria-haspopup="dialog">
+      <span class="ask-hive-fab-bee" id="ask-hive-fab-bee" aria-hidden="true">🐝</span>
+      <span id="ask-hive-fab-label" data-i18n="askHive.fab">Ask about BuzzBuzz</span>
+    </button>
+    <div id="ask-hive-backdrop" hidden></div>
+    <div id="ask-hive-panel" role="dialog" aria-labelledby="ask-hive-title" aria-describedby="ask-hive-desc" hidden>
+      <div id="ask-hive-panel-header">
+        <h2 id="ask-hive-title" data-i18n="askHive.title">Ask the Hive</h2>
+        <button type="button" id="ask-hive-close" data-i18n-aria="askHive.closeAria" aria-label="Close">×</button>
+      </div>
+      <p id="ask-hive-desc" data-i18n="askHive.desc">Explore BuzzBuzz with your preferred AI assistant. You’ll continue on their website.</p>
+      <p id="ask-hive-external-note" data-i18n="askHive.externalNote">Opens an external AI website — not an official BuzzBuzz chatbot.</p>
+      <div id="ask-hive-actions">
+        <a class="ask-hive-action" data-ask-provider="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.chatgpt">Ask ChatGPT</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="claude" href="https://claude.ai/new" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.claude">Ask Claude</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.perplexity">Ask Perplexity</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="grok" href="https://grok.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.grok">Ask Grok</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="copy">
+          <span class="ask-hive-action-label" data-i18n="askHive.copy">Copy prompt</span>
+        </button>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="gemini">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.gemini">Copy and open Gemini</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </button>
+      </div>
+      <p id="ask-hive-status" role="status" aria-live="polite"></p>
+      <pre id="ask-hive-fallback" tabindex="0"></pre>
+    </div>
+  </div>
 
   <script>
+  (function () {
+    /* ---- Bee carousel arrows ---- */
+    var track = document.querySelector('.bee-carousel');
+    document.querySelectorAll('.bee-nav').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var slide = track.querySelector('.bee-slide');
+        var step = slide ? slide.getBoundingClientRect().width + 18 : 320;
+        track.scrollBy({ left: step * Number(btn.dataset.dir), behavior: 'smooth' });
+      });
+    });
+
+    /* ---- EN / KO toggle ----
+       Korean voice: modern, expressive, slang-forward Gen Z energy. */
+    var KO = {
+      'bees.title': '우리 벌들 소개',
+      'bees.intro': '워커라면 벌 하나쯤은 있어야지. 허니샵에서 스킨 모으고, 내 아이콘 정하고, 성격까지 통째로 맡겨버려. 벌 누르면 세계관 나옴 — ㄹㅇ 세계관 있음.',
+      'bees.more': '세계관 보기 →',
+      'bees.normal.tag': '원조. 교과서. 그냥 벌.',
+      'bees.berry.tag': '이 블러시? 메이크업 아니고 유산소임.',
+      'bees.goblin.tag': '고블린 모드: 상시 ON.',
+      'bees.outlaw.tag': '수배 중: 리더보드 털이범.',
+      'bees.aurora.tag': '전설 등급 드랍. RGB로 걷는 중.',
+      'bees.hani.tag': '마이크 ON. 날개 UP. 관객은 나 혼자.',
+      'bees.jimmy.tag': '산책 아님. 컴백 무대임.',
+      'bees.wizard.tag': '스펠은 하나. 자신감은 무한.',
+      'bees.festival.tag': '축제부 장관. 셀프 임명.',
+      'bees.luau.tag': '하와이 바람, 히비스커스 한 송이, 걱정 제로.',
+      'bees.unc.tag': '휴가 온 삼촌 에너지, 벌 사이즈로.',
+      'askHive.fab': 'BuzzBuzz 물어보기',
+      'askHive.title': '하이브에 물어보기',
+      'askHive.desc': '원하는 AI 어시스턴트에서 BuzzBuzz를 더 알아보세요. 해당 서비스 웹사이트로 이동합니다.',
+      'askHive.externalNote': '외부 AI 웹사이트로 이동합니다. BuzzBuzz 공식 챗봇이 아니에요.',
+      'askHive.chatgpt': 'ChatGPT에게 물어보기',
+      'askHive.claude': 'Claude에게 물어보기',
+      'askHive.perplexity': 'Perplexity에게 물어보기',
+      'askHive.grok': 'Grok에게 물어보기',
+      'askHive.copy': '프롬프트 복사',
+      'askHive.gemini': '복사하고 Gemini 열기',
+      'askHive.closeAria': '닫기',
+      'askHive.copied': '프롬프트를 복사했어요',
+      'askHive.copyError': '복사를 못 했어요. 아래 텍스트를 직접 복사해 주세요.',
+      'askHive.geminiHint': 'Gemini에 붙여넣어 주세요.',
+      'playlist.title': '산책할 때 듣기 좋은 음악',
+      'playlist.note': '길 위에서 살짝 듣고 싶을 때용 플레이리스트.'
+    };
+
+    /* Existing page copy, addressed by stable selectors (index = nth match). */
+    var MAP = [
+      ['.subtitle', 0, '친구들이랑 걷는 만보기 앱인데, 분위기가 좀 다름. 매일 걷고, 하루 한 컷 찍고, 주간 컬러헌트까지. 이게 되네?'],
+      ['#what-is-buzzbuzz', 0, '하이브랑 같이 걷자'],
+      ['.intro p', 0, 'BuzzBuzz는 압박 말고 친구 중심으로 만든 만보기 앱임. 걸음 수 찍고, 하이브 들어가고, 하루에 사진 한 장 올리고 — 걷기가 작은 소셜 리추얼이 되는 거지. 운동인데 안 빡세고, 소셜인데 안 시끄러움. 이 조합 ㄹㅇ 미쳤다.'],
+      ['.grid .card h3', 0, '걸음 수 카운터'],
+      ['.grid .card p', 0, '데일리 걸음, 목표, 스트릭까지. 스프레드시트 감성은 빼고 걷기를 가볍게 만들어줌.'],
+      ['.grid .card h3', 1, '하이브 네트워크'],
+      ['.grid .card p', 1, '친구 추가하고 하이브 만들고, 서로 슬쩍 자극 주면서 같이 움직이는 거임. 갓벽.'],
+      ['.grid .card h3', 2, '비캠 다이어리'],
+      ['.grid .card p', 2, '하루에 진짜 사진 딱 한 장만 하이브에 공유. 24시간 지나면 붕— 하고 사라짐.'],
+      ['.grid .card h3', 3, '컬러헌트'],
+      ['.grid .card p', 3, '매주 컬러 미션 받고 세상에서 그 색 찾기. 색 하나. 사진 한 장. 주인공 산책 각.'],
+      ['#how-it-works', 0, 'BuzzBuzz 이렇게 굴러감'],
+      ['.split .text-block h3', 0, '1. 데일리 걸음 목표 정하기'],
+      ['.split .text-block p', 0, '걷기를 엑셀로 만들 생각 1도 없음. 걸음 확인하고, 스트릭 지키고, 내 페이스대로 가면 됨.'],
+      ['.split .text-block h3', 1, '2. 하이브 만들거나 들어가기'],
+      ['.split .text-block p', 1, '하이브는 BuzzBuzz 속 내 소규모 친구 네트워크. 가벼운 응원, 걷기 챌린지, 부담 제로 안부용으로 설계됨.'],
+      ['.split .text-block h3', 2, '3. 하루 한 장 올리기'],
+      ['.split .text-block p', 2, '비캠 다이어리에 데일리 한 컷. 24시간 뒤 사라지니까 피드가 늘 신선하고, 진지함은 제로.'],
+      ['.split .text-block h3', 3, '4. 컬러헌트 플레이'],
+      ['.split .text-block p', 3, '매주 모두에게 컬러 하나 떨어짐. 산책하다 발견하면 찰칵, 순간이 사라지기 전에 공유.'],
+      ['#why-buzzbuzz', 0, '소셜 에너지 탑재한 걷기 앱'],
+      ['#why-buzzbuzz ~ .text-block p', 0, '대부분의 만보기 앱은 숫자, 칼로리, 빡센 목표 얘기만 함. BuzzBuzz는 다름. 더 걷고 싶고, 친구랑 연결되고 싶고, 매일 산책이 좀 재밌었으면 하는 사람들을 위해 만든 앱임. 걸음 트래킹 + 소셜 동기부여 + 24시간 사진 + 주간 컬러 미션을 꿀벌 테마 하나에 싹 담았음.'],
+      ['#why-buzzbuzz ~ .text-block p', 1, '귀여운 만보기를 원하든, 친구랑 하는 걷기 챌린지 앱을 원하든, 초미니 포토 다이어리를 원하든 — BuzzBuzz는 그냥 캐주얼하게 감. 헬스장 압박 없음. 오버띵킹 없음. 걷고, 찍고, 버즈.'],
+      ['.quote', 0, '\u201c주인공 산책 감지됨 \ud83d\udc1d\u201d'],
+      ['#faq', 0, 'BuzzBuzz 자주 묻는 질문'],
+      ['details summary', 0, 'BuzzBuzz가 뭐임?'],
+      ['details p', 0, 'BuzzBuzz는 만보기 + 소셜 걷기 앱임. 걸음 수 추적하고, 친구랑 연결되고, 하이브에 들어가고, 하루 한 장 사진 올리고, 주간 컬러헌트까지 즐길 수 있음.'],
+      ['details summary', 1, '만보기 앱 맞음?'],
+      ['details p', 1, '맞음. 데일리 걸음이랑 진행 상황 다 추적함. 근데 일반 피트니스 트래커보다 훨씬 소셜하고, 가볍고, 부담 없는 경험으로 디자인됐음.'],
+      ['details summary', 2, '친구랑 같이 쓸 수 있음?'],
+      ['details p', 2, '당연하지. BuzzBuzz의 중심은 하이브 — 서로의 걷기 진행 상황 보고, 데일리 순간 공유하고, 같이 동기부여 받는 소규모 친구 네트워크임.'],
+      ['details summary', 3, '하이브가 뭐임?'],
+      ['details p', 3, '하이브는 BuzzBuzz 안의 내 친구 그룹. 걸음 수, 데일리 사진, 컬러헌트 순간을 내가 초대한 사람들이랑만 공유하는 공간임.'],
+      ['details summary', 4, '비캠 다이어리는 뭐임?'],
+      ['details p', 4, '비캠 다이어리는 BuzzBuzz의 데일리 포토 기능. 하루에 진짜 사진 한 장을 하이브에 공유하고, 그 사진은 24시간 동안만 보임.'],
+      ['details summary', 5, '컬러헌트는 뭐임?'],
+      ['details p', 5, '컬러헌트는 매주 모두가 같은 컬러 미션을 받는 포토 챌린지. 현실 세계에서 그 색 찾아서 찍고, 하이브에 공유하면 됨.'],
+      ['details summary', 6, '사진 영구 보관됨?'],
+      ['details p', 6, '아니. 비캠 다이어리 사진은 24시간 동안만 보이게 설계됐음. 공유를 가볍고, 신선하고, 캐주얼하게 유지하는 게 목표임.'],
+      ['details summary', 7, '피트니스 앱임, 소셜 앱임?'],
+      ['details p', 7, '둘 다임. 걷기 + 걸음 추적 앱인데 소셜 기능, 데일리 사진, 친구 하이브, 재밌는 챌린지가 다 들어있음.'],
+      ['details summary', 8, '사진 꼭 올려야 됨?'],
+      ['details p', 8, '아니. 그냥 만보기 + 걷기 동기부여 앱으로만 써도 됨. 사진 공유랑 컬러헌트는 끼고 싶을 때 끼면 되는 거임.'],
+      ['details summary', 9, '어디서 다운받음?'],
+      ['details p', 9, 'iPhone용 App Store와 Android용 Google Play에서 지금 바로 다운받을 수 있음.'],
+      ['footer > p', 0, 'BuzzBuzz © 2026 · 걷고. 찍고. 버즈.']
+    ];
+
+    var enCache = {};
+
+    function setLang(lang) {
+      document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (!(key in enCache)) enCache[key] = el.textContent;
+        if (lang === 'ko' && KO[key]) el.textContent = KO[key];
+        else el.textContent = enCache[key];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        var cacheKey = 'aria:' + key;
+        if (!(cacheKey in enCache)) enCache[cacheKey] = el.getAttribute('aria-label') || '';
+        if (lang === 'ko' && KO[key]) el.setAttribute('aria-label', KO[key]);
+        else el.setAttribute('aria-label', enCache[cacheKey]);
+      });
+      MAP.forEach(function (row) {
+        var el = document.querySelectorAll(row[0])[row[1]];
+        if (!el) return;
+        var cacheKey = 's:' + row[0] + ':' + row[1];
+        if (!(cacheKey in enCache)) enCache[cacheKey] = el.textContent;
+        el.textContent = lang === 'ko' ? row[2] : enCache[cacheKey];
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+      try { localStorage.setItem('bb-lang', lang); } catch (e) {}
+      if (typeof window.__askHiveOnLangChange === 'function') {
+        window.__askHiveOnLangChange(lang === 'ko' ? 'ko' : 'en');
+      }
+    }
+
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+
+    /** URL ?lang= wins (for QR / share links); only ko → Korean, else English. */
+    function resolveLang() {
+      var urlLang = new URLSearchParams(window.location.search).get('lang');
+      if (urlLang !== null) {
+        return urlLang.toLowerCase().startsWith('ko') ? 'ko' : 'en';
+      }
+      try {
+        var saved = localStorage.getItem('bb-lang');
+        if (saved === 'ko') return 'ko';
+      } catch (e) {}
+      return 'en';
+    }
+
+    setLang(resolveLang());
+
+    /* ---- Ask the Hive (v1 experiment) ---- */
+    (function initAskHive() {
+      var ASK_HIVE_ENABLED = true;
+      var askHivePreview =
+        new URLSearchParams(window.location.search).get('askHive') === '1';
+      var isMarketing = document.documentElement.classList.contains('mode-marketing');
+      var showAskHive = (ASK_HIVE_ENABLED || askHivePreview) && isMarketing;
+      if (!showAskHive) return;
+
+      var root = document.getElementById('ask-hive');
+      var fab = document.getElementById('ask-hive-fab');
+      var panel = document.getElementById('ask-hive-panel');
+      var backdrop = document.getElementById('ask-hive-backdrop');
+      var closeBtn = document.getElementById('ask-hive-close');
+      var statusEl = document.getElementById('ask-hive-status');
+      var fallbackEl = document.getElementById('ask-hive-fallback');
+      if (!root || !fab || !panel) return;
+
+      document.documentElement.classList.add('ask-hive-on');
+      root.hidden = false;
+
+      /**
+       * Provider config — consumer prefill URLs are UNDOCUMENTED / fragile.
+       * Do not treat ChatGPT / Claude / Perplexity query params as official APIs.
+       * Update, disable, or swap destinations here without touching markup.
+       */
+      var PROVIDERS = {
+        chatgpt: {
+          id: 'chatgpt',
+          label: 'Ask ChatGPT',
+          // Undocumented: https://chatgpt.com/?q=… (not an official OpenAI API)
+          baseUrl: 'https://chatgpt.com/',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        claude: {
+          id: 'claude',
+          label: 'Ask Claude',
+          // Undocumented for consumer web chat: https://claude.ai/new?q=…
+          // (Official docs cover Claude Desktop claude:// and Claude Code URLs.)
+          baseUrl: 'https://claude.ai/new',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        perplexity: {
+          id: 'perplexity',
+          label: 'Ask Perplexity',
+          // Observed / community pattern: https://www.perplexity.ai/?q=… (may redirect)
+          baseUrl: 'https://www.perplexity.ai/',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        grok: {
+          id: 'grok',
+          label: 'Ask Grok',
+          // Undocumented / community pattern: https://grok.com/?q=… (not an official xAI API)
+          baseUrl: 'https://grok.com/',
+          queryParam: 'q',
+          supportsPromptPrefill: true,
+          enabled: true,
+          openMode: 'anchor'
+        },
+        copy: {
+          id: 'copy',
+          label: 'Copy prompt',
+          baseUrl: '',
+          supportsPromptPrefill: false,
+          enabled: true,
+          openMode: 'copy'
+        },
+        gemini: {
+          id: 'gemini',
+          label: 'Copy and open Gemini',
+          // No reliable native prompt-prefill URL — clipboard-first.
+          baseUrl: 'https://gemini.google.com/app',
+          supportsPromptPrefill: false,
+          enabled: true,
+          openMode: 'copy-open'
+        }
+      };
+
+      var PROMPTS = {
+        en:
+          "I'm viewing BuzzBuzz at " + window.location.href.split('#')[0] + ".\n\n" +
+          "BuzzBuzz is a playful social step-tracking app designed to help friends and families stay active together. Users join small Hives, contribute their daily steps, and care for expressive virtual bees. The experience is intended to feel warmer and less competitive than traditional fitness tracking apps.\n\n" +
+          "Based on the information available on the page, explain:\n" +
+          "1. How BuzzBuzz works\n" +
+          "2. Who it is best suited for\n" +
+          "3. How Hives support motivation and connection\n" +
+          "4. How it differs from more competitive fitness apps such as Strava\n\n" +
+          "Clearly distinguish facts found on the page from any assumptions or general advice.",
+        ko:
+          "지금 BuzzBuzz 페이지를 보고 있어요: " + window.location.href.split('#')[0] + "\n\n" +
+          "BuzzBuzz는 친구·가족이 함께 가볍게 걸을 수 있게 만든 소셜 만보기 앱이에요. 작은 하이브에 들어가 하루 걸음을 모으고, 표정이 있는 가상 벌을 돌보는 방식이에요. 전통적인 경쟁형 피트니스 앱보다 더 따뜻하고 부담이 적게 느껴지도록 설계됐어요.\n\n" +
+          "페이지에 있는 정보를 바탕으로 아래를 설명해 주세요:\n" +
+          "1. BuzzBuzz가 어떻게 작동하는지\n" +
+          "2. 어떤 사람에게 잘 맞는지\n" +
+          "3. 하이브가 동기부여와 연결감에 어떻게 도움이 되는지\n" +
+          "4. Strava처럼 더 경쟁적인 피트니스 앱과 어떻게 다른지\n\n" +
+          "페이지에서 확인되는 사실과, 추정이나 일반적인 조언을 분명히 구분해 주세요."
+      };
+
+      var STR = {
+        en: {
+          copied: 'Prompt copied',
+          copyError: "Couldn't copy. Select the text below and copy it yourself.",
+          geminiHint: 'Paste the prompt in Gemini.',
+          closeAria: 'Close'
+        },
+        ko: {
+          copied: '프롬프트를 복사했어요',
+          copyError: '복사를 못 했어요. 아래 텍스트를 직접 복사해 주세요.',
+          geminiHint: 'Gemini에 붙여넣어 주세요.',
+          closeAria: '닫기'
+        }
+      };
+
+      var isOpen = false;
+      var mqSheet = window.matchMedia('(max-width: 760px)');
+      var inertTargets = [];
+
+      function locale() {
+        return document.documentElement.lang === 'ko' ? 'ko' : 'en';
+      }
+
+      function trackAskHive(eventName, detail) {
+        var payload = detail || {};
+        payload.locale = locale();
+        payload.pageType = 'marketing';
+        try {
+          window.dispatchEvent(new CustomEvent('ask-hive:' + eventName, { detail: payload }));
+        } catch (e) {}
+      }
+
+      function getPrompt() {
+        return PROMPTS[locale()] || PROMPTS.en;
+      }
+
+      function providerUrl(provider, prompt) {
+        if (!provider || !provider.supportsPromptPrefill) return provider.baseUrl || '#';
+        var url = new URL(provider.baseUrl);
+        url.searchParams.set(provider.queryParam || 'q', prompt);
+        return url.toString();
+      }
+
+      function refreshAnchorHrefs() {
+        var prompt = getPrompt();
+        Object.keys(PROVIDERS).forEach(function (id) {
+          var provider = PROVIDERS[id];
+          if (!provider.enabled || provider.openMode !== 'anchor') return;
+          var el = root.querySelector('[data-ask-provider="' + id + '"]');
+          if (!el) return;
+          el.setAttribute('href', providerUrl(provider, prompt));
+        });
+      }
+
+      function setStatus(message, tone) {
+        statusEl.textContent = message || '';
+        if (tone) statusEl.setAttribute('data-tone', tone);
+        else statusEl.removeAttribute('data-tone');
+      }
+
+      function showFallback(text) {
+        fallbackEl.textContent = text;
+        fallbackEl.classList.add('is-visible');
+      }
+
+      function hideFallback() {
+        fallbackEl.classList.remove('is-visible');
+        fallbackEl.textContent = '';
+      }
+
+      function isSheetMode() {
+        return mqSheet.matches;
+      }
+
+      function getFocusable() {
+        return Array.prototype.slice.call(
+          panel.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])')
+        ).filter(function (el) {
+          if (el.hasAttribute('disabled') || el.getAttribute('aria-hidden') === 'true') return false;
+          // Avoid offsetParent checks — fixed-position panels often report null.
+          var style = window.getComputedStyle(el);
+          return style.visibility !== 'hidden' && style.display !== 'none';
+        });
+      }
+
+      function setBackgroundInert(on) {
+        inertTargets.forEach(function (el) {
+          if (on) el.setAttribute('inert', '');
+          else el.removeAttribute('inert');
+        });
+      }
+
+      function openPanel() {
+        if (isOpen) return;
+        isOpen = true;
+        hideFallback();
+        setStatus('');
+        refreshAnchorHrefs();
+        panel.hidden = false;
+        root.classList.add('is-open');
+        fab.setAttribute('aria-expanded', 'true');
+
+        if (isSheetMode()) {
+          root.classList.add('is-sheet-open');
+          backdrop.hidden = false;
+          panel.setAttribute('aria-modal', 'true');
+          setBackgroundInert(true);
+        } else {
+          root.classList.remove('is-sheet-open');
+          backdrop.hidden = true;
+          panel.removeAttribute('aria-modal');
+          setBackgroundInert(false);
+        }
+
+        var focusables = getFocusable();
+        (focusables[0] || closeBtn).focus();
+        trackAskHive('open', {});
+      }
+
+      function closePanel() {
+        if (!isOpen) return;
+        isOpen = false;
+        panel.hidden = true;
+        backdrop.hidden = true;
+        root.classList.remove('is-open', 'is-sheet-open');
+        fab.setAttribute('aria-expanded', 'false');
+        panel.removeAttribute('aria-modal');
+        setBackgroundInert(false);
+        fab.focus();
+        trackAskHive('close', {});
+      }
+
+      function togglePanel() {
+        if (isOpen) closePanel();
+        else openPanel();
+      }
+
+      function copyPrompt(providerId) {
+        var prompt = getPrompt();
+        var strings = STR[locale()];
+        var id = providerId || 'copy';
+        function ok() {
+          setStatus(strings.copied, 'ok');
+          hideFallback();
+          trackAskHive('copy_prompt', { providerId: id, prefillAttempted: false });
+          return true;
+        }
+        function fail() {
+          setStatus(strings.copyError, 'err');
+          showFallback(prompt);
+          trackAskHive('copy_error', { providerId: id, prefillAttempted: false });
+          return false;
+        }
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(prompt).then(ok).catch(fail);
+        }
+        try {
+          var ta = document.createElement('textarea');
+          ta.value = prompt;
+          ta.setAttribute('readonly', '');
+          ta.style.position = 'fixed';
+          ta.style.left = '-9999px';
+          document.body.appendChild(ta);
+          ta.select();
+          var success = document.execCommand('copy');
+          document.body.removeChild(ta);
+          return Promise.resolve(success ? ok() : fail());
+        } catch (e) {
+          return Promise.resolve(fail());
+        }
+      }
+
+      // Cache inert targets: marketing chrome except Ask Hive
+      inertTargets = Array.prototype.slice.call(
+        document.querySelectorAll('#marketing-content > :not(#ask-hive)')
+      );
+
+      fab.addEventListener('click', function () { togglePanel(); });
+      closeBtn.addEventListener('click', function () { closePanel(); });
+      backdrop.addEventListener('click', function () { closePanel(); });
+
+      document.addEventListener('keydown', function (e) {
+        if (!isOpen) return;
+        if (e.key === 'Escape') {
+          e.preventDefault();
+          closePanel();
+          return;
+        }
+        if (e.key !== 'Tab' || !isSheetMode()) return;
+        var focusables = getFocusable();
+        if (!focusables.length) return;
+        var first = focusables[0];
+        var last = focusables[focusables.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      });
+
+      document.addEventListener('pointerdown', function (e) {
+        if (!isOpen || isSheetMode()) return;
+        if (root.contains(e.target)) return;
+        closePanel();
+      });
+
+      function onBreakpointChange() {
+        if (!isOpen) return;
+        // Re-apply mode-specific a11y when crossing breakpoint while open.
+        closePanel();
+      }
+      if (typeof mqSheet.addEventListener === 'function') {
+        mqSheet.addEventListener('change', onBreakpointChange);
+      } else if (typeof mqSheet.addListener === 'function') {
+        mqSheet.addListener(onBreakpointChange);
+      }
+
+      root.querySelectorAll('[data-ask-provider]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          var id = el.getAttribute('data-ask-provider');
+          var provider = PROVIDERS[id];
+          if (!provider || !provider.enabled) {
+            e.preventDefault();
+            return;
+          }
+          trackAskHive('provider_select', {
+            providerId: id,
+            prefillAttempted: !!provider.supportsPromptPrefill
+          });
+
+          if (provider.openMode === 'copy') {
+            e.preventDefault();
+            copyPrompt('copy');
+            return;
+          }
+
+          if (provider.openMode === 'copy-open') {
+            e.preventDefault();
+            var strings = STR[locale()];
+            // Open Gemini synchronously in this click gesture, then copy.
+            var a = document.createElement('a');
+            a.href = provider.baseUrl;
+            a.target = '_blank';
+            a.rel = 'noopener';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            trackAskHive('external_open', {
+              providerId: id,
+              prefillAttempted: false
+            });
+            copyPrompt('gemini').then(function (ok) {
+              if (ok) {
+                setStatus(strings.copied + ' — ' + strings.geminiHint, 'ok');
+              }
+            });
+            return;
+          }
+
+          // Anchor mode: href already refreshed on open / language change.
+          trackAskHive('external_open', {
+            providerId: id,
+            prefillAttempted: true
+          });
+        });
+      });
+
+      window.__askHiveOnLangChange = function () {
+        refreshAnchorHrefs();
+        if (isOpen) {
+          setStatus('');
+          hideFallback();
+        }
+      };
+
+      refreshAnchorHrefs();
+    })();
+
+  })();
+  </script>
+  </div>
+
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var hasInviteParams = params.has('hiveId') || params.has('inviteId');
+
+      if (!hasInviteParams) {
+        return; // marketing i18n/scripts already in #marketing-content
+      }
+
+      // Invite visits should not be indexed as the marketing homepage.
+      var robots = document.querySelector('meta[name="robots"]');
+      if (robots) robots.setAttribute('content', 'noindex, follow');
+      var googlebot = document.querySelector('meta[name="googlebot"]');
+      if (googlebot) googlebot.setAttribute('content', 'noindex, follow');
+
+      // ---- EXISTING invite logic (unchanged) ----
+
     (function () {
       var params = new URLSearchParams(window.location.search);
       var hiveId = params.get("hiveId") || "";
@@ -376,10 +2335,13 @@
       storeBtnAndroid.hidden = !isAndroid;
 
       // Open button: keep https href for copy/share; click tries the custom scheme.
+      var startStoreFallback = null;
+
       openBtn.setAttribute("href", invitePageHttps);
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
         window.location.href = deepLink;
+        if (startStoreFallback) startStoreFallback();
       });
 
       if (isChatInApp) {
@@ -418,27 +2380,33 @@
         chatHint.hidden = false;
       } else {
         // ---- STANDARD BROWSER PATH (Chrome / Safari / Samsung / in-chat western apps) ----
-        // Original behavior: try the app via custom scheme, fall back to the store.
+        // Fixed 2026-08-11: no silent auto-attempt on page load. The store
+        // fallback only arms once the person taps "Open BuzzBuzz" (see the
+        // click handler above) -- otherwise visitors who already had the app
+        // installed were getting bounced to the store on a fixed timer before
+        // the custom-scheme confirmation dialog had a chance to work.
         var didHide = false;
         document.addEventListener("visibilitychange", function () {
           if (document.hidden) didHide = true;
         });
 
-        // Try to open app after first paint.
-        setTimeout(function () {
-          window.location.href = deepLink;
-        }, 120);
-
-        // If the page stayed visible, assume app is not installed -- offer store (with referrer on Android).
-        setTimeout(function () {
-          if (!didHide) {
-            window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
-          }
-        }, 1800);
+        var fallbackArmed = false;
+        startStoreFallback = function () {
+          if (fallbackArmed) return;
+          fallbackArmed = true;
+          setTimeout(function () {
+            if (!didHide) {
+              window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
+            }
+          }, 1800);
+        };
       }
 
       setLang(resolveLang());
     })();
+  
+    })();
   </script>
+
 </body>
 </html>
