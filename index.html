@@ -4,7 +4,7 @@
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var isInvite = params.has('hiveId') || params.has('inviteId');
+      var isInvite = params.has('i') || params.has('hiveId') || params.has('inviteId');
       document.documentElement.classList.add(isInvite ? 'mode-invite' : 'mode-marketing');
     })();
   </script>
@@ -33,14 +33,15 @@
   <meta property="og:site_name" content="BuzzBuzz" />
   <meta property="og:url" content="https://buzzbuzz.club/" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:image" content="https://buzzbuzz.club/app-icon.png" />
-  <meta property="og:image:alt" content="BuzzBuzz app icon — a cozy step counter and social walking app" />
+  <!-- 1200×630 invite/share card — Van designing separately; file not uploaded yet (404 until then). -->
+  <meta property="og:image" content="https://buzzbuzz.club/og-invite.png" />
+  <meta property="og:image:alt" content="BuzzBuzz — join a hive and walk with friends" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="BuzzBuzz — Walk with your hive" />
   <meta name="twitter:description" content="Step counter + social walking app. Daily photos, weekly Color Hunts, and a hive of friends." />
-  <meta name="twitter:image" content="https://buzzbuzz.club/app-icon.png" />
+  <meta name="twitter:image" content="https://buzzbuzz.club/og-invite.png" />
 
   <!-- Favicon (absolute URLs — required for GitHub Pages subpaths & Google Search) -->
   <link rel="icon" type="image/png" sizes="48x48" href="https://buzzbuzz.club/favicon-48.png" />
@@ -2132,7 +2133,7 @@
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var hasInviteParams = params.has('hiveId') || params.has('inviteId');
+      var hasInviteParams = params.has('i') || params.has('hiveId') || params.has('inviteId');
 
       if (!hasInviteParams) {
         return; // marketing i18n/scripts already in #marketing-content
@@ -2148,9 +2149,15 @@
 
     (function () {
       var params = new URLSearchParams(window.location.search);
+      // Short form: ?i=<inviteId> where inviteId = `${hiveId}-${Date.now()}`.
+      // Legacy form still accepted: ?hiveId=&from=&inviteId=
+      var inviteId = params.get("i") || params.get("inviteId") || "";
       var hiveId = params.get("hiveId") || "";
       var from = params.get("from") || "";
-      var inviteId = params.get("inviteId") || "";
+      if (!hiveId && inviteId) {
+        var tsMatch = inviteId.match(/^(.+)-\d{13,}$/);
+        if (tsMatch) hiveId = tsMatch[1];
+      }
 
       var ua = navigator.userAgent || "";
       var isAndroid = /Android/i.test(ua);
@@ -2163,15 +2170,21 @@
       var isChatInApp = isKakao || isLine || isWeChat;
 
       // ---- Deep link (custom scheme) ----
+      // Pass short `i` when present so the app can resolve fromUsername after sign-in.
+      // Keep hiveId/from/inviteId for legacy deep links and older app builds.
       var deepLink =
         "buzzbuzz://community/friend/new?hiveId=" + encodeURIComponent(hiveId) +
         "&from=" + encodeURIComponent(from) +
-        "&inviteId=" + encodeURIComponent(inviteId);
+        "&inviteId=" + encodeURIComponent(inviteId) +
+        (inviteId ? "&i=" + encodeURIComponent(inviteId) : "");
 
       // ---- Store URLs ----
-      // Android Play URL carries the Install Referrer payload (hiveId + from only;
-      // inviteId intentionally dropped to keep payload short -- join needs only these two).
-      var referrerPayload = new URLSearchParams({ hiveId: hiveId, from: from }).toString();
+      // Android Play Install Referrer: short `i=` (hiveId recoverable); legacy hiveId+from kept when present.
+      var referrerParams = inviteId
+        ? { i: inviteId, hiveId: hiveId }
+        : { hiveId: hiveId, from: from };
+      if (from) referrerParams.from = from;
+      var referrerPayload = new URLSearchParams(referrerParams).toString();
       var storeUrlIos = "https://apps.apple.com/app/id6767195595";
       var storeUrlAndroid =
         "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker" +
