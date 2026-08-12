@@ -2135,38 +2135,6 @@
   <script>
     (function () {
       var params = new URLSearchParams(window.location.search);
-      var hasInviteParams = params.has('hiveId') || params.has('inviteId');
-
-      if (!hasInviteParams) {
-        return; // marketing i18n/scripts already in #marketing-content
-      }
-
-      // Invite visits should not be indexed as the marketing homepage.
-      var robots = document.querySelector('meta[name="robots"]');
-      if (robots) robots.setAttribute('content', 'noindex, follow');
-      var googlebot = document.querySelector('meta[name="googlebot"]');
-      if (googlebot) googlebot.setAttribute('content', 'noindex, follow');
-
-      // ---- EXISTING invite logic (unchanged) ----
-
-    (function () {
-      var params = new URLSearchParams(window.location.search);
-      var hasInviteParams = params.has('i') || params.has('hiveId') || params.has('inviteId');
-
-      if (!hasInviteParams) {
-        return; // marketing i18n/scripts already in #marketing-content
-      }
-
-      // Invite visits should not be indexed as the marketing homepage.
-      var robots = document.querySelector('meta[name="robots"]');
-      if (robots) robots.setAttribute('content', 'noindex, follow');
-      var googlebot = document.querySelector('meta[name="googlebot"]');
-      if (googlebot) googlebot.setAttribute('content', 'noindex, follow');
-
-      // ---- EXISTING invite logic (unchanged) ----
-
-    (function () {
-      var params = new URLSearchParams(window.location.search);
       // Short form: ?i=<inviteId> where inviteId = `${hiveId}-${Date.now()}`.
       // Legacy form still accepted: ?hiveId=&from=&inviteId=
       var inviteId = params.get("i") || params.get("inviteId") || "";
@@ -2176,6 +2144,17 @@
         var tsMatch = inviteId.match(/^(.+)-\d{13,}$/);
         if (tsMatch) hiveId = tsMatch[1];
       }
+
+      var hasInviteParams = params.has("i") || params.has("hiveId") || params.has("inviteId");
+      if (!hasInviteParams) {
+        return; // marketing i18n/scripts already in #marketing-content
+      }
+
+      // Invite visits should not be indexed as the marketing homepage.
+      var robots = document.querySelector('meta[name="robots"]');
+      if (robots) robots.setAttribute('content', 'noindex, follow');
+      var googlebot = document.querySelector('meta[name="googlebot"]');
+      if (googlebot) googlebot.setAttribute('content', 'noindex, follow');
 
       var ua = navigator.userAgent || "";
       var isAndroid = /Android/i.test(ua);
@@ -2365,12 +2344,26 @@
       storeBtnIos.hidden = isAndroid;
       storeBtnAndroid.hidden = !isAndroid;
 
-      // Open button: keep https href for copy/share; click tries the custom scheme.
+      // Open button: keep https href for copy/share; click tries the app.
+      // Android Chrome silently no-ops a bare `buzzbuzz://...` assignment even
+      // with a user gesture. Use intent:// which names the Play package and
+      // carries a Play Store fallback. iOS keeps the custom scheme + JS timer.
+      // Confirmed 1.0.39 / Android 76 MainActivity already has VIEW+BROWSABLE
+      // for scheme=buzzbuzz (no host restriction) — this is website-side only.
       var startStoreFallback = null;
+      var androidOpenUrl =
+        "intent://" + deepLink.replace(/^buzzbuzz:\/\//, "") +
+        "#Intent;scheme=buzzbuzz;package=com.buzzbuzz.steptracker;" +
+        "S.browser_fallback_url=" + encodeURIComponent(storeUrlAndroid) +
+        ";end";
 
       openBtn.setAttribute("href", invitePageHttps);
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
+        if (isAndroid) {
+          window.location.href = androidOpenUrl;
+          return;
+        }
         window.location.href = deepLink;
         if (startStoreFallback) startStoreFallback();
       });
@@ -2434,8 +2427,6 @@
       }
 
       setLang(resolveLang());
-    })();
-  
     })();
   </script>
 
