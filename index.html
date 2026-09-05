@@ -2208,6 +2208,16 @@
       // Same invite as the address bar -- safe to copy/paste into chat as a tappable link.
       var invitePageHttps = window.location.href.split("#")[0];
 
+      /** Share URL shape for deferred iOS install clipboard hydrate (parseInviteSearchParams). */
+      var clipboardInviteUrl = (function () {
+        if (inviteId) {
+          var q = new URLSearchParams({ i: inviteId });
+          if (from) q.set("from", from);
+          return "https://buzzbuzz.club/?" + q.toString();
+        }
+        return invitePageHttps;
+      })();
+
       // ---- Element refs ----
       var fromText = document.getElementById("fromText");
       var openBtn = document.getElementById("openBtn");
@@ -2438,6 +2448,13 @@
           fallbackArmed = true;
           setTimeout(function () {
             if (!didHide) {
+              // iOS only (Android returns above / never arms this timer): seed clipboard
+              // for deferred-install hydrate after App Store install.
+              try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(clipboardInviteUrl).catch(function () {});
+                }
+              } catch (err) {}
               window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
             }
           }, 1800);
