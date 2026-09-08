@@ -55,6 +55,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
+  <link rel="preload" as="image" href="hero/background.webp" fetchpriority="high" />
 
   <!-- Structured data: MobileApplication -->
   <script type="application/ld+json">
@@ -235,52 +236,181 @@
     }
     .skip-link:focus { left: 12px; top: 12px; }
 
+    #marketing-content > header {
+      overflow-x: clip;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 110'><polygon points='50,4 96,28 96,82 50,106 4,82 4,28' fill='none' stroke='%23efaa08' stroke-width='1.6'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 110'><polygon points='50,4 96,28 96,82 50,106 4,82 4,28' fill='none' stroke='%23efaa08' stroke-width='1.6'/></svg>");
+      background-repeat: no-repeat;
+      background-position: 5% 82%, 58% 8%;
+      background-size: 150px 165px, 110px 122px;
+    }
+
     .hero {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "copy visual"
-        "ph visual";
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
       align-items: center;
-      column-gap: 56px;
-      max-width: 1120px;
+      column-gap: 28px;
+      max-width: 1180px;
       margin: 0 auto;
-      padding: 96px 24px 72px;
+      padding: 72px 24px 56px;
       text-align: left;
     }
 
-    .hero-copy { grid-area: copy; text-align: left; }
-    .hero-visual { grid-area: visual; }
-    .hero .ph-badge { grid-area: ph; }
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+      max-width: 540px;
+    }
 
-    .hero-visual img {
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-deco-hand {
       display: block;
-      width: 100%;
-      max-width: 440px;
+      width: min(240px, 62%);
       height: auto;
-      margin-left: auto;
+      margin: 0 0 6px -10px;
+      pointer-events: none;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 4px 0 18px;
     }
 
     .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 0 18px;
-      border-radius: 22px;
+      width: 58px;
+      height: 58px;
+      margin: 0;
+      border-radius: 16px;
       display: block;
-      box-shadow: 0 14px 32px rgba(65, 45, 10, .14);
+      box-shadow: 0 10px 22px rgba(65, 45, 10, .14);
       object-fit: cover;
     }
 
-    h1, h2, h3, .quote, summary, .store-badge .badge-large {
+    .hero-wordmark {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -.6px;
+      line-height: 1;
+    }
+
+    .hero-line {
+      display: block;
+    }
+
+    .hero-hive {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-underline {
+      position: absolute;
+      left: -6%;
+      width: 114%;
+      height: auto;
+      bottom: -.32em;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-hive > span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-community {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+      max-width: 360px;
+    }
+
+    .hero-avatars {
+      width: 152px;
+      height: auto;
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+
+    .hero-community p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.35;
+      color: #5a4b41;
+    }
+
+    .hero-art {
+      position: relative;
+      width: min(100%, 580px);
+      margin-left: auto;
+      margin-right: -24px;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 94%;
+      max-width: 520px;
+      height: auto;
+      margin: 2% 0 4% auto;
+      transform: rotate(-2.2deg);
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 12px 28px rgba(65, 45, 10, .08));
+    }
+
+    .hero-dash,
+    .hero-namsan,
+    .hero-bee {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .hero-dash {
+      z-index: 0;
+      width: 82%;
+      height: auto;
+      left: 6%;
+      bottom: 5%;
+    }
+
+    .hero-namsan {
+      z-index: 2;
+      width: 44%;
+      max-width: 210px;
+      height: auto;
+      left: -6%;
+      bottom: 18%;
+      filter: drop-shadow(0 10px 18px rgba(65, 45, 10, .12));
+    }
+
+    .hero-bee {
+      z-index: 3;
+      width: 32%;
+      max-width: 160px;
+      height: auto;
+      top: -6%;
+      right: -2%;
+    }
+
+    h1, h2, h3, .quote, summary, .store-badge .badge-large, .hero-wordmark {
       font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    h1 {
-      font-size: clamp(48px, 8.5vw, 84px);
+    .hero h1 {
+      font-size: clamp(34px, 4.2vw + 10px, 58px);
       font-weight: 800;
-      line-height: .95;
-      margin: 0 0 18px;
-      letter-spacing: -2px;
+      line-height: 1.06;
+      margin: 0 0 16px;
+      letter-spacing: -1.4px;
     }
 
     h2 {
@@ -301,9 +431,9 @@
     p { margin-top: 0; }
 
     .subtitle {
-      max-width: 520px;
-      margin: 0 0 36px;
-      font-size: 22px;
+      max-width: 460px;
+      margin: 0 0 24px;
+      font-size: 18px;
       color: #5a4b41; /* bumped contrast from #6a5a50 */
     }
 
@@ -312,32 +442,7 @@
       justify-content: flex-start;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .ph-badge {
-      margin: 20px 0 0;
-    }
-
-    .ph-badge a {
-      display: inline-block;
-      line-height: 0;
-      border-radius: 8px;
-      transition: opacity .15s ease, transform .15s ease;
-    }
-
-    .ph-badge a:hover,
-    .ph-badge a:focus-visible {
-      opacity: .92;
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .ph-badge img {
-      display: block;
-      width: 250px;
-      max-width: min(250px, 100%);
-      height: auto;
+      margin-top: 0;
     }
 
     .store-badge {
@@ -563,23 +668,76 @@
       vertical-align: -2px;
     }
 
+    @media (max-width: 1024px) {
+      .hero {
+        column-gap: 16px;
+        padding: 64px 24px 48px;
+      }
+      .hero-art {
+        width: min(100%, 480px);
+        margin-right: -8px;
+      }
+      .hero-photo { max-width: 400px; width: 92%; }
+      .hero-bee { width: 26%; max-width: 128px; }
+      .hero-namsan { width: 40%; max-width: 176px; left: -4%; }
+      .hero-deco-hand { width: min(210px, 58%); }
+      .store-badge { min-width: 176px; padding: 10px 16px 10px 14px; }
+    }
+
     @media (max-width: 760px) {
       .hero {
-        display: block;
-        text-align: center;
-        padding-top: 72px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+        padding: 48px 20px 20px;
       }
-      .hero-copy { text-align: center; }
-      .logo { margin: 0 auto 18px; }
+      .hero-copy {
+        max-width: none;
+        text-align: left;
+      }
+      .hero-deco-hand {
+        width: min(168px, 64%);
+        margin: 0 0 2px -4px;
+      }
+      .hero-brand { margin: 2px 0 12px; }
+      .logo { width: 48px; height: 48px; border-radius: 13px; }
+      .hero-wordmark { font-size: 24px; }
+      .hero h1 { font-size: clamp(30px, 8vw, 38px); letter-spacing: -1px; margin-bottom: 12px; }
       .subtitle {
-        max-width: 720px;
-        margin: 0 auto 36px;
-        font-size: 18px;
+        max-width: none;
+        margin: 0 0 16px;
+        font-size: 15px;
       }
-      .cta-row { justify-content: center; }
-      .hero-visual img {
-        max-width: min(400px, 88vw);
-        margin: 32px auto 0;
+      .cta-row { justify-content: flex-start; gap: 10px; }
+      .hero-community { margin-top: 14px; max-width: none; }
+      .hero-avatars { width: 120px; }
+      .hero-art {
+        width: min(92%, 300px);
+        margin: 12px auto 0;
+      }
+      .hero-photo {
+        width: 90%;
+        max-width: 268px;
+        margin: 8% auto 2%;
+        transform: rotate(-1.4deg);
+      }
+      .hero-dash { display: none; }
+      .hero-bee {
+        width: 22%;
+        max-width: 72px;
+        top: 0;
+        right: 4%;
+      }
+      .hero-namsan {
+        width: 38%;
+        max-width: 118px;
+        left: -2%;
+        bottom: 8%;
+      }
+      #marketing-content > header {
+        background-size: 96px 106px, 80px 88px;
+        background-position: 8% 88%, 78% 6%;
       }
       .split { grid-template-columns: 1fr; }
       .text-block { padding: 26px; }
@@ -1192,16 +1350,32 @@
   <header>
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
-        <img class="logo"
-             src="https://buzzbuzz.club/app-icon.png"
-             alt="BuzzBuzz app icon"
-             width="88" height="88"
-             loading="eager" />
+        <img class="hero-deco-hand"
+             src="hero/deco-small-walks.webp"
+             alt=""
+             width="714" height="248"
+             decoding="async" fetchpriority="low"
+             aria-hidden="true" />
 
-        <h1 id="page-title">BuzzBuzz</h1>
+        <div class="hero-brand">
+          <img class="logo"
+               src="https://buzzbuzz.club/app-icon.png"
+               alt="BuzzBuzz app icon"
+               width="88" height="88"
+               loading="eager" />
+          <span class="hero-wordmark">BuzzBuzz</span>
+        </div>
+
+        <h1 id="page-title">
+          <span class="hero-line" data-i18n="hero.line1">Your daily walk</span>
+          <span class="hero-line" data-i18n="hero.line2">is better with</span>
+          <span class="hero-line">
+            <span data-i18n="hero.beforeHive">a </span><span class="hero-hive"><span data-i18n="hero.hive">hive.</span><img class="hero-underline" src="hero/underline.webp" alt="" width="561" height="85" decoding="async" fetchpriority="low" aria-hidden="true" /></span>
+          </span>
+        </h1>
 
         <p class="subtitle">
-          A cozy step counter and social walking app for friends. Daily walks, tiny real moments, and weekly Color Hunts.
+          A cozy step counter for friends. Track your steps, share one small moment a day, and keep your hive moving together.
         </p>
 
         <nav class="cta-row" aria-label="Download BuzzBuzz">
@@ -1254,26 +1428,45 @@
             </span>
           </a>
         </nav>
+
+        <div class="hero-community">
+          <img class="hero-avatars"
+               src="hero/portraits.webp"
+               alt=""
+               width="355" height="100"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+          <p data-i18n="hero.community">Made for walkers, friends, and small hives.</p>
+        </div>
       </div>
 
       <div class="hero-visual">
-        <img src="beach-visual.webp"
-             alt="Woman on a sunset beach walk checking her step count in the BuzzBuzz app"
-             width="656" height="850"
-             fetchpriority="high" decoding="async" />
+        <div class="hero-art">
+          <img class="hero-dash"
+               src="hero/dash-bottom.webp"
+               alt=""
+               width="730" height="329"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+          <img class="hero-photo"
+               src="hero/background.webp"
+               alt="Woman on a sunset beach walk checking her step count in the BuzzBuzz app"
+               width="896" height="1016"
+               fetchpriority="high" decoding="async" />
+          <img class="hero-namsan"
+               src="hero/namsan.webp"
+               alt=""
+               width="365" height="258"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+          <img class="hero-bee"
+               src="hero/bee-deco.webp"
+               alt=""
+               width="377" height="456"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+        </div>
       </div>
-
-      <p class="ph-badge">
-        <a href="https://www.producthunt.com/products/buzzbuzz-step-tracker?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-buzzbuzz-step-tracker"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="BuzzBuzz on Product Hunt">
-          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1175163&amp;theme=light&amp;t=1781850749371"
-               alt="BuzzBuzz - Step Tracker - A cozy step counter and social walking app for friends | Product Hunt"
-               width="250"
-               height="54" />
-        </a>
-      </p>
     </section>
   </header>
 
@@ -1622,6 +1815,11 @@
     /* ---- EN / KO toggle ----
        Korean voice: modern, expressive, slang-forward Gen Z energy. */
     var KO = {
+      'hero.line1': '매일 산책은',
+      'hero.line2': '같이하면 더 빛나',
+      'hero.beforeHive': '\u200b',
+      'hero.hive': '하이브.',
+      'hero.community': '워커, 친구, 작은 하이브들을 위해 만들었어.',
       'bees.title': '우리 벌들 소개',
       'bees.intro': '워커라면 벌 하나쯤은 있어야지. 허니샵에서 스킨 모으고, 내 아이콘 정하고, 성격까지 통째로 맡겨버려. 벌 누르면 세계관 나옴 — ㄹㅇ 세계관 있음.',
       'bees.more': '세계관 보기 →',
@@ -1658,7 +1856,7 @@
 
     /* Existing page copy, addressed by stable selectors (index = nth match). */
     var MAP = [
-      ['.subtitle', 0, '친구들이랑 걷는 만보기 앱인데, 분위기가 좀 다름. 매일 걷고, 하루 한 컷 찍고, 주간 컬러헌트까지. 이게 되네?'],
+      ['.subtitle', 0, '친구들이랑 쓰는 아늑한 만보기. 걸음 수 찍고, 하루에 작은 순간 하나 공유하고, 하이브가 같이 움직이는 거지.'],
       ['#what-is-buzzbuzz', 0, '하이브랑 같이 걷자'],
       ['.intro p', 0, 'BuzzBuzz는 압박 말고 친구 중심으로 만든 만보기 앱임. 걸음 수 찍고, 하이브 들어가고, 하루에 사진 한 장 올리고 — 걷기가 작은 소셜 리추얼이 되는 거지. 운동인데 안 빡세고, 소셜인데 안 시끄러움. 이 조합 ㄹㅇ 미쳤다.'],
       ['.grid .card h3', 0, '걸음 수 카운터'],
