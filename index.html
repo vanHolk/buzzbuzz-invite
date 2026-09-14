@@ -55,6 +55,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
+  <link rel="preload" as="image" href="hero/background.webp" fetchpriority="high" />
 
   <!-- Structured data: MobileApplication -->
   <script type="application/ld+json">
@@ -235,52 +236,250 @@
     }
     .skip-link:focus { left: 12px; top: 12px; }
 
-    .hero {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-areas:
-        "copy visual"
-        "ph visual";
-      align-items: center;
-      column-gap: 56px;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 96px 24px 72px;
-      text-align: left;
+    #marketing-content > header {
+      overflow-x: clip;
+      background-image:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 110'><polygon points='50,4 96,28 96,82 50,106 4,82 4,28' fill='none' stroke='%23efaa08' stroke-width='1.6' opacity='0.25'/></svg>"),
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 110'><polygon points='50,4 96,28 96,82 50,106 4,82 4,28' fill='none' stroke='%23efaa08' stroke-width='1.6' opacity='0.25'/></svg>");
+      background-repeat: no-repeat;
+      background-position: 5% 82%, calc(58% + var(--hex-x, 0px)) calc(8% + var(--hex-y, 0px));
+      background-size: 150px 165px, 110px 122px;
     }
 
-    .hero-copy { grid-area: copy; text-align: left; }
-    .hero-visual { grid-area: visual; }
-    .hero .ph-badge { grid-area: ph; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr);
+      align-items: center;
+      column-gap: 28px;
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 72px 24px 56px;
+      text-align: left;
+      --hero-in-y: 8px;
+      --hero-in-photo: 12px;
+    }
 
-    .hero-visual img {
+    .hero-copy {
+      position: relative;
+      z-index: 1;
+      text-align: left;
+      max-width: 540px;
+    }
+
+    .hero-visual {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-deco-hand {
       display: block;
-      width: 100%;
-      max-width: 440px;
+      width: min(240px, 62%);
       height: auto;
-      margin-left: auto;
+      margin: 0 0 6px -10px;
+      pointer-events: none;
+    }
+
+    .hero-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 4px 0 18px;
     }
 
     .logo {
-      width: 88px;
-      height: 88px;
-      margin: 0 0 18px;
-      border-radius: 22px;
+      width: 58px;
+      height: 58px;
+      margin: 0;
+      border-radius: 16px;
       display: block;
-      box-shadow: 0 14px 32px rgba(65, 45, 10, .14);
+      box-shadow: 0 10px 22px rgba(65, 45, 10, .14);
       object-fit: cover;
     }
 
-    h1, h2, h3, .quote, summary, .store-badge .badge-large {
+    .hero-wordmark {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: -.6px;
+      line-height: 1;
+    }
+
+    .hero-line {
+      display: block;
+    }
+
+    .hero-hive {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero-underline {
+      position: absolute;
+      left: -6%;
+      width: 114%;
+      height: auto;
+      bottom: -.32em;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-hive > span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-community {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 22px;
+      max-width: 360px;
+    }
+
+    .hero-avatars {
+      width: 152px;
+      height: auto;
+      flex-shrink: 0;
+      pointer-events: none;
+    }
+
+    .hero-community p {
+      margin: 0;
+      font-size: 13px;
+      line-height: 1.35;
+      color: #5a4b41;
+    }
+
+    .hero-art {
+      position: relative;
+      width: min(100%, 580px);
+      margin-left: auto;
+      margin-right: -24px;
+      --hx: 0;
+      --hy: 0;
+    }
+
+    .hero-photo {
+      display: block;
+      width: 94%;
+      max-width: 520px;
+      height: auto;
+      margin: 2% 0 4% auto;
+      --hero-photo-rot: -2.2deg;
+      transform: rotate(var(--hero-photo-rot));
+      position: relative;
+      z-index: 1;
+      filter:
+        drop-shadow(0 8px 18px rgba(189, 134, 25, .12))
+        drop-shadow(0 22px 44px rgba(189, 134, 25, .10))
+        drop-shadow(0 6px 16px rgba(110, 79, 26, .07));
+    }
+
+    .hero-dash,
+    .hero-namsan,
+    .hero-bee {
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .hero-dash {
+      z-index: 0;
+      width: 82%;
+      height: auto;
+      left: 6%;
+      bottom: 5%;
+      transform: translate3d(calc(var(--hx) * 3px), calc(var(--hy) * 2px), 0);
+    }
+
+    .hero-namsan {
+      z-index: 2;
+      width: 44%;
+      max-width: 210px;
+      height: auto;
+      left: -6%;
+      bottom: 18%;
+      filter: drop-shadow(0 10px 18px rgba(65, 45, 10, .12));
+      transform: translate3d(calc(var(--hx) * -4px), calc(var(--hy) * -3px), 0);
+    }
+
+    .hero-bee {
+      z-index: 3;
+      width: 38%;
+      max-width: 192px;
+      height: auto;
+      top: -6%;
+      right: -10%;
+      transform: translate3d(calc(var(--hx) * 8px), calc(var(--hy) * 5px), 0);
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-deco-hand {
+        animation: heroIn 560ms cubic-bezier(.22, 1, .36, 1) backwards;
+      }
+      .hero-brand,
+      .hero h1,
+      .subtitle,
+      .cta-row {
+        animation: heroIn 620ms cubic-bezier(.22, 1, .36, 1) 70ms backwards;
+      }
+      .hero-community {
+        animation: heroIn 560ms cubic-bezier(.22, 1, .36, 1) 140ms backwards;
+      }
+      .hero-photo {
+        animation: heroInPhoto 660ms cubic-bezier(.22, 1, .36, 1) 90ms backwards;
+      }
+      .hero-dash {
+        animation: heroInLayer 600ms cubic-bezier(.22, 1, .36, 1) 120ms backwards;
+      }
+      .hero-namsan {
+        animation: heroInNamsan 650ms cubic-bezier(.22, 1, .36, 1) 180ms backwards;
+      }
+      .hero-bee {
+        animation: heroInBee 620ms cubic-bezier(.22, 1, .36, 1) 260ms backwards;
+      }
+    }
+
+    @keyframes heroIn {
+      from {
+        opacity: 0;
+        transform: translateY(var(--hero-in-y));
+      }
+    }
+    @keyframes heroInPhoto {
+      from {
+        opacity: 0;
+        transform: rotate(var(--hero-photo-rot)) translateY(var(--hero-in-photo));
+      }
+    }
+    @keyframes heroInLayer {
+      from {
+        opacity: 0;
+        transform: translate3d(calc(var(--hx) * 3px), calc(var(--hy) * 2px + 8px), 0);
+      }
+    }
+    @keyframes heroInNamsan {
+      from {
+        opacity: 0;
+        transform: translate3d(calc(var(--hx) * -4px), calc(var(--hy) * -3px + 14px), 0);
+      }
+    }
+    @keyframes heroInBee {
+      from {
+        opacity: 0;
+        transform: translate3d(calc(var(--hx) * 8px), calc(var(--hy) * 5px + 10px), 0);
+      }
+    }
+
+    h1, h2, h3, .quote, summary, .store-badge .badge-large, .hero-wordmark {
       font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
     }
 
-    h1 {
-      font-size: clamp(48px, 8.5vw, 84px);
+    .hero h1 {
+      font-size: clamp(34px, 4.2vw + 10px, 58px);
       font-weight: 800;
-      line-height: .95;
-      margin: 0 0 18px;
-      letter-spacing: -2px;
+      line-height: 1.06;
+      margin: 0 0 16px;
+      letter-spacing: -1.4px;
     }
 
     h2 {
@@ -301,9 +500,9 @@
     p { margin-top: 0; }
 
     .subtitle {
-      max-width: 520px;
-      margin: 0 0 36px;
-      font-size: 22px;
+      max-width: 460px;
+      margin: 0 0 24px;
+      font-size: 18px;
       color: #5a4b41; /* bumped contrast from #6a5a50 */
     }
 
@@ -312,32 +511,7 @@
       justify-content: flex-start;
       gap: 14px;
       flex-wrap: wrap;
-      margin-top: 28px;
-    }
-
-    .ph-badge {
-      margin: 20px 0 0;
-    }
-
-    .ph-badge a {
-      display: inline-block;
-      line-height: 0;
-      border-radius: 8px;
-      transition: opacity .15s ease, transform .15s ease;
-    }
-
-    .ph-badge a:hover,
-    .ph-badge a:focus-visible {
-      opacity: .92;
-      transform: translateY(-1px);
-      outline: none;
-    }
-
-    .ph-badge img {
-      display: block;
-      width: 250px;
-      max-width: min(250px, 100%);
-      height: auto;
+      margin-top: 0;
     }
 
     .store-badge {
@@ -563,23 +737,96 @@
       vertical-align: -2px;
     }
 
+    @media (max-width: 1024px) {
+      .hero {
+        column-gap: 16px;
+        padding: 64px 24px 48px;
+      }
+      .hero-art {
+        width: min(100%, 480px);
+        margin-right: -8px;
+      }
+      .hero-photo { max-width: 400px; width: 92%; }
+      .hero-bee { width: 31%; max-width: 154px; right: -8%; }
+      .hero-namsan { width: 40%; max-width: 176px; left: -4%; }
+      .hero-deco-hand { width: min(210px, 58%); }
+      .store-badge { min-width: 176px; padding: 10px 16px 10px 14px; }
+    }
+
     @media (max-width: 760px) {
       .hero {
-        display: block;
-        text-align: center;
-        padding-top: 72px;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        text-align: left;
+        padding: 48px 20px 20px;
       }
-      .hero-copy { text-align: center; }
-      .logo { margin: 0 auto 18px; }
+      .hero-copy {
+        max-width: none;
+        text-align: left;
+      }
+      .hero-deco-hand {
+        width: min(168px, 64%);
+        margin: 0 0 2px -4px;
+      }
+      .hero-brand { margin: 2px 0 12px; }
+      .logo { width: 48px; height: 48px; border-radius: 13px; }
+      .hero-wordmark { font-size: 24px; }
+      .hero h1 { font-size: clamp(30px, 8vw, 38px); letter-spacing: -1px; margin-bottom: 12px; }
       .subtitle {
-        max-width: 720px;
-        margin: 0 auto 36px;
-        font-size: 18px;
+        max-width: none;
+        margin: 0 0 16px;
+        font-size: 15px;
       }
-      .cta-row { justify-content: center; }
-      .hero-visual img {
-        max-width: min(400px, 88vw);
-        margin: 32px auto 0;
+      .cta-row { justify-content: flex-start; gap: 10px; }
+      .hero-community { margin-top: 14px; max-width: none; }
+      .hero-avatars { width: 120px; }
+      .hero-art {
+        width: min(92%, 300px);
+        margin: 12px auto 0;
+      }
+      .hero-photo {
+        width: 90%;
+        max-width: 268px;
+        margin: 8% auto 2%;
+        --hero-photo-rot: -1.4deg;
+      }
+      .hero-dash { display: none; }
+      .hero-bee {
+        width: 26%;
+        max-width: 86px;
+        top: 0;
+        right: -2%;
+      }
+      .hero-namsan {
+        width: 38%;
+        max-width: 118px;
+        left: -2%;
+        bottom: 8%;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        .hero {
+          --hero-in-y: 4px;
+          --hero-in-photo: 6px;
+        }
+        .hero-deco-hand,
+        .hero-brand,
+        .hero h1,
+        .subtitle,
+        .cta-row,
+        .hero-community {
+          animation-duration: 480ms;
+        }
+        .hero-photo,
+        .hero-dash,
+        .hero-namsan,
+        .hero-bee {
+          animation-duration: 500ms;
+        }
+      }
+      #marketing-content > header {
+        background-size: 96px 106px, 80px 88px;
+        background-position: 8% 88%, 78% 6%;
       }
       .split { grid-template-columns: 1fr; }
       .text-block { padding: 26px; }
@@ -641,6 +888,7 @@
     }
     .bee-carousel::-webkit-scrollbar { display: none; }
     .bee-slide {
+      position: relative;
       scroll-snap-align: center;
       flex: 0 0 min(78vw, 300px);
       background: #fffaf1;
@@ -689,6 +937,21 @@
       font-weight: 700;
       color: #c98a06;
     }
+    .bee-soon-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: #2d221c;
+      background: #efaa08;
+      border: 2px solid #2d221c;
+      border-radius: 999px;
+      padding: 4px 10px;
+    }
     .bee-nav {
       position: absolute;
       top: 50%;
@@ -721,6 +984,98 @@
       html { scroll-behavior: auto; }
       .button { transition: none; }
       .bee-slide, .bee-nav { transition: none; }
+      .hero-deco-hand,
+      .hero-brand,
+      .hero h1,
+      .subtitle,
+      .cta-row,
+      .hero-community,
+      .hero-photo,
+      .hero-dash,
+      .hero-namsan,
+      .hero-bee,
+      .qr-download-card {
+        animation: none !important;
+      }
+    }
+
+    .qr-download-card {
+      display: none;
+      position: fixed;
+      z-index: 40;
+      left: 24px;
+      bottom: 24px;
+      width: 102px;
+      padding: 8px 6px 7px;
+      text-decoration: none;
+      color: #2d221c;
+      background: #fffaf1;
+      border: 2px solid #eadbc7;
+      border-radius: 16px;
+      box-shadow:
+        0 8px 24px rgba(189, 134, 25, .10),
+        0 4px 12px rgba(110, 79, 26, .07);
+      text-align: center;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+    .qr-download-card img {
+      display: block;
+      width: 86px;
+      height: 86px;
+      margin: 0 auto 6px;
+      background: #fff;
+      border-radius: 6px;
+    }
+    .qr-download-title {
+      display: block;
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: -.2px;
+      line-height: 1.15;
+    }
+    .qr-download-hint {
+      display: block;
+      margin-top: 2px;
+      font-size: 10.5px;
+      color: #5a4b41;
+      line-height: 1.25;
+    }
+    @media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+      .qr-download-card { display: block; }
+    }
+    @media (min-width: 1100px) and (hover: hover) and (pointer: fine) and (max-height: 700px) {
+      .qr-download-card { display: none; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .qr-download-card {
+        animation: qrCardIn 560ms cubic-bezier(.22, 1, .36, 1) 800ms backwards;
+      }
+    }
+    @keyframes qrCardIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+    }
+    @media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+      .qr-download-card:hover,
+      .qr-download-card:focus-visible {
+        transform: translateY(-2px);
+        box-shadow:
+          0 12px 28px rgba(189, 134, 25, .14),
+          0 6px 14px rgba(110, 79, 26, .09);
+      }
+      .qr-download-card:focus-visible {
+        outline: 2px solid #2d221c;
+        outline-offset: 3px;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .qr-download-card:hover,
+      .qr-download-card:focus-visible {
+        transform: none;
+      }
     }
   </style>
 
@@ -1192,16 +1547,32 @@
   <header>
     <section class="hero" aria-labelledby="page-title">
       <div class="hero-copy">
-        <img class="logo"
-             src="https://buzzbuzz.club/app-icon.png"
-             alt="BuzzBuzz app icon"
-             width="88" height="88"
-             loading="eager" />
+        <img class="hero-deco-hand"
+             src="hero/deco-small-walks.webp"
+             alt=""
+             width="714" height="248"
+             decoding="async" fetchpriority="low"
+             aria-hidden="true" />
 
-        <h1 id="page-title">BuzzBuzz</h1>
+        <div class="hero-brand">
+          <img class="logo"
+               src="https://buzzbuzz.club/app-icon.png"
+               alt="BuzzBuzz app icon"
+               width="88" height="88"
+               loading="eager" />
+          <span class="hero-wordmark">BuzzBuzz</span>
+        </div>
+
+        <h1 id="page-title">
+          <span class="hero-line" data-i18n="hero.line1">Your daily walk</span>
+          <span class="hero-line" data-i18n="hero.line2">is better with</span>
+          <span class="hero-line">
+            <span data-i18n="hero.beforeHive">a </span><span class="hero-hive"><span data-i18n="hero.hive">hive.</span><img class="hero-underline" src="hero/underline.webp" alt="" width="561" height="85" decoding="async" fetchpriority="low" aria-hidden="true" /></span>
+          </span>
+        </h1>
 
         <p class="subtitle">
-          A cozy step counter and social walking app for friends. Daily walks, tiny real moments, and weekly Color Hunts.
+          A cozy step counter for friends. Track your steps, share one small moment a day, and keep your hive moving together.
         </p>
 
         <nav class="cta-row" aria-label="Download BuzzBuzz">
@@ -1254,26 +1625,45 @@
             </span>
           </a>
         </nav>
+
+        <div class="hero-community">
+          <img class="hero-avatars"
+               src="hero/portraits.webp"
+               alt=""
+               width="355" height="100"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+          <p data-i18n="hero.community">Made for walkers, friends, and small hives.</p>
+        </div>
       </div>
 
       <div class="hero-visual">
-        <img src="beach-visual.webp"
-             alt="Woman on a sunset beach walk checking her step count in the BuzzBuzz app"
-             width="656" height="850"
-             fetchpriority="high" decoding="async" />
+        <div class="hero-art">
+          <img class="hero-dash"
+               src="hero/dash-bottom.webp"
+               alt=""
+               width="730" height="329"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+          <img class="hero-photo"
+               src="hero/background.webp"
+               alt="Woman on a sunset beach walk checking her step count in the BuzzBuzz app"
+               width="896" height="1016"
+               fetchpriority="high" decoding="async" />
+          <img class="hero-namsan"
+               src="hero/namsan.webp"
+               alt=""
+               width="365" height="258"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+          <img class="hero-bee"
+               src="hero/bee-deco.webp"
+               alt=""
+               width="377" height="456"
+               decoding="async" fetchpriority="low"
+               aria-hidden="true" />
+        </div>
       </div>
-
-      <p class="ph-badge">
-        <a href="https://www.producthunt.com/products/buzzbuzz-step-tracker?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-buzzbuzz-step-tracker"
-           target="_blank"
-           rel="noopener noreferrer"
-           aria-label="BuzzBuzz on Product Hunt">
-          <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1175163&amp;theme=light&amp;t=1781850749371"
-               alt="BuzzBuzz - Step Tracker - A cozy step counter and social walking app for friends | Product Hunt"
-               width="250"
-               height="54" />
-        </a>
-      </p>
     </section>
   </header>
 
@@ -1324,11 +1714,19 @@
       <div class="bee-carousel-wrap">
         <button class="bee-nav prev" type="button" aria-label="Previous bee" data-dir="-1">‹</button>
         <div class="bee-carousel" role="list" aria-label="BuzzBuzz bees">
-          <a class="bee-slide" role="listitem" href="bees/normal.html">
-            <img src="bees/img/normal.png" alt="Normal Bee, the original yellow BuzzBuzz bee" loading="lazy" width="480" height="480" />
+          <a class="bee-slide" role="listitem" href="bees/suho.html">
+            <img src="bees/img/suho.png" alt="Suho, a BuzzBuzz bee in a light-blue Chuseok durumagi and a traditional gat" loading="lazy" width="480" height="480" />
             <span class="bee-plate">
-              <span class="bee-name">Normal Bee</span>
-              <p class="bee-tag" data-i18n="bees.normal.tag">The Original. The Blueprint.</p>
+              <span class="bee-name">Suho</span>
+              <p class="bee-tag" data-i18n="bees.suho.tag">Bows first, snacks first.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/boram.html">
+            <img src="bees/img/boram.png" alt="Boram, a BuzzBuzz bee in a coral Chuseok hanbok with braided hair and a gold flower pin" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Boram</span>
+              <p class="bee-tag" data-i18n="bees.boram.tag">Dressed for moon-viewing night.</p>
               <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
             </span>
           </a>
@@ -1410,6 +1808,23 @@
               <span class="bee-name">Berry Blush</span>
               <p class="bee-tag" data-i18n="bees.berry.tag">The blush is cardio, baby.</p>
               <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/normal.html">
+            <img src="bees/img/normal.png" alt="Normal Bee, the original yellow BuzzBuzz bee" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Normal Bee</span>
+              <p class="bee-tag" data-i18n="bees.normal.tag">The Original. The Blueprint.</p>
+              <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/vampire.html">
+            <span class="bee-soon-badge" data-i18n="bees.vampire.soon">Coming soon</span>
+            <img src="bees/img/vampire.png" alt="Blurred teaser of Vampire Bee, a coming-soon BuzzBuzz skin" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Vampire Bee</span>
+              <p class="bee-tag" data-i18n="bees.vampire.tag">Fangs out in October.</p>
+              <span class="bee-more" data-i18n="bees.vampire.more">Coming soon →</span>
             </span>
           </a>
         </div>
@@ -1552,6 +1967,15 @@
     <p>BuzzBuzz &copy; 2026 &middot; walk. snap. buzz.</p>
   </footer>
 
+  <a class="qr-download-card" href="/download?source=desktop_qr">
+    <img src="buzzbuzz-download-qr.svg"
+         alt="QR code to download BuzzBuzz"
+         width="328" height="328"
+         decoding="async" />
+    <span class="qr-download-title" data-i18n="qr.title">Get BuzzBuzz</span>
+    <span class="qr-download-hint" data-i18n="qr.hint">Scan with your phone</span>
+  </a>
+
   <!-- Ask the Hive FAB (hidden unless .ask-hive-on + marketing mode) -->
   <div id="ask-hive" hidden>
     <button type="button" id="ask-hive-fab" aria-expanded="false" aria-controls="ask-hive-panel" aria-haspopup="dialog">
@@ -1593,6 +2017,86 @@
 
   <script>
   (function () {
+    /* ---- Hero micro-parallax (mouse / fine pointer only) ---- */
+    (function initHeroParallax() {
+      var hero = document.querySelector('#marketing-content .hero');
+      var art = document.querySelector('#marketing-content .hero-art');
+      var header = document.querySelector('#marketing-content > header');
+      if (!hero || !art) return;
+
+      var fine = window.matchMedia('(hover: hover) and (pointer: fine)');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
+      var targetX = 0;
+      var targetY = 0;
+      var curX = 0;
+      var curY = 0;
+      var raf = 0;
+      var leaving = false;
+
+      function allowed() {
+        return fine.matches && !reduce.matches;
+      }
+
+      function apply(x, y) {
+        art.style.setProperty('--hx', x.toFixed(4));
+        art.style.setProperty('--hy', y.toFixed(4));
+        if (header) {
+          header.style.setProperty('--hex-x', (-2 * x).toFixed(2) + 'px');
+          header.style.setProperty('--hex-y', (-2 * y).toFixed(2) + 'px');
+        }
+      }
+
+      function tick() {
+        var ease = leaving ? 0.14 : 0.08;
+        curX += (targetX - curX) * ease;
+        curY += (targetY - curY) * ease;
+        if (Math.abs(targetX - curX) < 0.002 && Math.abs(targetY - curY) < 0.002) {
+          curX = targetX;
+          curY = targetY;
+          raf = 0;
+        } else {
+          raf = requestAnimationFrame(tick);
+        }
+        apply(curX, curY);
+      }
+
+      function kick() {
+        if (!raf) raf = requestAnimationFrame(tick);
+      }
+
+      function reset() {
+        targetX = 0;
+        targetY = 0;
+        leaving = true;
+        kick();
+      }
+
+      hero.addEventListener('pointermove', function (e) {
+        if (e.pointerType !== 'mouse' || !allowed()) return;
+        var r = hero.getBoundingClientRect();
+        if (!r.width || !r.height) return;
+        var nx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+        var ny = ((e.clientY - r.top) / r.height - 0.5) * 2;
+        targetX = Math.max(-1, Math.min(1, nx));
+        targetY = Math.max(-1, Math.min(1, ny));
+        leaving = false;
+        kick();
+      }, { passive: true });
+
+      hero.addEventListener('pointerleave', function (e) {
+        if (e.pointerType && e.pointerType !== 'mouse') return;
+        reset();
+      });
+
+      function onConstraintChange() {
+        if (!allowed()) reset();
+      }
+      if (fine.addEventListener) {
+        fine.addEventListener('change', onConstraintChange);
+        reduce.addEventListener('change', onConstraintChange);
+      }
+    })();
+
     /* ---- Bee carousel arrows ---- */
     var track = document.querySelector('.bee-carousel');
     document.querySelectorAll('.bee-nav').forEach(function (btn) {
@@ -1606,6 +2110,13 @@
     /* ---- EN / KO toggle ----
        Korean voice: modern, expressive, slang-forward Gen Z energy. */
     var KO = {
+      'hero.line1': '매일 산책은',
+      'hero.line2': '같이하면 더 빛나',
+      'hero.beforeHive': '\u200b',
+      'hero.hive': '하이브.',
+      'hero.community': '워커, 친구, 작은 하이브들을 위해 만들었어.',
+      'qr.title': 'BuzzBuzz 받기',
+      'qr.hint': '폰으로 스캔하세요',
       'bees.title': '우리 벌들 소개',
       'bees.intro': '워커라면 벌 하나쯤은 있어야지. 허니샵에서 스킨 모으고, 내 아이콘 정하고, 성격까지 통째로 맡겨버려. 벌 누르면 세계관 나옴 — ㄹㅇ 세계관 있음.',
       'bees.more': '세계관 보기 →',
@@ -1620,6 +2131,8 @@
       'bees.festival.tag': '축제부 장관. 셀프 임명.',
       'bees.luau.tag': '하와이 바람, 히비스커스 한 송이, 걱정 제로.',
       'bees.unc.tag': '휴가 온 삼촌 에너지, 벌 사이즈로.',
+      'bees.boram.tag': '보름달 보러 가는 밤, 제일 예쁘게.',
+      'bees.suho.tag': '인사도, 간식도 제일 먼저 해요.',
       'askHive.fab': 'BuzzBuzz 물어보기',
       'askHive.title': '하이브에 물어보기',
       'askHive.desc': '원하는 AI 어시스턴트에서 BuzzBuzz를 더 알아보세요. 해당 서비스 웹사이트로 이동합니다.',
@@ -1640,7 +2153,7 @@
 
     /* Existing page copy, addressed by stable selectors (index = nth match). */
     var MAP = [
-      ['.subtitle', 0, '친구들이랑 걷는 만보기 앱인데, 분위기가 좀 다름. 매일 걷고, 하루 한 컷 찍고, 주간 컬러헌트까지. 이게 되네?'],
+      ['.subtitle', 0, '친구들이랑 쓰는 아늑한 만보기. 걸음 수 찍고, 하루에 작은 순간 하나 공유하고, 하이브가 같이 움직이는 거지.'],
       ['#what-is-buzzbuzz', 0, '하이브랑 같이 걷자'],
       ['.intro p', 0, 'BuzzBuzz는 압박 말고 친구 중심으로 만든 만보기 앱임. 걸음 수 찍고, 하이브 들어가고, 하루에 사진 한 장 올리고 — 걷기가 작은 소셜 리추얼이 되는 거지. 운동인데 안 빡세고, 소셜인데 안 시끄러움. 이 조합 ㄹㅇ 미쳤다.'],
       ['.grid .card h3', 0, '걸음 수 카운터'],
@@ -2190,6 +2703,16 @@
       // Same invite as the address bar -- safe to copy/paste into chat as a tappable link.
       var invitePageHttps = window.location.href.split("#")[0];
 
+      /** Share URL shape for deferred iOS install clipboard hydrate (parseInviteSearchParams). */
+      var clipboardInviteUrl = (function () {
+        if (inviteId) {
+          var q = new URLSearchParams({ i: inviteId });
+          if (from) q.set("from", from);
+          return "https://buzzbuzz.club/?" + q.toString();
+        }
+        return invitePageHttps;
+      })();
+
       // ---- Element refs ----
       var fromText = document.getElementById("fromText");
       var openBtn = document.getElementById("openBtn");
@@ -2420,6 +2943,13 @@
           fallbackArmed = true;
           setTimeout(function () {
             if (!didHide) {
+              // iOS only (Android returns above / never arms this timer): seed clipboard
+              // for deferred-install hydrate after App Store install.
+              try {
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                  navigator.clipboard.writeText(clipboardInviteUrl).catch(function () {});
+                }
+              } catch (err) {}
               window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
             }
           }, 1800);
