@@ -888,6 +888,7 @@
     }
     .bee-carousel::-webkit-scrollbar { display: none; }
     .bee-slide {
+      position: relative;
       scroll-snap-align: center;
       flex: 0 0 min(78vw, 300px);
       background: #fffaf1;
@@ -935,6 +936,21 @@
       font-size: 15px;
       font-weight: 700;
       color: #c98a06;
+    }
+    .bee-soon-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      z-index: 2;
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      color: #2d221c;
+      background: #efaa08;
+      border: 2px solid #2d221c;
+      border-radius: 999px;
+      padding: 4px 10px;
     }
     .bee-nav {
       position: absolute;
@@ -1800,6 +1816,15 @@
               <span class="bee-name">Normal Bee</span>
               <p class="bee-tag" data-i18n="bees.normal.tag">The Original. The Blueprint.</p>
               <span class="bee-more" data-i18n="bees.more">Read the lore →</span>
+            </span>
+          </a>
+          <a class="bee-slide" role="listitem" href="bees/vampire.html">
+            <span class="bee-soon-badge" data-i18n="bees.vampire.soon">Coming soon</span>
+            <img src="bees/img/vampire.png" alt="Blurred teaser of Vampire Bee, a coming-soon BuzzBuzz skin" loading="lazy" width="480" height="480" />
+            <span class="bee-plate">
+              <span class="bee-name">Vampire Bee</span>
+              <p class="bee-tag" data-i18n="bees.vampire.tag">Fangs out in October.</p>
+              <span class="bee-more" data-i18n="bees.vampire.more">Coming soon →</span>
             </span>
           </a>
         </div>
