@@ -267,6 +267,7 @@
       .pager a, .mini-cell, .store-badge { transition: none; }
     }
   </style>
+  <link rel="stylesheet" href="/sticky-widgets.css" />
 </head>
 <body>
 
@@ -402,6 +403,18 @@
             <img src="img/unc.png" alt="Unc Summer, a bee in a Hawaiian shirt with a perm and mustache" loading="lazy" width="480" height="480" />
             <span class="mini-name">Unc Summer</span>
           </a>
+          <a class="mini-cell" href="boram.html">
+            <img src="img/boram.png" alt="Boram, a BuzzBuzz bee in a coral Chuseok hanbok with braided hair and a gold flower pin" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Boram</span>
+          </a>
+          <a class="mini-cell" href="suho.html">
+            <img src="img/suho.png" alt="Suho, a BuzzBuzz bee in a light-blue Chuseok durumagi and a traditional gat" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Suho</span>
+          </a>
+          <a class="mini-cell" href="vampire.html">
+            <img src="img/vampire.png" alt="Vampire Bee, a coming-soon BuzzBuzz skin with the portrait blurred" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Vampire Bee</span>
+          </a>
       </div>
     </section>
   </main>
@@ -460,6 +473,54 @@
     <p data-i18n="lbl.footer_tag">BuzzBuzz © 2026 · walk. snap. buzz.</p>
   </footer>
 
+  <a class="qr-download-card" href="/download?source=bee_desktop_qr">
+    <img src="/buzzbuzz-download-qr.svg"
+         alt="QR code to download BuzzBuzz"
+         width="328" height="328"
+         decoding="async" />
+    <span class="qr-download-title" data-i18n="qr.title">Get BuzzBuzz</span>
+    <span class="qr-download-hint" data-i18n="qr.hint">Scan with your phone</span>
+  </a>
+
+  <div id="ask-hive" hidden>
+    <button type="button" id="ask-hive-fab" aria-expanded="false" aria-controls="ask-hive-panel" aria-haspopup="dialog">
+      <span class="ask-hive-fab-bee" id="ask-hive-fab-bee" aria-hidden="true">🐝</span>
+      <span id="ask-hive-fab-label" data-i18n="askHive.fab">Ask about BuzzBuzz</span>
+    </button>
+    <div id="ask-hive-backdrop" hidden></div>
+    <div id="ask-hive-panel" role="dialog" aria-labelledby="ask-hive-title" aria-describedby="ask-hive-desc" hidden>
+      <div id="ask-hive-panel-header">
+        <h2 id="ask-hive-title" data-i18n="askHive.title">Ask the Hive</h2>
+        <button type="button" id="ask-hive-close" data-i18n-aria="askHive.closeAria" aria-label="Close">×</button>
+      </div>
+      <p id="ask-hive-desc" data-i18n="askHive.desc">Explore BuzzBuzz with your preferred AI assistant. You’ll continue on their website.</p>
+      <p id="ask-hive-external-note" data-i18n="askHive.externalNote">Opens an external AI website — not an official BuzzBuzz chatbot.</p>
+      <div id="ask-hive-actions">
+        <a class="ask-hive-action" data-ask-provider="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.chatgpt">Ask ChatGPT</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="claude" href="https://claude.ai/new" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.claude">Ask Claude</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.perplexity">Ask Perplexity</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="grok" href="https://grok.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.grok">Ask Grok</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="copy">
+          <span class="ask-hive-action-label" data-i18n="askHive.copy">Copy prompt</span>
+        </button>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="gemini">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.gemini">Copy and open Gemini</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </button>
+      </div>
+      <p id="ask-hive-status" role="status" aria-live="polite"></p>
+      <pre id="ask-hive-fallback" tabindex="0"></pre>
+    </div>
+  </div>
+
+
   <script>
   (function () {
     var KO = {
@@ -475,6 +536,19 @@
   "lbl.cta_title": "내 벌 정하고, 스트릭 시작하기.",
   "lbl.cta_sub": "BuzzBuzz는 iPhone에서 무료임. 걷고, 찍고, 버즈 — 허니샵에서 이런 스킨도 풀 수 있음.",
   "lbl.footer_tag": "BuzzBuzz © 2026 · 걷고. 찍고. 버즈.",
+  "qr.title": "BuzzBuzz 받기",
+  "qr.hint": "폰으로 스캔하세요",
+  "askHive.fab": "BuzzBuzz 물어보기",
+  "askHive.title": "하이브에 물어보기",
+  "askHive.desc": "원하는 AI 어시스턴트에서 BuzzBuzz를 더 알아보세요. 해당 서비스 웹사이트로 이동합니다.",
+  "askHive.externalNote": "외부 AI 웹사이트로 이동합니다. BuzzBuzz 공식 챗봇이 아니에요.",
+  "askHive.chatgpt": "ChatGPT에게 물어보기",
+  "askHive.claude": "Claude에게 물어보기",
+  "askHive.perplexity": "Perplexity에게 물어보기",
+  "askHive.grok": "Grok에게 물어보기",
+  "askHive.copy": "프롬프트 복사",
+  "askHive.gemini": "복사하고 Gemini 열기",
+  "askHive.closeAria": "닫기",
   "epithet": "1학년. 스펠 하나. 자신감 무한.",
   "file.0.k": "바이브",
   "file.0.v": "이론은 과탑. 실습은 화재 위험 요소.",
@@ -507,9 +581,19 @@
         if (lang === 'ko' && KO[key]) el.textContent = KO[key];
         else el.textContent = enCache[key];
       });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        var cacheKey = 'aria:' + key;
+        if (!(cacheKey in enCache)) enCache[cacheKey] = el.getAttribute('aria-label') || '';
+        if (lang === 'ko' && KO[key]) el.setAttribute('aria-label', KO[key]);
+        else el.setAttribute('aria-label', enCache[cacheKey]);
+      });
       document.querySelectorAll('.lang-toggle button').forEach(function (b) {
         b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
       });
+      if (typeof window.__askHiveOnLangChange === 'function') {
+        window.__askHiveOnLangChange(lang === 'ko' ? 'ko' : 'en');
+      }
       try { localStorage.setItem('bb-lang', lang); } catch (e) {}
     }
     document.querySelectorAll('.lang-toggle button').forEach(function (b) {
@@ -521,5 +605,6 @@
   })();
   </script>
 
+  <script src="/sticky-widgets.js" defer></script>
 </body>
 </html>

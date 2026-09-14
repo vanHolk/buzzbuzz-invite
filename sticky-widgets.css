@@ -1,0 +1,332 @@
+/* Sticky desktop QR + Ask the Hive FAB (shared by bee lore pages). */
+
+.qr-download-card {
+  display: none;
+  position: fixed;
+  z-index: 40;
+  left: 24px;
+  bottom: 24px;
+  width: 102px;
+  padding: 8px 6px 7px;
+  text-decoration: none;
+  color: #2d221c;
+  background: #fffaf1;
+  border: 2px solid #eadbc7;
+  border-radius: 16px;
+  box-shadow:
+    0 8px 24px rgba(189, 134, 25, .10),
+    0 4px 12px rgba(110, 79, 26, .07);
+  text-align: center;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.qr-download-card img {
+  display: block;
+  width: 86px;
+  height: 86px;
+  margin: 0 auto 6px;
+  background: #fff;
+  border-radius: 6px;
+}
+.qr-download-title {
+  display: block;
+  font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -.2px;
+  line-height: 1.15;
+}
+.qr-download-hint {
+  display: block;
+  margin-top: 2px;
+  font-size: 10.5px;
+  color: #5a4b41;
+  line-height: 1.25;
+}
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+  .qr-download-card { display: block; }
+}
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine) and (max-height: 700px) {
+  .qr-download-card { display: none; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .qr-download-card {
+    animation: stickyQrCardIn 560ms cubic-bezier(.22, 1, .36, 1) 800ms backwards;
+  }
+}
+@keyframes stickyQrCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+  .qr-download-card:hover,
+  .qr-download-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 28px rgba(189, 134, 25, .14),
+      0 6px 14px rgba(110, 79, 26, .09);
+  }
+  .qr-download-card:focus-visible {
+    outline: 2px solid #2d221c;
+    outline-offset: 3px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .qr-download-card:hover,
+  .qr-download-card:focus-visible {
+    transform: none;
+  }
+}
+
+html:not(.ask-hive-on) #ask-hive { display: none !important; }
+
+#ask-hive {
+  --ask-ink: #2d221c;
+  --ask-cream: #fffaf1;
+  --ask-bg: #fff8e7;
+  --ask-border: #eadbc7;
+  --ask-honey: #efaa08;
+  --ask-muted: #5a4b41;
+  font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+#ask-hive-fab {
+  position: fixed;
+  z-index: 60;
+  bottom: max(16px, env(safe-area-inset-bottom, 0px));
+  right: max(16px, env(safe-area-inset-right, 0px));
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 18px;
+  border: 2px solid var(--ask-border);
+  border-radius: 999px;
+  background: var(--ask-cream);
+  color: var(--ask-ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(65, 45, 10, .16);
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+#ask-hive-fab:hover,
+#ask-hive-fab:focus-visible {
+  background: #fff3d6;
+  box-shadow: 0 14px 28px rgba(65, 45, 10, .2);
+  outline: none;
+}
+#ask-hive-fab:focus-visible {
+  outline: 2px solid var(--ask-ink);
+  outline-offset: 3px;
+}
+#ask-hive-fab:active { transform: translateY(1px); }
+#ask-hive-fab[aria-expanded="true"] {
+  border-color: var(--ask-honey);
+  background: #fff3d6;
+}
+#ask-hive-fab-label { white-space: nowrap; }
+#ask-hive-fab-bee {
+  display: inline-block;
+  animation: ask-hive-bee-bob 1.6s ease-in-out infinite;
+}
+@keyframes ask-hive-bee-bob {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@media (max-width: 360px) {
+  #ask-hive-fab-label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; white-space: nowrap; }
+  #ask-hive-fab { width: 48px; height: 48px; padding: 0; justify-content: center; }
+}
+
+#ask-hive-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: rgba(45, 34, 28, 0.35);
+}
+#ask-hive.is-sheet-open #ask-hive-backdrop { display: block; }
+
+#ask-hive-panel {
+  display: none;
+  position: fixed;
+  z-index: 80;
+  width: min(360px, calc(100vw - 32px));
+  max-height: min(70vh, 520px);
+  overflow: auto;
+  padding: 18px 18px 16px;
+  background: var(--ask-cream);
+  color: var(--ask-ink);
+  border: 2px solid var(--ask-border);
+  border-radius: 22px;
+  box-shadow: 0 18px 40px rgba(65, 45, 10, .22);
+  box-sizing: border-box;
+}
+#ask-hive.is-open #ask-hive-panel { display: block; }
+
+@media (min-width: 761px) {
+  #ask-hive-panel {
+    bottom: calc(max(16px, env(safe-area-inset-bottom, 0px)) + 60px);
+    right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  #ask-hive-backdrop { display: none !important; }
+}
+
+@media (max-width: 760px) {
+  #ask-hive-panel {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    max-width: none;
+    max-height: min(78vh, 640px);
+    border-radius: 22px 22px 0 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    padding-bottom: max(18px, env(safe-area-inset-bottom, 0px));
+  }
+}
+
+#ask-hive-panel-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+#ask-hive-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+#ask-hive-close {
+  flex: 0 0 auto;
+  width: 40px;
+  height: 40px;
+  margin: -6px -6px 0 0;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--ask-ink);
+  font: inherit;
+  font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
+}
+#ask-hive-close:hover,
+#ask-hive-close:focus-visible {
+  background: rgba(239, 170, 8, 0.28);
+  outline: none;
+}
+#ask-hive-close:focus-visible {
+  outline: 2px solid var(--ask-ink);
+  outline-offset: 2px;
+}
+#ask-hive-desc {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--ask-muted);
+  line-height: 1.45;
+}
+#ask-hive-external-note {
+  margin: 0 0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ask-muted);
+  letter-spacing: 0.01em;
+}
+#ask-hive-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.ask-hive-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 2px solid var(--ask-border);
+  background: #fffdf8;
+  color: var(--ask-ink);
+  text-decoration: none;
+  font: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  text-align: left;
+  box-sizing: border-box;
+  width: 100%;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.ask-hive-action:hover,
+.ask-hive-action:focus-visible {
+  background: #fff3d6;
+  border-color: var(--ask-honey);
+  outline: none;
+}
+.ask-hive-action:focus-visible {
+  outline: 2px solid var(--ask-ink);
+  outline-offset: 2px;
+}
+.ask-hive-action:active { transform: translateY(1px); }
+.ask-hive-action-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.ask-hive-ext-icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+.ask-hive-action--secondary {
+  background: transparent;
+  font-weight: 700;
+}
+#ask-hive-status {
+  min-height: 1.2em;
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ask-muted);
+}
+#ask-hive-status[data-tone="ok"] { color: #2f6b3a; }
+#ask-hive-status[data-tone="err"] { color: #8a3b2b; }
+#ask-hive-fallback {
+  display: none;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px dashed var(--ask-border);
+  background: #fff;
+  font-size: 13px;
+  line-height: 1.4;
+  color: var(--ask-ink);
+  white-space: pre-wrap;
+  max-height: 140px;
+  overflow: auto;
+  user-select: text;
+}
+#ask-hive-fallback.is-visible { display: block; }
+
+@media (prefers-reduced-motion: reduce) {
+  #ask-hive-fab,
+  .ask-hive-action {
+    transition: none;
+  }
+  #ask-hive-fab-bee {
+    animation: none;
+  }
+}
