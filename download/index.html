@@ -3,11 +3,13 @@
 <head>
   <!-- Download / open-app funnel (logic extracted from former root index.html). -->
   <meta charset="utf-8" />
+  <script src="/posthog-config.js"></script>
+  <script src="/posthog.js"></script>
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="robots" content="noindex, follow" />
   <title>Download BuzzBuzz</title>
   <link rel="canonical" href="https://buzzbuzz.club/download" />
-  <meta name="description" content="Open your BuzzBuzz invite or install the app." />
+  <meta name="description" content="Download BuzzBuzz for iPhone and Android." />
   <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48.png" />
   <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
   <style>
@@ -149,6 +151,24 @@
 
 <meta name="google-site-verification" content="f5kW8lnfxmBm6ORzf38g_FlO5oWQp37LfXvhJd4OjpE" />
 
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      if (params.has("i") || params.has("hiveId") || params.has("inviteId")) return;
+      var STORE_IOS = "https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595";
+      var STORE_PLAY = "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker";
+      var source = params.get("source");
+      if (source) {
+        STORE_PLAY += "&referrer=" + encodeURIComponent("source=" + source);
+      }
+      var ua = navigator.userAgent || "";
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      if (isIOS) window.location.replace(STORE_IOS);
+      else if (/Android/i.test(ua)) window.location.replace(STORE_PLAY);
+    })();
+  </script>
+
 </head>
 <body>
 
@@ -161,18 +181,18 @@
     <div class="card">
       <img src="/app-icon.png" alt="BuzzBuzz app icon" class="app-icon" id="appIcon" />
 
-      <h1 id="pageHeading">Join my BuzzBuzz Hive</h1>
-      <p id="fromText">Opening your invite…</p>
+      <h1 id="pageHeading">Download BuzzBuzz</h1>
+      <p id="fromText" class="ph-mask">Get the app on iPhone or Android.</p>
 
       <!-- Standard-browser hint (default). Hidden inside chat in-app browsers. -->
-      <p class="muted" id="standardHint">If BuzzBuzz is installed, it should open automatically.</p>
+      <p class="muted" id="standardHint">Pick a store to download BuzzBuzz.</p>
 
       <!-- Open in app: href stays https so "Copy link" works in chat apps. -->
-      <a id="openBtn" class="btn btn-open" href="">Open BuzzBuzz</a>
+      <a id="openBtn" class="btn btn-open" href="" hidden>Open BuzzBuzz</a>
 
       <!-- Store buttons (referrer baked into Android URL). -->
-      <a id="storeBtnIos" class="btn btn-store" href="https://apps.apple.com/app/id6767195595">Get BuzzBuzz on the App Store</a>
-      <a id="storeBtnAndroid" class="btn btn-store" href="">Get BuzzBuzz on Google Play</a>
+      <a id="storeBtnIos" class="btn btn-store" href="https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595">Get BuzzBuzz on the App Store</a>
+      <a id="storeBtnAndroid" class="btn btn-store" href="https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker">Get BuzzBuzz on Google Play</a>
 
       <!-- External-browser escape (chat in-app browsers only). Button-only, user-tapped. -->
       <button id="escapeBtn" class="btn btn-escape" hidden type="button">Open in browser</button>
@@ -181,7 +201,7 @@
       <div class="hint" id="chatHint" hidden></div>
 
       <!-- First-install copy (standard browsers). -->
-      <p class="muted" id="installHint" style="margin-top:10px;">
+      <p class="muted" id="installHint" style="margin-top:10px;" hidden>
         First time installing BuzzBuzz? After install, return to your message and tap this invite link again to join the correct hive.
       </p>
     </div>
@@ -193,10 +213,13 @@
       var hiveId = params.get("hiveId") || "";
       var from = params.get("from") || "";
       var inviteId = params.get("inviteId") || "";
+      var hasInviteParams = params.has("i") || params.has("hiveId") || params.has("inviteId");
+      var source = params.get("source") || "";
 
       var ua = navigator.userAgent || "";
       var isAndroid = /Android/i.test(ua);
-      var isIOS = /iPhone|iPad|iPod/i.test(ua);
+      var isIOS = /iPhone|iPad|iPod/i.test(ua) ||
+        (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
 
       // Chat in-app browser detection (heuristic, not a security boundary).
       var isKakao = /KAKAOTALK/i.test(ua);
@@ -372,6 +395,69 @@
         return "en";
       }
 
+      if (!hasInviteParams) {
+        var STORE_IOS = "https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595";
+        var STORE_PLAY = "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker";
+        if (source) {
+          STORE_PLAY += "&referrer=" + encodeURIComponent("source=" + source);
+        }
+        storeBtnIos.setAttribute("href", STORE_IOS);
+        storeBtnAndroid.setAttribute("href", STORE_PLAY);
+        storeBtnIos.hidden = false;
+        storeBtnAndroid.hidden = false;
+
+        var GATE = {
+          en: {
+            title: "Download BuzzBuzz",
+            meta: "Download BuzzBuzz for iPhone and Android.",
+            heading: "Download BuzzBuzz",
+            from: "Get the app on iPhone or Android.",
+            hint: "Pick a store to download BuzzBuzz.",
+            storeIos: "Get BuzzBuzz on the App Store",
+            storeAndroid: "Get BuzzBuzz on Google Play"
+          },
+          ko: {
+            title: "BuzzBuzz 다운로드",
+            meta: "iPhone과 Android용 BuzzBuzz를 다운로드하세요.",
+            heading: "BuzzBuzz 다운로드",
+            from: "iPhone이나 Android에서 앱을 받으세요.",
+            hint: "스토어를 골라 BuzzBuzz를 다운로드하세요.",
+            storeIos: "App Store에서 BuzzBuzz 받기",
+            storeAndroid: "Google Play에서 BuzzBuzz 받기"
+          }
+        };
+
+        function setGateLang(lang) {
+          var key = lang === "ko" ? "ko" : "en";
+          var copy = GATE[key];
+          document.documentElement.lang = key;
+          document.title = copy.title;
+          if (metaDescription) metaDescription.setAttribute("content", copy.meta);
+          pageHeading.textContent = copy.heading;
+          fromText.textContent = copy.from;
+          standardHint.textContent = copy.hint;
+          storeBtnIos.textContent = copy.storeIos;
+          storeBtnAndroid.textContent = copy.storeAndroid;
+          document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+            b.setAttribute("aria-pressed", String(b.dataset.lang === key));
+          });
+          try { localStorage.setItem("bb-lang", key); } catch (e) {}
+        }
+
+        document.querySelectorAll(".lang-toggle button").forEach(function (b) {
+          b.addEventListener("click", function () { setGateLang(b.dataset.lang); });
+        });
+        setGateLang(resolveLang());
+        return;
+      }
+
+      if (typeof window.buzzbuzzCapture === "function") {
+        window.buzzbuzzCapture("invite_page_viewed", { arrived_via_invite: true });
+      }
+
+      openBtn.hidden = false;
+      installHint.hidden = false;
+
       document.querySelectorAll(".lang-toggle button").forEach(function (b) {
         b.addEventListener("click", function () { setLang(b.dataset.lang); });
       });
@@ -390,7 +476,21 @@
       openBtn.setAttribute("href", invitePageHttps);
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
+        if (typeof window.buzzbuzzCapture === "function") {
+          window.buzzbuzzCapture("open_buzzbuzz_clicked");
+        }
         window.location.href = deepLink;
+      });
+
+      storeBtnIos.addEventListener("click", function () {
+        if (typeof window.buzzbuzzCapture === "function") {
+          window.buzzbuzzCapture("app_store_clicked");
+        }
+      });
+      storeBtnAndroid.addEventListener("click", function () {
+        if (typeof window.buzzbuzzCapture === "function") {
+          window.buzzbuzzCapture("play_store_clicked");
+        }
       });
 
       if (isChatInApp) {
@@ -409,6 +509,9 @@
         // External-browser escape (button-only; auto-firing fails on Android per Kakao docs).
         escapeBtn.hidden = false;
         escapeBtn.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("open_in_browser_clicked");
+          }
           if (isKakao) {
             // Kakao: open current page in the system browser.
             window.location.href =

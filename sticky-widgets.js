@@ -123,8 +123,16 @@
 
   function trackAskHive(eventName, detail) {
     var payload = detail || {};
+    var captureEvent = {
+      open: 'ask_hive_opened',
+      provider_select: 'ask_hive_provider_selected',
+      copy_prompt: 'ask_hive_prompt_copied'
+    }[eventName];
     payload.locale = locale();
     payload.pageType = 'bee-lore';
+    if (captureEvent && typeof window.buzzbuzzCapture === 'function') {
+      window.buzzbuzzCapture(captureEvent, payload);
+    }
     try {
       window.dispatchEvent(new CustomEvent('ask-hive:' + eventName, { detail: payload }));
     } catch (e) {}

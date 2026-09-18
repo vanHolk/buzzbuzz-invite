@@ -8,6 +8,8 @@
       document.documentElement.classList.add(isInvite ? 'mode-invite' : 'mode-marketing');
     })();
   </script>
+  <script src="/posthog-config.js"></script>
+  <script src="/posthog.js"></script>
 
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -1502,7 +1504,7 @@
       <img src="./app-icon.png" alt="BuzzBuzz app icon" class="app-icon" id="appIcon" />
 
       <h1 id="pageHeading">Join my BuzzBuzz Hive</h1>
-      <p id="fromText">Opening your invite…</p>
+      <p id="fromText" class="ph-mask">Opening your invite…</p>
 
       <!-- Standard-browser hint (default). Hidden inside chat in-app browsers. -->
       <p class="muted" id="standardHint">If BuzzBuzz is installed, it should open automatically.</p>
@@ -2386,8 +2388,16 @@
 
       function trackAskHive(eventName, detail) {
         var payload = detail || {};
+        var captureEvent = {
+          open: 'ask_hive_opened',
+          provider_select: 'ask_hive_provider_selected',
+          copy_prompt: 'ask_hive_prompt_copied'
+        }[eventName];
         payload.locale = locale();
         payload.pageType = 'marketing';
+        if (captureEvent && typeof window.buzzbuzzCapture === 'function') {
+          window.buzzbuzzCapture(captureEvent, payload);
+        }
         try {
           window.dispatchEvent(new CustomEvent('ask-hive:' + eventName, { detail: payload }));
         } catch (e) {}
@@ -2663,6 +2673,10 @@
         return; // marketing i18n/scripts already in #marketing-content
       }
 
+      if (typeof window.buzzbuzzCapture === "function") {
+        window.buzzbuzzCapture("invite_page_viewed", { arrived_via_invite: true });
+      }
+
       // Invite visits should not be indexed as the marketing homepage.
       var robots = document.querySelector('meta[name="robots"]');
       if (robots) robots.setAttribute('content', 'noindex, follow');
@@ -2883,12 +2897,26 @@
       openBtn.setAttribute("href", invitePageHttps);
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
+        if (typeof window.buzzbuzzCapture === "function") {
+          window.buzzbuzzCapture("open_buzzbuzz_clicked");
+        }
         if (isAndroid) {
           window.location.href = androidOpenUrl;
           return;
         }
         window.location.href = deepLink;
         if (startStoreFallback) startStoreFallback();
+      });
+
+      storeBtnIos.addEventListener("click", function () {
+        if (typeof window.buzzbuzzCapture === "function") {
+          window.buzzbuzzCapture("app_store_clicked");
+        }
+      });
+      storeBtnAndroid.addEventListener("click", function () {
+        if (typeof window.buzzbuzzCapture === "function") {
+          window.buzzbuzzCapture("play_store_clicked");
+        }
       });
 
       if (isChatInApp) {
@@ -2907,6 +2935,9 @@
         // External-browser escape (button-only; auto-firing fails on Android per Kakao docs).
         escapeBtn.hidden = false;
         escapeBtn.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("open_in_browser_clicked");
+          }
           if (isKakao) {
             // Kakao: open current page in the system browser.
             window.location.href =
