@@ -119,8 +119,22 @@
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/vampire.html</loc>
-    <lastmod>2026-09-14</lastmod>
+    <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buzzbuzz.club/bees/img/vampire.png</image:loc>
+      <image:title>Vampire Bee — the Halloween BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/witch.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buzzbuzz.club/bees/img/witch.png</image:loc>
+      <image:title>Witch Bee — the Halloween BuzzBuzz bee</image:title>
+    </image:image>
   </url>
 </urlset>
