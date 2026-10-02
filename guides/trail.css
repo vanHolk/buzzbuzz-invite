@@ -364,6 +364,60 @@ h1, h2, h3, .brand span, .kicker, .store-badge .badge-large, .bee-says-label, .a
   font-size: 14px;
 }
 
+.quick-answer {
+  margin: 4px 0 18px;
+  background: var(--card);
+  border: 2px solid var(--line);
+  border-left: 6px solid var(--honey);
+  border-radius: 28px;
+  padding: 16px 22px 16px 20px;
+}
+.quick-answer-kicker {
+  margin: 0;
+  font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.quick-answer-figure {
+  margin: 2px 0 8px;
+  font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: clamp(34px, 6vw, 46px);
+  font-weight: 800;
+  letter-spacing: -1.2px;
+  line-height: .95;
+}
+.quick-answer-note {
+  margin: 0;
+  max-width: 38em;
+  color: var(--muted);
+  font-size: 15.5px;
+}
+
+.sources {
+  margin-top: 36px;
+}
+.sources h2 {
+  margin: 0 0 10px;
+  font-size: 22px;
+  letter-spacing: -.4px;
+}
+.sources ul {
+  margin: 0;
+  padding-left: 1.15em;
+  font-size: 15px;
+}
+.sources li { margin: 0 0 6px; }
+.sources a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--honey);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
 .hero-fig {
   margin: 0 0 22px;
   background: var(--card);
@@ -374,6 +428,7 @@ h1, h2, h3, .brand span, .kicker, .store-badge .badge-large, .bee-says-label, .a
 .hero-fig img { display: block; width: 100%; height: auto; }
 
 .prose {
+  max-width: 66ch;
   font-size: 18.5px;
   line-height: 1.65;
 }

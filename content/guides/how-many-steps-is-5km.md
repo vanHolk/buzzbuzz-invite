@@ -2,46 +2,53 @@
 title: "How Many Steps Is 5 km?"
 description: "The answer depends on your stride — but here's a surprisingly good estimate."
 slug: how-many-steps-is-5km
-date: 2026-09-12
+date: 2026-10-02
 category: step-nerd
 questType: quick-quest
 readTime: "4 min"
 chips:
   - "👟 Easy"
 featured: true
+answerKicker: "5 km"
+answerFigure: "≈ 6,500 steps"
+answerNote: "Typical range: ~6,000–7,500. This is an estimate. Your result depends mainly on step length."
 seoTitle: "How Many Steps Is 5 km?"
-seoDescription: "5 km is about 6,500 steps for most adults, usually somewhere between 6,000 and 7,500. See how stride length changes the count and how to measure your own."
+seoDescription: "5 km is roughly 6,500 steps for many adults — an estimate, often between 6,000 and 7,500, depending on step length."
 related:
   - how-long-to-walk-10000-steps
   - start-a-walking-streak-with-friends
+sources:
+  - "[NHS: Walking for health](https://www.nhs.uk/live-well/exercise/walking-for-health/)"
 ---
 
-**5 km is about 6,500 steps** for a lot of adults. An honest range is **6,000–7,500 steps**, because a longer stride covers the same ground in fewer steps.
+There is no exact conversion. A useful middle estimate is **about 6,500 steps**, and a lot of adults land somewhere between **6,000 and 7,500**. A shorter step means more steps for the same 5 km.
 
-If you only keep one number, use about **1,300 steps per kilometre**. Five times that is 6,500.
+If you want one number to remember, **about 1,300 steps per kilometre** gets you to 6,500. Treat it as a sketch, then check it against your own walk.
 
 ## Why your number will be a little different
 
 A step counter is counting footfalls, not metres. The same 5 km can land higher or lower depending on a few ordinary things:
 
-- **Stride length.** Shorter legs, or a shorter stride, means more steps. A longer stride means fewer.
-- **Pace.** Walking faster often stretches your stride a little.
+- **Step length.** Shorter steps cover less ground, so the count goes up. Longer steps do the opposite.
+- **Pace.** Walking faster often stretches each step a little.
 - **The route.** Hills, crowds, traffic lights, and a wandering park path are not a treadmill.
-- **The device.** A phone in a bag and a watch on a wrist can disagree by a few hundred steps. That is normal.
+- **The device.** A phone in a bag and a watch on a wrist can land on different numbers. That is normal.
 
-A rough stride check, using 5,000 metres divided by step length:
+The arithmetic is simple: 5,000 metres divided by the length of one step.
 
-- Shorter stride, about 0.70 m: closer to **7,100 steps**
-- Average stride, about 0.76 m: closer to **6,600 steps**
-- Longer stride, about 0.85 m: closer to **5,900 steps**
+- Shorter step, about 0.67 m: closer to **7,500 steps**
+- Middle step, about 0.75 m: closer to **6,700 steps**
+- Longer step, about 0.80 m: closer to **6,300 steps**
 
-The popular “2,000 steps in a mile” shortcut lands in the same neighborhood. 5 km is about 3.1 miles, which is roughly 6,200 steps. Close enough to be useful. Not close enough to argue about.
+These are examples, not a measurement of your walk. The popular “2,000 steps in a mile” shortcut is the same kind of estimate. 5 km is 3.1 miles, which comes out near **6,200 steps** if that shortcut happens to fit you. Close enough to be useful. Not close enough to argue about.
 
 ## How long 5 km of walking takes
 
-At an easy pace, 5 km often takes **50–70 minutes**. Brisk walkers can do it closer to 45. It is a real walk, not a lap to the corner shop, and it does not have to happen as one loop.
+Time follows pace, not a fixed clock. The [NHS describes a brisk walk as about 3 miles an hour](https://www.nhs.uk/live-well/exercise/walking-for-health/) — faster than a stroll, slow enough that you can still talk. At that pace, 5 km takes **about an hour**.
 
-A commute, a lunch wander, and the long way home can add up to the same distance. If you care more about the clock than the kilometres, [walking 10,000 steps usually takes 90–120 minutes](/guides/how-long-to-walk-10000-steps).
+A comfortable walk is often closer to **60–75 minutes**. A slower stroll can take **80 minutes or more**. You do not have to do it as one loop.
+
+A commute, a lunch wander, and the long way home can add up to the same distance. If you care more about the clock than the kilometres, [walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking.
 
 :::bee
 Five kilometres is a very respectable day of walking. If your hive is comparing numbers, compare the walk you actually took — not a perfect treadmill average.
@@ -49,7 +56,7 @@ Five kilometres is a very respectable day of walking. If your hive is comparing 
 
 ## Find your own 5 km
 
-1. Walk a route you know is about 5 km, or go for roughly an hour at an easy pace.
+1. Walk a route you know is about 5 km, or go for roughly an hour at a comfortable pace.
 2. Note the step count at the start and at the end.
 3. Divide the steps by 5. That is your personal steps-per-kilometre.
 4. Use that number next time, instead of a stranger’s average.

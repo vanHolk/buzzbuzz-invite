@@ -2,7 +2,7 @@
 title: "The 10,000-Step Halloween Challenge"
 description: "A reason to leave the house after dark."
 slug: 10000-step-halloween-challenge
-date: 2026-10-01
+date: 2026-10-02
 category: after-dark
 questType: seasonal-quest
 chips:
@@ -14,6 +14,7 @@ seoDescription: "A simple 10,000-step Halloween challenge: bank some steps befor
 related:
   - start-a-walking-streak-with-friends
   - how-long-to-walk-10000-steps
+  - how-many-steps-is-5km
 ---
 
 Walk **10,000 steps** sometime during Halloween week. At least **one of those walks happens after sunset**. That is the whole rulebook.
@@ -22,12 +23,12 @@ You can split the steps across the day. The night walk is the part that makes it
 
 ## How to play it
 
-- **Before dark:** bank 4,000–6,000 steps, so the night walk is a finale and not a march.
+- **Before dark:** bank 4,000–6,000 steps, so the night walk is a finale and not a march. For a lot of people that is in the neighborhood of [a 5 km walk](/guides/how-many-steps-is-5km) — an estimate, since step length changes the count.
 - **After dark:** go out for the rest. Twenty to forty minutes is enough if you already started. Ideally with at least one other person.
 - **Proof:** one photo from the night walk. A lit window, a plastic skeleton, your own shadow. No need to photograph strangers.
 - **Finish line:** everyone who hits 10,000 and sends a night photo is done. It is not a race unless your group wants a race.
 
-If 10,000 steps sounds abstract, it is usually [90–120 minutes of walking](/guides/how-long-to-walk-10000-steps) in total. The spooky portion can be the short one.
+If 10,000 steps sounds abstract, it is usually [about 90–120 minutes of actual walking](/guides/how-long-to-walk-10000-steps) in total, not a medical target. The spooky portion can be the short one.
 
 :::bee
 The spooky part is optional. The together part is not. A night walk is better with a friend, a lit street, and permission to turn around when you are cold.

@@ -259,6 +259,12 @@ function loadArticles() {
     if (!/^\d{4}-\d{2}-\d{2}$/.test(article.date)) {
       throw new Error(`${file}: date must be YYYY-MM-DD`);
     }
+    if (article.updated && !/^\d{4}-\d{2}-\d{2}$/.test(article.updated)) {
+      throw new Error(`${file}: updated must be YYYY-MM-DD`);
+    }
+    if (article.updated && article.updated < article.date) {
+      throw new Error(`${file}: updated cannot be earlier than date`);
+    }
     if (!areaById[article.category]) {
       throw new Error(`${file}: unknown category "${article.category}"`);
     }
@@ -267,6 +273,16 @@ function loadArticles() {
     }
     article.chips = Array.isArray(article.chips) ? article.chips : [];
     article.related = Array.isArray(article.related) ? article.related : [];
+    article.sources = (Array.isArray(article.sources) ? article.sources : []).map((item) => {
+      const match = /^\[([^\]]+)\]\((https?:\/\/[^)\s]+)\)$/.exec(String(item).trim());
+      if (!match) throw new Error(`${file}: source must be a markdown link: ${item}`);
+      return { title: match[1], url: match[2] };
+    });
+    const answerKeys = ["answerKicker", "answerFigure", "answerNote"];
+    const answerCount = answerKeys.filter((key) => article[key]).length;
+    if (answerCount !== 0 && answerCount !== answerKeys.length) {
+      throw new Error(`${file}: answerKicker, answerFigure, and answerNote must be set together`);
+    }
     article.featured = Boolean(article.featured);
     article.html = markdownToHtml(article.body);
     articles.push(article);
@@ -312,6 +328,10 @@ function formatDate(iso) {
     year: "numeric",
     timeZone: "UTC",
   }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
+function modifiedDate(article) {
+  return article.updated || article.date;
 }
 
 function articleUrl(slug) {
@@ -575,6 +595,26 @@ function renderArticle(article, bySlug) {
     ? `\n      <figure class="hero-fig">\n        <img src="${escapeHtml(article.hero.startsWith("http") ? article.hero : article.hero.startsWith("/") ? article.hero : `/${article.hero}`)}" alt="" width="1200" height="630" />\n      </figure>`
     : "";
   const metaHtml = meta.length ? `\n      <p class="meta">${escapeHtml(meta.join(" · "))}</p>` : "";
+  const answerHtml = article.answerFigure
+    ? `\n      <aside class="quick-answer" aria-label="Quick answer">
+        <p class="quick-answer-kicker">${escapeHtml(article.answerKicker)}</p>
+        <p class="quick-answer-figure">${escapeHtml(article.answerFigure)}</p>
+        <p class="quick-answer-note">${escapeHtml(article.answerNote)}</p>
+      </aside>`
+    : "";
+  const published = article.date;
+  const modified = modifiedDate(article);
+  const bylineHtml = modified !== published
+    ? `<p class="byline">Published <time datetime="${published}">${formatDate(published)}</time> · Updated <time datetime="${modified}">${formatDate(modified)}</time></p>`
+    : `<p class="byline"><time datetime="${published}">${formatDate(published)}</time></p>`;
+  const sourcesHtml = article.sources.length
+    ? `\n<section class="sources" aria-labelledby="sources">
+  <h2 id="sources">Sources</h2>
+  <ul>
+${article.sources.map((source) => `    <li><a href="${escapeHtml(source.url)}" rel="noopener noreferrer">${escapeHtml(source.title)}</a></li>`).join("\n")}
+  </ul>
+</section>`
+    : "";
   const relatedHtml = related.length
     ? `<section class="still" aria-labelledby="still-buzzing">
     <h2 id="still-buzzing">Still buzzing? <span aria-hidden="true">🐝</span></h2>
@@ -598,11 +638,12 @@ ${related.map((item) => questCard(item, { compact: true })).join("\n")}
         <span aria-current="page">${escapeHtml(article.title)}</span>
       </nav>
       <p class="kicker">${escapeHtml(kicker(article))}</p>
-      <h1>${escapeHtml(article.title)}</h1>
+      <h1>${escapeHtml(article.title)}</h1>${answerHtml}
       <p class="dek">${escapeHtml(article.description)}</p>${metaHtml}
-      <p class="byline"><time datetime="${article.date}">${formatDate(article.date)}</time></p>${hero}
+      ${bylineHtml}${hero}
       <div class="prose">
 ${article.html}
+${sourcesHtml}
       </div>
     </article>
     ${relatedHtml}
@@ -618,15 +659,15 @@ ${article.html}
     ogType: "article",
     image,
     imageAlt: article.title,
-    extraMeta: `<meta property="article:published_time" content="${article.date}" />\n  <meta property="article:modified_time" content="${article.date}" />`,
+    extraMeta: `<meta property="article:published_time" content="${published}" />\n  <meta property="article:modified_time" content="${modified}" />`,
     jsonLd: [
       {
         "@context": "https://schema.org",
         "@type": "Article",
         headline: article.title,
         description,
-        datePublished: article.date,
-        dateModified: article.date,
+        datePublished: published,
+        dateModified: modified,
         author: { "@type": "Organization", name: "BuzzBuzz", url: `${site}/` },
         publisher: {
           "@type": "Organization",
@@ -654,13 +695,13 @@ ${article.html}
 }
 
 function urlBlock(articles, { images }) {
-  const latest = articles.map((article) => article.date).sort().at(-1);
+  const latest = articles.map((article) => modifiedDate(article)).sort().at(-1);
   const entries = [
     urlEntry(`${site}/guides`, latest, { changefreq: "weekly", priority: "0.8" }),
     ...articles
       .slice()
       .sort((a, b) => a.slug.localeCompare(b.slug))
-      .map((article) => urlEntry(articleUrl(article.slug), article.date, {
+      .map((article) => urlEntry(articleUrl(article.slug), modifiedDate(article), {
         changefreq: "monthly",
         priority: "0.6",
         image: images && article.hero ? { loc: imageUrl(article), title: article.title } : null,

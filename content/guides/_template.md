@@ -16,8 +16,16 @@ featured: false
 draft: true
 seoTitle: "Article Title in Plain Language"
 seoDescription: "A specific meta description, about 150 characters, that says what this page answers."
+# Optional quick answer, for pages that answer one direct question:
+# answerKicker: "5 km"
+# answerFigure: "≈ 6,500 steps"
+# answerNote: "Say that this is an estimate, and what changes it."
+# Optional. Use the real publication date. Set updated only after a later substantive edit.
+# updated: 2026-10-02
 related:
   - how-many-steps-is-5km
+# sources:
+#   - "[Publisher: page title](https://example.com/page)"
 ---
 
 Put the useful answer in the first paragraph. Search-friendly titles stay in `title` — quest labels are only the interface around them.

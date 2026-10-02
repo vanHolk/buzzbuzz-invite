@@ -2,7 +2,7 @@
 title: "Why We Made a Step Counter With Bees"
 description: "Walking was already good. It was just a little lonely."
 slug: why-we-made-a-step-counter-with-bees
-date: 2026-09-08
+date: 2026-10-02
 category: stories
 questType: story
 readTime: "4 min"
@@ -14,6 +14,7 @@ seoDescription: "Why BuzzBuzz is a step counter with bees, hives, and one photo 
 related:
   - start-a-walking-streak-with-friends
   - how-many-steps-is-5km
+  - how-long-to-walk-10000-steps
 ---
 
 Most step counters are very good at numbers and very bad at company. You open the app, see a ring, close the app, and the walk you just took evaporates. Nobody else knows you saw a dog in a raincoat. Nobody else knows you almost skipped the loop and did not.
@@ -34,6 +35,6 @@ The bee is not your coach. The bee is the friend who shows up in a tiny hat and 
 
 No arena of strangers. No feed that keeps every photo forever. A hive stays small. A daily photo stays up for about a day, then leaves. The walk is allowed to be ordinary. Ordinary is the point.
 
-We still care about the nerd questions — [how many steps are in 5 km](/guides/how-many-steps-is-5km), how long a big round number takes — because those questions are how people start. The app is for the part after the answer, when you text someone and go outside.
+We still care about the nerd questions — [how many steps are in 5 km](/guides/how-many-steps-is-5km), [how long 10,000 steps takes](/guides/how-long-to-walk-10000-steps) — because those questions are how people start. The app is for the part after the answer, when you text someone and go outside.
 
 If you want that part without a product tour, [start a seven-day streak with friends](/guides/start-a-walking-streak-with-friends). The bees can come with you. They are not required. The friend is.
