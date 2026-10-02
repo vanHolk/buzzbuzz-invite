@@ -64,4 +64,42 @@
     <loc>https://buzzbuzz.club/bees/witch.html</loc>
     <lastmod>2026-09-30</lastmod>
   </url>
+  <!-- guides:start -->
+  <url>
+    <loc>https://buzzbuzz.club/guides</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/10000-step-halloween-challenge</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/how-long-to-walk-10000-steps</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/how-many-steps-is-5km</loc>
+    <lastmod>2026-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/start-a-walking-streak-with-friends</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/why-we-made-a-step-counter-with-bees</loc>
+    <lastmod>2026-09-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- guides:end -->
 </urlset>
