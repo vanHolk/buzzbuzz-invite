@@ -40,7 +40,7 @@ Around 100 steps a minute is a research shorthand for moderate-intensity walking
 
 ## What 10,000 steps feels like
 
-Distance depends on step length too. For many adults, 10,000 steps is **about 7–8 km**, roughly **4.5–5 miles**. Shorter steps cover less ground, so the same count can be closer to 6.5 km. It is a full walk, not a warm-up, and it does not have to be one appointment.
+Distance depends on step length too. For many adults, 10,000 steps is **about 7–8 km**, roughly **4.5–5 miles**. [One mile is often about 2,000–2,500 steps](/guides/how-many-steps-is-1-mile) — an estimate, since step length changes the count. Shorter steps cover less ground, so the same 10,000 can be closer to 6.5 km. It is a full walk, not a warm-up, and it does not have to be one appointment.
 
 A day that quietly gets there:
 
