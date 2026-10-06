@@ -63,7 +63,7 @@ Pace sets the minutes. The [NHS describes a brisk walk as about 3 miles an hour]
 
 A slower walk takes longer. Waiting at a crossing does not add steps, even though the clock keeps going. You do not have to do the mile as one loop. A few blocks on the way somewhere still count.
 
-If the real question is a big daily total, [walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking. On the UNMC figure of just over 2,000 steps per mile, that count is close to five miles. Their estimate, not a tape measure.
+If the real question is a big daily total, [walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking. On the UNMC figure of just over 2,000 steps per mile, that count is close to five miles. [How many miles is 10,000 steps](/guides/how-many-miles-is-10000-steps) puts the same count at about 4 to 5 miles for many adults, depending on step length. UNMC’s figure, not a tape measure.
 
 :::bee
 Save the average for the chart. Walk the mile, trust the counter you actually wore, and let the hive argue about the photo.
