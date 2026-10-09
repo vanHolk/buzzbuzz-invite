@@ -46,6 +46,6 @@ Cold is the usual boss fight, not the dark. Pockets, a warm drink at the end, an
 
 ## If the hive wants extra credit
 
-Give the week a tiny theme. Everyone photographs the same color. Orange is the obvious one. Purple is the better one. In BuzzBuzz that kind of prompt is a Color Hunt, but any group chat can borrow it for seven days.
+Give the week a tiny theme. Everyone photographs the same color. Orange is the obvious one. Purple is the better one. In BuzzBuzz that kind of prompt is a Color Hunt, but any group chat can borrow it for seven days. For a daytime round with leaves, doors, and the rest of the block, try the [fall color walk](/guides/fall-color-walk).
 
 When the pumpkins come down, keep the part that was never seasonal: [a walking streak with friends](/guides/start-a-walking-streak-with-friends). Same group. Same check-in. No costume required.
