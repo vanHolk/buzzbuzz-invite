@@ -38,6 +38,8 @@ This assumes you keep walking, without long pauses:
 
 Around 100 steps a minute is a research shorthand for moderate-intensity walking in healthy adults, not a pace you have to hold. You do not need a perfect cadence. Walk for an hour, check the count, and you will know your own number by tomorrow.
 
+Thirty minutes at those same paces is about 2,400, 3,000, and 3,600 steps. [How many steps is a 30-minute walk](/guides/how-many-steps-is-a-30-minute-walk) has the half-hour version of this chart.
+
 ## What 10,000 steps feels like
 
 Distance depends on step length too. For many adults, 10,000 steps is **about 4 to 5 miles** (about **6.5 to 8 km**). [How many miles is 10,000 steps](/guides/how-many-miles-is-10000-steps) has the step-length breakdown. [One mile is often about 2,000–2,500 steps](/guides/how-many-steps-is-1-mile) — an estimate, since step length changes the count. It is a full walk, not a warm-up, and it does not have to be one appointment.
