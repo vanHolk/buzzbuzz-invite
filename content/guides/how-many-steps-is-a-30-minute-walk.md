@@ -35,9 +35,9 @@ These are planning estimates for a half hour with no long pauses:
 - Steady walk, about 100 steps a minute: **about 3,000 steps**
 - Brisk walk, about 120 steps a minute: **about 3,600 steps**
 
-Multiply the cadence by 30. 80 × 30 = 2,400. 100 × 30 = 3,000. 120 × 30 = 3,600. Hills and crowds will miss a row by a little.
+Multiply the cadence by 30. 80 × 30 = 2,400. 100 × 30 = 3,000. 120 × 30 = 3,600. Hills and crowds will pull a real walk a little off these rows.
 
-About 100 steps a minute is a research marker for moderate-intensity walking, and about 130 steps a minute is the marker for vigorous intensity. In [CADENCE-Adults](https://link.springer.com/article/10.1186/s12966-019-0769-6) (Tudor-Locke and colleagues, 2019), healthy adults ages 21 to 40 walked on a treadmill, and the published thresholds were rounded to those two cadences. They label intensity in that lab study. The pace worth repeating is your own.
+About 100 steps a minute is a research marker for moderate-intensity walking, and about 130 steps a minute is the marker for vigorous intensity. In [CADENCE-Adults](https://link.springer.com/article/10.1186/s12966-019-0769-6) (Tudor-Locke and colleagues, 2019), healthy adults ages 21 to 40 walked on a treadmill, and the published thresholds were rounded to those two cadences. Those numbers describe intensity in a lab study, so treat them as reference points rather than a pace you need to hold.
 
 ## How far 30 minutes goes
 
@@ -45,7 +45,7 @@ The [NHS describes a brisk walk as about 3 miles an hour](https://www.nhs.uk/liv
 
 Step length turns that distance back into a count. [One mile is often about 2,000–2,500 steps](/guides/how-many-steps-is-1-mile). A mile and a half on the same range is 1.5 × 2,000 = **3,000 steps** at the low end and 1.5 × 2,500 = **3,750 steps** at the high end. The brisk row above, about 3,600, sits inside that band. The minutes-based estimate and the miles-based estimate roughly agree.
 
-The kilometre version lines up too. [5 km is roughly 6,500 steps](/guides/how-many-steps-is-5km) for a lot of people, about 1,300 steps in a kilometre. At that figure, 2.4 km is 1,300 × 2.4 = **about 3,120 steps**, close to the steady row. Same family of estimate, counted from the distance.
+The kilometre version lines up too. [5 km is roughly 6,500 steps](/guides/how-many-steps-is-5km) for a lot of people, about 1,300 steps in a kilometre. At that figure, 2.4 km is 1,300 × 2.4 = **about 3,120 steps**, close to the steady row.
 
 ## Check yours in 60 seconds
 
@@ -61,13 +61,13 @@ Or note the counter, walk for 30 minutes, and subtract. If the clock says 40 and
 
 ## Where a half hour fits
 
-The [CDC asks adults for at least 150 minutes of moderate-intensity activity a week](https://www.cdc.gov/physical-activity-basics/guidelines/adults.html), such as brisk walking. You can spread that time through the week and break it into smaller chunks. One sketch on the page is 30 minutes a day, 5 days a week. Five 30-minute walks are 5 × 30 = **150 minutes**. Three walks of 10 minutes are 3 × 10 = **30 minutes**, one of those days in smaller pieces.
+The [CDC asks adults for at least 150 minutes of moderate-intensity activity a week](https://www.cdc.gov/physical-activity-basics/guidelines/adults.html), such as brisk walking. You can spread that time through the week and break it into smaller chunks. The CDC's own example is 30 minutes a day, 5 days a week. Five 30-minute walks are 5 × 30 = **150 minutes**. Three 10-minute walks cover one of those days in smaller pieces.
 
 On the step side, one steady half hour is about **3,000 steps**, and three of them are 3 × 3,000 = **about 9,000**. Walking between those loops, to the station or around the block, gets a lot of people the rest of the way toward 10,000. [Walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking. Three half hours are 90 minutes, the short end of that range. At 100 steps a minute, 10,000 steps takes 10,000 ÷ 100 = **100 minutes**, so the steps outside the three loops still matter.
 
 ## Why two counters disagree
 
-A half hour is a clock. Steps are footfalls. The same 30 minutes moves for a few ordinary reasons:
+Your counter tallies footfalls, not minutes, so the same half hour can land higher or lower for a few ordinary reasons:
 
 - **Pace.** More steps a minute means more steps in the half hour.
 - **Step length.** At the same speed, a shorter step needs a quicker cadence, so the count rises. A longer step does the reverse.
