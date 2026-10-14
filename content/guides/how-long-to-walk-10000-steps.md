@@ -12,7 +12,7 @@ featured: false
 answerKicker: "10,000 steps"
 answerFigure: "≈ 90–120 min"
 answerNote: "Time spent walking, not time on the clock. A steady 100 steps a minute takes about 1 hour 40 minutes."
-seoTitle: "How Long Does It Take to Walk 10,000 Steps?"
+seoTitle: "How Long to Walk 10,000 Steps? About 90–120 Minutes"
 seoDescription: "Walking 10,000 steps usually takes about 90–120 minutes of actual walking. Pace, stops, and step length all change the time."
 related:
   - how-many-steps-is-5km
@@ -24,7 +24,7 @@ sources:
   - "[CADENCE-Adults: walking cadence and intensity](https://link.springer.com/article/10.1186/s12966-019-0769-6)"
 ---
 
-**About 90–120 minutes** of walking is a fair estimate for 10,000 steps. A brisk, fairly steady pace can land closer to **80–100 minutes**. A slower stroll, with looking and stopping, can take **two hours or a little more**.
+Walking 10,000 steps takes **about 90–120 minutes** of actual walking. A brisk, fairly steady pace can land closer to **80–100 minutes**. A slower stroll, with looking and stopping, can take **two hours or a little more**.
 
 Those are minutes of actual walking. Traffic lights, coffee, and tying a shoe keep the clock running. They do not add steps.
 
