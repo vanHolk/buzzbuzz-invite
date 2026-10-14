@@ -12,8 +12,8 @@ featured: true
 answerKicker: "5 km"
 answerFigure: "≈ 6,500 steps"
 answerNote: "Typical range: ~6,000–7,500. This is an estimate. Your result depends mainly on step length."
-seoTitle: "How Many Steps Is 5 km?"
-seoDescription: "5 km is roughly 6,500 steps for many adults — an estimate, often between 6,000 and 7,500, depending on step length."
+seoTitle: "How Many Steps Is 5 km? About 6,500 Steps"
+seoDescription: "5 km is about 6,500 steps for many adults, usually between 6,000 and 7,500 depending on step length. See the step-length chart and walking time."
 related:
   - how-many-steps-is-1-mile
   - how-long-to-walk-10000-steps
@@ -22,7 +22,7 @@ sources:
   - "[NHS: Walking for health](https://www.nhs.uk/live-well/exercise/walking-for-health/)"
 ---
 
-There is no exact conversion. A useful middle estimate is **about 6,500 steps**, and a lot of adults land somewhere between **6,000 and 7,500**. A shorter step means more steps for the same 5 km.
+5 km is **about 6,500 steps** for many adults, and most land somewhere between **6,000 and 7,500**. There is no exact conversion. A shorter step means more steps for the same 5 km.
 
 If you want one number to remember, **about 1,300 steps per kilometre** gets you to 6,500. Treat it as a sketch, then check it against your own walk.
 
