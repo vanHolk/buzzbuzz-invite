@@ -64,7 +64,7 @@ If you are walking alone, the compare step can wait. Save the photos and send th
 
 ## When your street turns
 
-[Fall color depends on location](https://www.fs.usda.gov/visit/fall-colors). The Forest Service goes region by region: aspens, oaks, maples, cottonwoods, and golden larches. Elevation changes the mix from one trail to the next. Check the park or forest page near you, or walk the loop you already use and see what has turned. A block with few trees still works. The door, the bike, and the window are on the list. If autumn where you live arrives in the other half of the year, save the prompts for autumn there.
+[Fall color depends on location](https://www.fs.usda.gov/visit/fall-colors). The Forest Service goes region by region: aspens, oaks, maples, cottonwoods, and golden larches. Elevation changes the mix from one trail to the next. Check the park or forest page near you, or walk the loop you already use and see what has turned. A block with few trees still works. The door, the bike, and the window are on the list. If autumn where you live arrives in the other half of the year, save the prompts for autumn there. If you want a longer trail day, [a hike counts toward your step goal too](/guides/does-a-hike-count-toward-your-step-goal).
 
 :::bee
 The [Forest Service](https://www.fs.usda.gov/visit/fall-colors/joy-and-science) notes that many native bees and butterflies rely on leaf litter to complete their life cycles. Leave a corner unraked. The photo of the pile can come from the sidewalk.
