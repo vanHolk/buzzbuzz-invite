@@ -28,7 +28,7 @@ sources:
 
 The round sketch is the [5 km figure](/guides/how-many-steps-is-5km) doubled. About **1,300 steps per kilometre** times 10 is 13,000. Treat it as a sketch, then check it on a walk you take.
 
-A step counter counts footfalls, not metres. The same 10 km can land higher or lower for ordinary reasons: a shorter step, a pace that stretches each step a little, hills and crossings, or a phone in a bag and a watch on a wrist. Two people can share the route and finish with different totals. Both can be right.
+A step counter counts footfalls, not metres. The same 10 km can land higher or lower for ordinary reasons: a shorter step, a pace that stretches each step a little, hills and crossings, or a phone in a bag and a watch on a wrist. Two people can share the route and finish with different totals.
 
 ## A step-length chart for 10 km
 
@@ -44,7 +44,7 @@ The [University of Nebraska Medical Center’s walking guide](https://www.unmc.e
 
 10,000 on the watch is a tidy round number. At a 0.75 m step it covers about **7.5 km**. [How many miles is 10,000 steps](/guides/how-many-miles-is-10000-steps) puts that count at about **6.5–8 km** for many adults, and 7.5 km sits in the middle of the band.
 
-A 10 km still wants about **2.5 km** more, and about **3,000 steps** more. Cheer the 10,000 if you want, and keep walking. The sign for 10 km is a little further along.
+A 10 km still wants about **2.5 km** more, and about **3,000 steps** more. Cheer the 10,000 if you want, and keep walking.
 
 ## How long 10 km takes
 
