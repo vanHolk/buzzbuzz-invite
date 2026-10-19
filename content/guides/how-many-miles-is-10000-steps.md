@@ -64,7 +64,7 @@ Same step, same formula, still estimates. Feet are the step count times 2.5. Mil
 
 18,750 ÷ 5,280 = 3.55 miles, shown as 3.6, and 18,750 × 0.3048 = 5.72 km, shown as 5.7. 37,500 ÷ 5,280 = 7.10 miles, shown as 7.1, and 37,500 × 0.3048 = 11.43 km, shown as 11.4. A shorter step than 2.5 feet shrinks every row. A longer step grows them.
 
-[5 km is roughly 6,500 steps](/guides/how-many-steps-is-5km) for a lot of people. At this 2.5 foot step, 7,500 steps is about 5.7 km, a little past that 5 km.
+[5 km is roughly 6,500 steps](/guides/how-many-steps-is-5km) for a lot of people. At this 2.5 foot step, 7,500 steps is about 5.7 km, a little past that 5 km. [10 km is about 13,000 steps](/guides/how-many-steps-is-10km) for many adults, so 10,000 steps usually stops short of a 10 km.
 
 ## Measure your own
 

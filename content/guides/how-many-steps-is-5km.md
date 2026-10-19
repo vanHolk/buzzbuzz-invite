@@ -24,7 +24,7 @@ sources:
 
 5 km is **about 6,500 steps** for many adults, and most land somewhere between **6,000 and 7,500**. There is no exact conversion. A shorter step means more steps for the same 5 km.
 
-If you want one number to remember, **about 1,300 steps per kilometre** gets you to 6,500. Treat it as a sketch, then check it against your own walk.
+If you want one number to remember, **about 1,300 steps per kilometre** gets you to 6,500. Double the 6,500 for [10 km](/guides/how-many-steps-is-10km). Treat it as a sketch, then check it against your own walk.
 
 ## Why your number will be a little different
 
