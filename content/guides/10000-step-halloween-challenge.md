@@ -49,3 +49,5 @@ Cold is the usual boss fight, not the dark. Pockets, a warm drink at the end, an
 Give the week a tiny theme. Everyone photographs the same color. Orange is the obvious one. Purple is the better one. In BuzzBuzz that kind of prompt is a Color Hunt, but any group chat can borrow it for seven days. For a daytime round with leaves, doors, and the rest of the block, try the [fall color walk](/guides/fall-color-walk).
 
 When the pumpkins come down, keep the part that was never seasonal: [a walking streak with friends](/guides/start-a-walking-streak-with-friends). Same group. Same check-in. No costume required.
+
+For the darker months after that week, [walking after the clocks go back](/guides/walking-after-the-clocks-go-back) is the daily version: move the walk, light it, or shrink it to ten minutes.
