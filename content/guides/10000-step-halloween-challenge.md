@@ -28,6 +28,8 @@ You can split the steps across the day. The night walk is the part that makes it
 - **Proof:** one photo from the night walk. A lit window, a plastic skeleton, your own shadow. No need to photograph strangers.
 - **Finish line:** everyone who hits 10,000 and sends a night photo is done. It is not a race unless your group wants a race.
 
+Anyone counting the trick-or-treat route can use [how many steps is trick-or-treating](/guides/how-many-steps-is-trick-or-treating) for the street miles and the driveways.
+
 If 10,000 steps sounds abstract, it is usually [about 90–120 minutes of actual walking](/guides/how-long-to-walk-10000-steps) in total, not a medical target. The spooky portion can be the short one.
 
 :::bee
