@@ -3,6 +3,7 @@ title: "Fall Color Walk: 12 Photo Prompts for an Autumn Walk"
 description: "A color, a daytime walk, and photos to compare."
 slug: fall-color-walk
 date: 2026-10-09
+updated: 2026-10-30
 category: touch-grass
 questType: seasonal-quest
 readTime: "5 min"
@@ -70,4 +71,4 @@ If you are walking alone, the compare step can wait. Save the photos and send th
 The [Forest Service](https://www.fs.usda.gov/visit/fall-colors/joy-and-science) notes that many native bees and butterflies rely on leaf litter to complete their life cycles. Leave a corner unraked. The photo of the pile can come from the sidewalk.
 :::
 
-When the evenings get dark, the same group can move on to the [10,000-step Halloween challenge](/guides/10000-step-halloween-challenge). Until then, pick a color and walk it in daylight.
+The night version, when you want one, is the [10,000-step Halloween challenge](/guides/10000-step-halloween-challenge). This one stays a daytime loop: pick a color and walk it in daylight.

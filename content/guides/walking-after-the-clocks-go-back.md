@@ -3,6 +3,7 @@ title: "Walking After the Clocks Go Back: Keep Your Daily Walk When It Gets Dark
 description: "The clocks go back and the after-work walk lands in the dark. Move it, light it, or shrink it to ten minutes."
 slug: walking-after-the-clocks-go-back
 date: 2026-10-23
+updated: 2026-10-30
 category: after-dark
 questType: night-walk
 readTime: "5 min"
@@ -12,10 +13,10 @@ chips:
 featured: false
 draft: false
 answerKicker: "Clocks go back"
-answerFigure: "UK Oct 25 · US Nov 1"
+answerFigure: "Last Sun Oct · First Sun Nov"
 answerNote: "Move the walk, light it up, or shrink it. Don't drop it."
 seoTitle: "Walking After the Clocks Go Back: How to Keep Your Daily Walk in the Dark Months"
-seoDescription: "The clocks go back Oct 25 (UK) and Nov 1 (US). How to move, light, and share your daily walk so the habit survives darker evenings."
+seoDescription: "When the clocks go back, the evening walk lands in the dark. Move it, light it, or shrink it to ten minutes so the habit survives."
 related:
   - start-a-walking-streak-with-friends
   - 10000-step-halloween-challenge
@@ -25,16 +26,16 @@ sources:
   - "[NIST: Daylight Saving Time](https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst)"
   - "[GOV.UK: The Highway Code, rules for pedestrians](https://www.gov.uk/guidance/the-highway-code/rules-for-pedestrians-1-to-35)"
   - "[NHTSA: Pedestrian Safety](https://www.nhtsa.gov/road-safety/pedestrian-safety)"
-  - "[NHS: Walking for health](https://www.nhs.uk/live-well/exercise/running-and-aerobic-exercises/walking-for-health/)"
+  - "[NHS: Walking for health](https://www.nhs.uk/live-well/exercise/walking-for-health/)"
 ---
 
-The clocks go back on Sunday 25 October in the UK and Sunday 1 November in the US, and the after-work walk suddenly happens in the dark. The walk survives if you do one of three things: move it into daylight, make the evening version visible, or shrink it to a minimum that still counts.
+The clocks go back on the last Sunday in October in the UK and the first Sunday in November in the US, and the after-work walk suddenly happens in the dark. The walk survives if you do one of three things: move it into daylight, make the evening version visible, or shrink it to a minimum that still counts.
 
 ## The dates, then the habit
 
-In the UK the clocks go back one hour at 2am on the last Sunday in October. In 2026 that Sunday is 25 October, and the country returns to Greenwich Mean Time. [GOV.UK](https://www.gov.uk/when-do-the-clocks-change) lists this change and the next one forward, on 28 March 2027. British Summer Time is the stretch with more daylight in the evenings and less in the mornings. When the clocks go back, that flips.
+In the UK the clocks go back one hour at 2am on the last Sunday in October, and the country returns to Greenwich Mean Time. [GOV.UK](https://www.gov.uk/when-do-the-clocks-change) lists the date for the current year, and the date the clocks go forward again. British Summer Time is the stretch with more daylight in the evenings and less in the mornings. When the clocks go back, that flips.
 
-In the United States, [NIST](https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst) says daylight saving time in 2026 ends on November 1 at 2 a.m. local time. At 2 a.m. the local time becomes 1 a.m., and that hour repeats. The return to standard time moves one hour of daylight from the evening to the morning. Daylight saving time begins again at 2 a.m. on the second Sunday in March. The evening light goes an hour earlier overnight.
+In the United States, [NIST](https://www.nist.gov/pml/time-and-frequency-division/popular-links/daylight-saving-time-dst) says daylight saving time ends at 2 a.m. on the first Sunday in November. At 2 a.m. the local time becomes 1 a.m., and that hour repeats. The return to standard time moves one hour of daylight from the evening to the morning. Daylight saving time begins again at 2 a.m. on the second Sunday in March. The evening light goes an hour earlier overnight.
 
 Hawaii does not observe daylight saving time, and most of Arizona does not either. The exception NIST names is the Navajo Nation, which does.
 
@@ -42,7 +43,7 @@ Hawaii does not observe daylight saving time, and most of Arizona does not eithe
 
 Morning, lunch, or the evening walk you already take. Choose one before the week fills up.
 
-Morning uses the hour the change hands back. That autumn switch moves an hour of daylight from the evening to the morning, so a loop before work is the one that gets lighter. Try it the first Monday, before the school bags and the first messages. One morning tells you whether the slot fits.
+Morning uses the hour the change hands back. That autumn switch moves an hour of daylight from the evening to the morning, so a loop before work is the one that gets lighter. Try it the first Monday after the change, before the school bags and the first messages. One morning tells you whether the slot fits.
 
 Lunch is the walk that stays in daylight through the short months. A lap of the block, or the long way to a sandwich, still sits in the middle of the day after that one-hour shift. If the morning is already claimed and the trip home is dark, put lunch on the calendar the way you would a meeting you meant to keep.
 
@@ -54,7 +55,7 @@ In poor daylight, [Highway Code Rule 3](https://www.gov.uk/guidance/the-highway-
 
 ## Keep a ten-minute minimum
 
-[The NHS](https://www.nhs.uk/live-well/exercise/running-and-aerobic-exercises/walking-for-health/) says a brisk 10-minute daily walk counts toward the 150 minutes of weekly exercise in the physical activity guidelines for adults aged 19 to 64. On the worst wet dark Tuesday, those ten minutes still count, and they keep a streak alive. Any of the three slots qualifies.
+[The NHS](https://www.nhs.uk/live-well/exercise/walking-for-health/) says a brisk 10-minute daily walk counts toward the 150 minutes of weekly exercise in the physical activity guidelines for adults aged 19 to 64. On the worst wet dark Tuesday, those ten minutes still count, and they keep a streak alive. Any of the three slots qualifies.
 
 When the evening is kinder, take a full half hour. [How many steps that adds up to](/guides/how-many-steps-is-a-30-minute-walk) depends on your pace. Ten minutes is the promise that keeps a bad day on the board.
 
@@ -70,4 +71,4 @@ The first person out after dark posts a streetlight photo. Or pick one lunch a w
 Hang the reflective layer on the same hook as the shoes. A jacket in a drawer never meets a headlight.
 :::
 
-Pick your slot before Sunday. Send the group one line: morning, lunch, or the evening loop with something a headlight can find. Then take the ten minutes on the first gloomy day, while the rule is still new.
+Pick your slot before the clocks change. Send the group one line: morning, lunch, or the evening loop with something a headlight can find. Then take the ten minutes on the first gloomy day, while the rule is still new.

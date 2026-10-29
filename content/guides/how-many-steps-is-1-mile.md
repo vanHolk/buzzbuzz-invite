@@ -3,6 +3,7 @@ title: "How Many Steps Is 1 Mile?"
 description: "The answer depends on your step — but 2,000–2,500 is a surprisingly useful estimate."
 slug: how-many-steps-is-1-mile
 date: 2026-10-02
+updated: 2026-10-30
 category: step-nerd
 questType: quick-quest
 readTime: "5 min"
@@ -55,7 +56,7 @@ A few more lengths, so the spread is visible. These are examples, not a reading 
 
 A step around 2.4 feet is 5,280 ÷ 2.4 = **2,200 steps**. Pair that with 2,112 and you get the middle band: about **2,100–2,200**. Near 2.1 feet you are just past 2,500. Near 2.8 feet you are under 2,000. The 2,000–2,500 range is a handy middle for many walkers. It is not a rule, and it is not a lab result.
 
-The same shortcut shows up in kilometres. [5 km is roughly 6,500 steps](/guides/how-many-steps-is-5km) for a lot of people, and 5 km is about 3.1 miles. A flat “2,000 steps per mile” would suggest about 6,200. Same family of estimate. Different rounding. Useful. Not worth a fight in the group chat.
+The same shortcut shows up in kilometres. [5 km is roughly 6,500 steps](/guides/how-many-steps-is-5km) for a lot of people, and 5 km is about 3.1 miles. A flat “2,000 steps per mile” would suggest about 6,200. Same family of estimate. Different rounding. Useful. Not worth a fight in the group chat. The longer sketch is [how many steps are in 10 km](/guides/how-many-steps-is-10km), which is not the same walk as 10,000 steps.
 
 ## How long that mile takes
 
