@@ -3,6 +3,7 @@ title: "How Many Steps Is Trick-or-Treating?"
 description: "About 2,000 steps for every mile of the route, plus every driveway. Map the loop, then add the doors."
 slug: how-many-steps-is-trick-or-treating
 date: 2026-10-27
+updated: 2026-10-30
 category: step-nerd
 questType: quick-quest
 readTime: "5 min"
@@ -74,10 +75,10 @@ Steps are distance divided by step length. On the formula in the [1 mile guide](
 
 After the last porch, line up the kid, the adult beside them, and the friend who walked the driveways while everyone else waited at the door. A hive can hold those three totals in one place. If the group wants the week-long version, that is the [10,000-step Halloween challenge](/guides/10000-step-halloween-challenge).
 
-After Halloween, [walking after the clocks go back](/guides/walking-after-the-clocks-go-back) is the daily walk for the darker evenings that follow.
+Once the costumes are away, [walking after the clocks go back](/guides/walking-after-the-clocks-go-back) is the daily walk for the darker evenings.
 
 :::bee
 Write the street miles down before the first doorbell. The porches are the part you add by hand.
 :::
 
-Before you leave on Saturday, draw the loop and write down the miles. At the first door, note the counter. At the last door, subtract. That gap is your night, driveways included.
+Before you leave, draw the loop and write down the miles. At the first door, note the counter. At the last door, subtract. That gap is your night, driveways included.
