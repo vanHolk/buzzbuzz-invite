@@ -137,6 +137,16 @@
       <image:title>Witch Bee — the Halloween BuzzBuzz bee</image:title>
     </image:image>
   </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/cozy.html</loc>
+    <lastmod>2026-10-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://buzzbuzz.club/bees/img/cozy.png</image:loc>
+      <image:title>Cozy Bee — the November BuzzBuzz bee</image:title>
+    </image:image>
+  </url>
   <!-- guides:start -->
   <url>
     <loc>https://buzzbuzz.club/guides</loc>

@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#efaa08" />
+  <script src="/posthog-config.js"></script>
+  <script src="/posthog.js"></script>
+
+  <title>Cozy Bee: The November Bee in BuzzBuzz</title>
+
+  <!-- Primary SEO -->
+  <meta name="description" content="Meet Cozy Bee, the November bee in BuzzBuzz. She has a cream beanie, a rust scarf, and a calendar built so nobody in the hive spends a dark evening alone." />
+  <meta name="keywords" content="Cozy Bee, November bee, BuzzBuzz bee skins, BuzzBuzz bee lore, Honey Shop skins, beanie bee, step counter app mascot" />
+  <meta name="author" content="BuzzBuzz" />
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <link rel="canonical" href="https://buzzbuzz.club/bees/cozy.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Cozy Bee: The November Bee in BuzzBuzz" />
+  <meta property="og:description" content="Meet Cozy Bee, the November bee in BuzzBuzz. She has a cream beanie, a rust scarf, and a calendar built so nobody in the hive spends a dark evening alone." />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="BuzzBuzz" />
+  <meta property="og:url" content="https://buzzbuzz.club/bees/cozy.html" />
+  <meta property="og:image" content="https://buzzbuzz.club/bees/img/cozy.png" />
+  <meta property="og:image:alt" content="Cozy Bee, a yellow bee in a cream pom-pom beanie and a rust scarf" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Cozy Bee: The November Bee in BuzzBuzz" />
+  <meta name="twitter:description" content="Meet Cozy Bee, the November bee in BuzzBuzz. She has a cream beanie, a rust scarf, and a calendar built so nobody in the hive spends a dark evening alone." />
+  <meta name="twitter:image" content="https://buzzbuzz.club/bees/img/cozy.png" />
+
+  <!-- Favicon (absolute URLs — required for GitHub Pages subpaths & Google Search) -->
+  <link rel="icon" type="image/png" sizes="48x48" href="https://buzzbuzz.club/favicon-48.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://buzzbuzz.club/favicon-192.png" />
+  <link rel="shortcut icon" href="https://buzzbuzz.club/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://buzzbuzz.club/apple-touch-icon.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Cozy Bee: The November Bee in BuzzBuzz",
+    "url": "https://buzzbuzz.club/bees/cozy.html",
+    "description": "Meet Cozy Bee, the November bee in BuzzBuzz. She has a cream beanie, a rust scarf, and a calendar built so nobody in the hive spends a dark evening alone.",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "BuzzBuzz",
+      "url": "https://buzzbuzz.club/"
+    },
+    "primaryImageOfPage": "https://buzzbuzz.club/bees/img/cozy.png"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "BuzzBuzz", "item": "https://buzzbuzz.club/" },
+      { "@type": "ListItem", "position": 2, "name": "Bees", "item": "https://buzzbuzz.club/#meet-the-bees" },
+      { "@type": "ListItem", "position": 3, "name": "Cozy Bee", "item": "https://buzzbuzz.club/bees/cozy.html" }
+    ]
+  }
+  </script>
+
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f5efdf;
+      color: #2d221c;
+      line-height: 1.55;
+    }
+    a { color: inherit; }
+    h1, h2, h3, .eyebrow, .mini-name, .store-badge .badge-large {
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    h1 {
+      font-size: clamp(44px, 7.5vw, 72px);
+      font-weight: 800;
+      line-height: .95;
+      letter-spacing: -2px;
+      margin: 6px 0 10px;
+    }
+    h2 {
+      font-size: clamp(30px, 4.5vw, 44px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -1.2px;
+      margin: 0 0 18px;
+    }
+    h3 { margin: 0 0 10px; font-size: 22px; font-weight: 700; letter-spacing: -.3px; }
+    p { margin-top: 0; }
+
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      background: #2d221c; color: #fff7eb;
+      padding: 10px 14px; border-radius: 8px; z-index: 100;
+    }
+    .skip-link:focus { left: 12px; top: 12px; }
+
+    .lang-toggle {
+      position: fixed; top: 14px; right: 14px; z-index: 50;
+      display: inline-flex; align-items: center;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 999px;
+      padding: 3px; box-shadow: 0 6px 18px rgba(65,45,10,.12);
+      font-family: "Baloo 2", -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .lang-toggle button {
+      border: 0; background: transparent; color: #5a4b41;
+      font: inherit; font-size: 14px; font-weight: 700;
+      padding: 6px 14px; border-radius: 999px; cursor: pointer;
+      transition: background .15s ease, color .15s ease;
+    }
+    .lang-toggle button[aria-pressed="true"] { background: #efaa08; color: #2d221c; }
+    .lang-toggle button:focus-visible { outline: 2px solid #2d221c; outline-offset: 2px; }
+
+    .topbar {
+      max-width: 1120px; margin: 0 auto; padding: 22px 24px 0;
+    }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: "Baloo 2", sans-serif; font-weight: 700;
+      text-decoration: none; color: #5a4b41;
+      border-bottom: 2px solid transparent;
+      transition: color .15s ease, border-color .15s ease;
+    }
+    .back-link:hover, .back-link:focus-visible { color: #2d221c; border-bottom-color: #efaa08; outline: none; }
+
+    .hero {
+      max-width: 1120px; margin: 0 auto;
+      padding: 36px 24px 64px;
+      display: grid; grid-template-columns: minmax(260px, 440px) 1fr;
+      gap: 44px; align-items: center;
+    }
+    .bee-cell {
+      position: relative;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 36px;
+      overflow: hidden; box-shadow: 0 18px 44px rgba(65,45,10,.12);
+    }
+    .bee-cell img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+    .eyebrow {
+      display: inline-block;
+      font-size: 14px; font-weight: 800; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #2d221c; background: #efaa08;
+      padding: 4px 12px; border-radius: 999px;
+    }
+    .epithet { font-size: 22px; color: #5a4b41; margin: 0 0 26px; }
+
+    .chips { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .chip {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 18px;
+      padding: 14px 16px;
+    }
+    .chip-k {
+      display: block; font-size: 11px; font-weight: 800; letter-spacing: 1px;
+      text-transform: uppercase; color: #a08c75; margin-bottom: 3px;
+    }
+    .chip-v { font-size: 15px; color: #2d221c; font-weight: 600; }
+
+    .section { max-width: 920px; margin: 0 auto; padding: 0 24px 64px; }
+    .text-block {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 32px;
+      padding: 34px; font-size: 18px;
+    }
+    .text-block p { color: #5a4b41; }
+    .text-block p:last-child { margin-bottom: 0; }
+
+    .grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 28px;
+      padding: 26px;
+    }
+    .card p { color: #5a4b41; margin-bottom: 0; }
+
+    .color-banner {
+      display: flex; align-items: center; gap: 20px;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 28px;
+      padding: 26px;
+    }
+    .swatch {
+      width: 64px; height: 64px; border-radius: 50%;
+      border: 3px solid #2d221c; flex-shrink: 0;
+      background: linear-gradient(135deg, #d85018, #6a2a12);
+    }
+    .color-banner h3 { margin-bottom: 2px; }
+    .color-banner p { margin: 0; color: #5a4b41; font-size: 18px; }
+
+    .pager {
+      display: flex; justify-content: space-between; gap: 14px;
+      margin-bottom: 26px; flex-wrap: wrap;
+    }
+    .pager a {
+      font-family: "Baloo 2", sans-serif; font-weight: 800; font-size: 17px;
+      text-decoration: none; color: #2d221c;
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 999px;
+      padding: 12px 22px;
+      transition: border-color .15s ease, transform .15s ease;
+    }
+    .pager a:hover, .pager a:focus-visible { border-color: #efaa08; transform: translateY(-2px); outline: none; }
+
+    .mini-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 14px;
+    }
+    .mini-cell {
+      background: #fffaf1; border: 2px solid #eadbc7; border-radius: 22px;
+      overflow: hidden; text-decoration: none; color: #2d221c;
+      transition: transform .15s ease, border-color .15s ease;
+    }
+    .mini-cell:hover, .mini-cell:focus-visible { transform: translateY(-3px); border-color: #efaa08; outline: none; }
+    .mini-cell img { display: block; width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; }
+    .mini-name {
+      display: block; padding: 10px 14px 13px;
+      font-size: 16px; font-weight: 800; letter-spacing: -.3px;
+      border-top: 2px solid #f3e9d7;
+    }
+
+    .cta {
+      text-align: center;
+      max-width: 720px; margin: 0 auto; padding: 0 24px 80px;
+    }
+    .cta p { color: #5a4b41; font-size: 18px; margin-bottom: 26px; }
+    .cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .store-badge {
+      display: inline-flex; align-items: center; gap: 12px;
+      background: #1a1410; color: #fff7eb;
+      padding: 12px 22px 12px 18px; border-radius: 14px;
+      text-decoration: none; min-width: 200px;
+      transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+      box-shadow: 0 10px 24px rgba(65,45,10,.18);
+    }
+    .store-badge:hover, .store-badge:focus-visible {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 30px rgba(65,45,10,.24);
+      background: #2d221c; outline: none;
+    }
+    .store-badge svg { width: 28px; height: 28px; flex-shrink: 0; }
+    .store-badge .badge-text { display: flex; flex-direction: column; align-items: flex-start; line-height: 1.1; }
+    .store-badge .badge-small { font-size: 10px; font-weight: 500; letter-spacing: .5px; opacity: .85; text-transform: uppercase; }
+    .store-badge .badge-large { font-size: 19px; font-weight: 700; letter-spacing: -.3px; margin-top: 1px; }
+
+    footer { text-align: center; padding: 0 24px 80px; color: #7a695f; font-size: 14px; }
+
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; gap: 28px; padding-top: 24px; }
+      .bee-cell { max-width: 380px; margin: 0 auto; }
+      .chips { grid-template-columns: 1fr; }
+      .lang-toggle { top: 10px; right: 10px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .pager a, .mini-cell, .store-badge { transition: none; }
+    }
+  </style>
+  <link rel="stylesheet" href="/sticky-widgets.css" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" data-lang="en" aria-pressed="true">EN</button>
+    <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+  </div>
+
+  <div class="topbar">
+    <a class="back-link" href="../landing.html" data-i18n="lbl.back">← Back to the hive</a>
+  </div>
+
+  <header class="hero">
+    <div class="bee-cell">
+      <img src="img/cozy.png" alt="Cozy Bee, a yellow bee in a cream pom-pom beanie and a rust scarf" width="480" height="480" fetchpriority="high" />
+    </div>
+    <div>
+      <span class="eyebrow"><span data-i18n="lbl.eyebrow">BuzzBuzz Bee Lore</span> · No. 16</span>
+      <h1 data-i18n="lbl.h1">Cozy Bee</h1>
+      <p class="epithet" data-i18n="epithet">The days are getting shorter. Her calendar is getting longer.</p>
+
+      <h2 class="visually-hidden" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);" data-i18n="lbl.file_title">Character file</h2>
+      <div class="chips">
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.0.k">Classification</span>
+            <span class="chip-v" data-i18n="file.0.v">November bee. Organizer, opinion-haver, plan-maker.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.1.k">Active hours</span>
+            <span class="chip-v" data-i18n="file.1.v">Whenever someone might be home alone with nothing on.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.2.k">Step style</span>
+            <span class="chip-v" data-i18n="file.2.v">Quick and talking the whole way. She stops at every bookshop window to check whether the staff picks have improved. They haven't.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.3.k">Diet</span>
+            <span class="chip-v" data-i18n="file.3.v">Diner toast and coffee, plus whatever the pie of the week is, as long as she approves of it.</span>
+          </div>
+          <div class="chip">
+            <span class="chip-k" data-i18n="file.4.k">Current status</span>
+            <span class="chip-v" data-i18n="file.4.v">In the Honey Shop for November.</span>
+          </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="section" aria-labelledby="lore">
+      <h2 id="lore" data-i18n="lbl.lore_title">Case notes</h2>
+      <div class="text-block">
+        <p data-i18n="lore.0">Cozy Bee has decided the hive won't have a lonely November, and she didn't ask anyone before deciding. By the first frost she had a book club, a soup swap, and a Thursday trivia night on the calendar. She'd also booked a Friday for "lantern stuff," which she still hasn't explained.</p>
+        <p data-i18n="lore.1">She knows everyone's business, and she knows it early. She knew Goblin Bee had switched barbers before Goblin Bee's barber knew. She has notes on the harvest fair parking plan and on the font on the fair flyer. Most of them are correct, and none of them were requested.</p>
+        <p data-i18n="lore.2">She has had the same window seat at the corner diner every morning since she arrived. The owner says he only saves it so she'll stop rearranging the other tables. One Tuesday, Boram's mug was still on its hook for the third day running. Cozy Bee ordered a second slice of pie to go, didn't say who it was for, and took the long way home past Boram's door.</p>
+        <p data-i18n="lore.3">Her mother knitted the scarf the winter Cozy Bee left home. It's a little too long because her mother kept going while they talked on the phone. Cozy Bee will tell you it's uneven. She has never once let anyone else fix it.</p>
+        <p data-i18n="lore.4">Cozy Bee is in the BuzzBuzz Honey Shop for November. If you're free Thursday, you're not anymore.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="facts">
+      <h2 id="facts" data-i18n="lbl.facts_title">Notes from the town meeting</h2>
+      <div class="grid" role="list">
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.0.k">Hat contents</h3>
+          <p data-i18n="fact.0.v">Three paperbacks and a spare event schedule. The pom-pom is mostly structural.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.1.k">Town meetings</h3>
+          <p data-i18n="fact.1.v">Six. She has never missed one, and she has opinions on items not yet on the agenda.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.2.k">The diner owner</h3>
+          <p data-i18n="fact.2.v">"That seat's not yours." It has been hers every morning for a year.</p>
+        </article>
+        <article class="card" role="listitem">
+          <h3 data-i18n="fact.3.k">Signup sheets</h3>
+          <p data-i18n="fact.3.v">She has already put your name on one, and you'll find out which.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="color">
+      <h2 id="color" data-i18n="lbl.color_title">Favorite Color Hunt color</h2>
+      <div class="color-banner">
+        <span class="swatch" aria-hidden="true"></span>
+        <div>
+          <h3 data-i18n="color.name">Scarf rust</h3>
+          <p data-i18n="color.quote">"Nobody's staying in tonight. I made a list."</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="more">
+      <h2 id="more" data-i18n="lbl.more_title">More bees</h2>
+      <nav class="pager" aria-label="Bee navigation">
+        <a href="witch.html" rel="prev" data-i18n="lbl.prev">← Previous bee</a>
+        <a href="normal.html" rel="next" data-i18n="lbl.next">Next bee →</a>
+      </nav>
+      <div class="mini-grid">
+          <a class="mini-cell" href="normal.html">
+            <img src="img/normal.png" alt="Normal Bee, the original yellow BuzzBuzz bee with a calm smile" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Normal Bee</span>
+          </a>
+          <a class="mini-cell" href="berry-blush.html">
+            <img src="img/berry-blush.png" alt="Berry Blush, a hot pink bee with heart-shaped cheeks and long lashes" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Berry Blush</span>
+          </a>
+          <a class="mini-cell" href="goblin.html">
+            <img src="img/goblin.png" alt="Goblin Bee, a green bee with pointy ears, red eyes and a fanged grin" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Goblin Bee</span>
+          </a>
+          <a class="mini-cell" href="outlaw.html">
+            <img src="img/outlaw.png" alt="Outlaw Bee, a yellow bee wearing a brown cowboy hat with a star and a red bandana" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Outlaw Bee</span>
+          </a>
+          <a class="mini-cell" href="aurora-prism.html">
+            <img src="img/aurora-prism.png" alt="Aurora Prism, a holographic rainbow gradient bee with iridescent wings" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Aurora Prism</span>
+          </a>
+          <a class="mini-cell" href="hani.html">
+            <img src="img/hani.png" alt="Hani, a bee with pastel pink hair, heart-shaped wings, and a headset" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Hani</span>
+          </a>
+          <a class="mini-cell" href="kpop-jimmy.html">
+            <img src="img/kpop-jimmy.png" alt="Kpop Jimmy, a bee with a wavy blue perm and an idol headset mic" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Kpop Jimmy</span>
+          </a>
+          <a class="mini-cell" href="wizard-student.html">
+            <img src="img/wizard-student.png" alt="Wizard Student, a bee wearing a black witch hat and a gold bell collar" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Wizard Student</span>
+          </a>
+          <a class="mini-cell" href="festival-bee.html">
+            <img src="img/festival-bee.png" alt="Festival Bee, a bee with a white goatee wearing a star-spangled top hat, blue suit and red bow tie" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Festival Bee</span>
+          </a>
+          <a class="mini-cell" href="luau-bee.html">
+            <img src="img/luau.png" alt="Luau Bee, a bee with hibiscus tucked behind one antenna and a floral pareo" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Luau Bee</span>
+          </a>
+          <a class="mini-cell" href="unc-summer.html">
+            <img src="img/unc.png" alt="Unc Summer, a bee in a Hawaiian shirt with a perm and mustache" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Unc Summer</span>
+          </a>
+          <a class="mini-cell" href="boram.html">
+            <img src="img/boram.png" alt="Boram, a BuzzBuzz bee in a coral Chuseok hanbok with braided hair and a gold flower pin" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Boram</span>
+          </a>
+          <a class="mini-cell" href="suho.html">
+            <img src="img/suho.png" alt="Suho, a BuzzBuzz bee in a light-blue Chuseok durumagi and a traditional gat" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Suho</span>
+          </a>
+          <a class="mini-cell" href="vampire.html">
+            <img src="img/vampire.png" alt="Vampire Bee, a pale blue bee with yellow eyes, fangs, pointed ears, and a red-lined cape" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Vampire Bee</span>
+          </a>
+          <a class="mini-cell" href="witch.html">
+            <img src="img/witch.png" alt="Witch Bee, a yellow bee with white hair, green eyes, a crescent-moon hat, and a dark cape" loading="lazy" width="480" height="480" />
+            <span class="mini-name">Witch Bee</span>
+          </a>
+      </div>
+    </section>
+  </main>
+
+  <section class="cta" aria-labelledby="cta-title">
+    <h2 id="cta-title" data-i18n="lbl.cta_title">Pick your bee. Start your streak.</h2>
+    <p data-i18n="lbl.cta_sub">BuzzBuzz is a free social step counter for friends and family. Walk together, compare steps, and unlock bee skins like this one in the Honey Shop.</p>
+    <nav class="cta-row" aria-label="Download BuzzBuzz">
+    <a href="https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595"
+       class="store-badge" target="_blank" rel="noopener"
+       aria-label="Download BuzzBuzz on the App Store">
+      <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M17.05 12.04c-.03-2.83 2.31-4.19 2.42-4.26-1.32-1.93-3.38-2.2-4.11-2.22-1.75-.18-3.42 1.03-4.31 1.03-.89 0-2.27-1.01-3.74-.98-1.92.03-3.7 1.12-4.69 2.84-2 3.47-.51 8.6 1.43 11.42.95 1.38 2.08 2.92 3.56 2.87 1.43-.06 1.97-.92 3.7-.92 1.72 0 2.21.92 3.72.89 1.54-.03 2.51-1.4 3.45-2.79 1.09-1.6 1.54-3.15 1.57-3.23-.03-.01-3.01-1.15-3.04-4.58zM14.34 3.65c.79-.96 1.32-2.29 1.18-3.62-1.14.05-2.52.76-3.34 1.71-.73.85-1.37 2.21-1.2 3.51 1.27.1 2.57-.65 3.36-1.6z"/>
+      </svg>
+      <span class="badge-text">
+        <span class="badge-small">Download on the</span>
+        <span class="badge-large">App Store</span>
+      </span>
+    </a>
+    <a href="https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker"
+       class="store-badge" target="_blank" rel="noopener"
+       aria-label="Get BuzzBuzz on Google Play">
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <defs>
+          <linearGradient id="gpA" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#00d4ff"/>
+            <stop offset="1" stop-color="#00b8e6"/>
+          </linearGradient>
+          <linearGradient id="gpB" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#ffce00"/>
+            <stop offset="1" stop-color="#ffa800"/>
+          </linearGradient>
+          <linearGradient id="gpC" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#ff3a44"/>
+            <stop offset="1" stop-color="#c31162"/>
+          </linearGradient>
+          <linearGradient id="gpD" x1="0" x2="1" y1="0" y2="1">
+            <stop offset="0" stop-color="#00f076"/>
+            <stop offset="1" stop-color="#00c853"/>
+          </linearGradient>
+        </defs>
+        <path fill="url(#gpA)" d="M3.6 1.7c-.4.4-.6 1-.6 1.8v17c0 .8.2 1.4.6 1.8l.1.1L13.2 13v-.2L3.7 1.7h-.1z"/>
+        <path fill="url(#gpB)" d="M16.4 16.2 13.2 13v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2-.1-.1z"/>
+        <path fill="url(#gpC)" d="M16.5 16.1 13.2 12.8 3.6 22.4c.4.4 1 .4 1.7 0l11.2-6.3"/>
+        <path fill="url(#gpD)" d="M16.5 9.7 5.3 3.4c-.7-.4-1.3-.4-1.7 0l9.6 9.6 3.3-3.3z"/>
+      </svg>
+      <span class="badge-text">
+        <span class="badge-small">Get it on</span>
+        <span class="badge-large">Google Play</span>
+      </span>
+    </a>
+    </nav>
+  </section>
+
+  <footer>
+    <p data-i18n="lbl.footer_tag">BuzzBuzz © 2026 · walk. snap. buzz.</p>
+  </footer>
+
+  <a class="qr-download-card" href="/download?source=bee_desktop_qr">
+    <img src="/buzzbuzz-download-qr.svg"
+         alt="QR code to download BuzzBuzz"
+         width="328" height="328"
+         decoding="async" />
+    <span class="qr-download-title" data-i18n="qr.title">Get BuzzBuzz</span>
+    <span class="qr-download-hint" data-i18n="qr.hint">Scan with your phone</span>
+  </a>
+
+  <div id="ask-hive" hidden>
+    <button type="button" id="ask-hive-fab" aria-expanded="false" aria-controls="ask-hive-panel" aria-haspopup="dialog">
+      <span class="ask-hive-fab-bee" id="ask-hive-fab-bee" aria-hidden="true">🐝</span>
+      <span id="ask-hive-fab-label" data-i18n="askHive.fab">Ask about BuzzBuzz</span>
+    </button>
+    <div id="ask-hive-backdrop" hidden></div>
+    <div id="ask-hive-panel" role="dialog" aria-labelledby="ask-hive-title" aria-describedby="ask-hive-desc" hidden>
+      <div id="ask-hive-panel-header">
+        <h2 id="ask-hive-title" data-i18n="askHive.title">Ask the Hive</h2>
+        <button type="button" id="ask-hive-close" data-i18n-aria="askHive.closeAria" aria-label="Close">×</button>
+      </div>
+      <p id="ask-hive-desc" data-i18n="askHive.desc">Explore BuzzBuzz with your preferred AI assistant. You’ll continue on their website.</p>
+      <p id="ask-hive-external-note" data-i18n="askHive.externalNote">Opens an external AI website — not an official BuzzBuzz chatbot.</p>
+      <div id="ask-hive-actions">
+        <a class="ask-hive-action" data-ask-provider="chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.chatgpt">Ask ChatGPT</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="claude" href="https://claude.ai/new" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.claude">Ask Claude</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="perplexity" href="https://www.perplexity.ai/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.perplexity">Ask Perplexity</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <a class="ask-hive-action" data-ask-provider="grok" href="https://grok.com/" target="_blank" rel="noopener">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.grok">Ask Grok</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </a>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="copy">
+          <span class="ask-hive-action-label" data-i18n="askHive.copy">Copy prompt</span>
+        </button>
+        <button type="button" class="ask-hive-action ask-hive-action--secondary" data-ask-provider="gemini">
+          <span class="ask-hive-action-label"><span data-i18n="askHive.gemini">Copy and open Gemini</span> <svg class="ask-hive-ext-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 5h5v5"/><path d="M10 14 19 5"/><path d="M19 13v5a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5"/></svg></span>
+        </button>
+      </div>
+      <p id="ask-hive-status" role="status" aria-live="polite"></p>
+      <pre id="ask-hive-fallback" tabindex="0"></pre>
+    </div>
+  </div>
+
+
+  <!-- TODO: Korean copy lives in the JS i18n object, so Google indexes English only. Korea is the primary market — future work is static /ko/ pages + hreflang, not a JS toggle. -->
+
+  <script>
+  (function () {
+    var META = {
+      en: {
+        title: 'Cozy Bee: The November Bee in BuzzBuzz',
+        description: 'Meet Cozy Bee, the November bee in BuzzBuzz. She has a cream beanie, a rust scarf, and a calendar built so nobody in the hive spends a dark evening alone.'
+      },
+      ko: {
+        title: '코지비 | 버즈버즈 11월 벌 스킨과 캐릭터 이야기',
+        description: '크림 비니, 적갈색 목도리, 그리고 하이브에 혼자 있는 저녁이 없게 채운 달력. 버즈버즈 11월 벌 코지비의 이야기.'
+      }
+    };
+
+    var KO = {
+  "lbl.back": "← 하이브로 돌아가기",
+  "lbl.eyebrow": "버즈버즈 벌 이야기",
+  "lbl.h1": "코지비",
+  "lbl.file_title": "캐릭터 파일",
+  "lbl.lore_title": "사건 기록",
+  "lbl.facts_title": "마을 회의 기록",
+  "lbl.color_title": "좋아하는 컬러 헌트 색",
+  "lbl.more_title": "다른 벌들",
+  "lbl.prev": "← 이전 벌",
+  "lbl.next": "다음 벌 →",
+  "lbl.cta_title": "내 벌 정하고, 스트릭 시작하기.",
+  "lbl.cta_sub": "버즈버즈는 친구·가족과 함께 걷는 소셜 만보기 앱이에요. 같이 걷고, 걸음 수를 비교하고, 허니샵에서 이런 벌 스킨도 열어보세요.",
+  "lbl.footer_tag": "BuzzBuzz © 2026 · 걷고. 찍고. 버즈.",
+  "qr.title": "BuzzBuzz 받기",
+  "qr.hint": "폰으로 스캔하세요",
+  "askHive.fab": "BuzzBuzz 물어보기",
+  "askHive.title": "하이브에 물어보기",
+  "askHive.desc": "원하는 AI 어시스턴트에서 BuzzBuzz를 더 알아보세요. 해당 서비스 웹사이트로 이동합니다.",
+  "askHive.externalNote": "외부 AI 웹사이트로 이동합니다. BuzzBuzz 공식 챗봇이 아니에요.",
+  "askHive.chatgpt": "ChatGPT에게 물어보기",
+  "askHive.claude": "Claude에게 물어보기",
+  "askHive.perplexity": "Perplexity에게 물어보기",
+  "askHive.grok": "Grok에게 물어보기",
+  "askHive.copy": "프롬프트 복사",
+  "askHive.gemini": "복사하고 Gemini 열기",
+  "askHive.closeAria": "닫기",
+  "epithet": "해는 점점 짧아지고, 달력은 점점 길어진다.",
+  "file.0.k": "분류",
+  "file.0.v": "11월 벌. 총무, 의견 부자, 계획 제조기.",
+  "file.1.k": "활동 시간",
+  "file.1.v": "누군가 집에 혼자 남아서 할 일이 없어질 때면, 그때.",
+  "file.2.k": "걸음 스타일",
+  "file.2.v": "빠르고, 가는 내내 말을 한다. 서점 창마다 멈춰 직원 추천이 나아졌는지 본다. 안 나아졌다.",
+  "file.3.k": "식단",
+  "file.3.v": "다이너 토스트에 커피, 그리고 이번 주 파이. 본인이 괜찮다고 한 것만.",
+  "file.4.k": "현재 상태",
+  "file.4.v": "11월, 허니샵에 있음.",
+  "lore.0": "코지비는 하이브에 외로운 11월 같은 건 없을 거라고 정해 버렸다. 물어보고 정한 게 아니다. 첫 서리가 내리기 전에 독서 모임이랑 수프 바꿔 먹기, 목요일 퀴즈의 밤까지 달력에 올려 두었다. 금요일은 \"랜턴 하는 날\"로 잡아 뒀는데, 그게 뭔지는 아직도 설명이 없다.",
+  "lore.1": "남의 일은 다 알고, 그것도 남보다 먼저 안다. 고블린비가 이발소를 갈아탔다는 걸, 그 이발사보다 먼저 알았다. 수확 축제 주차 계획에도, 전단지 글꼴에도 메모가 있다. 대부분은 맞고, 부탁받은 적은 없다.",
+  "lore.2": "온 뒤로 매일 아침, 모퉁이 다이너 창가 자리는 코지비 자리다. 주인은 다른 테이블을 더 이상 재배치하지 말라며 그 자리만 남겨 둔다고 한다. 어느 화요일, 보람이 머그잔이 사흘째 고리에 그대로였다. 코지비는 포장용 파이를 한 조각 더 시키고, 누구 건지는 말하지 않은 채, 보람이 집 앞을 지나 멀리 돌아 집에 갔다.",
+  "lore.3": "목도리는 코지비가 집을 떠나던 겨울, 엄마가 떠 준 것이다. 전화로 이야기하는 동안 엄마가 뜨개질을 멈추지 않아서, 조금 길다. 코지비는 올이 고르지 않다고 말한다. 그래도 남이 고치게 한 적은 한 번도 없다.",
+  "lore.4": "코지비는 11월, 버즈버즈 허니샵에 있다. 목요일에 한가했다면, 이제는 아니다.",
+  "fact.0.k": "모자 속",
+  "fact.0.v": "문고판 세 권, 예비 일정표 하나. 폼폼은 거의 구조물이다.",
+  "fact.1.k": "마을 회의",
+  "fact.1.v": "한 번도 빠진 적 없다. 아직 안건에도 없는 항목에 의견이 있다.",
+  "fact.2.k": "다이너 주인",
+  "fact.2.v": "\"그 자리 네 거 아니야.\" 일 년째, 매일 아침 그 자리다.",
+  "fact.3.k": "참가 신청서",
+  "fact.3.v": "네 이름은 이미 어디엔가 적혀 있다. 어디인지는 나중에 알게 된다.",
+  "color.name": "스카프 러스트",
+  "color.quote": "\"오늘 밤 집에 있는 사람 없어. 내가 목록 만들었거든.\""
+};
+
+    var enCache = {};
+    function setMeta(lang) {
+      var m = META[lang] || META.en;
+      document.title = m.title;
+      var desc = document.querySelector('meta[name="description"]');
+      if (desc) desc.setAttribute('content', m.description);
+      var ogTitle = document.querySelector('meta[property="og:title"]');
+      if (ogTitle) ogTitle.setAttribute('content', m.title);
+      var ogDesc = document.querySelector('meta[property="og:description"]');
+      if (ogDesc) ogDesc.setAttribute('content', m.description);
+      var twTitle = document.querySelector('meta[name="twitter:title"]');
+      if (twTitle) twTitle.setAttribute('content', m.title);
+      var twDesc = document.querySelector('meta[name="twitter:description"]');
+      if (twDesc) twDesc.setAttribute('content', m.description);
+    }
+    function setLang(lang) {
+      document.documentElement.lang = lang === 'ko' ? 'ko' : 'en';
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n');
+        if (!(key in enCache)) enCache[key] = el.textContent;
+        if (lang === 'ko' && KO[key]) el.textContent = KO[key];
+        else el.textContent = enCache[key];
+      });
+      document.querySelectorAll('[data-i18n-aria]').forEach(function (el) {
+        var key = el.getAttribute('data-i18n-aria');
+        var cacheKey = 'aria:' + key;
+        if (!(cacheKey in enCache)) enCache[cacheKey] = el.getAttribute('aria-label') || '';
+        if (lang === 'ko' && KO[key]) el.setAttribute('aria-label', KO[key]);
+        else el.setAttribute('aria-label', enCache[cacheKey]);
+      });
+      document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+        b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+      });
+      setMeta(lang === 'ko' ? 'ko' : 'en');
+      if (typeof window.__askHiveOnLangChange === 'function') {
+        window.__askHiveOnLangChange(lang === 'ko' ? 'ko' : 'en');
+      }
+      try { localStorage.setItem('bb-lang', lang); } catch (e) {}
+    }
+    document.querySelectorAll('.lang-toggle button').forEach(function (b) {
+      b.addEventListener('click', function () { setLang(b.dataset.lang); });
+    });
+    var saved = 'en';
+    try { saved = localStorage.getItem('bb-lang') || 'en'; } catch (e) {}
+    if (saved === 'ko') setLang('ko');
+  })();
+  </script>
+
+  <script src="/sticky-widgets.js" defer></script>
+</body>
+</html>
