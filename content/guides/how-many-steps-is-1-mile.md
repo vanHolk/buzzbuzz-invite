@@ -79,6 +79,6 @@ Save the average for the chart. Walk the mile, trust the counter you actually wo
 
 You can also start from step length. Walk a measured stretch, divide the feet by your steps, then divide 5,280 by that length. One honest mile from your own shoes beats a dozen charts.
 
-Once that number is yours, you can retire the internet version of this question.
+Once that number is yours, you can retire the internet version of this question. Times five for [5 miles](/guides/how-many-steps-is-5-miles).
 
 A mile is also an easy floor when other people are involved. [Start a walking streak with friends](/guides/start-a-walking-streak-with-friends) and the distance stops being a solo math problem. The company is what makes tomorrow easier. A hive can keep the score if you want one — the walk still counts if you never open an app.

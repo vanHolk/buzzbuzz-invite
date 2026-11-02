@@ -50,7 +50,7 @@ The middle row works out as 10,000 × 2.5 = 25,000 feet, then 25,000 ÷ 5,280 = 
 
 The [University of Nebraska Medical Center’s walking guide](https://www.unmc.edu/cfhl/resources/walking.html) puts an average stride at about 2.5 feet, says a mile takes just over 2,000 steps, and calls 10,000 steps close to five miles. Divide 5,280 by 2.5 and you get 2,112 steps in a mile. Divide 10,000 by 2,112 and you get 4.7 miles again.
 
-About 4 to 5 miles fits a step of about 2.1 to 2.6 feet. Four miles is 6.4 km and five miles is 8.0 km, so the round kilometre version of that band is about 6.5 to 8. The 2.1 foot row is 6.4 km, on the short side of that rounding. The 2.8 foot row is 5.3 miles and 8.5 km, outside the band.
+About 4 to 5 miles fits a step of about 2.1 to 2.6 feet. Four miles is 6.4 km and five miles is 8.0 km, so the round kilometre version of that band is about 6.5 to 8. The 2.1 foot row is 6.4 km, on the short side of that rounding. The 2.8 foot row is 5.3 miles and 8.5 km, outside the band. The step count for that five-mile end is [how many steps is 5 miles](/guides/how-many-steps-is-5-miles).
 
 ## Other daily totals at a 2.5 foot step
 
