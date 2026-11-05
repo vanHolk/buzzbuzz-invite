@@ -25,7 +25,7 @@ We wanted a step counter that still counted — and also remembered that walking
 
 A bee is a small body that works better in a group. That felt closer to the product than a medal, a flame, or a graph with opinions.
 
-In BuzzBuzz, your people are a **hive**. Your daily photo is a **bee cam**. The character on your profile is a bee you can dress up when the numbers get too serious. [Meet the bees](/#meet-the-bees) — yes, they have lore. None of this makes you fitter by itself. It makes the walk easier to share, which is how a lot of walking actually continues.
+In BuzzBuzz, your people are a [hive](/guides/what-is-a-hive). Your daily photo is a **bee cam**. The character on your profile is a bee you can dress up when the numbers get too serious. [Meet the bees](/#meet-the-bees) — yes, they have lore. None of this makes you fitter by itself. It makes the walk easier to share, which is how a lot of walking actually continues.
 
 :::bee
 The bee is not your coach. The bee is the friend who shows up in a tiny hat and asks if you are walking today.

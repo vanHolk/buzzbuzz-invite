@@ -41,7 +41,7 @@ You do not need a scenic route or a matching outfit. You need a walk long enough
 
 The photo is the part people actually open. A bakery window, a weird cloud, a dog in a coat. The step count can ride along underneath. Steps are the score. The picture is the story.
 
-If you use BuzzBuzz, this is the shape of a hive: a few friends, a daily step count, and one photo that does not have to live forever. That is also [why the app is full of bees](/guides/why-we-made-a-step-counter-with-bees). Any group chat you already have will also do. The walking is the point.
+If you use BuzzBuzz, this is the shape of a hive ([what a hive is](/guides/what-is-a-hive)): a few friends, a daily step count, and one photo that does not have to live forever. That is also [why the app is full of bees](/guides/why-we-made-a-step-counter-with-bees). Any group chat you already have will also do. The walking is the point.
 
 ## When someone misses
 
