@@ -9,9 +9,11 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: 86vh;
+  height: clamp(640px, 52vw, 740px);
   overflow: hidden;
   background: #8ec6ea;
+  border-bottom-left-radius: 50% 72px;
+  border-bottom-right-radius: 50% 72px;
 }
 
 .hero-scene {
@@ -20,7 +22,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: center 42%;
   pointer-events: none;
 }
 
@@ -100,8 +102,8 @@
   position: relative;
   z-index: 1;
   width: min(1080px, 100%);
-  margin: 0 auto 32px;
-  padding: 36px 8px 8px;
+  margin: -168px auto 32px;
+  padding: 8px 8px 8px;
   background: transparent;
 }
 
@@ -162,7 +164,7 @@
   position: relative;
   z-index: 5;
   background: #fff;
-  box-shadow: 0 0 0 6px var(--bg);
+  box-shadow: 0 0 0 4px #fff;
 }
 
 .trail-index .area-head,
@@ -345,6 +347,10 @@
   .trail-index .trail-end {
     background: transparent;
   }
+
+  .trail-index .area:first-child .area-head > div {
+    margin-top: 72px;
+  }
 }
 
 @media (max-width: 899px) {
@@ -354,17 +360,26 @@
   }
 
   .hero-band {
-    min-height: 70vh;
+    height: 600px;
+    border-bottom-left-radius: 50% 40px;
+    border-bottom-right-radius: 50% 40px;
   }
 
   .trail-index .trail-hero {
-    padding-bottom: 48px;
+    padding-bottom: 36px;
   }
 
   .trail-sheet {
     width: 100%;
-    margin: 0 auto 18px;
-    padding-top: 28px;
+    margin: -132px auto 18px;
+    padding-top: 8px;
+  }
+
+  .trail-index .area-head h2,
+  .trail-index .area-note,
+  .trail-index .trail-end p {
+    background: transparent;
+    box-shadow: none;
   }
 
   .trail-bee {
