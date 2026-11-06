@@ -102,7 +102,7 @@
   position: relative;
   z-index: 1;
   width: min(1080px, 100%);
-  margin: -168px auto 32px;
+  margin: -280px auto 32px;
   padding: 8px 8px 8px;
   background: transparent;
 }
@@ -180,6 +180,12 @@
   background: var(--bg);
   box-shadow: 0 0 0 0.28em var(--bg);
   box-decoration-break: clone;
+}
+
+.trail-index .area:first-of-type .area-head h2,
+.trail-index .area:first-of-type .area-note {
+  background: transparent;
+  box-shadow: none;
 }
 
 .trail-index .quest-card {
@@ -347,10 +353,6 @@
   .trail-index .trail-end {
     background: transparent;
   }
-
-  .trail-index .area:first-child .area-head > div {
-    margin-top: 72px;
-  }
 }
 
 @media (max-width: 899px) {
@@ -371,7 +373,7 @@
 
   .trail-sheet {
     width: 100%;
-    margin: -132px auto 18px;
+    margin: -220px auto 18px;
     padding-top: 8px;
   }
 
