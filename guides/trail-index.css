@@ -1,12 +1,15 @@
 /* Trail index only. Article pages keep guides/trail.css as it was.
-   Honey frame, cream hero, white sheet. The spine is the walking line. */
+   Full-bleed valley, cream page, white stop cards. The spine is the walking line. */
 
 .trail-index {
-  background: var(--honey);
+  background: var(--bg);
 }
 
 .hero-band {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 86vh;
   overflow: hidden;
   background: #8ec6ea;
 }
@@ -37,7 +40,8 @@
 .trail-index .trail-hero {
   max-width: none;
   margin: 0;
-  padding: 8px 0 128px;
+  padding: 8px 0 72px;
+  flex: 1;
   text-align: center;
   background: transparent;
   background-image: none;
@@ -95,12 +99,10 @@
 .trail-sheet {
   position: relative;
   z-index: 1;
-  width: min(1080px, calc(100% - 36px));
-  margin: -52px auto 32px;
-  padding: 28px 8px 8px;
-  background: #fff;
-  border-radius: 36px;
-  box-shadow: 0 18px 44px rgba(65, 45, 10, .14);
+  width: min(1080px, 100%);
+  margin: 0 auto 32px;
+  padding: 36px 8px 8px;
+  background: transparent;
 }
 
 .trail-index .trail {
@@ -160,7 +162,7 @@
   position: relative;
   z-index: 5;
   background: #fff;
-  box-shadow: 0 0 0 6px #fff;
+  box-shadow: 0 0 0 6px var(--bg);
 }
 
 .trail-index .area-head,
@@ -173,8 +175,8 @@
 .trail-index .area-head h2,
 .trail-index .area-note,
 .trail-index .trail-end p {
-  background: #fff;
-  box-shadow: 0 0 0 0.28em #fff;
+  background: var(--bg);
+  box-shadow: 0 0 0 0.28em var(--bg);
   box-decoration-break: clone;
 }
 
@@ -182,7 +184,7 @@
   z-index: 2;
   margin: 0 12px 20px 84px;
   padding: 17px 20px 15px;
-  background: var(--card);
+  background: #fff;
   border: 2px solid var(--ink);
   border-radius: 22px;
   box-shadow: 4px 5px 0 var(--ink);
@@ -351,15 +353,18 @@
     padding: 0 16px;
   }
 
+  .hero-band {
+    min-height: 70vh;
+  }
+
   .trail-index .trail-hero {
-    padding-bottom: 96px;
+    padding-bottom: 48px;
   }
 
   .trail-sheet {
-    width: calc(100% - 16px);
-    margin: -36px auto 18px;
-    border-radius: 28px;
-    padding-top: 20px;
+    width: 100%;
+    margin: 0 auto 18px;
+    padding-top: 28px;
   }
 
   .trail-bee {
