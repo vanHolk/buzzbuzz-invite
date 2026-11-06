@@ -28,6 +28,8 @@ You can split the steps across the day. The night walk is the part that makes it
 - **Proof:** one photo from the night walk. A lit window, a plastic skeleton, your own shadow. No need to photograph strangers.
 - **Finish line:** everyone who hits 10,000 and sends a night photo is done. It is not a race unless your group wants a race.
 
+Anyone counting the trick-or-treat route can use [how many steps is trick-or-treating](/guides/how-many-steps-is-trick-or-treating) for the street miles and the driveways.
+
 If 10,000 steps sounds abstract, it is usually [about 90–120 minutes of actual walking](/guides/how-long-to-walk-10000-steps) in total, not a medical target. The spooky portion can be the short one.
 
 :::bee
@@ -46,6 +48,8 @@ Cold is the usual boss fight, not the dark. Pockets, a warm drink at the end, an
 
 ## If the hive wants extra credit
 
-Give the week a tiny theme. Everyone photographs the same color. Orange is the obvious one. Purple is the better one. In BuzzBuzz that kind of prompt is a Color Hunt, but any group chat can borrow it for seven days.
+Give the week a tiny theme. Everyone photographs the same color. Orange is the obvious one. Purple is the better one. In BuzzBuzz that kind of prompt is a Color Hunt, but any group chat can borrow it for seven days. For a daytime round with leaves, doors, and the rest of the block, try the [fall color walk](/guides/fall-color-walk).
 
 When the pumpkins come down, keep the part that was never seasonal: [a walking streak with friends](/guides/start-a-walking-streak-with-friends). Same group. Same check-in. No costume required.
+
+For the darker months after that week, [walking after the clocks go back](/guides/walking-after-the-clocks-go-back) is the daily version: move the walk, light it, or shrink it to ten minutes.

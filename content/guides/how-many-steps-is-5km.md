@@ -12,18 +12,19 @@ featured: true
 answerKicker: "5 km"
 answerFigure: "≈ 6,500 steps"
 answerNote: "Typical range: ~6,000–7,500. This is an estimate. Your result depends mainly on step length."
-seoTitle: "How Many Steps Is 5 km?"
-seoDescription: "5 km is roughly 6,500 steps for many adults — an estimate, often between 6,000 and 7,500, depending on step length."
+seoTitle: "How Many Steps Is 5 km? About 6,500 Steps"
+seoDescription: "5 km is about 6,500 steps for many adults, usually between 6,000 and 7,500 depending on step length. See the step-length chart and walking time."
 related:
+  - how-many-steps-is-1-mile
   - how-long-to-walk-10000-steps
   - start-a-walking-streak-with-friends
 sources:
   - "[NHS: Walking for health](https://www.nhs.uk/live-well/exercise/walking-for-health/)"
 ---
 
-There is no exact conversion. A useful middle estimate is **about 6,500 steps**, and a lot of adults land somewhere between **6,000 and 7,500**. A shorter step means more steps for the same 5 km.
+5 km is **about 6,500 steps** for many adults, and most land somewhere between **6,000 and 7,500**. There is no exact conversion. A shorter step means more steps for the same 5 km.
 
-If you want one number to remember, **about 1,300 steps per kilometre** gets you to 6,500. Treat it as a sketch, then check it against your own walk.
+If you want one number to remember, **about 1,300 steps per kilometre** gets you to 6,500. Double the 6,500 for [10 km](/guides/how-many-steps-is-10km). Treat it as a sketch, then check it against your own walk.
 
 ## Why your number will be a little different
 
@@ -40,7 +41,7 @@ The arithmetic is simple: 5,000 metres divided by the length of one step.
 - Middle step, about 0.75 m: closer to **6,700 steps**
 - Longer step, about 0.80 m: closer to **6,300 steps**
 
-These are examples, not a measurement of your walk. The popular “2,000 steps in a mile” shortcut is the same kind of estimate. 5 km is 3.1 miles, which comes out near **6,200 steps** if that shortcut happens to fit you. Close enough to be useful. Not close enough to argue about.
+These are examples, not a measurement of your walk. The popular “[2,000 steps in a mile](/guides/how-many-steps-is-1-mile)” line is the same kind of estimate. A mile is often closer to 2,000–2,500 steps, depending on step length. 5 km is 3.1 miles, which comes out near **6,200 steps** if a flat 2,000 happens to fit you. Close enough to be useful. Not close enough to argue about.
 
 ## How long 5 km of walking takes
 
