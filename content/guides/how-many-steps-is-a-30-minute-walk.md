@@ -3,6 +3,7 @@ title: "How Many Steps Is a 30-Minute Walk?"
 description: "A steady half hour lands near 3,000 steps. Easy is closer to 2,400, and a fast walk is closer to 3,600."
 slug: how-many-steps-is-a-30-minute-walk
 date: 2026-10-13
+updated: 2026-11-06
 category: step-nerd
 questType: quick-quest
 readTime: "5 min"
@@ -13,8 +14,8 @@ draft: false
 answerKicker: "30-minute walk"
 answerFigure: "≈ 2,400–3,600 steps"
 answerNote: "An estimate. A steady pace near 100 steps a minute lands close to 3,000."
-seoTitle: "How Many Steps Is a 30-Minute Walk?"
-seoDescription: "A 30-minute walk is about 3,000 steps at a steady pace, roughly 2,400–3,600 depending on speed. Here's the pace chart and a 60-second way to check yours."
+seoTitle: "About 3,000 Steps in a 30-Minute Walk"
+seoDescription: "How many steps in a 30-minute walk? About 3,000 at a steady 100 steps a minute. Easy is closer to 2,400, and a brisk walk is closer to 3,600."
 related:
   - how-long-to-walk-10000-steps
   - how-many-steps-is-1-mile
