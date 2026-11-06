@@ -1,0 +1,403 @@
+/* Trail index only. Article pages keep guides/trail.css as it was.
+   Honey frame, cream hero, white sheet. The spine is the walking line. */
+
+.trail-index {
+  background: var(--honey);
+}
+
+.hero-band {
+  position: relative;
+  overflow: hidden;
+  background: #8ec6ea;
+}
+
+.hero-scene {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  pointer-events: none;
+}
+
+.hero-band .top,
+.trail-hero-grid,
+.trail-index .trail-hero {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-band .top {
+  max-width: 1120px;
+  background: transparent;
+  justify-content: center;
+}
+
+.trail-index .trail-hero {
+  max-width: none;
+  margin: 0;
+  padding: 8px 0 128px;
+  text-align: center;
+  background: transparent;
+  background-image: none;
+}
+
+.trail-hero-grid {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px 8px;
+  display: grid;
+  grid-template-columns: minmax(0, 720px);
+  justify-content: center;
+  justify-items: center;
+}
+
+.trail-index .trail-hero h1 {
+  margin: 0 0 14px;
+  font-size: clamp(46px, 6.4vw, 76px);
+  letter-spacing: -2px;
+  text-align: center;
+}
+
+.trail-index .lede,
+.trail-index .support {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.trail-index .lede {
+  margin-bottom: 8px;
+  max-width: 22em;
+}
+
+.trail-index .support {
+  max-width: 36em;
+}
+
+.trail-index .trail-hero .cta-row {
+  justify-content: center;
+  margin-top: 26px;
+}
+
+.scene-short {
+  display: none;
+}
+
+.scene-short iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.trail-sheet {
+  position: relative;
+  z-index: 1;
+  width: min(1080px, calc(100% - 36px));
+  margin: -52px auto 32px;
+  padding: 28px 8px 8px;
+  background: #fff;
+  border-radius: 36px;
+  box-shadow: 0 18px 44px rgba(65, 45, 10, .14);
+}
+
+.trail-index .trail {
+  --spine-x: 24px;
+  margin-top: 8px;
+  padding-top: 12px;
+}
+
+.trail-index .trail::before {
+  content: none;
+}
+
+.spine {
+  position: absolute;
+  z-index: 0;
+  left: var(--spine-x);
+  top: 0;
+  bottom: 16px;
+  width: 4px;
+  margin-left: -2px;
+  border-radius: 99px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #d9c6aa 0 7px,
+    transparent 7px 15px
+  );
+  pointer-events: none;
+}
+
+.spine-walk {
+  display: block;
+  width: 100%;
+  height: 0;
+  border-radius: inherit;
+  background: var(--honey);
+}
+
+.trail-bee {
+  position: absolute;
+  z-index: 6;
+  left: var(--spine-x);
+  top: 24px;
+  width: 64px;
+  aspect-ratio: 1;
+  transform: translate(-50%, -46%);
+  pointer-events: none;
+}
+
+.trail-bee img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 8px 10px rgba(65, 45, 10, .16));
+}
+
+.trail-index .node {
+  position: relative;
+  z-index: 5;
+  background: #fff;
+  box-shadow: 0 0 0 6px #fff;
+}
+
+.trail-index .area-head,
+.trail-index .trail-end {
+  position: relative;
+  z-index: 4;
+  background: transparent;
+}
+
+.trail-index .area-head h2,
+.trail-index .area-note,
+.trail-index .trail-end p {
+  background: #fff;
+  box-shadow: 0 0 0 0.28em #fff;
+  box-decoration-break: clone;
+}
+
+.trail-index .quest-card {
+  z-index: 2;
+  margin: 0 12px 20px 84px;
+  padding: 17px 20px 15px;
+  background: var(--card);
+  border: 2px solid var(--ink);
+  border-radius: 22px;
+  box-shadow: 4px 5px 0 var(--ink);
+}
+
+.trail-index .quest-card:hover,
+.trail-index .quest-card:focus-visible {
+  transform: translateY(-3px);
+  border-color: var(--ink);
+  box-shadow: 4px 8px 0 var(--ink);
+  outline: 3px solid var(--honey);
+  outline-offset: 4px;
+}
+
+.trail-index .card-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.trail-index .stop-no {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.trail-index .pill {
+  font-family: "Baloo 2", sans-serif;
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
+  padding: 5px 9px 4px;
+  border-radius: 999px;
+  background: #ffe4a0;
+  color: var(--ink);
+  white-space: nowrap;
+}
+
+.trail-index .pill-season {
+  background: #e46f26;
+  color: #fffaf1;
+}
+
+.trail-index .quest-card h3 {
+  margin: 10px 0 8px;
+  font-size: 25px;
+  line-height: 1.08;
+  letter-spacing: -0.2px;
+}
+
+.trail-index .figure {
+  margin: 2px 0 0;
+  font-family: "Baloo 2", sans-serif;
+  font-weight: 800;
+  font-size: 46px;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #2349b5;
+}
+
+.trail-index .unit {
+  margin: 6px 0 8px;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 1.3;
+  color: var(--ink);
+}
+
+.trail-index .quest-card .dek {
+  margin: 0;
+  font-size: 15.5px;
+  line-height: 1.45;
+}
+
+.trail-index .card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 14px;
+  margin-top: 14px;
+  padding-top: 11px;
+  border-top: 1.5px dashed rgba(90, 75, 65, .35);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.trail-index .card-foot .go {
+  margin-left: auto;
+  color: var(--ink);
+  font-weight: 800;
+}
+
+.trail-index .quest-card::after {
+  content: "";
+  position: absolute;
+  left: -62px;
+  top: 30px;
+  width: 62px;
+  height: 3px;
+  border-radius: 99px;
+  background: var(--honey);
+}
+
+.trail-index .site-footer {
+  padding-top: 4px;
+  padding-bottom: 28px;
+}
+
+@media (min-width: 900px) {
+  .trail-index .trail {
+    --spine-x: 50%;
+  }
+
+  .trail-bee {
+    width: 72px;
+    /* Sit just to the right of the line so markers and cards stay clear. */
+    transform: translate(-12%, -46%);
+  }
+
+  .trail-index .side-left {
+    padding: 0 calc(50% + 40px) 0 20px;
+  }
+
+  .trail-index .side-right {
+    padding: 0 20px 0 calc(50% + 88px);
+  }
+
+  .trail-index .quests .quest-card {
+    margin: 0 0 18px;
+  }
+
+  .trail-index .side-left .quest-card::after,
+  .trail-index .side-right .quest-card::after {
+    top: 34px;
+    height: 3px;
+    border-radius: 99px;
+    background: var(--honey);
+    box-shadow: none;
+  }
+
+  .trail-index .side-left .quest-card::after {
+    right: -40px;
+    left: auto;
+    width: 40px;
+  }
+
+  .trail-index .side-right .quest-card::after {
+    left: -88px;
+    right: auto;
+    width: 88px;
+  }
+
+  .trail-index .area-head,
+  .trail-index .trail-end {
+    background: transparent;
+  }
+}
+
+@media (max-width: 899px) {
+  .trail-hero-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 0 16px;
+  }
+
+  .trail-index .trail-hero {
+    padding-bottom: 96px;
+  }
+
+  .trail-sheet {
+    width: calc(100% - 16px);
+    margin: -36px auto 18px;
+    border-radius: 28px;
+    padding-top: 20px;
+  }
+
+  .trail-bee {
+    width: 56px;
+  }
+
+  .hero-band .top {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .trail-index .quest-card {
+    padding: 15px 16px 14px;
+  }
+
+  .trail-index .quest-card h3 {
+    font-size: 22px;
+  }
+
+  .trail-index .figure {
+    font-size: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .trail-bee img {
+    animation: trailBeeBob 2.2s ease-in-out infinite;
+  }
+}
+
+@keyframes trailBeeBob {
+  0%,
+  100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .trail-index .quest-card {
+    transition: none;
+  }
+}

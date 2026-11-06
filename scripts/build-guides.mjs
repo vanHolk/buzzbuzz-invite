@@ -353,14 +353,15 @@ const appleSvg = `<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true
 
 const playSvg = `<svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="gpA" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#00d4ff"/><stop offset="1" stop-color="#00b8e6"/></linearGradient><linearGradient id="gpB" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ffce00"/><stop offset="1" stop-color="#ffa800"/></linearGradient><linearGradient id="gpC" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#ff3a44"/><stop offset="1" stop-color="#c31162"/></linearGradient><linearGradient id="gpD" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#00f076"/><stop offset="1" stop-color="#00c853"/></linearGradient></defs><path fill="url(#gpA)" d="M3.6 1.7c-.4.4-.6 1-.6 1.8v17c0 .8.2 1.4.6 1.8l.1.1L13.2 13v-.2L3.7 1.7h-.1z"/><path fill="url(#gpB)" d="M16.4 16.2 13.2 13v-.2l3.2-3.2.1.1 3.8 2.2c1.1.6 1.1 1.6 0 2.2l-3.8 2.2-.1-.1z"/><path fill="url(#gpC)" d="M16.5 16.1 13.2 12.8 3.6 22.4c.4.4 1 .4 1.7 0l11.2-6.3"/><path fill="url(#gpD)" d="M16.5 9.7 5.3 3.4c-.7-.4-1.3-.4-1.7 0l9.6 9.6 3.3-3.3z"/></svg>`;
 
-function storeBadges() {
+function storeBadges(prefix = "gp") {
+  const play = playSvg.replaceAll('id="gp', `id="${prefix}`).replaceAll("url(#gp", `url(#${prefix}`);
   return `<nav class="cta-row" aria-label="Download BuzzBuzz">
       <a href="https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595" class="store-badge" target="_blank" rel="noopener" aria-label="Download BuzzBuzz on the App Store">
         ${appleSvg}
         <span class="badge-text"><span class="badge-small">Download on the</span><span class="badge-large">App Store</span></span>
       </a>
       <a href="https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker" class="store-badge" target="_blank" rel="noopener" aria-label="Get BuzzBuzz on Google Play">
-        ${playSvg}
+        ${play}
         <span class="badge-text"><span class="badge-small">Get it on</span><span class="badge-large">Google Play</span></span>
       </a>
     </nav>`;
@@ -411,6 +412,8 @@ function pageShell({
   jsonLd = [],
   body,
   comment,
+  bodyClass = "",
+  headExtras = "",
 }) {
   const schemas = jsonLd.map((entry) => `  ${jsonScript(entry)}`).join("\n");
   return `<!DOCTYPE html>
@@ -450,9 +453,9 @@ function pageShell({
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;700;800&display=swap" />
   <link rel="stylesheet" href="/guides/trail.css" />
   <link rel="stylesheet" href="/sticky-widgets.css" />
-${schemas}
+${headExtras}${schemas}
 </head>
-<body>
+<body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
   <a class="skip-link" href="#main">Skip to main content</a>
 ${body}
 </body>
@@ -460,23 +463,57 @@ ${body}
 `;
 }
 
-function questCard(article, { compact = false, side = "" } = {}) {
+function answerBits(article) {
+  if (!article.answerFigure) return null;
+  const match = /^(≈\s*\S+)\s+(.+)$/.exec(article.answerFigure.trim());
+  if (!match) return { figure: article.answerFigure.trim(), unit: "" };
+  const figure = match[1];
+  const rest = match[2];
+  if (article.answerKicker && /^steps$/i.test(rest)) {
+    return { figure, unit: `steps in ${article.answerKicker}` };
+  }
+  if (article.answerKicker && /^min$/i.test(rest)) {
+    return { figure, unit: `for ${article.answerKicker}` };
+  }
+  return { figure, unit: rest };
+}
+
+function questCard(article, { compact = false, side = "", stop = 0 } = {}) {
   const meta = metaParts(article);
   const metaHtml = meta.length ? `\n        <p class="meta">${escapeHtml(meta.join(" · "))}</p>` : "";
-  const card = `<a class="quest-card${compact ? " compact" : ""}" href="/guides/${article.slug}">
+  if (compact) {
+    const card = `<a class="quest-card compact" href="/guides/${article.slug}">
         <p class="kicker">${escapeHtml(kicker(article))}</p>
         <h3>${escapeHtml(article.title)}</h3>
         <p class="dek">${escapeHtml(article.description)}</p>${metaHtml}
       </a>`;
-  if (compact) return `    <li>\n      ${card}\n    </li>`;
+    return `    <li>\n      ${card}\n    </li>`;
+  }
+
+  const seasonal = article.questType === "seasonal-quest";
+  const pill = seasonal ? "Seasonal Quest" : QUESTS[article.questType];
+  const answer = answerBits(article);
+  const figureHtml = answer
+    ? `\n        <p class="figure">${escapeHtml(answer.figure)}</p>${answer.unit ? `\n        <p class="unit">${escapeHtml(answer.unit)}</p>` : ""}`
+    : "";
+  const foot = meta
+    .map((part) => `<span>${escapeHtml(part)}</span>`)
+    .concat([`<span class="go">Read <span aria-hidden="true">→</span></span>`])
+    .join("");
+  const card = `<a class="quest-card" href="/guides/${article.slug}">
+        <div class="card-top"><span class="stop-no">Stop ${String(stop).padStart(2, "0")}</span><span class="pill${seasonal ? " pill-season" : ""}">${escapeHtml(pill)}</span></div>
+        <h3>${escapeHtml(article.title)}</h3>${figureHtml}
+        <p class="dek">${escapeHtml(article.description)}</p>
+        <div class="card-foot">${foot}</div>
+      </a>`;
   return `      <li class="side-${side}">\n        ${card}\n      </li>`;
 }
 
-function ctaSection() {
+function ctaSection(prefix = "gp") {
   return `<section class="cta" aria-labelledby="cta-title">
     <h2 id="cta-title">Walking is better together.</h2>
     <p>Invite your friends, start a Hive and see where your steps take you.</p>
-    ${storeBadges()}
+    ${storeBadges(prefix)}
   </section>`;
 }
 
@@ -487,7 +524,7 @@ function renderLanding(articles) {
     if (!quests.length) return "";
     const items = quests
       .map((article) => {
-        const html = questCard(article, { side: side % 2 === 0 ? "left" : "right" });
+        const html = questCard(article, { side: side % 2 === 0 ? "left" : "right", stop: side + 1 });
         side += 1;
         return html;
       })
@@ -518,27 +555,42 @@ ${items}
       url: articleUrl(article.slug),
     }));
 
-  const body = `  <header class="top">
-    ${brandHtml()}
-  </header>
-  <main id="main">
-    <section class="trail-hero" aria-labelledby="trail-title">
-      <p class="bee-mark" aria-hidden="true">🐝</p>
-      <h1 id="trail-title">The BuzzBuzz <span class="mark"><span>Trail</span><img src="/hero/underline.webp" alt="" width="561" height="85" decoding="async" /></span></h1>
-      <p class="lede">Walking guides, challenges &amp; tiny adventures.</p>
-      <p class="support">Pick a trail, find a challenge, or learn something strangely specific about steps.</p>
-    </section>
-    <div class="trail">
-${sections}
-      <div class="trail-end">
-        <span class="node" aria-hidden="true">🐝</span>
-        <p>That’s the trail so far. More stops when we walk them.</p>
-      </div>
+  const body = `  <main id="main">
+    <div class="hero-band">
+      <img class="hero-scene" src="/hero/trail-valley.jpg" alt="" width="1024" height="640" />
+      <header class="top">
+        ${brandHtml()}
+      </header>
+      <section class="trail-hero" aria-labelledby="trail-title">
+        <div class="trail-hero-grid">
+          <div class="trail-hero-copy">
+            <h1 id="trail-title">The BuzzBuzz <span class="mark"><span>Trail</span><img src="/hero/underline.webp" alt="" width="561" height="85" decoding="async" /></span></h1>
+            <p class="lede">Walking guides, challenges &amp; tiny adventures.</p>
+            <p class="support">Pick a trail, find a challenge, or learn something strangely specific about steps.</p>
+            ${storeBadges("hero")}
+          </div>
+          <div class="scene-short">
+            <iframe src="https://www.youtube-nocookie.com/embed/KkGzYufG3I8" title="Walking is better together" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
     </div>
-    ${ctaSection()}
+    <div class="trail-sheet">
+      <div class="trail" id="trail">
+        <div class="spine" aria-hidden="true"><span class="spine-walk"></span></div>
+        <div class="trail-bee" aria-hidden="true"><img src="/bees/img/normal.png" alt="" width="480" height="480" decoding="async" /></div>
+${sections}
+        <div class="trail-end">
+          <span class="node" aria-hidden="true">🐝</span>
+          <p>That’s the trail so far. More stops when we walk them.</p>
+        </div>
+      </div>
+      ${ctaSection("end")}
+      ${footerHtml({ trailCurrent: true })}
+    </div>
   </main>
-  ${footerHtml({ trailCurrent: true })}
-  ${qrHtml("trail_desktop_qr")}`;
+  ${qrHtml("trail_desktop_qr")}
+  <script src="/guides/trail-walk.js" defer></script>`;
 
   return pageShell({
     title: "The BuzzBuzz Trail — Walking Guides & Step Challenges | BuzzBuzz",
@@ -568,6 +620,8 @@ ${sections}
     ],
     body,
     comment: "Generated by scripts/build-guides.mjs. Edit content/guides, then rebuild.",
+    bodyClass: "trail-index",
+    headExtras: `  <link rel="stylesheet" href="/guides/trail-index.css" />\n`,
   });
 }
 
