@@ -40,6 +40,8 @@ A step counter counts footfalls, not metres. The same 10 km can land higher or l
 
 The [University of Nebraska Medical Center’s walking guide](https://www.unmc.edu/cfhl/resources/walking.html) puts an average stride at about 2.5 feet, which works out to just over 2,100 steps a mile, and 10 km is about 6.2 miles, which lands near **13,100**. [How many steps are in 1 mile](/guides/how-many-steps-is-1-mile) has the method.
 
+A [marathon](/guides/how-many-steps-is-a-marathon) is 42.195 km, about 4.2 times this walk, and roughly 56,000 walking steps.
+
 ## 10,000 steps and 10 km
 
 10,000 on the watch is a tidy round number. At a 0.75 m step it covers about **7.5 km**. [How many miles is 10,000 steps](/guides/how-many-miles-is-10000-steps) puts that count at about **6.5–8 km** for many adults, and 7.5 km sits in the middle of the band.

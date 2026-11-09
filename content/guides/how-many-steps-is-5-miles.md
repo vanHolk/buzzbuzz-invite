@@ -57,6 +57,8 @@ Direct division gives 10,728.9 steps for 5 miles. Five times 2,146 gives 10,730.
 
 [10 km is about 13,000 steps](/guides/how-many-steps-is-10km) for many adults. 10 km is about 6.2 miles, so it adds another **1.2 miles** on top of this walk.
 
+A [marathon](/guides/how-many-steps-is-a-marathon) is 26.2 miles, a little more than five of these walks, and roughly 56,000 walking steps.
+
 ## How long 5 miles takes
 
 Pace sets the clock. The [NHS describes a brisk walk as about 3 miles an hour](https://www.nhs.uk/live-well/exercise/walking-for-health/), faster than a stroll, and you can still talk. At that pace, 5 miles takes 5 ÷ 3 hours. That is 100 minutes, or **1 hour 40 minutes** of brisk walking.
