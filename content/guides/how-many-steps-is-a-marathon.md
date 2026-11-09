@@ -73,7 +73,7 @@ Seven days at 8,000 steps is 7 × 8,000 = **56,000**, the round figure on the 0.
 Six people sharing a marathon's worth of steps is 56,260 ÷ 6 = 9,377, about **9,400 steps** each. Eight people is 56,260 ÷ 8 = 7,032.5, about **7,000 steps** each. [A hive](/guides/what-is-a-hive) is a small group of friends who can share a day's steps.
 
 :::bee
-Nobody in the hive has to run anything. Six ordinary walking days, one marathon's worth of steps, and the bragging rights get split six ways.
+Nobody in the hive has to run anything. Six friends each walk an ordinary day, and the bragging rights for a whole marathon get split six ways.
 :::
 
 ## Find your own marathon
