@@ -150,7 +150,7 @@
   <!-- guides:start -->
   <url>
     <loc>https://buzzbuzz.club/guides</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -211,6 +211,12 @@
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-a-30-minute-walk</loc>
     <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/how-many-steps-is-a-marathon</loc>
+    <lastmod>2026-11-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
