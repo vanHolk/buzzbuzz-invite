@@ -2900,6 +2900,32 @@
         "S.browser_fallback_url=" + encodeURIComponent(storeUrlAndroid) +
         ";end";
 
+      /** Start the clipboard write inside the tap. Safari drops a write that begins in the store-fallback timer. */
+      function seedInviteClipboard() {
+        try {
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            return navigator.clipboard.writeText(clipboardInviteUrl);
+          }
+        } catch (err) {}
+        return Promise.resolve();
+      }
+
+      function goToStoreAfterSeed(url) {
+        var went = false;
+        function go() {
+          if (went) return;
+          went = true;
+          window.location.href = url;
+        }
+        var pending = seedInviteClipboard();
+        if (pending && typeof pending.then === "function") {
+          pending.then(go, go);
+        } else {
+          go();
+        }
+        setTimeout(go, 400);
+      }
+
       openBtn.setAttribute("href", invitePageHttps);
       openBtn.addEventListener("click", function (e) {
         e.preventDefault();
@@ -2910,14 +2936,17 @@
           window.location.href = androidOpenUrl;
           return;
         }
+        seedInviteClipboard();
         window.location.href = deepLink;
         if (startStoreFallback) startStoreFallback();
       });
 
-      storeBtnIos.addEventListener("click", function () {
+      storeBtnIos.addEventListener("click", function (e) {
+        e.preventDefault();
         if (typeof window.buzzbuzzCapture === "function") {
           window.buzzbuzzCapture("app_store_clicked");
         }
+        goToStoreAfterSeed(storeUrlIos);
       });
       storeBtnAndroid.addEventListener("click", function () {
         if (typeof window.buzzbuzzCapture === "function") {
@@ -2980,13 +3009,7 @@
           fallbackArmed = true;
           setTimeout(function () {
             if (!didHide) {
-              // iOS only (Android returns above / never arms this timer): seed clipboard
-              // for deferred-install hydrate after App Store install.
-              try {
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                  navigator.clipboard.writeText(clipboardInviteUrl).catch(function () {});
-                }
-              } catch (err) {}
+              // Clipboard write already started in the Open tap. This timer only navigates.
               window.location.href = isAndroid ? storeUrlAndroid : storeUrlIos;
             }
           }, 1800);
