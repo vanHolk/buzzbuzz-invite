@@ -61,6 +61,8 @@ Send one plain text and pin it. “6,000 steps. One photo. We start tomorrow. No
 
 The seven-day playbook, including a missed Wednesday, is [start a walking streak with friends](/guides/start-a-walking-streak-with-friends). Follow that page for the week.
 
+A holiday table works as a one-day hive, as in the [Thanksgiving walk](/guides/thanksgiving-walk).
+
 :::bee
 A hive notices a quiet Tuesday before any dashboard does. Send “walking at 6?” and leave it there. The notice helps. A speech is how people mute the chat.
 :::

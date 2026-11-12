@@ -65,7 +65,7 @@ Two to six friends. Pin one rule: a walk counts if it is ten minutes, any time o
 
 If you use BuzzBuzz, the group is a hive: a few friends, a daily step count, and one photo. A group chat you already have can hold the same check-in.
 
-The first person out after dark posts a streetlight photo. Or pick one lunch a week and walk it together. The [10,000-step Halloween challenge](/guides/10000-step-halloween-challenge) is the one-night version, for Halloween week. This rule is for the months after the pumpkins come down.
+The first person out after dark posts a streetlight photo. Or pick one lunch a week and walk it together. The [10,000-step Halloween challenge](/guides/10000-step-halloween-challenge) is the one-night version, for Halloween week. This rule is for the months after the pumpkins come down. A holiday evening walk after dark, including the [Thanksgiving walk](/guides/thanksgiving-walk), uses the same visibility habits.
 
 :::bee
 Hang the reflective layer on the same hook as the shoes. A jacket in a drawer never meets a headlight.
