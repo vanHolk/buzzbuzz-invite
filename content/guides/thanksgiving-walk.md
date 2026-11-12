@@ -63,7 +63,7 @@ Late-November evenings get dark early in much of the US. If the time you named l
 
 At about 100 steps a minute, 10 minutes is about **1,000 steps**, 20 minutes is about **2,000 steps**, and 30 minutes is about **3,000 steps**. That pace is the estimate in [how many steps are in a 30-minute walk](/guides/how-many-steps-is-a-30-minute-walk). A stroller, a hill, or a pause to look at a yard decoration will move the real count. Treat the round numbers as an estimate.
 
-A Thanksgiving-morning 5K, the turkey trot common in many US towns, is about **6,500 steps** if you walk it. That matches [how many steps are in 5 km](/guides/how-many-steps-is-5km). The after-dinner loop is the outing between the fridge and the pie. The step count is a fun number to send, not a target.
+A Thanksgiving-morning 5K, the turkey trot common in many US towns, is about **6,500 steps** if you walk it. That matches [how many steps are in 5 km](/guides/how-many-steps-is-5km). Send the count to the group chat for bragging rights. Nobody has to hit a number.
 
 ## Friends at different tables
 
