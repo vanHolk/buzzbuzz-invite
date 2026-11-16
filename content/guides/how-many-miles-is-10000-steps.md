@@ -94,7 +94,7 @@ Tudor-Locke and Bassett, writing in Sports Medicine in 2004, trace the 10,000-st
 
 ## How long those steps take
 
-[Walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking.
+[Walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking. Thirty minutes of that same walking is about 3,000 steps at a steady pace. The [30-minute walk guide](/guides/how-many-steps-is-a-30-minute-walk) splits the half hour by pace.
 
 :::bee
 Four miles and five miles can both be an honest 10,000. Keep the counter you wore on a route you already know.

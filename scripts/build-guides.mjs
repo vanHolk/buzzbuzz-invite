@@ -165,6 +165,29 @@ function beeAside(raw) {
   return `<aside class="bee-says">\n  <p class="bee-says-label"><span aria-hidden="true">🐝</span> Bee says</p>\n${paragraphs}\n</aside>`;
 }
 
+function splitTableRow(line) {
+  let text = line.trim();
+  if (text.startsWith("|")) text = text.slice(1);
+  if (text.endsWith("|")) text = text.slice(0, -1);
+  return text.split("|").map((cell) => cell.trim());
+}
+
+function isTableSeparator(line) {
+  const cells = splitTableRow(line);
+  return cells.length > 1 && cells.every((cell) => /^:?-{3,}:?$/.test(cell));
+}
+
+function tableHtml(header, rows) {
+  const head = header.map((cell) => `<th scope="col">${inline(cell)}</th>`).join("");
+  const body = rows
+    .map((row) => {
+      const cells = header.map((_, index) => `<td>${inline(row[index] || "")}</td>`).join("");
+      return `    <tr>${cells}</tr>`;
+    })
+    .join("\n");
+  return `<div class="table-scroll">\n<table>\n  <thead>\n    <tr>${head}</tr>\n  </thead>\n  <tbody>\n${body}\n  </tbody>\n</table>\n</div>`;
+}
+
 function markdownToHtml(markdown) {
   const lines = markdown.replace(/\r\n/g, "\n").split("\n");
   const blocks = [];
@@ -216,11 +239,23 @@ function markdownToHtml(markdown) {
       blocks.push(`<ol>\n${items.join("\n")}\n</ol>`);
       continue;
     }
+    if (line.trim().startsWith("|") && i + 1 < lines.length && isTableSeparator(lines[i + 1])) {
+      const header = splitTableRow(line);
+      i += 2;
+      const rows = [];
+      while (i < lines.length && lines[i].trim().startsWith("|")) {
+        if (!isTableSeparator(lines[i])) rows.push(splitTableRow(lines[i]));
+        i += 1;
+      }
+      blocks.push(tableHtml(header, rows));
+      continue;
+    }
     const buf = [line.trim()];
     i += 1;
     while (
       i < lines.length &&
       lines[i].trim() &&
+      !lines[i].trim().startsWith("|") &&
       !/^(#{2,3}\s|:::bee\s*$|[-*]\s|\d+\.\s)/.test(lines[i])
     ) {
       buf.push(lines[i].trim());
