@@ -150,7 +150,7 @@
   <!-- guides:start -->
   <url>
     <loc>https://buzzbuzz.club/guides</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -247,6 +247,12 @@
   <url>
     <loc>https://buzzbuzz.club/guides/what-is-a-hive</loc>
     <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/guides/why-phone-and-watch-step-counts-dont-match</loc>
+    <lastmod>2026-11-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
