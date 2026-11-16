@@ -47,7 +47,7 @@ These are examples, not a measurement of your walk. The popular “[2,000 steps 
 
 Time follows pace, not a fixed clock. The [NHS describes a brisk walk as about 3 miles an hour](https://www.nhs.uk/live-well/exercise/walking-for-health/) — faster than a stroll, slow enough that you can still talk. At that pace, 5 km takes **about an hour**.
 
-A comfortable walk is often closer to **60–75 minutes**. A slower stroll can take **80 minutes or more**. You do not have to do it as one loop.
+A comfortable walk is often closer to **60–75 minutes**. A slower stroll can take **80 minutes or more**. You do not have to do it as one loop. Half an hour of the same walk is the short piece: [a 30-minute walk is about 3,000 steps](/guides/how-many-steps-is-a-30-minute-walk) at a steady pace, and higher if you speed up.
 
 A commute, a lunch wander, and the long way home can add up to the same distance. If you care more about the clock than the kilometres, [walking 10,000 steps usually takes about 90–120 minutes](/guides/how-long-to-walk-10000-steps) of actual walking.
 
