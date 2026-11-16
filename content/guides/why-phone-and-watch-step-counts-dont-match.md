@@ -12,9 +12,9 @@ featured: false
 draft: false
 answerKicker: "Phone vs watch"
 answerFigure: "One source wins"
-answerNote: "Health and Health Connect don’t add your devices together. For overlapping minutes they keep the source highest on a priority list."
+answerNote: "Health and Health Connect don’t add your devices together. When sources overlap, the one highest on a priority list wins."
 seoTitle: "iPhone and Apple Watch Steps Don’t Match? Here’s Why"
-seoDescription: "Apple Health doesn’t add your iPhone and Apple Watch steps. It picks one source per stretch of time. Here’s how to fix the order, plus Android."
+seoDescription: "Apple Health doesn’t add your iPhone and Apple Watch steps together. The top source on a priority list wins. Here’s how to fix it, plus Android."
 related:
   - how-many-steps-is-1-mile
   - how-many-steps-is-a-30-minute-walk
@@ -40,7 +40,7 @@ If several sources contribute the same data type, the one at the top of the list
 
 ## Put the right source on top
 
-On iPhone, the taps use the names on Apple’s page:
+On iPhone:
 
 1. Open the Health app.
 2. Tap the Browse tab.
@@ -69,15 +69,13 @@ Case, Burwick, Volpp, and Patel compared devices with a person counting steps, i
 
 On an 8,000-step day, as an illustration, 6% is 8,000 × 0.06 = **480 steps**. A few hundred steps of disagreement sits inside the phone range they measured. At the low end of those wrist devices, 22.7% of 8,000 is 1,816, about **1,800 steps**. A drop well past that, or a total that falls the day a new app appears, is a reason to open the source list.
 
-[10,000 steps is about 4–5 miles](/guides/how-many-miles-is-10000-steps). A [30-minute walk](/guides/how-many-steps-is-a-30-minute-walk) is one piece of a day like this.
-
 ## Count 500 steps and compare
 
-Carry the phone and wear the watch. Walk and count **500 steps** out loud, then set each reading next to your count. A known distance works too. [How many steps are in 1 mile](/guides/how-many-steps-is-1-mile) has the method: note the counter at the start and at the end of a mile you already know, and subtract. Keep the closer device, the one you have on you most of the day, and drag it to the top of the list.
+Carry the phone and wear the watch. Walk and count **500 steps** out loud, then set each reading next to your count. A known distance works too. [How many steps are in 1 mile](/guides/how-many-steps-is-1-mile) has the method: note the counter at the start and at the end of a mile you already know, and subtract. A [30-minute walk](/guides/how-many-steps-is-a-30-minute-walk) is a longer test, about 3,000 steps at a steady pace. Keep the closer device, the one you have on you most of the day, and drag it to the top of the list.
 
 ## In a hive, compare the week
 
-A [hive](/guides/what-is-a-hive) often mixes someone wearing a watch with a friend who only carries a phone. A 212-step win on Tuesday is a bad prize. Compare the week. Pick one source and leave it, so your own days stay comparable. [A walking streak with friends](/guides/start-a-walking-streak-with-friends) holds up when the chat is about the photo.
+A [hive](/guides/what-is-a-hive) often mixes someone wearing a watch with a friend who only carries a phone. A 212-step win on Tuesday is a bad prize. Compare the week. Pick one source and leave it, so your own days stay comparable. A [walking streak with friends](/guides/start-a-walking-streak-with-friends) cares whether everyone walked, not whose device counted 3% higher.
 
 :::bee
 A new app with permission to write steps lands at the top of the list on its own. If the total shrinks the day you install one, check the list before you blame the walk.
