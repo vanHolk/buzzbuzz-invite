@@ -37,7 +37,7 @@ The big thread you muted does not ask where the quiet person went. The four-pers
 
 You walk, or you get enough steps to clear a floor the group agreed on. Then one check-in: a photo, a step count, or a single “done.” Steps are the score. The picture is the story.
 
-For a mixed group, 5,000–8,000 steps is a strong first week. A shift, a kid, or a long commute can still clear it. A shorter day counts as showing up. A [30-minute walk is about 3,000 steps](/guides/how-many-steps-is-a-30-minute-walk) at a steady pace. Treat the 3,000 as an estimate. Hills, strollers, and red lights move it, and the check-in stays one message.
+For a mixed group, 5,000–8,000 steps is a strong first week. A shift, a kid, or a long commute can still clear it. A shorter day counts as showing up. A [30-minute walk is about 3,000 steps](/guides/how-many-steps-is-a-30-minute-walk) at a steady pace. Treat the 3,000 as an estimate. Hills, strollers, and red lights move it, and the check-in stays one message. If one friend wears a watch and another only carries a phone, their counts won’t line up exactly. [Here’s why phone and watch step counts don’t match](/guides/why-phone-and-watch-step-counts-dont-match).
 
 The photo can be dull. A bakery window, a weird cloud, a dog in a coat, the corner you already pass on the way home. People open the picture. The step count can sit underneath. In BuzzBuzz that photo stays up for about a day, then leaves, so yesterday does not pile up. A group chat can do the same job. Send one picture and move on.
 

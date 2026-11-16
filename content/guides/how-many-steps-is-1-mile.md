@@ -77,6 +77,8 @@ Save the average for the chart. Walk the mile, trust the counter you actually wo
 3. Subtract. That gap is your personal steps per mile.
 4. Use that number next time, instead of a stranger’s average.
 
+If your phone and your watch disagree on that mile, see [why phone and watch step counts don’t match](/guides/why-phone-and-watch-step-counts-dont-match).
+
 You can also start from step length. Walk a measured stretch, divide the feet by your steps, then divide 5,280 by that length. One honest mile from your own shoes beats a dozen charts.
 
 Once that number is yours, you can retire the internet version of this question. Times five for [5 miles](/guides/how-many-steps-is-5-miles).
