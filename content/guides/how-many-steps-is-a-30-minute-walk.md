@@ -34,6 +34,8 @@ A 30-minute walk is about **3,000 to 4,000 steps**, depending on pace. Steady wa
 
 An easy stroll near 80 steps a minute is about **2,400** in the same half hour, and a brisk 120 is about **3,600**. Those are the planning cadences on the [10,000-step time guide](/guides/how-long-to-walk-10000-steps): about 80 slow, about 100 average, about 120 and up for brisk. Count the minutes you are walking. A red light, a shoelace, or a conversation on the corner keeps the clock running and adds no steps.
 
+When it is too cold to walk outside, these same paces still apply to a mall loop or a hallway, which [too cold to walk outside](/guides/too-cold-to-walk-indoor-steps) covers.
+
 ## A 30-minute pace chart
 
 Multiply the cadence by 30. The rows assume you keep the pace, with no long pauses.

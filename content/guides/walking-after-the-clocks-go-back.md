@@ -57,6 +57,8 @@ In poor daylight, [Highway Code Rule 3](https://www.gov.uk/guidance/the-highway-
 
 [The NHS](https://www.nhs.uk/live-well/exercise/walking-for-health/) says a brisk 10-minute daily walk counts toward the 150 minutes of weekly exercise in the physical activity guidelines for adults aged 19 to 64. On the worst wet dark Tuesday, those ten minutes still count, and they keep a streak alive. Any of the three slots qualifies.
 
+When it is too cold or icy to go out, those ten minutes can be indoor laps, and [too cold to walk outside](/guides/too-cold-to-walk-indoor-steps) is the way to count them.
+
 When the evening is kinder, take a full half hour. [How many steps that adds up to](/guides/how-many-steps-is-a-30-minute-walk) depends on your pace. Ten minutes is the promise that keeps a bad day on the board.
 
 ## Let the group hold the dark months
