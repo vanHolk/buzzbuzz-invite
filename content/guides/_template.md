@@ -22,6 +22,7 @@ seoDescription: "A specific meta description, about 150 characters, that says wh
 # answerNote: "Say that this is an estimate, and what changes it."
 # Optional. Use the real publication date. Set updated only after a later substantive edit.
 # updated: 2026-10-02
+# App Store and Google Play links in the body are tracked automatically with the guide slug.
 related:
   - how-many-steps-is-5km
 # sources:

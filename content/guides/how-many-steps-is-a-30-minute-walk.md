@@ -3,7 +3,7 @@ title: "How Many Steps Is a 30-Minute Walk?"
 description: "A steady half hour lands near 3,000 steps. Easy is closer to 2,400, and a fast walk is closer to 3,600."
 slug: how-many-steps-is-a-30-minute-walk
 date: 2026-10-13
-updated: 2026-11-16
+updated: 2026-11-24
 category: step-nerd
 questType: quick-quest
 readTime: "6 min"
@@ -14,8 +14,8 @@ draft: false
 answerKicker: "30-minute walk"
 answerFigure: "≈ 3,000–4,000 steps"
 answerNote: "An estimate for a steady walk or faster. Easy is closer to 2,400, and a brisk walk is closer to 3,600."
-seoTitle: "About 3,000 Steps in a 30-Minute Walk"
-seoDescription: "How many steps in a 30-minute walk? About 3,000 at a steady 100 steps a minute. Easy is closer to 2,400, and a brisk walk is closer to 3,600."
+seoTitle: "30-Minute Walk: ~3,000 Steps (Pace Chart)"
+seoDescription: "A steady 30-minute walk is about 3,000 steps. Compare easy, steady, brisk and very brisk estimates, then check your own pace in 60 seconds."
 related:
   - how-long-to-walk-10000-steps
   - how-many-steps-is-1-mile
@@ -82,6 +82,12 @@ A minute of counting beats a stranger’s average.
 A count of 90 in that minute is 90 × 30 = **2,700 steps**. A count of 110 is 110 × 30 = **3,300 steps**.
 
 Or note the counter, walk for 30 minutes, and subtract. If the clock says 40 and you were moving for 30, use 30. Next time, start from that number.
+
+## See what half an hour adds in BuzzBuzz
+
+Set a 30-minute timer and check your daily step tally in BuzzBuzz before you head out. When the timer goes off, subtract your starting tally to see how many steps this particular loop added. Try it once at an easy pace and once briskly. You’ll have two numbers that tell you how much each version can add toward your daily step goal. The easy loop earns its place, too.
+
+[Download BuzzBuzz on the App Store](https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595) or [get it on Google Play](https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker).
 
 ## Where a half hour fits
 

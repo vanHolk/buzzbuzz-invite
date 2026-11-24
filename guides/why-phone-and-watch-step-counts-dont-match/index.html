@@ -23,7 +23,7 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="Why Don’t My Phone and Watch Step Counts Match?" />
   <meta property="article:published_time" content="2026-11-17" />
-  <meta property="article:modified_time" content="2026-11-17" />
+  <meta property="article:modified_time" content="2026-11-24" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="iPhone and Apple Watch Steps Don’t Match? Here’s Why | BuzzBuzz" />
   <meta name="twitter:description" content="Apple Health doesn’t add your iPhone and Apple Watch steps together. The top source on a priority list wins. Here’s how to fix it, plus Android." />
@@ -44,7 +44,7 @@
   "headline": "Why Don’t My Phone and Watch Step Counts Match?",
   "description": "Apple Health doesn’t add your iPhone and Apple Watch steps together. The top source on a priority list wins. Here’s how to fix it, plus Android.",
   "datePublished": "2026-11-17",
-  "dateModified": "2026-11-17",
+  "dateModified": "2026-11-24",
   "author": {
     "@type": "Organization",
     "name": "BuzzBuzz",
@@ -121,7 +121,7 @@
       </aside>
       <p class="dek">Your phone and watch each count steps. When both write the same data, the higher source on the priority list wins.</p>
       <p class="meta">👟 Easy · 5 min</p>
-      <p class="byline"><time datetime="2026-11-17">November 17, 2026</time></p>
+      <p class="byline">Published <time datetime="2026-11-17">November 17, 2026</time> · Updated <time datetime="2026-11-24">November 24, 2026</time></p>
       <div class="prose">
 <p>Your iPhone and Apple Watch each count steps on their own. When both write steps, the source at the top of Data Sources &amp; Access takes priority in <a href="https://support.apple.com/en-us/108779">Apple Health</a>. Health does not add the two devices together. The phone also misses the walking you do while it sits on a desk, and the two devices count a little differently on the same walk. Small gaps are normal. A big sudden drop usually means the wrong source is on top.</p>
 
@@ -159,6 +159,12 @@
 <p>Open Health Connect. Under Permissions and data, tap Manage Data, then Data sources and priority. Under App sources, touch and hold next to the app name and drag the handle. To leave an app out of the totals, next to Data sources and priority, tap Edit, then Remove. The app can still write. Those steps do not count in the totals.</p>
 
 <p>Some apps read all of the data and merge it their own way, so two apps can show different totals for the same day.</p>
+
+<h2 id="keep-one-step-tally-with-buzzbuzz">Keep one step tally with BuzzBuzz</h2>
+
+<p>Once you’ve sorted out which device to trust, pick one tally for comparing your walks. BuzzBuzz tracks your daily steps and shows progress toward a step goal. Try checking its tally before and after the same loop a few times. The change gives you a number you can compare from walk to walk, and you can stop refereeing the phone and watch after every outing.</p>
+
+<p><a href="https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595">Download BuzzBuzz on the App Store</a> or <a href="https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker">get it on Google Play</a>.</p>
 
 <h2 id="same-walk-two-devices">Same walk, two devices</h2>
 
@@ -258,5 +264,24 @@
     <span class="qr-download-title">Get BuzzBuzz</span>
     <span class="qr-download-hint">Scan with your phone</span>
   </a>
+  <script>
+    (function () {
+      var properties = { source: "why-phone-and-watch-step-counts-dont-match" };
+      document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("app_store_clicked", properties);
+          }
+        });
+      });
+      document.querySelectorAll('a[href^="https://play.google.com/store/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("play_store_clicked", properties);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

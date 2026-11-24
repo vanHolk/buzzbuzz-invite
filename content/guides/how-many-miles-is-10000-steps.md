@@ -3,7 +3,7 @@ title: "How Many Miles Is 10,000 Steps?"
 description: "About 4 to 5 miles. A 2.5 foot step lands near 4.7 miles (7.6 km)."
 slug: how-many-miles-is-10000-steps
 date: 2026-10-06
-updated: 2026-11-06
+updated: 2026-11-24
 category: step-nerd
 questType: quick-quest
 readTime: "6 min"
@@ -60,6 +60,12 @@ About 4 to 5 miles fits a step of about 2.1 to 2.6 feet. Four miles is 6.4 km an
 The rows above are walking steps. A running step is often longer, so the same 10,000 can pass 5 miles. [Runner’s World](https://www.runnersworld.com/training/a60492650/how-many-miles-is-10000-steps/) reports exercise physiologist Heather Hart’s view that a run usually covers more miles in 10,000 steps than a walk, unless each step is very short and the cadence is high. Check a run the same way as a walk. Divide the distance by the steps.
 
 [Mayo Clinic Press](https://mcpress.mayoclinic.org/nutrition-fitness/does-hitting-10000-steps-a-day-really-make-a-difference/) prints a simpler chart: every 1,000 steps is about half a mile and about 10 minutes, so 10,000 steps is 5 miles and 100 minutes. Half a mile in 10 minutes is 3 miles an hour, and 1,000 steps in 10 minutes is 100 steps a minute. A mile at 2,000 steps is 5,280 ÷ 2,000 = 2.64 feet per step, a little longer than the 2.5 foot row. That is why this page gets 4.7 miles there, and 5 miles only as the long end of the range. The minutes are a separate question. [How long 10,000 steps takes](/guides/how-long-to-walk-10000-steps) keeps the clock.
+
+## Estimate miles from your BuzzBuzz step total
+
+BuzzBuzz tracks your daily steps, so you can use the tally you actually walked in the formula above. For a more personal estimate, use the change in your tally on a route of known length to work out your usual step length. Then multiply today’s step total by that length and divide by 5,280 if you measured in feet. It’s a handy bit of math for days when you’re nowhere near a tidy 10,000.
+
+[Download BuzzBuzz on the App Store](https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595) or [get it on Google Play](https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker).
 
 ## Other daily totals at a 2.5 foot step
 

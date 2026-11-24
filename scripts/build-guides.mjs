@@ -449,6 +449,7 @@ function pageShell({
   comment,
   bodyClass = "",
   headExtras = "",
+  source = "guides",
 }) {
   const schemas = jsonLd.map((entry) => `  ${jsonScript(entry)}`).join("\n");
   return `<!DOCTYPE html>
@@ -493,6 +494,25 @@ ${headExtras}${schemas}
 <body${bodyClass ? ` class="${escapeHtml(bodyClass)}"` : ""}>
   <a class="skip-link" href="#main">Skip to main content</a>
 ${body}
+  <script>
+    (function () {
+      var properties = { source: ${JSON.stringify(source)} };
+      document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("app_store_clicked", properties);
+          }
+        });
+      });
+      document.querySelectorAll('a[href^="https://play.google.com/store/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("play_store_clicked", properties);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
 `;
@@ -779,6 +799,7 @@ ${sourcesHtml}
       },
     ],
     body,
+    source: article.slug,
     comment: `Generated from content/guides/${article.source} by scripts/build-guides.mjs. Do not edit by hand.`,
   });
 }
