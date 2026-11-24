@@ -6,7 +6,7 @@
  *
  * Source of truth is the markdown. Generated pages live in /guides so the
  * site can keep shipping as static files (no CMS, no framework).
- * Commit both the markdown and the generated HTML.
+ * Commit the markdown, generated HTML, and generated sitemap.
  *
  * A file is published when:
  *   - it does not start with _
@@ -14,6 +14,7 @@
  *   - filename matches slug
  */
 
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -22,6 +23,13 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = path.join(root, "content", "guides");
 const outDir = path.join(root, "guides");
 const site = "https://buzzbuzz.club";
+const authorPath = "/about/michael-holker/";
+const author = {
+  "@type": "Person",
+  "@id": `${site}${authorPath}#person`,
+  name: "Michael Holker",
+  url: `${site}${authorPath}`,
+};
 const defaultImage = `${site}/share-image-light.png`;
 
 const AREAS = [
@@ -50,10 +58,6 @@ function escapeHtml(value) {
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
     .replace(/"/g, "&quot;");
-}
-
-function escapeXml(value) {
-  return escapeHtml(value);
 }
 
 function unquote(value) {
@@ -713,9 +717,10 @@ function renderArticle(article, bySlug) {
     : "";
   const published = article.date;
   const modified = modifiedDate(article);
-  const bylineHtml = modified !== published
-    ? `<p class="byline">Published <time datetime="${published}">${formatDate(published)}</time> · Updated <time datetime="${modified}">${formatDate(modified)}</time></p>`
-    : `<p class="byline"><time datetime="${published}">${formatDate(published)}</time></p>`;
+  const bylineDates = modified !== published
+    ? `Published <time datetime="${published}">${formatDate(published)}</time> · Updated <time datetime="${modified}">${formatDate(modified)}</time>`
+    : `<time datetime="${published}">${formatDate(published)}</time>`;
+  const bylineHtml = `<p class="byline">By <a href="${authorPath}">${author.name}</a> · ${bylineDates}</p>`;
   const sourcesHtml = article.sources.length
     ? `\n<section class="sources" aria-labelledby="sources">
   <h2 id="sources">Sources</h2>
@@ -777,7 +782,7 @@ ${sourcesHtml}
         description,
         datePublished: published,
         dateModified: modified,
-        author: { "@type": "Organization", name: "BuzzBuzz", url: `${site}/` },
+        author,
         publisher: {
           "@type": "Organization",
           name: "BuzzBuzz",
@@ -804,41 +809,65 @@ ${sourcesHtml}
   });
 }
 
-function urlBlock(articles, { images }) {
-  const latest = articles.map((article) => modifiedDate(article)).sort().at(-1);
-  const entries = [
-    urlEntry(`${site}/guides`, latest, { changefreq: "weekly", priority: "0.8" }),
-    ...articles
-      .slice()
-      .sort((a, b) => a.slug.localeCompare(b.slug))
-      .map((article) => urlEntry(articleUrl(article.slug), modifiedDate(article), {
-        changefreq: "monthly",
-        priority: "0.6",
-        image: images && article.hero ? { loc: imageUrl(article), title: article.title } : null,
-      })),
-  ];
-  return `<!-- guides:start -->\n${entries.join("\n")}\n  <!-- guides:end -->`;
-}
-
-function urlEntry(loc, lastmod, { changefreq, priority, image }) {
-  const imageXml = image
-    ? `\n    <image:image>\n      <image:loc>${escapeXml(image.loc)}</image:loc>\n      <image:title>${escapeXml(image.title)}</image:title>\n    </image:image>`
-    : "";
-  return `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${changefreq}</changefreq>\n    <priority>${priority}</priority>${imageXml}\n  </url>`;
-}
-
-function upsertSitemap(file, block) {
-  const start = "<!-- guides:start -->";
-  const end = "<!-- guides:end -->";
-  let xml = fs.readFileSync(file, "utf8");
-  if (xml.includes(start) && xml.includes(end)) {
-    xml = xml.replace(new RegExp(`${start}[\\s\\S]*?${end}`), block);
-  } else {
-    const close = xml.lastIndexOf("</urlset>");
-    if (close === -1) throw new Error(`${file}: missing </urlset>`);
-    xml = `${xml.slice(0, close)}  ${block}\n${xml.slice(close)}`;
+function sourceDate(file) {
+  const options = { cwd: root, encoding: "utf8" };
+  const unchanged = spawnSync("git", ["diff", "--quiet", "HEAD", "--", file], options);
+  if (unchanged.status === 0) {
+    const log = spawnSync("git", ["log", "-1", "--format=%cs", "--", file], options);
+    const date = log.stdout?.trim();
+    if (log.status === 0 && /^\d{4}-\d{2}-\d{2}$/.test(date)) return date;
   }
-  fs.writeFileSync(file, xml);
+  return fs.statSync(path.join(root, file)).mtime.toISOString().slice(0, 10);
+}
+
+function* htmlFiles(dir = "") {
+  for (const entry of fs.readdirSync(path.join(root, dir), { withFileTypes: true })) {
+    if (entry.name.startsWith(".") || entry.name === "node_modules") continue;
+    const file = path.posix.join(dir, entry.name);
+    if (entry.isDirectory()) yield* htmlFiles(file);
+    if (entry.isFile() && file.endsWith(".html")) yield file;
+  }
+}
+
+function writeSitemap(articles) {
+  // Use the inputs for generated pages so running the build doesn't reset lastmod.
+  const templateDate = sourceDate("scripts/build-guides.mjs");
+  const guideDates = articles.map((article) => sourceDate(`content/guides/${article.source}`));
+  const generated = new Map([
+    ["guides/index.html", { lastmod: [templateDate, ...guideDates].sort().at(-1) }],
+    ...articles.map((article, index) => [
+      `guides/${article.slug}/index.html`,
+      {
+        lastmod: [templateDate, guideDates[index]].sort().at(-1),
+        image: article.hero ? imageUrl(article) : null,
+      },
+    ]),
+  ]);
+  const urls = new Map();
+  for (const file of htmlFiles()) {
+    const html = fs.readFileSync(path.join(root, file), "utf8");
+    const head = html.split("</head>", 1)[0];
+    if (/<meta\s+name="robots"\s+content="[^"]*\bnoindex\b/i.test(head)) continue;
+    const route = file.replace(/(^|\/)index\.html$/, "$1");
+    const loc = head.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1] || `${site}/${route}`;
+    if (!loc.startsWith(`${site}/`)) continue;
+    const lastmod = generated.get(file)?.lastmod ?? sourceDate(file);
+    const image = generated.get(file)?.image ??
+      (file.startsWith("bees/") ? head.match(/<meta\s+property="og:image"\s+content="([^"]+)"/i)?.[1] : null);
+    const imageXml = image
+      ? `\n    <image:image><image:loc>${escapeHtml(image)}</image:loc></image:image>`
+      : "";
+    if (urls.has(loc)) throw new Error(`Duplicate sitemap URL: ${loc}`);
+    urls.set(loc, `  <url>\n    <loc>${escapeHtml(loc)}</loc>\n    <lastmod>${lastmod}</lastmod>${imageXml}\n  </url>`);
+  }
+  const entries = [...urls.keys()].sort().map((url) => urls.get(url));
+  fs.writeFileSync(path.join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+${entries.join("\n")}
+</urlset>
+`);
+  console.log(`Built sitemap.xml (${entries.length} URLs)`);
 }
 
 function writeOutput(articles) {
@@ -856,8 +885,7 @@ function writeOutput(articles) {
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, "index.html"), renderArticle(article, bySlug));
   }
-  upsertSitemap(path.join(root, "sitemap.xml"), urlBlock(articles, { images: true }));
-  upsertSitemap(path.join(root, "sitemap-pages.xml"), urlBlock(articles, { images: false }));
+  writeSitemap(articles);
 }
 
 const articles = loadArticles();

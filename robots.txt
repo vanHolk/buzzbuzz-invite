@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://buzzbuzz.club/sitemap.xml
-Sitemap: https://buzzbuzz.club/sitemap-pages.xml

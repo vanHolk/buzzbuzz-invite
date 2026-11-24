@@ -1,5 +1,5 @@
 ---
-title: "Walking After the Clocks Go Back: Keep Your Daily Walk When It Gets Dark Early"
+title: "How to Walk After the Clocks Go Back"
 description: "The clocks go back and the after-work walk lands in the dark. Move it, light it, or shrink it to ten minutes."
 slug: walking-after-the-clocks-go-back
 date: 2026-10-23
@@ -15,7 +15,7 @@ draft: false
 answerKicker: "Clocks go back"
 answerFigure: "Last Sun Oct · First Sun Nov"
 answerNote: "Move the walk, light it up, or shrink it. Don't drop it."
-seoTitle: "Walking After the Clocks Go Back: How to Keep Your Daily Walk in the Dark Months"
+seoTitle: "How to Walk After the Clocks Go Back"
 seoDescription: "When the clocks go back, the evening walk lands in the dark. Move it, light it, or shrink it to ten minutes so the habit survives."
 related:
   - start-a-walking-streak-with-friends
