@@ -3,270 +3,174 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://buzzbuzz.club/</loc>
-    <lastmod>2026-07-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
-    <loc>https://buzzbuzz.club/bees/normal.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/normal.png</image:loc>
-      <image:title>Normal Bee — the original BuzzBuzz bee</image:title>
-    </image:image>
+    <loc>https://buzzbuzz.club/about/michael-holker/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
-    <loc>https://buzzbuzz.club/bees/berry-blush.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/berry-blush.png</image:loc>
-      <image:title>Berry Blush — the pink BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/goblin.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/goblin.png</image:loc>
-      <image:title>Goblin Bee — the chaos bee of BuzzBuzz</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/outlaw.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/outlaw.png</image:loc>
-      <image:title>Outlaw Bee — the cowboy bee of BuzzBuzz</image:title>
-    </image:image>
+    <loc>https://buzzbuzz.club/bees/</loc>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/aurora-prism.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/aurora-prism.png</image:loc>
-      <image:title>Aurora Prism — the legendary BuzzBuzz bee</image:title>
-    </image:image>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/aurora-prism.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://buzzbuzz.club/bees/hani.html</loc>
-    <lastmod>2026-06-25</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/hani.png</image:loc>
-      <image:title>Hani — the main character BuzzBuzz bee</image:title>
-    </image:image>
+    <loc>https://buzzbuzz.club/bees/berry-blush.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/berry-blush.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://buzzbuzz.club/bees/kpop-jimmy.html</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/kpop-jimmy.png</image:loc>
-      <image:title>Kpop Jimmy — the idol BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/wizard-student.html</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/wizard-student.png</image:loc>
-      <image:title>Wizard Student — the magic school BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/festival-bee.html</loc>
-    <lastmod>2026-07-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/festival-bee.png</image:loc>
-      <image:title>Festival Bee — the Honey Festival BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/luau-bee.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/luau.png</image:loc>
-      <image:title>Luau Bee — the golden-hour island BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/unc-summer.html</loc>
-    <lastmod>2026-07-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/unc.png</image:loc>
-      <image:title>Unc Summer — the vacation uncle BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/vampire.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/vampire.png</image:loc>
-      <image:title>Vampire Bee — the Halloween BuzzBuzz bee</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://buzzbuzz.club/bees/witch.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/witch.png</image:loc>
-      <image:title>Witch Bee — the Halloween BuzzBuzz bee</image:title>
-    </image:image>
+    <loc>https://buzzbuzz.club/bees/boram.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/boram.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/cozy.html</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://buzzbuzz.club/bees/img/cozy.png</image:loc>
-      <image:title>Cozy Bee — the November BuzzBuzz bee</image:title>
-    </image:image>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/cozy.png</image:loc></image:image>
   </url>
-  <!-- guides:start -->
+  <url>
+    <loc>https://buzzbuzz.club/bees/festival-bee.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/festival-bee.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/goblin.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/goblin.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/hani.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/hani.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/kpop-jimmy.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/kpop-jimmy.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/luau-bee.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/luau.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/normal.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/normal.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/outlaw.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/outlaw.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/suho.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/suho.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/unc-summer.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/unc.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/vampire.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/vampire.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/witch.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/witch.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://buzzbuzz.club/bees/wizard-student.html</loc>
+    <lastmod>2026-11-24</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/wizard-student.png</image:loc></image:image>
+  </url>
   <url>
     <loc>https://buzzbuzz.club/guides</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/10000-step-halloween-challenge</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/does-a-hike-count-toward-your-step-goal</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/fall-color-walk</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-long-to-walk-10000-steps</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-miles-is-10000-steps</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-1-mile</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-10km</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-5-miles</loc>
-    <lastmod>2026-11-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-5km</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-a-30-minute-walk</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-a-marathon</loc>
-    <lastmod>2026-11-10</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/how-many-steps-is-trick-or-treating</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/start-a-walking-streak-with-friends</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/thanksgiving-walk</loc>
-    <lastmod>2026-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/too-cold-to-walk-indoor-steps</loc>
-    <lastmod>2026-11-20</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/walking-after-the-clocks-go-back</loc>
-    <lastmod>2026-10-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/what-is-a-hive</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/why-phone-and-watch-step-counts-dont-match</loc>
     <lastmod>2026-11-24</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/why-we-made-a-step-counter-with-bees</loc>
-    <lastmod>2026-10-02</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <lastmod>2026-11-24</lastmod>
   </url>
-  <!-- guides:end -->
 </urlset>

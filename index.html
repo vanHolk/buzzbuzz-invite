@@ -20,7 +20,7 @@
   <title>BuzzBuzz — Step Counter & Social Walking App for Friends</title>
 
   <!-- Primary SEO -->
-  <meta name="description" content="BuzzBuzz is a playful step counter and social walking app. Track daily steps, join a hive of friends, share one photo a day, and play weekly Color Hunt challenges. Free for iOS and Android." />
+  <meta name="description" content="BuzzBuzz is a free step counter for iOS and Android. Track steps with friends in a hive, share a daily photo, and play weekly Color Hunts." />
   <meta name="keywords" content="step counter app, social walking app, walking app with friends, daily step tracker, fitness app for friends, photo diary app, color hunt challenge, walking challenge app, BuzzBuzz app, hive walking" />
   <meta name="author" content="BuzzBuzz" />
   <meta name="publisher" content="BuzzBuzz" />
@@ -71,7 +71,10 @@
     "operatingSystem": "iOS, Android",
     "description": "BuzzBuzz is a playful step counter and social walking app where friends track daily steps, join hives, share one photo a day, and take part in weekly Color Hunt challenges.",
     "url": "https://buzzbuzz.club/",
-    "installUrl": "https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595",
+    "installUrl": [
+      "https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595",
+      "https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker"
+    ],
     "featureList": [
       "Daily step tracking",
       "Friend hives for social walking",
@@ -1122,7 +1125,7 @@
       background: #fff;
     }
 
-    h1 {
+    h1, #pageHeading {
       margin: 0 0 10px;
       font-size: 28px;
       line-height: 1.2;
@@ -1488,7 +1491,7 @@
     <div class="card">
       <img src="./app-icon.png" alt="BuzzBuzz app icon" class="app-icon" id="appIcon" />
 
-      <h1 id="pageHeading">Join my BuzzBuzz Hive</h1>
+      <h2 id="pageHeading">Join my BuzzBuzz Hive</h2>
       <p id="fromText" class="ph-mask">Opening your invite…</p>
 
       <!-- Standard-browser hint (default). Hidden inside chat in-app browsers. -->
@@ -1697,6 +1700,8 @@
       <p class="bees-intro" data-i18n="bees.intro">
         Every walker needs a bee. Collect skins in the Honey Shop, pick your icon, and let it carry your whole personality. Tap a bee for the lore — yes, there's lore.
       </p>
+
+      <p><a href="/bees/" data-i18n="bees.all">See all bees →</a></p>
 
       <div class="bee-carousel-wrap">
         <button class="bee-nav prev" type="button" aria-label="Previous bee" data-dir="-1">‹</button>
@@ -2122,6 +2127,7 @@
       'qr.title': 'BuzzBuzz 받기',
       'qr.hint': '폰으로 스캔하세요',
       'bees.title': '우리 벌들 소개',
+      'bees.all': '모든 벌 보기 →',
       'bees.intro': '워커라면 벌 하나쯤은 있어야지. 허니샵에서 스킨 모으고, 내 아이콘 정하고, 성격까지 통째로 맡겨버려. 벌 누르면 세계관 나옴 — ㄹㅇ 세계관 있음.',
       'bees.more': '세계관 보기 →',
       'bees.normal.tag': '원조. 교과서. 그냥 벌.',
