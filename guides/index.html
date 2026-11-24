@@ -501,5 +501,24 @@
     <span class="qr-download-hint">Scan with your phone</span>
   </a>
   <script src="/guides/trail-walk.js" defer></script>
+  <script>
+    (function () {
+      var properties = { source: "guides" };
+      document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("app_store_clicked", properties);
+          }
+        });
+      });
+      document.querySelectorAll('a[href^="https://play.google.com/store/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("play_store_clicked", properties);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

@@ -3,6 +3,7 @@ title: "How Many Steps Is 10 km?"
 description: "About 13,000 steps for many adults, usually 12,500–15,000. Step length moves the count."
 slug: how-many-steps-is-10km
 date: 2026-10-20
+updated: 2026-11-24
 category: step-nerd
 questType: quick-quest
 readTime: "5 min"
@@ -13,8 +14,8 @@ draft: false
 answerKicker: "10 km"
 answerFigure: "≈ 13,000 steps"
 answerNote: "Typical range: ~12,500–15,000. An estimate that depends mainly on step length."
-seoTitle: "How Many Steps Is 10 km? About 13,000 Steps"
-seoDescription: "10 km is about 13,000 steps for many adults, usually 12,500–15,000 depending on step length. That's more than 10,000 steps. See the chart and walking time."
+seoTitle: "10 km Is About 13,000 Steps (Step Length Chart)"
+seoDescription: "10 km is about 13,000 steps for many adults. Use the step-length table to estimate your count and see how long the walk takes at a brisk pace."
 related:
   - how-many-steps-is-5km
   - how-many-miles-is-10000-steps
@@ -32,11 +33,13 @@ A step counter counts footfalls, not metres. The same 10 km can land higher or l
 
 ## A step-length chart for 10 km
 
-10,000 metres ÷ your step length. These rows use the same example lengths as the 5 km page. They are examples, not a reading of your walk.
+Divide 10,000 metres by your step length. The table uses the same example lengths as the 5 km guide.
 
-- About 0.67 m: roughly **14,900 steps**
-- About 0.75 m: roughly **13,300 steps**
-- About 0.80 m: roughly **12,500 steps**
+| Step length | Estimated steps in 10 km |
+| --- | --- |
+| 0.67 m | 14,900 |
+| 0.75 m | 13,300 |
+| 0.80 m | 12,500 |
 
 The [University of Nebraska Medical Center’s walking guide](https://www.unmc.edu/cfhl/resources/walking.html) puts an average stride at about 2.5 feet, which works out to just over 2,100 steps a mile, and 10 km is about 6.2 miles, which lands near **13,100**. [How many steps are in 1 mile](/guides/how-many-steps-is-1-mile) has the method.
 
@@ -47,6 +50,12 @@ A [marathon](/guides/how-many-steps-is-a-marathon) is 42.195 km, about 4.2 times
 10,000 on the watch is a tidy round number. At a 0.75 m step it covers about **7.5 km**. [How many miles is 10,000 steps](/guides/how-many-miles-is-10000-steps) puts that count at about **6.5–8 km** for many adults, and 7.5 km sits in the middle of the band.
 
 A 10 km still wants about **2.5 km** more, and about **3,000 steps** more. Cheer the 10,000 if you want, and keep walking.
+
+## Use BuzzBuzz to find your own 10 km step count
+
+The table gets you close enough to plan. For your own number, check your daily step total in BuzzBuzz just before you start a known 10 km route and again as soon as you finish. Subtract the first total from the second. Save that number for next time, especially if your usual route has hills. You’ve already done the walking, so you might as well make the result work for you.
+
+[Download BuzzBuzz on the App Store](https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595) or [get it on Google Play](https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker).
 
 ## How long 10 km takes
 

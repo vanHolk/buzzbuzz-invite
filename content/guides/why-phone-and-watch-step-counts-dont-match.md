@@ -3,6 +3,7 @@ title: "Why Don’t My Phone and Watch Step Counts Match?"
 description: "Your phone and watch each count steps. When both write the same data, the higher source on the priority list wins."
 slug: why-phone-and-watch-step-counts-dont-match
 date: 2026-11-17
+updated: 2026-11-24
 category: step-nerd
 questType: quick-quest
 readTime: "5 min"
@@ -58,6 +59,12 @@ On iPhone:
 Open Health Connect. Under Permissions and data, tap Manage Data, then Data sources and priority. Under App sources, touch and hold next to the app name and drag the handle. To leave an app out of the totals, next to Data sources and priority, tap Edit, then Remove. The app can still write. Those steps do not count in the totals.
 
 Some apps read all of the data and merge it their own way, so two apps can show different totals for the same day.
+
+## Keep one step tally with BuzzBuzz
+
+Once you’ve sorted out which device to trust, pick one tally for comparing your walks. BuzzBuzz tracks your daily steps and shows progress toward a step goal. Try checking its tally before and after the same loop a few times. The change gives you a number you can compare from walk to walk, and you can stop refereeing the phone and watch after every outing.
+
+[Download BuzzBuzz on the App Store](https://apps.apple.com/us/app/buzzbuzz-step-tracker/id6767195595) or [get it on Google Play](https://play.google.com/store/apps/details?id=com.buzzbuzz.steptracker).
 
 ## Same walk, two devices
 

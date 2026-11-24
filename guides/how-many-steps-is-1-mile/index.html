@@ -261,5 +261,24 @@
     <span class="qr-download-title">Get BuzzBuzz</span>
     <span class="qr-download-hint">Scan with your phone</span>
   </a>
+  <script>
+    (function () {
+      var properties = { source: "how-many-steps-is-1-mile" };
+      document.querySelectorAll('a[href^="https://apps.apple.com/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("app_store_clicked", properties);
+          }
+        });
+      });
+      document.querySelectorAll('a[href^="https://play.google.com/store/"]').forEach(function (link) {
+        link.addEventListener("click", function () {
+          if (typeof window.buzzbuzzCapture === "function") {
+            window.buzzbuzzCapture("play_store_clicked", properties);
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
