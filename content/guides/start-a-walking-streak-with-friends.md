@@ -43,6 +43,8 @@ The photo is the part people actually open. A bakery window, a weird cloud, a do
 
 If you use BuzzBuzz, this is the shape of a hive ([what a hive is](/guides/what-is-a-hive)): a few friends, a daily step count, and one photo that does not have to live forever. That is also [why the app is full of bees](/guides/why-we-made-a-step-counter-with-bees). Any group chat you already have will also do. The walking is the point.
 
+If your friends live in other time zones, [use local walking days and a shared check-in](/guides/walk-with-friends-who-live-far-away).
+
 ## When someone misses
 
 Someone will miss. Decide this on day one.

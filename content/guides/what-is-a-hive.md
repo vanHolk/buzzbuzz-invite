@@ -61,6 +61,8 @@ Send one plain text and pin it. “6,000 steps. One photo. We start tomorrow. No
 
 The seven-day playbook, including a missed Wednesday, is [start a walking streak with friends](/guides/start-a-walking-streak-with-friends). Follow that page for the week.
 
+If your group spans time zones, here’s [how to walk with friends who live far away](/guides/walk-with-friends-who-live-far-away).
+
 Friends at different holiday tables can run a one-day version with the [Thanksgiving walk](/guides/thanksgiving-walk).
 
 :::bee
