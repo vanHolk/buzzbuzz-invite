@@ -3,7 +3,7 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://buzzbuzz.club/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/about/michael-holker/</loc>
@@ -11,91 +11,96 @@
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/aurora-prism.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/aurora-prism.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/berry-blush.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/berry-blush.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/boram.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/boram.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/cozy.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/cozy.png</image:loc></image:image>
   </url>
   <url>
+    <loc>https://buzzbuzz.club/bees/elf-bee.html</loc>
+    <lastmod>2026-11-27</lastmod>
+    <image:image><image:loc>https://buzzbuzz.club/bees/img/elf-bee.png</image:loc></image:image>
+  </url>
+  <url>
     <loc>https://buzzbuzz.club/bees/festival-bee.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/festival-bee.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/goblin.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/goblin.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/hani.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/hani.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/kpop-jimmy.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/kpop-jimmy.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/luau-bee.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/luau.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/normal.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/normal.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/outlaw.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/outlaw.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/suho.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/suho.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/unc-summer.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/unc.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/vampire.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/vampire.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/witch.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/witch.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/bees/wizard-student.html</loc>
-    <lastmod>2026-11-24</lastmod>
+    <lastmod>2026-11-27</lastmod>
     <image:image><image:loc>https://buzzbuzz.club/bees/img/wizard-student.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/10000-step-halloween-challenge</loc>
@@ -147,7 +152,7 @@
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/start-a-walking-streak-with-friends</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/thanksgiving-walk</loc>
@@ -159,7 +164,7 @@
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/walk-with-friends-who-live-far-away</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/walking-after-the-clocks-go-back</loc>
@@ -167,7 +172,7 @@
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/what-is-a-hive</loc>
-    <lastmod>2026-11-26</lastmod>
+    <lastmod>2026-11-27</lastmod>
   </url>
   <url>
     <loc>https://buzzbuzz.club/guides/why-phone-and-watch-step-counts-dont-match</loc>
