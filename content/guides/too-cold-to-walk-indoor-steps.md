@@ -72,6 +72,8 @@ Indoor laps count. Pin one line where the group will see it. On a below-freezing
 
 A hive is a few friends, a daily step count, and one photo. That shape is [what a hive is](/guides/what-is-a-hive). The week-long version in a chat you already have is [how to start a walking streak with friends](/guides/start-a-walking-streak-with-friends).
 
+If those indoor loops are feeding a 24-day group goal, see [a December walking challenge for friends](/guides/december-walking-challenge-for-friends).
+
 When you do head out after dark, [walking after the clocks go back](/guides/walking-after-the-clocks-go-back) covers visibility and the ten-minute minimum.
 
 :::bee
